@@ -85,6 +85,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.5,
     },
+    // Spanish Subpaths
+    {
+      url: `${baseUrl}/es`,
+      lastModified,
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/es/calculadora`,
+      lastModified,
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/es/servicios`,
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
   ];
 
   // Specific Service Category Pages
