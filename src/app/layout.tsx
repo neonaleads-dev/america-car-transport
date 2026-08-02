@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "America's Trusted Network for Vehicle Shipping",
   description:
     "Compare verified car carriers, get instant quotes, and ship your vehicle safely anywhere in America.",
+  verification: {
+    google: "ddgFC7lCCFGcRISIspal82FrdtgAL6wFuWAVL5V6Kg8",
+  },
   alternates: {
     canonical: "https://www.americacartransport.com",
     languages: {
@@ -39,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
       <head>
+        <meta name="google-site-verification" content="ddgFC7lCCFGcRISIspal82FrdtgAL6wFuWAVL5V6Kg8" />
         <StructuredData />
       </head>
       <body className="font-sans bg-slate-100 text-charcoal antialiased">
