@@ -99,40 +99,40 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 1. Hero Section (Bright Vivid Scenic Background) */}
-      <section id="hero-quote" className="relative min-h-[88vh] flex items-center px-4 md:px-8 lg:px-24 pt-10 pb-16 overflow-hidden bg-slate-100">
+      {/* 1. Hero Section (Clean Floating Text over Scenic Background) */}
+      <section id="hero-quote" className="relative min-h-[85vh] flex items-center px-4 md:px-8 lg:px-24 pt-10 pb-16 overflow-hidden bg-slate-50">
         
-        {/* Full Scenic Background Image Layer (Clear & Vibrant) */}
+        {/* Full Scenic Background Image Layer */}
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <img 
             src="/hero-background-truck-bright.jpg" 
             alt="America Car Transport Carrier Truck Driving Along Scenic Coast Highway" 
-            className="w-full h-full object-cover object-center scale-[1.02]"
+            className="w-full h-full object-cover object-center"
           />
-          {/* Light Soft Vignette Overlay to enhance contrast without washing out the photo */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/30 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-black/10"></div>
+          {/* Smooth Seamless Gradient - NO BOXES OR CARDS */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/55 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent"></div>
         </div>
 
         <div className="w-full max-w-[1400px] mx-auto z-10 relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Frosted Glass Typography Card for Maximum Readability */}
-          <div className="flex flex-col justify-center lg:col-span-6 xl:col-span-7 bg-white/75 backdrop-blur-md p-6 md:p-8 rounded-3xl border border-white/90 shadow-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-600/10 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-6 w-max border border-blue-200 shadow-xs">
+          {/* Left Column: Clean Floating Typography (NO BOX) */}
+          <div className="flex flex-col justify-center lg:col-span-6 xl:col-span-7">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-6 w-max border border-blue-200 shadow-sm">
               <Award className="w-4 h-4 text-blue-600" />
               #1 Rated Auto Transport Network
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] font-black tracking-tight text-slate-900 mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-[4.2rem] leading-[1.1] font-black tracking-tight text-slate-900 mb-6 drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
               Instantly Compare &amp; Book <span className="text-blue-600">Trusted Car Shipping</span> Nationwide
             </h1>
             
-            <p className="text-base md:text-lg text-slate-700 font-semibold leading-relaxed max-w-xl mb-8">
+            <p className="text-lg md:text-xl text-slate-700 font-semibold leading-relaxed max-w-xl mb-8 drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
               America&apos;s leading bonded &amp; insured auto transport network. Compare verified carriers, lock in guaranteed rates, and enjoy zero upfront deposits.
             </p>
 
             {/* Google Rating & BBB Accreditation Badges */}
-            <div className="flex flex-wrap items-center gap-4 bg-white/90 p-4 rounded-2xl border border-slate-200/90 shadow-sm max-w-xl">
+            <div className="flex flex-wrap items-center gap-4 bg-white/95 p-4 rounded-2xl border border-slate-200/90 shadow-md max-w-xl">
               <div className="flex items-center gap-2.5 pr-4 border-r border-slate-200">
                 <div className="flex text-amber-400">
                   {[...Array(5)].map((_, i) => (
