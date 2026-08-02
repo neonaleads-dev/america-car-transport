@@ -100,52 +100,58 @@ export default function Home() {
       </header>
 
       {/* 1. Hero Section */}
-      <section id="hero-quote" className="relative min-h-[85vh] flex items-center px-4 md:px-8 lg:px-24 pt-10 pb-16 overflow-hidden bg-gradient-to-br from-white via-slate-50 to-blue-50/50">
+      <section id="hero-quote" className="relative min-h-[88vh] flex items-center px-4 md:px-8 lg:px-24 pt-10 pb-16 overflow-hidden bg-slate-900">
         
-        {/* Decorative Background Shapes */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-          <div className="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-b from-blue-100/40 to-transparent blur-3xl"></div>
-          <div className="absolute top-[40%] -left-[10%] w-[50%] h-[50%] rounded-full bg-gradient-to-t from-slate-200/50 to-transparent blur-3xl"></div>
+        {/* Full Scenic Background Image Layer */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+          <img 
+            src="/hero-background-truck-scenic.jpg" 
+            alt="America Car Transport Carrier Truck Driving Along Scenic Coast Highway" 
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Elegant Dark Overlay for High Contrast Text & Calculator Pop */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/75 to-slate-950/40 lg:to-slate-900/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40"></div>
         </div>
 
         <div className="w-full max-w-[1400px] mx-auto z-10 relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Typography & Rating Card */}
           <div className="flex flex-col justify-center lg:col-span-6 xl:col-span-7">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-6 w-max border border-blue-200 shadow-sm">
-              <Award className="w-4 h-4 text-blue-600" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/20 text-blue-300 rounded-full text-xs md:text-sm font-bold tracking-wide mb-6 w-max border border-blue-400/30 shadow-md backdrop-blur-md">
+              <Award className="w-4 h-4 text-blue-400" />
               #1 Rated Auto Transport Network
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-[4.2rem] leading-[1.1] font-black tracking-tight text-slate-900 mb-6">
-              Instantly Compare &amp; Book <span className="text-blue-600">Trusted Car Shipping</span> Nationwide
+            <h1 className="text-4xl md:text-6xl lg:text-[4.2rem] leading-[1.1] font-black tracking-tight text-white mb-6 drop-shadow-md">
+              Instantly Compare &amp; Book <span className="text-blue-400">Trusted Car Shipping</span> Nationwide
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-xl mb-8">
+            <p className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed max-w-xl mb-8 drop-shadow-sm">
               America&apos;s leading bonded &amp; insured auto transport network. Compare verified carriers, lock in guaranteed rates, and enjoy zero upfront deposits.
             </p>
 
             {/* Google Rating & BBB Accreditation Badges */}
-            <div className="flex flex-wrap items-center gap-4 bg-white/90 p-4 rounded-2xl border border-slate-200/80 shadow-sm max-w-xl">
-              <div className="flex items-center gap-2.5 pr-4 border-r border-slate-200">
+            <div className="flex flex-wrap items-center gap-4 bg-slate-900/80 backdrop-blur-md p-4 rounded-2xl border border-slate-700/80 shadow-lg max-w-xl text-white">
+              <div className="flex items-center gap-2.5 pr-4 border-r border-slate-700">
                 <div className="flex text-amber-400">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-amber-400" />
                   ))}
                 </div>
                 <div>
-                  <div className="font-extrabold text-slate-900 text-sm leading-none">4.9 / 5.0 Rating</div>
-                  <div className="text-xs text-slate-500 font-medium mt-0.5">Google Verified Reviews</div>
+                  <div className="font-extrabold text-white text-sm leading-none">4.9 / 5.0 Rating</div>
+                  <div className="text-xs text-slate-300 font-medium mt-0.5">Google Verified Reviews</div>
                 </div>
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="px-2.5 py-1 bg-slate-900 text-white font-extrabold text-xs rounded border border-slate-700">
+                <div className="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-xs rounded border border-blue-500">
                   BBB A+
                 </div>
                 <div>
-                  <div className="font-bold text-slate-900 text-sm leading-none">Accredited Business</div>
-                  <div className="text-xs text-slate-500 font-medium mt-0.5">FMCSA Compliant Broker</div>
+                  <div className="font-bold text-white text-sm leading-none">Accredited Business</div>
+                  <div className="text-xs text-slate-300 font-medium mt-0.5">FMCSA Compliant Broker</div>
                 </div>
               </div>
             </div>
