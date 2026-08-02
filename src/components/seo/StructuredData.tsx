@@ -39,21 +39,8 @@ const schemaData = {
       },
       "image": "https://www.americacartransport.com/america-car-transport-logo.png",
       "telephone": "(530) 725-5383",
-      "email": "support@americacartransport.com",
       "priceRange": "$$",
       "description": "America's leading bonded & insured auto transport network. Compare verified carriers, lock in instant rates, and ship vehicles nationwide with zero upfront deposit.",
-      "identifier": [
-        {
-          "@type": "PropertyValue",
-          "name": "USDOT License Number",
-          "value": "3849102"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "MC Number",
-          "value": "1098472"
-        }
-      ],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [

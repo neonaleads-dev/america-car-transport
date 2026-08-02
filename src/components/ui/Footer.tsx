@@ -30,10 +30,6 @@ export default function Footer() {
               <Phone className="w-4 h-4 text-blue-400" />
               <a href="tel:5307255383" className="font-bold text-base hover:text-blue-400 transition-colors">(530) 725-5383</a>
             </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-blue-400" />
-              <a href="mailto:support@americacartransport.com" className="hover:text-blue-400 transition-colors">support@americacartransport.com</a>
-            </div>
           </div>
         </div>
 
@@ -90,9 +86,6 @@ export default function Footer() {
           <div>
             <p className="text-sm font-medium text-slate-400">
               &copy; {new Date().getFullYear()} America Car Transport. All rights reserved.
-            </p>
-            <p className="text-xs font-semibold text-slate-500 mt-1">
-              FMCSA Licensed &amp; Bonded Broker • USDOT #3849102 | MC #1098472
             </p>
           </div>
           <div className="flex items-center gap-6 text-sm font-medium text-slate-400">
