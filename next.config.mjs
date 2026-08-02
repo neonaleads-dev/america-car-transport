@@ -3,6 +3,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  outputFileTracing: false, // Disables trace scanning for 20-30 second ultra-fast Vercel builds!
+  swcMinify: true,
   async redirects() {
     return [
       {
