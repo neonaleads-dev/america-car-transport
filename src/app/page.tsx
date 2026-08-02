@@ -99,20 +99,26 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 1. Hero Section */}
-      <section id="hero-quote" className="relative min-h-[85vh] flex items-center px-4 md:px-8 lg:px-24 pt-10 pb-16 overflow-hidden bg-gradient-to-br from-white via-slate-50 to-blue-50/50">
+      {/* 1. Hero Section (Bright Scenic Background) */}
+      <section id="hero-quote" className="relative min-h-[85vh] flex items-center px-4 md:px-8 lg:px-24 pt-10 pb-16 overflow-hidden bg-slate-50">
         
-        {/* Decorative Background Shapes */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-          <div className="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-b from-blue-100/40 to-transparent blur-3xl"></div>
-          <div className="absolute top-[40%] -left-[10%] w-[50%] h-[50%] rounded-full bg-gradient-to-t from-slate-200/50 to-transparent blur-3xl"></div>
+        {/* Full Scenic Bright Background Image Layer */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+          <img 
+            src="/hero-background-truck-bright.jpg" 
+            alt="America Car Transport Carrier Truck Driving Along Scenic Coast Highway" 
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Subtle Light Soft Overlay to Maintain Bright Homepage Theme & Dark Text Legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/30 lg:to-white/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-50/90 via-transparent to-white/40"></div>
         </div>
 
         <div className="w-full max-w-[1400px] mx-auto z-10 relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Typography & Rating Card */}
           <div className="flex flex-col justify-center lg:col-span-6 xl:col-span-7">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-6 w-max border border-blue-200 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-6 w-max border border-blue-200 shadow-sm backdrop-blur-sm">
               <Award className="w-4 h-4 text-blue-600" />
               #1 Rated Auto Transport Network
             </div>
@@ -121,12 +127,12 @@ export default function Home() {
               Instantly Compare &amp; Book <span className="text-blue-600">Trusted Car Shipping</span> Nationwide
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-xl mb-8">
+            <p className="text-lg md:text-xl text-slate-700 font-medium leading-relaxed max-w-xl mb-8">
               America&apos;s leading bonded &amp; insured auto transport network. Compare verified carriers, lock in guaranteed rates, and enjoy zero upfront deposits.
             </p>
 
             {/* Google Rating & BBB Accreditation Badges */}
-            <div className="flex flex-wrap items-center gap-4 bg-white/90 p-4 rounded-2xl border border-slate-200/80 shadow-sm max-w-xl">
+            <div className="flex flex-wrap items-center gap-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-slate-200/90 shadow-md max-w-xl">
               <div className="flex items-center gap-2.5 pr-4 border-r border-slate-200">
                 <div className="flex text-amber-400">
                   {[...Array(5)].map((_, i) => (
