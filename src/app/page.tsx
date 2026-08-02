@@ -102,13 +102,7 @@ export default function Home() {
       {/* 1. Hero Section */}
       <section id="hero-quote" className="relative min-h-[85vh] flex items-center px-4 md:px-8 lg:px-24 pt-10 pb-16 overflow-hidden bg-gradient-to-br from-white via-slate-50 to-blue-50/50">
         
-        {/* USA Vector Route Map Background Pattern (Semi-Transparent Opacity 0.15) */}
-        <div 
-          className="absolute inset-0 w-full h-full pointer-events-none z-0 bg-no-repeat bg-cover bg-center opacity-[0.15]" 
-          style={{ backgroundImage: "url('/usa-route-map-bg.png')", backgroundPosition: "center 30%" }}
-        ></div>
-
-        {/* Decorative Background Glows */}
+        {/* Decorative Background Shapes */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
           <div className="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-b from-blue-100/40 to-transparent blur-3xl"></div>
           <div className="absolute top-[40%] -left-[10%] w-[50%] h-[50%] rounded-full bg-gradient-to-t from-slate-200/50 to-transparent blur-3xl"></div>
@@ -116,33 +110,23 @@ export default function Home() {
 
         <div className="w-full max-w-[1400px] mx-auto z-10 relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Typography, Rating Card & 3-Column Guarantee Bar */}
-          <div className="flex flex-col justify-center lg:col-span-6 xl:col-span-7 relative">
-            
-            {/* Auto Transport Carrier Truck Graphic Overlap */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 hidden xl:block pointer-events-none z-0 opacity-90 max-w-[320px]">
-              <img 
-                src="/open-carrier-truck.png" 
-                alt="Modern Auto Transport Carrier Truck Loaded with Vehicles" 
-                className="w-full h-auto object-contain filter drop-shadow-xl"
-              />
-            </div>
-
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-6 w-max border border-blue-200 shadow-sm relative z-10">
+          {/* Left Column: Typography & Rating Card */}
+          <div className="flex flex-col justify-center lg:col-span-6 xl:col-span-7">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-6 w-max border border-blue-200 shadow-sm">
               <Award className="w-4 h-4 text-blue-600" />
               #1 Rated Auto Transport Network
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-[4.2rem] leading-[1.1] font-black tracking-tight text-slate-900 mb-6 relative z-10">
+            <h1 className="text-4xl md:text-6xl lg:text-[4.2rem] leading-[1.1] font-black tracking-tight text-slate-900 mb-6">
               Instantly Compare &amp; Book <span className="text-blue-600">Trusted Car Shipping</span> Nationwide
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-xl mb-8 relative z-10">
+            <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-xl mb-8">
               America&apos;s leading bonded &amp; insured auto transport network. Compare verified carriers, lock in guaranteed rates, and enjoy zero upfront deposits.
             </p>
 
             {/* Google Rating & BBB Accreditation Badges */}
-            <div className="flex flex-wrap items-center gap-4 bg-white/95 p-4 rounded-2xl border border-slate-200/80 shadow-sm max-w-xl mb-5 relative z-10">
+            <div className="flex flex-wrap items-center gap-4 bg-white/90 p-4 rounded-2xl border border-slate-200/80 shadow-sm max-w-xl">
               <div className="flex items-center gap-2.5 pr-4 border-r border-slate-200">
                 <div className="flex text-amber-400">
                   {[...Array(5)].map((_, i) => (
@@ -165,44 +149,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* Prompt 3: Trust Badges & 3-Column Carrier Guarantee Bar */}
-            <div className="grid grid-cols-3 gap-3 max-w-xl relative z-10">
-              <div className="flex items-center gap-3 p-3 bg-blue-50/80 border border-blue-100 rounded-xl shadow-xs transition-transform hover:-translate-y-0.5">
-                <div className="w-9 h-9 rounded-lg bg-blue-600/10 text-blue-600 flex items-center justify-center shrink-0">
-                  <Shield className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="font-extrabold text-xs sm:text-sm text-slate-900 leading-tight">Secure &amp; Bonded</div>
-                  <div className="text-[10px] text-slate-500 font-semibold hidden sm:block">Full Insurance</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 p-3 bg-blue-50/80 border border-blue-100 rounded-xl shadow-xs transition-transform hover:-translate-y-0.5">
-                <div className="w-9 h-9 rounded-lg bg-blue-600/10 text-blue-600 flex items-center justify-center shrink-0">
-                  <Clock className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="font-extrabold text-xs sm:text-sm text-slate-900 leading-tight">On-Time Guarantee</div>
-                  <div className="text-[10px] text-slate-500 font-semibold hidden sm:block">Priority Dispatch</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 p-3 bg-blue-50/80 border border-blue-100 rounded-xl shadow-xs transition-transform hover:-translate-y-0.5">
-                <div className="w-9 h-9 rounded-lg bg-blue-600/10 text-blue-600 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="font-extrabold text-xs sm:text-sm text-slate-900 leading-tight">Locked-In Price</div>
-                  <div className="text-[10px] text-slate-500 font-semibold hidden sm:block">No Hidden Fees</div>
-                </div>
-              </div>
-            </div>
-
           </div>
 
           {/* Right Column: Calculator */}
-          <div ref={calcRef} className="w-full lg:col-span-6 xl:col-span-5 flex justify-center lg:justify-end relative z-20">
+          <div ref={calcRef} className="w-full lg:col-span-6 xl:col-span-5 flex justify-center lg:justify-end">
             <QuoteCalculator />
           </div>
         </div>

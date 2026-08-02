@@ -312,8 +312,8 @@ export default function QuoteCalculator() {
 
       <div className="px-4 py-4 md:px-6 md:py-6 flex-grow flex flex-col">
         {/* Step Tracker */}
-        <div className="flex items-center justify-between mb-4 md:mb-5">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => setStep(1)}>
+        <div className="flex items-center justify-between mb-4 md:mb-6">
+          <div className="flex items-center gap-2">
             <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${step === 1 ? 'border-blue-600 text-blue-600 bg-blue-50' : step > 1 ? 'border-green-500 bg-green-500 text-white' : 'border-slate-300 text-slate-400'}`}>
               {step > 1 ? <CheckCircle2 className="w-4 h-4" /> : <MapPin className="w-4 h-4" />}
             </div>
@@ -322,7 +322,7 @@ export default function QuoteCalculator() {
           
           <div className={`flex-1 h-[2px] mx-2 ${step > 1 ? 'bg-blue-200' : 'bg-slate-100'}`}></div>
           
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => setStep(2)}>
+          <div className="flex items-center gap-2">
             <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${step === 2 ? 'border-blue-600 text-blue-600 bg-blue-50' : step > 2 ? 'border-green-500 bg-green-500 text-white' : 'border-slate-300 text-slate-400'}`}>
               {step > 2 ? <CheckCircle2 className="w-4 h-4" /> : <Car className="w-4 h-4" />}
             </div>
@@ -331,44 +331,11 @@ export default function QuoteCalculator() {
           
           <div className={`flex-1 h-[2px] mx-2 ${step > 2 ? 'bg-blue-200' : 'bg-slate-100'}`}></div>
           
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => setStep(3)}>
+          <div className="flex items-center gap-2">
             <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${step === 3 || step === 4 ? 'border-blue-600 text-blue-600 bg-blue-50' : 'border-slate-300 text-slate-400'}`}>
               <Calendar className="w-4 h-4" />
             </div>
             <span className={`text-sm font-semibold hidden sm:block ${step >= 3 ? 'text-blue-600' : 'text-slate-400'}`}>Date</span>
-          </div>
-        </div>
-
-        {/* Interactive Vehicle Type Quick-Selector Bar */}
-        <div className="mb-4 bg-slate-50/90 p-2 rounded-xl border border-slate-200/80">
-          <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1.5 px-1">Select Vehicle Type</div>
-          <div className="grid grid-cols-5 gap-1.5 text-center">
-            {[
-              { id: 'sedan', label: '(Sedan)', icon: '🚗' },
-              { id: 'suv', label: '(SUV)', icon: '🚙' },
-              { id: 'truck', label: '(Truck)', icon: '🛻' },
-              { id: 'luxury', label: '(Luxury)', icon: '🏎️' },
-              { id: 'motorcycle', label: '(Motorcycle)', icon: '🏍️' },
-            ].map((cat) => {
-              const isSelected = formData.vehicles[0]?.model?.toLowerCase().includes(cat.id) || (step === 1 && cat.id === 'sedan');
-              return (
-                <button
-                  key={cat.id}
-                  type="button"
-                  onClick={() => {
-                    if (step === 1) setStep(2);
-                  }}
-                  className={`flex flex-col items-center justify-center py-2 px-1 rounded-lg border text-xs font-bold transition-all duration-200 cursor-pointer ${
-                    isSelected
-                      ? 'bg-blue-50 border-blue-400 text-blue-700 shadow-sm ring-2 ring-blue-500/20'
-                      : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300'
-                  }`}
-                >
-                  <span className="text-base mb-0.5">{cat.icon}</span>
-                  <span className="text-[10px] font-bold leading-tight">{cat.label}</span>
-                </button>
-              );
-            })}
           </div>
         </div>
 
