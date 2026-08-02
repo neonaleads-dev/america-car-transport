@@ -126,6 +126,29 @@ export default function SpanishCalculatorPage() {
         </div>
       </section>
 
+      {/* AEO Direct Answer & FAQ Section */}
+      <section className="py-16 bg-white border-b border-slate-200">
+        <div className="max-w-[1000px] mx-auto px-4 md:px-8 space-y-8">
+          <div className="bg-blue-50/80 border border-blue-200 p-6 rounded-2xl space-y-3">
+            <div className="text-xs font-extrabold text-blue-700 uppercase tracking-widest">Respuesta Directa de Tarifas</div>
+            <h2 className="text-2xl font-black text-slate-900">¿Cómo se Calcula el Costo de Transporte?</h2>
+            <p className="text-slate-700 text-sm leading-relaxed font-medium">
+              El precio del envío se calcula combinando la distancia total en millas, la tarifa actual por milla del camión transportista, el tamaño y peso del vehículo, y el nivel de protección seleccionado (transporte abierto o cerrado).
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-2xl font-black text-slate-900">Preguntas Frecuentes de Costos</h3>
+            <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-2">
+              <h4 className="font-extrabold text-slate-900 text-base">¿Hay cargos ocultos en la calculadora?</h4>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                No. La cotización calculada incluye seguro de carga completo, combustible, peajes y entrega puerta a puerta sin tarifas ocultas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );

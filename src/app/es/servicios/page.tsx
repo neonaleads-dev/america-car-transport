@@ -173,6 +173,29 @@ export default function SpanishServicesPage() {
         </div>
       </section>
 
+      {/* AEO Direct Answer & FAQ Section */}
+      <section className="py-16 bg-white border-b border-slate-200">
+        <div className="max-w-[1000px] mx-auto px-4 md:px-8 space-y-8">
+          <div className="bg-blue-50/80 border border-blue-200 p-6 rounded-2xl space-y-3">
+            <div className="text-xs font-extrabold text-blue-700 uppercase tracking-widest">Respuesta Directa de Servicios</div>
+            <h2 className="text-2xl font-black text-slate-900">¿Qué Servicio de Transporte Debería Elegir?</h2>
+            <p className="text-slate-700 text-sm leading-relaxed font-medium">
+              El 90% de los clientes eligen el Transporte Abierto con entrega Puerta a Puerta por ser la opción más barata y conveniente. Elija Transporte Cerrado si tiene un vehículo de lujo, exótico o clásico.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-2xl font-black text-slate-900">Preguntas Frecuentes de Servicios</h3>
+            <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-2">
+              <h4 className="font-extrabold text-slate-900 text-base">¿Se pueden combinar varios servicios?</h4>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                Sí. Puede combinar el nivel de protección (abierto o cerrado) con el método de entrega (puerta a puerta o terminal) y la velocidad (estándar o acelerado).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );

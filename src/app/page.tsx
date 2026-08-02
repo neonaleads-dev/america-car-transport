@@ -18,6 +18,7 @@ import FAQSection from "@/components/ui/FAQSection";
 import TestimonialsSection from "@/components/ui/TestimonialsSection";
 import RecentShipmentsTicker from "@/components/ui/RecentShipmentsTicker";
 import PopularRoutes from "@/components/ui/PopularRoutes";
+import StructuredData from "@/components/seo/StructuredData";
 import Footer from "@/components/ui/Footer";
 import { ShieldCheck, Truck, Clock, CheckCircle2, Phone, Star, Award, Shield } from "lucide-react";
 
@@ -52,6 +53,8 @@ export default function Home() {
 
   return (
     <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", "name": "America Car Transport", "url": "https://americacartransport.com" }) }} />
+    <StructuredData />
     <main ref={containerRef} className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans selection:bg-blue-200">
       
       {/* Navbar (Sticky, Clean, White, 3 Flex Sections) */}

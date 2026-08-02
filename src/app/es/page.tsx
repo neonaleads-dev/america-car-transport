@@ -145,47 +145,40 @@ export default function SpanishHomePage() {
         </div>
       </section>
 
-      {/* Services Grid Section (Spanish) */}
-      <section className="py-20 px-4 md:px-8 lg:px-24 bg-slate-900 border-b border-slate-800 text-white">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-14">
-            <div className="text-blue-400 font-extrabold tracking-widest uppercase text-xs mb-3">Nuestros Servicios</div>
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight">
-              Opciones de Transporte de Vehículos
-            </h2>
-            <div className="w-14 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+      {/* AEO Direct Answer & FAQ Section */}
+      <section className="py-16 bg-white border-b border-slate-200">
+        <div className="max-w-[1000px] mx-auto px-4 md:px-8 space-y-12">
+          
+          {/* Direct Answer Box */}
+          <div className="bg-blue-50/80 border border-blue-200 p-6 rounded-2xl space-y-3">
+            <div className="text-xs font-extrabold text-blue-700 uppercase tracking-widest">Respuesta Directa de Transporte</div>
+            <h2 className="text-2xl font-black text-slate-900">¿Cómo Funciona el Envío de Autos de Estado a Estado?</h2>
+            <p className="text-slate-700 text-sm md:text-base leading-relaxed font-medium">
+              El proceso consta de 3 pasos sencillos: 1) Solicitud de cotización sin depósito por adelantado, 2) Asignación de camión transportista verificado por la USDOT con inspección inicial del vehículo, y 3) Entrega directa puerta a puerta en su destino final con pago al momento de la entrega.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* FAQ Accordion */}
+          <div className="space-y-6">
+            <h3 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">Preguntas Frecuentes (FAQ)</h3>
             
-            <Link href="/es/servicios" className="group relative rounded-2xl overflow-hidden h-56 block shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
-              <img src="/america-car-transport-open-car-shipping-affordable.png" alt="Transporte Abierto de Autos" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 z-10">
-                <div className="text-white font-extrabold text-lg">Transporte Abierto (Económico)</div>
-                <div className="text-slate-300 text-xs font-medium">La opción más popular y económica</div>
+            <div className="space-y-4">
+              <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-2">
+                <h4 className="font-extrabold text-slate-900 text-base">¿Cuánto cuesta enviar un auto en Estados Unidos?</h4>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                  El costo varía según la distancia, tamaño del vehículo y tipo de camión (abierto o cerrado). En envíos promedio de estado a estado, los precios varían entre $500 y $1,500.
+                </p>
               </div>
-            </Link>
 
-            <Link href="/es/servicios" className="group relative rounded-2xl overflow-hidden h-56 block shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
-              <img src="/america-car-transport-enclosed-auto-transport-premium-protection.png" alt="Transporte Cerrado" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 z-10">
-                <div className="text-white font-extrabold text-lg">Transporte Cerrado (Protección Premium)</div>
-                <div className="text-slate-300 text-xs font-medium">Para autos de lujo, clásicos y exóticos</div>
+              <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-2">
+                <h4 className="font-extrabold text-slate-900 text-base">¿Está mi automóvil asegurado durante el viaje?</h4>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                  Sí. Todos los camiones de nuestra red cuentan con seguro de carga completo sin deducible para el propietario.
+                </p>
               </div>
-            </Link>
-
-            <Link href="/es/servicios" className="group relative rounded-2xl overflow-hidden h-56 block shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
-              <img src="/america-car-transport-door-to-door-vehicle-shipping-service.png" alt="Envío Puerta a Puerta" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 z-10">
-                <div className="text-white font-extrabold text-lg">Envío Puerta a Puerta</div>
-                <div className="text-slate-300 text-xs font-medium">Recogida y entrega directa en su dirección</div>
-              </div>
-            </Link>
-
+            </div>
           </div>
+
         </div>
       </section>
 
