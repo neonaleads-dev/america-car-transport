@@ -8,7 +8,7 @@ export const metadata = {
   title: "Door-to-Door Car Shipping | Pickup & Delivery at Your Door",
   description: "Ship your car with door-to-door auto transport — pickup and delivery as close to your exact address as possible. Get an instant quote in 30 seconds.",
   alternates: {
-    canonical: "https://americacartransport.com/services/door-to-door-transport",
+    canonical: "https://www.americacartransport.com/services/door-to-door-transport",
   },
 };
 
@@ -21,7 +21,7 @@ const serviceSchema = {
   "provider": {
     "@type": "MovingCompany",
     "name": "America Car Transport",
-    "url": "https://americacartransport.com",
+    "url": "https://www.americacartransport.com",
     "telephone": "+1-530-725-5383",
     "identifier": {
       "@type": "PropertyValue",
@@ -39,9 +39,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-    { "@type": "ListItem", "position": 3, "name": "Door-to-Door Transport", "item": "https://americacartransport.com/services/door-to-door-transport" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+    { "@type": "ListItem", "position": 3, "name": "Door-to-Door Transport", "item": "https://www.americacartransport.com/services/door-to-door-transport" }
   ]
 };
 

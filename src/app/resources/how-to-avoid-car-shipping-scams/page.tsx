@@ -8,12 +8,12 @@ export const metadata = {
   title: "How to Avoid Car Shipping Scams | Complete 2026 Guide",
   description: "Real answers on car shipping scams, red flags, damage risk, and how to verify a legit company — before you book. Fact-checked, no fear-mongering.",
   alternates: {
-    canonical: "https://americacartransport.com/resources/how-to-avoid-car-shipping-scams",
+    canonical: "https://www.americacartransport.com/resources/how-to-avoid-car-shipping-scams",
   },
   openGraph: {
     title: "How to Avoid Car Shipping Scams | Complete 2026 Guide",
     description: "Real answers on car shipping scams, red flags, damage risk, and how to verify a legit company — before you book. Fact-checked, no fear-mongering.",
-    url: "https://americacartransport.com/resources/how-to-avoid-car-shipping-scams",
+    url: "https://www.americacartransport.com/resources/how-to-avoid-car-shipping-scams",
     siteName: "America Car Transport",
     type: "article",
   },
@@ -64,50 +64,50 @@ export default function HowToAvoidCarShippingScamsPage() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://americacartransport.com/resources/how-to-avoid-car-shipping-scams#article",
+        "@id": "https://www.americacartransport.com/resources/how-to-avoid-car-shipping-scams#article",
         "headline": "How Do I Not Get Scammed Shipping My Car? A Complete, Honest Guide",
         "description": "Fact-checked consumer protection guide on car shipping scams, red flags, FMCSA SAFER lookup walkthrough, damage risks, and scam recovery steps.",
         "author": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "publisher": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "datePublished": "2026-07-29",
         "dateModified": "2026-07-29",
-        "mainEntityOfPage": "https://americacartransport.com/resources/how-to-avoid-car-shipping-scams"
+        "mainEntityOfPage": "https://www.americacartransport.com/resources/how-to-avoid-car-shipping-scams"
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/resources/how-to-avoid-car-shipping-scams#breadcrumb",
+        "@id": "https://www.americacartransport.com/resources/how-to-avoid-car-shipping-scams#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://americacartransport.com/"
+            "item": "https://www.americacartransport.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Resources",
-            "item": "https://americacartransport.com/resources"
+            "item": "https://www.americacartransport.com/resources"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "How to Avoid Car Shipping Scams",
-            "item": "https://americacartransport.com/resources/how-to-avoid-car-shipping-scams"
+            "item": "https://www.americacartransport.com/resources/how-to-avoid-car-shipping-scams"
           }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/resources/how-to-avoid-car-shipping-scams#faq",
+        "@id": "https://www.americacartransport.com/resources/how-to-avoid-car-shipping-scams#faq",
         "mainEntity": SCAM_FAQS.map((faq) => ({
           "@type": "Question",
           "name": faq.q,

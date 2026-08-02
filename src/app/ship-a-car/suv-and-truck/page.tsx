@@ -10,7 +10,7 @@ export const metadata = {
   title: "Lifted Truck & SUV Shipping | Oversized Vehicle Transport",
   description: "Ship your lifted truck, dually pickup, or large SUV with a carrier equipped for the extra height and weight — no surprise surcharges. Get a free quote.",
   alternates: {
-    canonical: "https://americacartransport.com/ship-a-car/suv-and-truck",
+    canonical: "https://www.americacartransport.com/ship-a-car/suv-and-truck",
   },
 };
 
@@ -20,13 +20,13 @@ export default function HeavyDutyTruckAndSUVShippingPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/ship-a-car/suv-and-truck#service",
+        "@id": "https://www.americacartransport.com/ship-a-car/suv-and-truck#service",
         "name": "Heavy Duty Truck & SUV Shipping",
         "serviceType": "Lifted Truck, Dually Pickup, & Large SUV Transport",
         "provider": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "areaServed": {
           "@type": "Country",
@@ -40,7 +40,7 @@ export default function HeavyDutyTruckAndSUVShippingPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/ship-a-car/suv-and-truck#faq",
+        "@id": "https://www.americacartransport.com/ship-a-car/suv-and-truck#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -70,11 +70,11 @@ export default function HeavyDutyTruckAndSUVShippingPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/ship-a-car/suv-and-truck#breadcrumb",
+        "@id": "https://www.americacartransport.com/ship-a-car/suv-and-truck#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-          { "@type": "ListItem", "position": 3, "name": "Heavy Duty Truck & SUV Shipping", "item": "https://americacartransport.com/ship-a-car/suv-and-truck" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Heavy Duty Truck & SUV Shipping", "item": "https://www.americacartransport.com/ship-a-car/suv-and-truck" }
         ]
       }
     ]

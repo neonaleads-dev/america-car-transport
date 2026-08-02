@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllStateSlugs } from "@/data/states";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://americacartransport.com";
+  const baseUrl = "https://www.americacartransport.com";
   const lastModified = new Date();
 
   // Core Static Top-Level Pages (High Sitelink Candidates)

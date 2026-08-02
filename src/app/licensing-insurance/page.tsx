@@ -10,7 +10,7 @@ export const metadata = {
   title: "Licensing & Insurance | FMCSA USDOT #3849102 MC #1098472 | America Car Transport",
   description: "Verify America Car Transport FMCSA licensing, USDOT #3849102, MC #1098472, $75K surety bond, and cargo insurance rules. Zero upfront deposit guarantee.",
   alternates: {
-    canonical: "https://americacartransport.com/licensing-insurance",
+    canonical: "https://www.americacartransport.com/licensing-insurance",
   },
 };
 
@@ -39,22 +39,22 @@ export default function LicensingInsurancePage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://americacartransport.com/licensing-insurance#webpage",
-        "url": "https://americacartransport.com/licensing-insurance",
+        "@id": "https://www.americacartransport.com/licensing-insurance#webpage",
+        "url": "https://www.americacartransport.com/licensing-insurance",
         "name": "Licensing & Insurance | FMCSA USDOT #3849102",
         "description": "Official FMCSA licensing, USDOT registration, surety bond, and cargo insurance compliance for America Car Transport.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://americacartransport.com/#website",
+          "@id": "https://www.americacartransport.com/#website",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         }
       },
       {
         "@type": "Organization",
-        "@id": "https://americacartransport.com/#organization",
+        "@id": "https://www.americacartransport.com/#organization",
         "name": "America Car Transport",
-        "url": "https://americacartransport.com",
+        "url": "https://www.americacartransport.com",
         "telephone": "(530) 725-5383",
         "identifier": [
           {
@@ -71,7 +71,7 @@ export default function LicensingInsurancePage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/licensing-insurance#faq",
+        "@id": "https://www.americacartransport.com/licensing-insurance#faq",
         "mainEntity": FAQS.map((faq) => ({
           "@type": "Question",
           "name": faq.question,
@@ -83,10 +83,10 @@ export default function LicensingInsurancePage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/licensing-insurance#breadcrumb",
+        "@id": "https://www.americacartransport.com/licensing-insurance#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Licensing & Insurance", "item": "https://americacartransport.com/licensing-insurance" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Licensing & Insurance", "item": "https://www.americacartransport.com/licensing-insurance" }
         ]
       }
     ]

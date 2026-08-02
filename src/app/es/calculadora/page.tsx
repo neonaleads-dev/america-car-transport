@@ -9,10 +9,10 @@ export const metadata = {
   title: "Calculadora de Costos de Envío de Autos | Cotización Gratis en Español",
   description: "Calcule el costo instantáneo de enviar su automóvil de estado a estado en EE.UU. Sin depósito inicial, sin compromiso. Tarifas garantizadas de transporte.",
   alternates: {
-    canonical: "https://americacartransport.com/es/calculadora",
+    canonical: "https://www.americacartransport.com/es/calculadora",
     languages: {
-      "en-US": "https://americacartransport.com/tools/car-shipping-cost-calculator",
-      "es-US": "https://americacartransport.com/es/calculadora",
+      "en-US": "https://www.americacartransport.com/tools/car-shipping-cost-calculator",
+      "es-US": "https://www.americacartransport.com/es/calculadora",
     },
   },
 };
@@ -23,18 +23,18 @@ export default function SpanishCalculatorPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://americacartransport.com/es/calculadora#app",
+        "@id": "https://www.americacartransport.com/es/calculadora#app",
         "name": "Calculadora de Costos de Envío de Autos",
-        "url": "https://americacartransport.com/es/calculadora",
+        "url": "https://www.americacartransport.com/es/calculadora",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "All"
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/es/calculadora#breadcrumb",
+        "@id": "https://www.americacartransport.com/es/calculadora#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://americacartransport.com/es" },
-          { "@type": "ListItem", "position": 2, "name": "Calculadora de Costos", "item": "https://americacartransport.com/es/calculadora" }
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.americacartransport.com/es" },
+          { "@type": "ListItem", "position": 2, "name": "Calculadora de Costos", "item": "https://www.americacartransport.com/es/calculadora" }
         ]
       }
     ]

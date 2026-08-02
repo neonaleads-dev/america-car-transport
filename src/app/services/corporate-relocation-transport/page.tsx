@@ -9,7 +9,7 @@ export const metadata = {
   title: "Corporate Relocation Car Shipping | Employee Vehicle Transport",
   description: "America Car Transport partners with companies and relocation coordinators to ship employee vehicles — direct invoicing, consistent service, and a single point of contact.",
   alternates: {
-    canonical: "https://americacartransport.com/services/corporate-relocation-transport",
+    canonical: "https://www.americacartransport.com/services/corporate-relocation-transport",
   },
 };
 
@@ -19,13 +19,13 @@ export default function CorporateRelocationTransportPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/services/corporate-relocation-transport#service",
+        "@id": "https://www.americacartransport.com/services/corporate-relocation-transport#service",
         "name": "Corporate Relocation Car Shipping",
         "serviceType": "Corporate Employee Relocation Vehicle Transport",
         "provider": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "areaServed": {
           "@type": "Country",
@@ -42,7 +42,7 @@ export default function CorporateRelocationTransportPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/services/corporate-relocation-transport#faq",
+        "@id": "https://www.americacartransport.com/services/corporate-relocation-transport#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -80,11 +80,11 @@ export default function CorporateRelocationTransportPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/services/corporate-relocation-transport#breadcrumb",
+        "@id": "https://www.americacartransport.com/services/corporate-relocation-transport#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-          { "@type": "ListItem", "position": 3, "name": "Corporate Relocation Transport", "item": "https://americacartransport.com/services/corporate-relocation-transport" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Corporate Relocation Transport", "item": "https://www.americacartransport.com/services/corporate-relocation-transport" }
         ]
       }
     ]

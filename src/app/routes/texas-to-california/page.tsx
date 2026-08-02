@@ -10,7 +10,7 @@ export const metadata = {
   title: "Texas to California Car Shipping | Cost & Transit | America Car Transport",
   description: "Ship a car from Texas to California — real 2026 pricing, transit times, and FAQs. Zero upfront deposit, fully licensed and bonded. Get an instant quote.",
   alternates: {
-    canonical: "https://americacartransport.com/routes/texas-to-california",
+    canonical: "https://www.americacartransport.com/routes/texas-to-california",
   },
 };
 
@@ -39,27 +39,27 @@ export default function TexasToCaliforniaRoutePage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://americacartransport.com/routes/texas-to-california#webpage",
-        "url": "https://americacartransport.com/routes/texas-to-california",
+        "@id": "https://www.americacartransport.com/routes/texas-to-california#webpage",
+        "url": "https://www.americacartransport.com/routes/texas-to-california",
         "name": "Texas to California Car Shipping | Cost & Transit Time",
         "description": "Direct auto transport from Texas to California. Real carrier rates, 3-5 day transit, zero deposit.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://americacartransport.com/#website",
+          "@id": "https://www.americacartransport.com/#website",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         }
       },
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/routes/texas-to-california#service",
+        "@id": "https://www.americacartransport.com/routes/texas-to-california#service",
         "serviceType": "Texas to California Car Shipping",
         "name": "Texas to California Car Shipping Service",
         "provider": {
           "@type": "MovingCompany",
-          "@id": "https://americacartransport.com/#organization",
+          "@id": "https://www.americacartransport.com/#organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com",
+          "url": "https://www.americacartransport.com",
           "telephone": "(530) 725-5383",
           "identifier": [
             { "@type": "PropertyValue", "propertyID": "USDOT", "value": "3849102" },
@@ -79,16 +79,16 @@ export default function TexasToCaliforniaRoutePage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/routes/texas-to-california#breadcrumb",
+        "@id": "https://www.americacartransport.com/routes/texas-to-california#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Routes", "item": "https://americacartransport.com/routes" },
-          { "@type": "ListItem", "position": 3, "name": "Texas to California", "item": "https://americacartransport.com/routes/texas-to-california" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Routes", "item": "https://www.americacartransport.com/routes" },
+          { "@type": "ListItem", "position": 3, "name": "Texas to California", "item": "https://www.americacartransport.com/routes/texas-to-california" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/routes/texas-to-california#faq",
+        "@id": "https://www.americacartransport.com/routes/texas-to-california#faq",
         "mainEntity": FAQS.map((faq) => ({
           "@type": "Question",
           "name": faq.question,

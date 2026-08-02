@@ -53,7 +53,7 @@ export default function Home() {
 
   return (
     <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", "name": "America Car Transport", "url": "https://americacartransport.com" }) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", "name": "America Car Transport", "url": "https://www.americacartransport.com" }) }} />
     <StructuredData />
     <main ref={containerRef} className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans selection:bg-blue-200">
       

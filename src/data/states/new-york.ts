@@ -8,7 +8,7 @@ export const newYorkData: StateData = {
   heroSubtitle: "Ship your vehicle to or from New York with top-rated, bonded & insured carriers. Direct door-to-door shipping for NYC boroughs, Long Island, Westchester, and Upstate NY.",
   metaTitle: "New York Car Shipping | Direct Auto Transport Services",
   metaDescription: "Professional New York car shipping services. Compare open & enclosed auto transport rates in NYC, Buffalo, Rochester, and Albany. Zero deposit policy.",
-  canonical: "https://americacartransport.com/locations/new-york",
+  canonical: "https://www.americacartransport.com/locations/new-york",
   
   population: "19.6 Million",
   capital: "Albany",

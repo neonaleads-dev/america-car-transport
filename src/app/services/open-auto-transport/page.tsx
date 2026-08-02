@@ -8,7 +8,7 @@ export const metadata = {
   title: "Open Auto Transport | Fast & Affordable Car Shipping",
   description: "Ship your car nationwide with open auto transport — America's most affordable, fastest way to move a vehicle. Get an instant quote, zero upfront deposit.",
   alternates: {
-    canonical: "https://americacartransport.com/services/open-auto-transport",
+    canonical: "https://www.americacartransport.com/services/open-auto-transport",
   },
 };
 
@@ -21,7 +21,7 @@ const serviceSchema = {
   "provider": {
     "@type": "MovingCompany",
     "name": "America Car Transport",
-    "url": "https://americacartransport.com",
+    "url": "https://www.americacartransport.com",
     "telephone": "+1-530-725-5383",
     "identifier": {
       "@type": "PropertyValue",
@@ -46,9 +46,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-    { "@type": "ListItem", "position": 3, "name": "Open Auto Transport", "item": "https://americacartransport.com/services/open-auto-transport" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+    { "@type": "ListItem", "position": 3, "name": "Open Auto Transport", "item": "https://www.americacartransport.com/services/open-auto-transport" }
   ]
 };
 

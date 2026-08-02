@@ -9,7 +9,7 @@ export const metadata = {
   title: "Car Shipping Resources & Driver Safety Guides | America Car Transport",
   description: "Explore official state driving laws, car shipping guides, scam prevention tips, and auto transport safety resources by America Car Transport.",
   alternates: {
-    canonical: "https://americacartransport.com/resources",
+    canonical: "https://www.americacartransport.com/resources",
   },
 };
 
@@ -54,27 +54,27 @@ export default function ResourcesHubPage() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://americacartransport.com/resources#webpage",
+        "@id": "https://www.americacartransport.com/resources#webpage",
         "name": "Car Shipping Resources & Driver Safety Guides",
         "description": "Educational resource hub for auto transport, state driving laws, licensing verification, and car shipping safety.",
-        "url": "https://americacartransport.com/resources",
+        "url": "https://www.americacartransport.com/resources",
         "publisher": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/resources#breadcrumb",
+        "@id": "https://www.americacartransport.com/resources#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://americacartransport.com/resources" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.americacartransport.com/resources" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/resources#faq",
+        "@id": "https://www.americacartransport.com/resources#faq",
         "mainEntity": [
           {
             "@type": "Question",

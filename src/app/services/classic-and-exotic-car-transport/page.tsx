@@ -10,7 +10,7 @@ export const metadata = {
   title: "Classic & Exotic Car Transport | White-Glove Shipping",
   description: "Ship your classic, antique, or exotic car with specialized enclosed transport — agreed-value insurance matching, liftgate loading, hard-sided trailers.",
   alternates: {
-    canonical: "https://americacartransport.com/services/classic-and-exotic-car-transport",
+    canonical: "https://www.americacartransport.com/services/classic-and-exotic-car-transport",
   },
 };
 
@@ -43,28 +43,28 @@ export default function ClassicAndExoticCarTransportPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://americacartransport.com/services/classic-and-exotic-car-transport#webpage",
-        "url": "https://americacartransport.com/services/classic-and-exotic-car-transport",
+        "@id": "https://www.americacartransport.com/services/classic-and-exotic-car-transport#webpage",
+        "url": "https://www.americacartransport.com/services/classic-and-exotic-car-transport",
         "name": "Classic & Exotic Car Transport | White-Glove Shipping",
         "description": "Specialized enclosed transport for classic, antique, and exotic vehicles, including liftgate loading and agreed-value insurance matching.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://americacartransport.com/#website",
+          "@id": "https://www.americacartransport.com/#website",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         }
       },
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/services/classic-and-exotic-car-transport#service",
+        "@id": "https://www.americacartransport.com/services/classic-and-exotic-car-transport#service",
         "serviceType": "Classic and Exotic Car Transport",
         "name": "Classic & Exotic Car Transport",
         "description": "Specialized enclosed transport for classic, antique, and exotic vehicles, including liftgate loading and agreed-value insurance matching.",
         "provider": {
           "@type": "MovingCompany",
-          "@id": "https://americacartransport.com/#organization",
+          "@id": "https://www.americacartransport.com/#organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com",
+          "url": "https://www.americacartransport.com",
           "telephone": "(530) 725-5383",
           "identifier": [
             { "@type": "PropertyValue", "propertyID": "USDOT", "value": "3849102" },
@@ -81,16 +81,16 @@ export default function ClassicAndExoticCarTransportPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/services/classic-and-exotic-car-transport#breadcrumb",
+        "@id": "https://www.americacartransport.com/services/classic-and-exotic-car-transport#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-          { "@type": "ListItem", "position": 3, "name": "Classic & Exotic Car Transport", "item": "https://americacartransport.com/services/classic-and-exotic-car-transport" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Classic & Exotic Car Transport", "item": "https://www.americacartransport.com/services/classic-and-exotic-car-transport" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/services/classic-and-exotic-car-transport#faq",
+        "@id": "https://www.americacartransport.com/services/classic-and-exotic-car-transport#faq",
         "mainEntity": FAQS.map((faq) => ({
           "@type": "Question",
           "name": faq.question,

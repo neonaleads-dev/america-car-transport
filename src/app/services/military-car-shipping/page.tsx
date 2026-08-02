@@ -10,7 +10,7 @@ export const metadata = {
   title: "Military Car Shipping | PCS Auto Transport Discount | America Car Transport",
   description: "Shipping your car during a PCS move? America Car Transport offers a military discount, on-time delivery for report dates, and no upfront deposit. Get a free quote.",
   alternates: {
-    canonical: "https://americacartransport.com/services/military-car-shipping",
+    canonical: "https://www.americacartransport.com/services/military-car-shipping",
   },
 };
 
@@ -20,13 +20,13 @@ export default function MilitaryCarShippingPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/services/military-car-shipping#service",
+        "@id": "https://www.americacartransport.com/services/military-car-shipping#service",
         "name": "Military PCS Car Shipping",
         "serviceType": "Military PCS Vehicle Shipping & Auto Transport",
         "provider": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "areaServed": {
           "@type": "Country",
@@ -43,7 +43,7 @@ export default function MilitaryCarShippingPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/services/military-car-shipping#faq",
+        "@id": "https://www.americacartransport.com/services/military-car-shipping#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -81,11 +81,11 @@ export default function MilitaryCarShippingPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/services/military-car-shipping#breadcrumb",
+        "@id": "https://www.americacartransport.com/services/military-car-shipping#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-          { "@type": "ListItem", "position": 3, "name": "Military Car Shipping", "item": "https://americacartransport.com/services/military-car-shipping" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Military Car Shipping", "item": "https://www.americacartransport.com/services/military-car-shipping" }
         ]
       }
     ]

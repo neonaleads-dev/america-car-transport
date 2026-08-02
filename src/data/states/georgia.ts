@@ -8,7 +8,7 @@ export const georgiaData: StateData = {
   heroSubtitle: "Ship your vehicle safely to or from Georgia. Direct door-to-door car transport in Atlanta, Savannah, Augusta, and Macon with zero upfront deposit.",
   metaTitle: "Georgia Car Shipping | Direct Auto Transport Services",
   metaDescription: "Reliable Georgia car shipping services. Get instant open & enclosed auto transport quotes for Atlanta, Savannah, and Augusta. FMCSA licensed.",
-  canonical: "https://americacartransport.com/locations/georgia",
+  canonical: "https://www.americacartransport.com/locations/georgia",
   
   population: "11.0 Million",
   capital: "Atlanta",

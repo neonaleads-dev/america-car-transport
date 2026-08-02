@@ -10,7 +10,7 @@ export const metadata = {
   title: "Snowbird Car Shipping | Seasonal Auto Transport to Florida & Arizona",
   description: "Shipping your car south for the winter? Learn the best time to book snowbird car shipping to Florida, Arizona, and beyond — and how to avoid peak-season price spikes.",
   alternates: {
-    canonical: "https://americacartransport.com/services/snowbird-car-shipping",
+    canonical: "https://www.americacartransport.com/services/snowbird-car-shipping",
   },
 };
 
@@ -20,13 +20,13 @@ export default function SnowbirdCarShippingPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/services/snowbird-car-shipping#service",
+        "@id": "https://www.americacartransport.com/services/snowbird-car-shipping#service",
         "name": "Snowbird Car Shipping — Seasonal Vehicle Transport",
         "serviceType": "Seasonal Auto Transport & Snowbird Vehicle Shipping",
         "provider": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "areaServed": ["Florida", "Arizona", "California", "New York", "Illinois", "Michigan"],
         "audience": {
@@ -40,7 +40,7 @@ export default function SnowbirdCarShippingPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/services/snowbird-car-shipping#faq",
+        "@id": "https://www.americacartransport.com/services/snowbird-car-shipping#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -70,11 +70,11 @@ export default function SnowbirdCarShippingPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/services/snowbird-car-shipping#breadcrumb",
+        "@id": "https://www.americacartransport.com/services/snowbird-car-shipping#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-          { "@type": "ListItem", "position": 3, "name": "Snowbird Car Shipping", "item": "https://americacartransport.com/services/snowbird-car-shipping" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Snowbird Car Shipping", "item": "https://www.americacartransport.com/services/snowbird-car-shipping" }
         ]
       }
     ]

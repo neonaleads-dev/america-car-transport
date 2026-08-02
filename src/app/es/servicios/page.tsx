@@ -9,10 +9,10 @@ export const metadata = {
   title: "Servicios de Transporte de Vehículos | Opciones de Envío de Autos",
   description: "Descubra todas las opciones de transporte de vehículos de America Car Transport en EE.UU. Envíos abiertos, cerrados, puerta a puerta y acelerados.",
   alternates: {
-    canonical: "https://americacartransport.com/es/servicios",
+    canonical: "https://www.americacartransport.com/es/servicios",
     languages: {
-      "en-US": "https://americacartransport.com/services",
-      "es-US": "https://americacartransport.com/es/servicios",
+      "en-US": "https://www.americacartransport.com/services",
+      "es-US": "https://www.americacartransport.com/es/servicios",
     },
   },
 };
@@ -23,20 +23,20 @@ export default function SpanishServicesPage() {
     "@graph": [
       {
         "@type": "ItemList",
-        "@id": "https://americacartransport.com/es/servicios#list",
+        "@id": "https://www.americacartransport.com/es/servicios#list",
         "name": "Servicios de Transporte de Vehículos en Español",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Transporte Abierto de Autos", "url": "https://americacartransport.com/services/open-auto-transport" },
-          { "@type": "ListItem", "position": 2, "name": "Transporte Cerrado de Autos", "url": "https://americacartransport.com/services/enclosed-auto-transport" },
-          { "@type": "ListItem", "position": 3, "name": "Envío Puerta a Puerta", "url": "https://americacartransport.com/services/door-to-door-transport" }
+          { "@type": "ListItem", "position": 1, "name": "Transporte Abierto de Autos", "url": "https://www.americacartransport.com/services/open-auto-transport" },
+          { "@type": "ListItem", "position": 2, "name": "Transporte Cerrado de Autos", "url": "https://www.americacartransport.com/services/enclosed-auto-transport" },
+          { "@type": "ListItem", "position": 3, "name": "Envío Puerta a Puerta", "url": "https://www.americacartransport.com/services/door-to-door-transport" }
         ]
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/es/servicios#breadcrumb",
+        "@id": "https://www.americacartransport.com/es/servicios#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://americacartransport.com/es" },
-          { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://americacartransport.com/es/servicios" }
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.americacartransport.com/es" },
+          { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://www.americacartransport.com/es/servicios" }
         ]
       }
     ]

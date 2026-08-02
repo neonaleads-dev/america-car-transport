@@ -9,10 +9,10 @@ export const metadata = {
   title: "Transporte de Autos en EE.UU. | Cotización Gratis de Envío de Vehículos",
   description: "Transporte de vehículos confiable en Estados Unidos con America Car Transport. Cotización instantánea sin depósito inicial. Envíos abiertos y cerrados puerta a puerta.",
   alternates: {
-    canonical: "https://americacartransport.com/es",
+    canonical: "https://www.americacartransport.com/es",
     languages: {
-      "en-US": "https://americacartransport.com/",
-      "es-US": "https://americacartransport.com/es",
+      "en-US": "https://www.americacartransport.com/",
+      "es-US": "https://www.americacartransport.com/es",
     },
   },
 };
@@ -23,16 +23,16 @@ export default function SpanishHomePage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://americacartransport.com/#organization",
+        "@id": "https://www.americacartransport.com/#organization",
         "name": "America Car Transport",
-        "url": "https://americacartransport.com/es",
-        "logo": "https://americacartransport.com/america-car-transport-logo.png",
+        "url": "https://www.americacartransport.com/es",
+        "logo": "https://www.americacartransport.com/america-car-transport-logo.png",
         "telephone": "(530) 725-5383",
         "description": "Empresa líder en transporte de vehículos en Estados Unidos. Envíos seguros puerta a puerta con $0 de depósito inicial."
       },
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/es#service",
+        "@id": "https://www.americacartransport.com/es#service",
         "name": "Servicio de Transporte de Autos en Estados Unidos",
         "serviceType": "Transporte de Vehículos, Envío de Carros de Estado a Estado",
         "provider": {
@@ -46,9 +46,9 @@ export default function SpanishHomePage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/es#breadcrumb",
+        "@id": "https://www.americacartransport.com/es#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://americacartransport.com/es" }
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.americacartransport.com/es" }
         ]
       }
     ]

@@ -10,7 +10,7 @@ export const metadata = {
   title: "College Student Car Shipping | Affordable Campus Car Transport",
   description: "Shipping a car to or from college? See the cheapest way to do it — terminal-to-terminal shipping — plus the best time to book for move-in and move-out.",
   alternates: {
-    canonical: "https://americacartransport.com/services/college-student-car-shipping",
+    canonical: "https://www.americacartransport.com/services/college-student-car-shipping",
   },
 };
 
@@ -20,13 +20,13 @@ export default function CollegeStudentCarShippingPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/services/college-student-car-shipping#service",
+        "@id": "https://www.americacartransport.com/services/college-student-car-shipping#service",
         "name": "College Student Car Shipping",
         "serviceType": "Student & Campus Vehicle Transport",
         "provider": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "areaServed": {
           "@type": "Country",
@@ -43,7 +43,7 @@ export default function CollegeStudentCarShippingPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/services/college-student-car-shipping#faq",
+        "@id": "https://www.americacartransport.com/services/college-student-car-shipping#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -73,11 +73,11 @@ export default function CollegeStudentCarShippingPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/services/college-student-car-shipping#breadcrumb",
+        "@id": "https://www.americacartransport.com/services/college-student-car-shipping#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-          { "@type": "ListItem", "position": 3, "name": "College Student Car Shipping", "item": "https://americacartransport.com/services/college-student-car-shipping" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "College Student Car Shipping", "item": "https://www.americacartransport.com/services/college-student-car-shipping" }
         ]
       }
     ]

@@ -10,7 +10,7 @@ export const metadata = {
   title: "Contact Us | America Car Transport — (530) 725-5383",
   description: "Get in touch with America Car Transport auto shipping specialists. Available 24/7 at (530) 725-5383 or support@americacartransport.com for instant quotes.",
   alternates: {
-    canonical: "https://americacartransport.com/contact",
+    canonical: "https://www.americacartransport.com/contact",
   },
 };
 
@@ -20,28 +20,28 @@ export default function ContactPage() {
     "@graph": [
       {
         "@type": "ContactPage",
-        "@id": "https://americacartransport.com/contact#webpage",
-        "url": "https://americacartransport.com/contact",
+        "@id": "https://www.americacartransport.com/contact#webpage",
+        "url": "https://www.americacartransport.com/contact",
         "name": "Contact Us | America Car Transport",
         "description": "24/7 customer support and auto shipping quotes.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://americacartransport.com/#website",
+          "@id": "https://www.americacartransport.com/#website",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/contact#breadcrumb",
+        "@id": "https://www.americacartransport.com/contact#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://americacartransport.com/contact" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://www.americacartransport.com/contact" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/contact#faq",
+        "@id": "https://www.americacartransport.com/contact#faq",
         "mainEntity": [
           {
             "@type": "Question",

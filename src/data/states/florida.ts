@@ -8,7 +8,7 @@ export const floridaData: StateData = {
   heroSubtitle: "Ship your vehicle to or from Florida with trusted, FMCSA-licensed carriers. Specializing in East Coast snowbird routes, Orlando relocations, and Miami vehicle logistics with zero upfront deposit.",
   metaTitle: "Florida Car Shipping | Direct Auto Transport Services",
   metaDescription: "Top-rated Florida car shipping services. Get instant quotes for door-to-door auto transport in Miami, Tampa, Orlando, and Jacksonville. Bonded & insured network.",
-  canonical: "https://americacartransport.com/locations/florida",
+  canonical: "https://www.americacartransport.com/locations/florida",
   
   population: "22.6 Million",
   capital: "Tallahassee",

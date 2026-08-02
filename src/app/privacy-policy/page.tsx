@@ -7,7 +7,7 @@ export const metadata = {
   title: "Privacy Policy | America Car Transport",
   description: "Privacy Policy for America Car Transport — Learn how we protect your personal information, quote data, and communications.",
   alternates: {
-    canonical: "https://americacartransport.com/privacy-policy",
+    canonical: "https://www.americacartransport.com/privacy-policy",
   },
 };
 
@@ -17,15 +17,15 @@ export default function PrivacyPolicyPage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/privacy-policy#breadcrumb",
+        "@id": "https://www.americacartransport.com/privacy-policy#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://americacartransport.com/privacy-policy" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.americacartransport.com/privacy-policy" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/privacy-policy#faq",
+        "@id": "https://www.americacartransport.com/privacy-policy#faq",
         "mainEntity": [
           {
             "@type": "Question",

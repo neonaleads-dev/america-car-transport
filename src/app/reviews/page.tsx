@@ -10,7 +10,7 @@ export const metadata = {
   title: "4.9★ Customer Reviews & Ratings | Verified Car Shipping | America Car Transport",
   description: "Read 10,450+ verified customer reviews for America Car Transport. See real 4.9-star ratings, door-to-door vehicle delivery stories, and route feedback nationwide.",
   alternates: {
-    canonical: "https://americacartransport.com/reviews",
+    canonical: "https://www.americacartransport.com/reviews",
   },
 };
 
@@ -119,24 +119,24 @@ export default function ReviewsPage() {
     "@graph": [
       {
         "@type": "ItemPage",
-        "@id": "https://americacartransport.com/reviews#webpage",
-        "url": "https://americacartransport.com/reviews",
+        "@id": "https://www.americacartransport.com/reviews#webpage",
+        "url": "https://www.americacartransport.com/reviews",
         "name": "Verified Customer Reviews & Ratings | America Car Transport",
         "description": "Read verified 4.9-star customer reviews for America Car Transport. Nationwide door-to-door vehicle transport testimonials.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://americacartransport.com/#website",
+          "@id": "https://www.americacartransport.com/#website",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         }
       },
       {
         "@type": "Organization",
-        "@id": "https://americacartransport.com/#organization",
+        "@id": "https://www.americacartransport.com/#organization",
         "name": "America Car Transport",
-        "url": "https://americacartransport.com",
+        "url": "https://www.americacartransport.com",
         "telephone": "(530) 725-5383",
-        "logo": "https://americacartransport.com/america-car-transport-logo.png",
+        "logo": "https://www.americacartransport.com/america-car-transport-logo.png",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
@@ -164,15 +164,15 @@ export default function ReviewsPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/reviews#breadcrumb",
+        "@id": "https://www.americacartransport.com/reviews#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Customer Reviews", "item": "https://americacartransport.com/reviews" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Customer Reviews", "item": "https://www.americacartransport.com/reviews" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/reviews#faq",
+        "@id": "https://www.americacartransport.com/reviews#faq",
         "mainEntity": [
           {
             "@type": "Question",

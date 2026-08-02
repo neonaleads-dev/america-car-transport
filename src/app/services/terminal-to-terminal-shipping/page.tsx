@@ -8,7 +8,7 @@ export const metadata = {
   title: "Terminal-to-Terminal Car Shipping | Save on Auto Transport",
   description: "Save on car shipping with terminal-to-terminal transport — drop off and pick up at a secure hub. Flexible, cost-effective, zero upfront deposit.",
   alternates: {
-    canonical: "https://americacartransport.com/services/terminal-to-terminal-shipping",
+    canonical: "https://www.americacartransport.com/services/terminal-to-terminal-shipping",
   },
 };
 
@@ -21,7 +21,7 @@ const serviceSchema = {
   "provider": {
     "@type": "MovingCompany",
     "name": "America Car Transport",
-    "url": "https://americacartransport.com",
+    "url": "https://www.americacartransport.com",
     "telephone": "+1-530-725-5383",
     "identifier": {
       "@type": "PropertyValue",
@@ -39,9 +39,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-    { "@type": "ListItem", "position": 3, "name": "Terminal-to-Terminal Shipping", "item": "https://americacartransport.com/services/terminal-to-terminal-shipping" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+    { "@type": "ListItem", "position": 3, "name": "Terminal-to-Terminal Shipping", "item": "https://www.americacartransport.com/services/terminal-to-terminal-shipping" }
   ]
 };
 

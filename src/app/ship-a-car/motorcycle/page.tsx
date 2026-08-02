@@ -10,7 +10,7 @@ export const metadata = {
   title: "Motorcycle & Powersports Shipping | Enclosed Bike & ATV Transport",
   description: "Ship your motorcycle, sportbike, or ATV with secured enclosed transport built for two-wheeled and off-road vehicles. Get a free quote — no upfront deposit.",
   alternates: {
-    canonical: "https://americacartransport.com/ship-a-car/motorcycle",
+    canonical: "https://www.americacartransport.com/ship-a-car/motorcycle",
   },
 };
 
@@ -20,13 +20,13 @@ export default function MotorcycleShippingPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/ship-a-car/motorcycle#service",
+        "@id": "https://www.americacartransport.com/ship-a-car/motorcycle#service",
         "name": "Motorcycle & Powersports Shipping",
         "serviceType": "Motorcycle, ATV, & Powersports Vehicle Transport",
         "provider": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "areaServed": {
           "@type": "Country",
@@ -40,7 +40,7 @@ export default function MotorcycleShippingPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/ship-a-car/motorcycle#faq",
+        "@id": "https://www.americacartransport.com/ship-a-car/motorcycle#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -70,11 +70,11 @@ export default function MotorcycleShippingPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/ship-a-car/motorcycle#breadcrumb",
+        "@id": "https://www.americacartransport.com/ship-a-car/motorcycle#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-          { "@type": "ListItem", "position": 3, "name": "Motorcycle & Powersports Shipping", "item": "https://americacartransport.com/ship-a-car/motorcycle" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Motorcycle & Powersports Shipping", "item": "https://www.americacartransport.com/ship-a-car/motorcycle" }
         ]
       }
     ]

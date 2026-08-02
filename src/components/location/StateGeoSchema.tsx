@@ -17,9 +17,9 @@ export default function StateGeoSchema({ state }: StateGeoSchemaProps) {
         "description": state.metaDescription,
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://americacartransport.com/#website",
+          "@id": "https://www.americacartransport.com/#website",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         }
       },
       {
@@ -39,7 +39,7 @@ export default function StateGeoSchema({ state }: StateGeoSchemaProps) {
         "provider": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com",
+          "url": "https://www.americacartransport.com",
           "telephone": "(530) 725-5383"
         },
         "areaServed": {
@@ -55,13 +55,13 @@ export default function StateGeoSchema({ state }: StateGeoSchemaProps) {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://americacartransport.com"
+            "item": "https://www.americacartransport.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Locations",
-            "item": "https://americacartransport.com/locations"
+            "item": "https://www.americacartransport.com/locations"
           },
           {
             "@type": "ListItem",

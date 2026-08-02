@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Compare verified car carriers, get instant quotes, and ship your vehicle safely anywhere in America.",
   alternates: {
-    canonical: "https://americacartransport.com",
+    canonical: "https://www.americacartransport.com",
   },
 };
 

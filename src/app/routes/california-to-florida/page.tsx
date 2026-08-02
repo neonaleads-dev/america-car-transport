@@ -10,12 +10,12 @@ export const metadata = {
   title: "California to Florida Car Shipping | Cost & Transit Time",
   description: "Ship a car from California to Florida — real 2026 pricing, transit times, and answers to common questions. Zero upfront deposit. Get an instant quote.",
   alternates: {
-    canonical: "https://americacartransport.com/routes/california-to-florida",
+    canonical: "https://www.americacartransport.com/routes/california-to-florida",
   },
   openGraph: {
     title: "California to Florida Car Shipping | Cost & Transit Time",
     description: "Ship a car from California to Florida — real 2026 pricing, transit times, and answers to common questions. Zero upfront deposit. Get an instant quote.",
-    url: "https://americacartransport.com/routes/california-to-florida",
+    url: "https://www.americacartransport.com/routes/california-to-florida",
     siteName: "America Car Transport",
     type: "website",
   },
@@ -62,14 +62,14 @@ export default function CaliforniaToFloridaRoutePage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/routes/california-to-florida#service",
+        "@id": "https://www.americacartransport.com/routes/california-to-florida#service",
         "serviceType": "California to Florida Car Shipping",
         "name": "California to Florida Car Shipping",
         "description": "Auto transport from California to Florida, approximately 2,700 miles, typically taking 5 to 7 days.",
         "provider": {
           "@type": "MovingCompany",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com",
+          "url": "https://www.americacartransport.com",
           "telephone": "+1-530-725-5383",
           "identifier": {
             "@type": "PropertyValue",
@@ -91,31 +91,31 @@ export default function CaliforniaToFloridaRoutePage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/routes/california-to-florida#breadcrumb",
+        "@id": "https://www.americacartransport.com/routes/california-to-florida#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://americacartransport.com/"
+            "item": "https://www.americacartransport.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Routes",
-            "item": "https://americacartransport.com/routes"
+            "item": "https://www.americacartransport.com/routes"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "California to Florida",
-            "item": "https://americacartransport.com/routes/california-to-florida"
+            "item": "https://www.americacartransport.com/routes/california-to-florida"
           }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/routes/california-to-florida#faq",
+        "@id": "https://www.americacartransport.com/routes/california-to-florida#faq",
         "mainEntity": ROUTE_FAQS.map((faq) => ({
           "@type": "Question",
           "name": faq.q,

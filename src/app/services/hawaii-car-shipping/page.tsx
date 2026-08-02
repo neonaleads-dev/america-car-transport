@@ -10,7 +10,7 @@ export const metadata = {
   title: "Hawaii Car Shipping | Ocean Auto Transport 2026",
   description: "Ship your car to Hawaii from California — RoRo and container ocean freight via Matson and Pasha. Real 2026 pricing, transit times, and what to expect.",
   alternates: {
-    canonical: "https://americacartransport.com/services/hawaii-car-shipping",
+    canonical: "https://www.americacartransport.com/services/hawaii-car-shipping",
   },
 };
 
@@ -47,28 +47,28 @@ export default function HawaiiCarShippingPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://americacartransport.com/services/hawaii-car-shipping#webpage",
-        "url": "https://americacartransport.com/services/hawaii-car-shipping",
+        "@id": "https://www.americacartransport.com/services/hawaii-car-shipping#webpage",
+        "url": "https://www.americacartransport.com/services/hawaii-car-shipping",
         "name": "Hawaii Car Shipping | Ocean Auto Transport",
         "description": "California to Hawaii vehicle shipping via RoRo & ocean container freight.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://americacartransport.com/#website",
+          "@id": "https://www.americacartransport.com/#website",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         }
       },
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/services/hawaii-car-shipping#service",
+        "@id": "https://www.americacartransport.com/services/hawaii-car-shipping#service",
         "serviceType": "Hawaii Car Shipping (Ocean Freight)",
         "name": "Hawaii Car Shipping Service",
         "description": "Ocean freight vehicle shipping from California to Hawaii via RoRo or container transport, coordinated with established ocean carriers.",
         "provider": {
           "@type": "MovingCompany",
-          "@id": "https://americacartransport.com/#organization",
+          "@id": "https://www.americacartransport.com/#organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com",
+          "url": "https://www.americacartransport.com",
           "telephone": "(530) 725-5383",
           "identifier": [
             { "@type": "PropertyValue", "propertyID": "USDOT", "value": "3849102" },
@@ -89,16 +89,16 @@ export default function HawaiiCarShippingPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/services/hawaii-car-shipping#breadcrumb",
+        "@id": "https://www.americacartransport.com/services/hawaii-car-shipping#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-          { "@type": "ListItem", "position": 3, "name": "Hawaii Car Shipping", "item": "https://americacartransport.com/services/hawaii-car-shipping" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Hawaii Car Shipping", "item": "https://www.americacartransport.com/services/hawaii-car-shipping" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/services/hawaii-car-shipping#faq",
+        "@id": "https://www.americacartransport.com/services/hawaii-car-shipping#faq",
         "mainEntity": FAQS.map((faq) => ({
           "@type": "Question",
           "name": faq.question,

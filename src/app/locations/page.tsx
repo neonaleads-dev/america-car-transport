@@ -10,7 +10,7 @@ export const metadata = {
   title: "Car Shipping Locations | Nationwide Auto Transport Network",
   description: "Explore America Car Transport coverage across all 50 states. Compare door-to-door car shipping rates, popular interstate routes, and local delivery hubs.",
   alternates: {
-    canonical: "https://americacartransport.com/locations",
+    canonical: "https://www.americacartransport.com/locations",
   },
 };
 
@@ -22,10 +22,10 @@ export default function LocationsHubPage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/locations#breadcrumb",
+        "@id": "https://www.americacartransport.com/locations#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://americacartransport.com/locations" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://www.americacartransport.com/locations" }
         ]
       }
     ]

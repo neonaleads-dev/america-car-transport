@@ -10,7 +10,7 @@ export const metadata = {
   title: "Non-Running Vehicle Transport | Ship a Car That Won't Start",
   description: "Yes, we can ship a car that doesn't run. America Car Transport uses winch-equipped carriers for inoperable vehicles, project cars, and auction purchases.",
   alternates: {
-    canonical: "https://americacartransport.com/ship-a-car/non-running",
+    canonical: "https://www.americacartransport.com/ship-a-car/non-running",
   },
 };
 
@@ -20,13 +20,13 @@ export default function NonRunningVehicleTransportPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/ship-a-car/non-running#service",
+        "@id": "https://www.americacartransport.com/ship-a-car/non-running#service",
         "name": "Inoperable & Non-Running Vehicle Transport",
         "serviceType": "Inoperable & Non-Running Vehicle Shipping",
         "provider": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "areaServed": {
           "@type": "Country",
@@ -39,7 +39,7 @@ export default function NonRunningVehicleTransportPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/ship-a-car/non-running#faq",
+        "@id": "https://www.americacartransport.com/ship-a-car/non-running#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -69,11 +69,11 @@ export default function NonRunningVehicleTransportPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/ship-a-car/non-running#breadcrumb",
+        "@id": "https://www.americacartransport.com/ship-a-car/non-running#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-          { "@type": "ListItem", "position": 3, "name": "Inoperable / Non-Running Vehicle Transport", "item": "https://americacartransport.com/ship-a-car/non-running" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Inoperable / Non-Running Vehicle Transport", "item": "https://www.americacartransport.com/ship-a-car/non-running" }
         ]
       }
     ]

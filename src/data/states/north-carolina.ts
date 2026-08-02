@@ -8,7 +8,7 @@ export const northCarolinaData: StateData = {
   heroSubtitle: "Ship your vehicle safely to or from North Carolina. Direct door-to-door car transport in Charlotte, Raleigh, Greensboro, and Wilmington with zero deposit.",
   metaTitle: "North Carolina Car Shipping | Direct Auto Transport Services",
   metaDescription: "Reliable North Carolina car shipping services. Compare open & enclosed auto transport quotes in Charlotte, Raleigh, and Greensboro. USDOT #3849102.",
-  canonical: "https://americacartransport.com/locations/north-carolina",
+  canonical: "https://www.americacartransport.com/locations/north-carolina",
   
   population: "10.7 Million",
   capital: "Raleigh",

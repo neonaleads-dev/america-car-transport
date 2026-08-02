@@ -7,7 +7,7 @@ export const metadata = {
   title: "Terms & Conditions | America Car Transport",
   description: "Terms and Conditions of Service for America Car Transport — Property broker logistics terms, cargo insurance, zero deposit policy, and cancellation policy.",
   alternates: {
-    canonical: "https://americacartransport.com/terms",
+    canonical: "https://www.americacartransport.com/terms",
   },
 };
 
@@ -17,15 +17,15 @@ export default function TermsPage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/terms#breadcrumb",
+        "@id": "https://www.americacartransport.com/terms#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Terms & Conditions", "item": "https://americacartransport.com/terms" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Terms & Conditions", "item": "https://www.americacartransport.com/terms" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/terms#faq",
+        "@id": "https://www.americacartransport.com/terms#faq",
         "mainEntity": [
           {
             "@type": "Question",

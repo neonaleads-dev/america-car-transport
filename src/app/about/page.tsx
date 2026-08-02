@@ -9,7 +9,7 @@ export const metadata = {
   title: "About Us | America Car Transport — Nationwide Auto Shipping Broker",
   description: "Learn about America Car Transport — FMCSA licensed & bonded property broker (USDOT #3849102) providing zero deposit door-to-door auto transport nationwide.",
   alternates: {
-    canonical: "https://americacartransport.com/about",
+    canonical: "https://www.americacartransport.com/about",
   },
 };
 
@@ -19,28 +19,28 @@ export default function AboutPage() {
     "@graph": [
       {
         "@type": "AboutPage",
-        "@id": "https://americacartransport.com/about#webpage",
-        "url": "https://americacartransport.com/about",
+        "@id": "https://www.americacartransport.com/about#webpage",
+        "url": "https://www.americacartransport.com/about",
         "name": "About Us | America Car Transport",
         "description": "Nationwide licensed and bonded auto transport broker network.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://americacartransport.com/#website",
+          "@id": "https://www.americacartransport.com/#website",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/about#breadcrumb",
+        "@id": "https://www.americacartransport.com/about#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://americacartransport.com/about" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.americacartransport.com/about" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/about#faq",
+        "@id": "https://www.americacartransport.com/about#faq",
         "mainEntity": [
           {
             "@type": "Question",

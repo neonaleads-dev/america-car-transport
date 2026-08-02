@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/_next/", "/api/"],
     },
-    sitemap: "https://americacartransport.com/sitemap.xml",
+    sitemap: "https://www.americacartransport.com/sitemap.xml",
   };
 }

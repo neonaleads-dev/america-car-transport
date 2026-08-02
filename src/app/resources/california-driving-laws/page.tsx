@@ -8,12 +8,12 @@ export const metadata = {
   title: "California Driving Laws 2026 | Rules Every Driver Should Know",
   description: "Answers to the most-asked California driving law questions for 2026 — phone use, speed limits, teen curfews, tailgating, and more. Fact-checked guide.",
   alternates: {
-    canonical: "https://americacartransport.com/resources/california-driving-laws",
+    canonical: "https://www.americacartransport.com/resources/california-driving-laws",
   },
   openGraph: {
     title: "California Driving Laws 2026 | Rules Every Driver Should Know",
     description: "Answers to the most-asked California driving law questions for 2026 — phone use, speed limits, teen curfews, tailgating, and more. Fact-checked guide.",
-    url: "https://americacartransport.com/resources/california-driving-laws",
+    url: "https://www.americacartransport.com/resources/california-driving-laws",
     siteName: "America Car Transport",
     type: "article",
   },
@@ -68,50 +68,50 @@ export default function CaliforniaDrivingLawsPage() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://americacartransport.com/resources/california-driving-laws#article",
+        "@id": "https://www.americacartransport.com/resources/california-driving-laws#article",
         "headline": "California Driving Laws 2026: Answers to the Most-Asked Questions",
         "description": "Fact-checked guide answering the top 10 most-searched questions about California driving laws, CVC statutes, speed buffers, and phone restrictions.",
         "author": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "publisher": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "datePublished": "2026-07-29",
         "dateModified": "2026-07-29",
-        "mainEntityOfPage": "https://americacartransport.com/resources/california-driving-laws"
+        "mainEntityOfPage": "https://www.americacartransport.com/resources/california-driving-laws"
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/resources/california-driving-laws#breadcrumb",
+        "@id": "https://www.americacartransport.com/resources/california-driving-laws#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://americacartransport.com/"
+            "item": "https://www.americacartransport.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Resources",
-            "item": "https://americacartransport.com/resources"
+            "item": "https://www.americacartransport.com/resources"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "California Driving Laws",
-            "item": "https://americacartransport.com/resources/california-driving-laws"
+            "item": "https://www.americacartransport.com/resources/california-driving-laws"
           }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/resources/california-driving-laws#faq",
+        "@id": "https://www.americacartransport.com/resources/california-driving-laws#faq",
         "mainEntity": LAWS_FAQS.map((faq) => ({
           "@type": "Question",
           "name": faq.q,

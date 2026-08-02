@@ -10,12 +10,12 @@ export const metadata = {
   title: "Car Shipping FAQ Hub | Complete Auto Transport Knowledge Base",
   description: "Find direct, expert answers to every auto transport question — car shipping costs, California state rules, scam protection, carrier insurance, and route transit times.",
   alternates: {
-    canonical: "https://americacartransport.com/faq",
+    canonical: "https://www.americacartransport.com/faq",
   },
   openGraph: {
     title: "Car Shipping FAQ Hub | Complete Auto Transport Knowledge Base",
     description: "Find direct, expert answers to every auto transport question — car shipping costs, California state rules, scam protection, carrier insurance, and route transit times.",
-    url: "https://americacartransport.com/faq",
+    url: "https://www.americacartransport.com/faq",
     siteName: "America Car Transport",
     type: "website",
   },
@@ -29,7 +29,7 @@ export default function FAQHubPage() {
     "@graph": [
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/faq#faqpage",
+        "@id": "https://www.americacartransport.com/faq#faqpage",
         "mainEntity": allFaqsFlat.map((faq) => ({
           "@type": "Question",
           "name": faq.q,
@@ -41,10 +41,10 @@ export default function FAQHubPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/faq#breadcrumb",
+        "@id": "https://www.americacartransport.com/faq#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com/" },
-          { "@type": "ListItem", "position": 2, "name": "FAQ Hub", "item": "https://americacartransport.com/faq" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com/" },
+          { "@type": "ListItem", "position": 2, "name": "FAQ Hub", "item": "https://www.americacartransport.com/faq" }
         ]
       }
     ]

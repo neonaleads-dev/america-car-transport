@@ -9,7 +9,7 @@ export const metadata = {
   title: "Auto Transport Services | Car Shipping Options",
   description: "Explore all America Car Transport services — open, enclosed, door-to-door, terminal, and expedited car shipping. Get an instant quote for any option.",
   alternates: {
-    canonical: "https://americacartransport.com/services",
+    canonical: "https://www.americacartransport.com/services",
   },
 };
 
@@ -18,20 +18,20 @@ const itemListSchema = {
   "@type": "ItemList",
   "name": "America Car Transport Services",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Open Auto Transport", "url": "https://americacartransport.com/services/open-auto-transport" },
-    { "@type": "ListItem", "position": 2, "name": "Enclosed Auto Transport", "url": "https://americacartransport.com/services/enclosed-auto-transport" },
-    { "@type": "ListItem", "position": 3, "name": "Door-to-Door Transport", "url": "https://americacartransport.com/services/door-to-door-transport" },
-    { "@type": "ListItem", "position": 4, "name": "Terminal-to-Terminal Shipping", "url": "https://americacartransport.com/services/terminal-to-terminal-shipping" },
-    { "@type": "ListItem", "position": 5, "name": "Expedited Auto Transport", "url": "https://americacartransport.com/services/expedited-auto-transport" },
-    { "@type": "ListItem", "position": 6, "name": "Military PCS Car Shipping", "url": "https://americacartransport.com/services/military-car-shipping" },
-    { "@type": "ListItem", "position": 7, "name": "Snowbird Car Shipping", "url": "https://americacartransport.com/services/snowbird-car-shipping" },
-    { "@type": "ListItem", "position": 8, "name": "College Student Car Shipping", "url": "https://americacartransport.com/services/college-student-car-shipping" },
-    { "@type": "ListItem", "position": 9, "name": "Dealer & Auction Transport", "url": "https://americacartransport.com/services/dealer-and-auction-transport" },
-    { "@type": "ListItem", "position": 10, "name": "Corporate Relocation Transport", "url": "https://americacartransport.com/services/corporate-relocation-transport" },
-    { "@type": "ListItem", "position": 11, "name": "Motorcycle & Powersports Shipping", "url": "https://americacartransport.com/ship-a-car/motorcycle" },
-    { "@type": "ListItem", "position": 12, "name": "Heavy Duty Truck & SUV Shipping", "url": "https://americacartransport.com/ship-a-car/suv-and-truck" },
-    { "@type": "ListItem", "position": 13, "name": "Non-Running Vehicle Transport", "url": "https://americacartransport.com/ship-a-car/non-running" },
-    { "@type": "ListItem", "position": 14, "name": "Classic & Exotic Car Transport", "url": "https://americacartransport.com/services/classic-and-exotic-car-transport" }
+    { "@type": "ListItem", "position": 1, "name": "Open Auto Transport", "url": "https://www.americacartransport.com/services/open-auto-transport" },
+    { "@type": "ListItem", "position": 2, "name": "Enclosed Auto Transport", "url": "https://www.americacartransport.com/services/enclosed-auto-transport" },
+    { "@type": "ListItem", "position": 3, "name": "Door-to-Door Transport", "url": "https://www.americacartransport.com/services/door-to-door-transport" },
+    { "@type": "ListItem", "position": 4, "name": "Terminal-to-Terminal Shipping", "url": "https://www.americacartransport.com/services/terminal-to-terminal-shipping" },
+    { "@type": "ListItem", "position": 5, "name": "Expedited Auto Transport", "url": "https://www.americacartransport.com/services/expedited-auto-transport" },
+    { "@type": "ListItem", "position": 6, "name": "Military PCS Car Shipping", "url": "https://www.americacartransport.com/services/military-car-shipping" },
+    { "@type": "ListItem", "position": 7, "name": "Snowbird Car Shipping", "url": "https://www.americacartransport.com/services/snowbird-car-shipping" },
+    { "@type": "ListItem", "position": 8, "name": "College Student Car Shipping", "url": "https://www.americacartransport.com/services/college-student-car-shipping" },
+    { "@type": "ListItem", "position": 9, "name": "Dealer & Auction Transport", "url": "https://www.americacartransport.com/services/dealer-and-auction-transport" },
+    { "@type": "ListItem", "position": 10, "name": "Corporate Relocation Transport", "url": "https://www.americacartransport.com/services/corporate-relocation-transport" },
+    { "@type": "ListItem", "position": 11, "name": "Motorcycle & Powersports Shipping", "url": "https://www.americacartransport.com/ship-a-car/motorcycle" },
+    { "@type": "ListItem", "position": 12, "name": "Heavy Duty Truck & SUV Shipping", "url": "https://www.americacartransport.com/ship-a-car/suv-and-truck" },
+    { "@type": "ListItem", "position": 13, "name": "Non-Running Vehicle Transport", "url": "https://www.americacartransport.com/ship-a-car/non-running" },
+    { "@type": "ListItem", "position": 14, "name": "Classic & Exotic Car Transport", "url": "https://www.americacartransport.com/services/classic-and-exotic-car-transport" }
   ]
 };
 
@@ -39,8 +39,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" }
   ]
 };
 

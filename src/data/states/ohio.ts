@@ -8,7 +8,7 @@ export const ohioData: StateData = {
   heroSubtitle: "Ship your car to or from Ohio safely. Direct door-to-door auto transport in Columbus, Cleveland, Cincinnati, and Toledo with zero deposit.",
   metaTitle: "Ohio Car Shipping | Direct Auto Transport Services",
   metaDescription: "Top-rated Ohio car shipping services. Compare open & enclosed auto transport rates in Columbus, Cleveland, and Cincinnati. USDOT #3849102.",
-  canonical: "https://americacartransport.com/locations/ohio",
+  canonical: "https://www.americacartransport.com/locations/ohio",
   
   population: "11.8 Million",
   capital: "Columbus",

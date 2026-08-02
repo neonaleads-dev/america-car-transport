@@ -30,7 +30,7 @@ export const californiaData: CaliforniaStateData = {
   heroSubtitle: "Real 2026 pricing, coverage across California's major cities, and answers to the questions Californians actually ask before booking.",
   metaTitle: "California Car Shipping | Auto Transport Quotes & Rates",
   metaDescription: "Ship your car to or from California with America Car Transport. Real 2026 pricing, top CA routes and cities, zero upfront deposit. Get an instant quote.",
-  canonical: "https://americacartransport.com/locations/california",
+  canonical: "https://www.americacartransport.com/locations/california",
   
   population: "39.0 Million",
   capital: "Sacramento",

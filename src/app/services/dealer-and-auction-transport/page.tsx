@@ -9,7 +9,7 @@ export const metadata = {
   title: "Dealer & Auction Vehicle Transport | Volume Car Shipping for Dealers",
   description: "Reliable vehicle transport for dealerships, auction buyers, and fleet managers — including non-running and salvage-title vehicles. Account-level service, volume pricing.",
   alternates: {
-    canonical: "https://americacartransport.com/services/dealer-and-auction-transport",
+    canonical: "https://www.americacartransport.com/services/dealer-and-auction-transport",
   },
 };
 
@@ -19,13 +19,13 @@ export default function DealerAndAuctionTransportPage() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/services/dealer-and-auction-transport#service",
+        "@id": "https://www.americacartransport.com/services/dealer-and-auction-transport#service",
         "name": "Dealer & Auction Vehicle Transport",
         "serviceType": "Commercial B2B Vehicle Shipping & Auction Logistics",
         "provider": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         },
         "areaServed": {
           "@type": "Country",
@@ -42,7 +42,7 @@ export default function DealerAndAuctionTransportPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/services/dealer-and-auction-transport#faq",
+        "@id": "https://www.americacartransport.com/services/dealer-and-auction-transport#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -80,11 +80,11 @@ export default function DealerAndAuctionTransportPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/services/dealer-and-auction-transport#breadcrumb",
+        "@id": "https://www.americacartransport.com/services/dealer-and-auction-transport#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://americacartransport.com/services" },
-          { "@type": "ListItem", "position": 3, "name": "Dealer & Auction Transport", "item": "https://americacartransport.com/services/dealer-and-auction-transport" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Dealer & Auction Transport", "item": "https://www.americacartransport.com/services/dealer-and-auction-transport" }
         ]
       }
     ]

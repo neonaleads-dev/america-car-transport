@@ -9,7 +9,7 @@ export const metadata = {
   title: "Popular Interstate Car Shipping Routes | America Car Transport",
   description: "Compare car shipping costs, transit times, and carrier dispatches for popular cross-country routes across the United States.",
   alternates: {
-    canonical: "https://americacartransport.com/routes",
+    canonical: "https://www.americacartransport.com/routes",
   },
 };
 
@@ -66,27 +66,27 @@ export default function RoutesHubPage() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://americacartransport.com/routes#webpage",
+        "@id": "https://www.americacartransport.com/routes#webpage",
         "name": "Interstate Car Shipping Routes Directory",
         "description": "Directory of major U.S. auto transport corridors with distance, cost, and transit time breakdowns.",
-        "url": "https://americacartransport.com/routes",
+        "url": "https://www.americacartransport.com/routes",
         "publisher": {
           "@type": "Organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/routes#breadcrumb",
+        "@id": "https://www.americacartransport.com/routes#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Popular Routes", "item": "https://americacartransport.com/routes" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Popular Routes", "item": "https://www.americacartransport.com/routes" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/routes#faq",
+        "@id": "https://www.americacartransport.com/routes#faq",
         "mainEntity": [
           {
             "@type": "Question",

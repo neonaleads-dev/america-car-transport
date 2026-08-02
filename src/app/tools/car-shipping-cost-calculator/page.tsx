@@ -8,7 +8,7 @@ export const metadata = {
   title: "Car Shipping Cost Calculator | Instant Quote, No Email",
   description: "Calculate your car shipping cost instantly — no email required. See real 2026 pricing by distance, vehicle, and transport type. Free, accurate estimate.",
   alternates: {
-    canonical: "https://americacartransport.com/tools/car-shipping-cost-calculator",
+    canonical: "https://www.americacartransport.com/tools/car-shipping-cost-calculator",
   },
 };
 
@@ -18,7 +18,7 @@ const webAppSchema = {
   "name": "Car Shipping Cost Calculator",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any (Web-based)",
-  "url": "https://americacartransport.com/tools/car-shipping-cost-calculator",
+  "url": "https://www.americacartransport.com/tools/car-shipping-cost-calculator",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -27,7 +27,7 @@ const webAppSchema = {
   "provider": {
     "@type": "MovingCompany",
     "name": "America Car Transport",
-    "url": "https://americacartransport.com",
+    "url": "https://www.americacartransport.com",
     "identifier": {
       "@type": "PropertyValue",
       "name": "USDOT",
@@ -40,9 +40,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://americacartransport.com/tools" },
-    { "@type": "ListItem", "position": 3, "name": "Car Shipping Cost Calculator", "item": "https://americacartransport.com/tools/car-shipping-cost-calculator" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.americacartransport.com/tools" },
+    { "@type": "ListItem", "position": 3, "name": "Car Shipping Cost Calculator", "item": "https://www.americacartransport.com/tools/car-shipping-cost-calculator" }
   ]
 };
 
@@ -255,7 +255,7 @@ const datasetSchema = {
     "@type": "Organization",
     "name": "America Car Transport"
   },
-  "license": "https://americacartransport.com/terms-of-service"
+  "license": "https://www.americacartransport.com/terms-of-service"
 };
 
 export default function CarShippingCostCalculatorPage() {

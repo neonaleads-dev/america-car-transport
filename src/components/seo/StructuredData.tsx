@@ -7,37 +7,37 @@ const schemaData = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://americacartransport.com/#website",
-      "url": "https://americacartransport.com",
+      "@id": "https://www.americacartransport.com/#website",
+      "url": "https://www.americacartransport.com",
       "name": "America Car Transport",
       "description": "America's leading bonded & insured auto transport network. Compare verified carriers, lock in instant rates, and ship vehicles nationwide.",
       "publisher": {
-        "@id": "https://americacartransport.com/#organization"
+        "@id": "https://www.americacartransport.com/#organization"
       },
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://americacartransport.com/faq?search={search_term_string}"
+          "urlTemplate": "https://www.americacartransport.com/faq?search={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }
     },
     {
       "@type": ["LocalBusiness", "AutomotiveBusiness"],
-      "@id": "https://americacartransport.com/#organization",
+      "@id": "https://www.americacartransport.com/#organization",
       "name": "America Car Transport",
-      "url": "https://americacartransport.com",
+      "url": "https://www.americacartransport.com",
       "logo": {
         "@type": "ImageObject",
-        "@id": "https://americacartransport.com/#logo",
-        "url": "https://americacartransport.com/america-car-transport-logo.png",
-        "contentUrl": "https://americacartransport.com/america-car-transport-logo.png",
+        "@id": "https://www.americacartransport.com/#logo",
+        "url": "https://www.americacartransport.com/america-car-transport-logo.png",
+        "contentUrl": "https://www.americacartransport.com/america-car-transport-logo.png",
         "caption": "America Car Transport - Official Logo",
         "width": "827",
         "height": "443"
       },
-      "image": "https://americacartransport.com/america-car-transport-logo.png",
+      "image": "https://www.americacartransport.com/america-car-transport-logo.png",
       "telephone": "(530) 725-5383",
       "email": "support@americacartransport.com",
       "priceRange": "$$",
@@ -89,54 +89,54 @@ const schemaData = {
     },
     {
       "@type": "SiteNavigationElement",
-      "@id": "https://americacartransport.com/#navigation",
+      "@id": "https://www.americacartransport.com/#navigation",
       "name": "Main Site Navigation",
       "hasPart": [
         {
           "@type": "WebPage",
           "name": "Car Shipping Cost Calculator (2026)",
-          "url": "https://americacartransport.com/tools/car-shipping-cost-calculator",
+          "url": "https://www.americacartransport.com/tools/car-shipping-cost-calculator",
           "description": "Calculate instant auto transport quotes by route distance and vehicle type."
         },
         {
           "@type": "WebPage",
           "name": "Central FAQ Hub",
-          "url": "https://americacartransport.com/faq",
+          "url": "https://www.americacartransport.com/faq",
           "description": "Complete auto transport knowledge base with direct answers to shipping questions."
         },
         {
           "@type": "WebPage",
           "name": "FMCSA & USDOT Licensing & Insurance",
-          "url": "https://americacartransport.com/licensing-insurance",
+          "url": "https://www.americacartransport.com/licensing-insurance",
           "description": "Verify USDOT #3849102 and MC #1098472 credentials and cargo insurance policy."
         },
         {
           "@type": "WebPage",
           "name": "Auto Shipping Services",
-          "url": "https://americacartransport.com/services",
+          "url": "https://www.americacartransport.com/services",
           "description": "Explore open, enclosed, door-to-door, expedited, and terminal auto shipping options."
         },
         {
           "@type": "WebPage",
           "name": "Locations & State Hubs Directory",
-          "url": "https://americacartransport.com/locations",
+          "url": "https://www.americacartransport.com/locations",
           "description": "State-by-state vehicle shipping guides and local logistics hubs."
         },
         {
           "@type": "WebPage",
           "name": "Interstate Route Directory",
-          "url": "https://americacartransport.com/routes",
+          "url": "https://www.americacartransport.com/routes",
           "description": "Compare distance, cost, and transit times across top US vehicle shipping corridors."
         }
       ]
     },
     {
       "@type": "Service",
-      "@id": "https://americacartransport.com/#service",
+      "@id": "https://www.americacartransport.com/#service",
       "name": "Nationwide Auto Transport & Car Shipping Service",
       "serviceType": "Auto Transport, Door-to-Door Car Shipping, Enclosed Vehicle Shipping",
       "provider": {
-        "@id": "https://americacartransport.com/#organization"
+        "@id": "https://www.americacartransport.com/#organization"
       },
       "areaServed": {
         "@type": "Country",
@@ -172,7 +172,7 @@ const schemaData = {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://americacartransport.com/#faq",
+      "@id": "https://www.americacartransport.com/#faq",
       "mainEntity": [
         {
           "@type": "Question",

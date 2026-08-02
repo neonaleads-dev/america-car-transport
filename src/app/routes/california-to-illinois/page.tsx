@@ -10,7 +10,7 @@ export const metadata = {
   title: "California to Illinois Car Shipping | Cost & Transit",
   description: "Ship a car from California to Illinois (Chicago) — real 2026 pricing, transit times, and FAQs. Zero upfront deposit. Get an instant quote.",
   alternates: {
-    canonical: "https://americacartransport.com/routes/california-to-illinois",
+    canonical: "https://www.americacartransport.com/routes/california-to-illinois",
   },
 };
 
@@ -39,27 +39,27 @@ export default function CaliforniaToIllinoisRoutePage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://americacartransport.com/routes/california-to-illinois#webpage",
-        "url": "https://americacartransport.com/routes/california-to-illinois",
+        "@id": "https://www.americacartransport.com/routes/california-to-illinois#webpage",
+        "url": "https://www.americacartransport.com/routes/california-to-illinois",
         "name": "California to Illinois Car Shipping | Cost & Transit Time",
         "description": "Direct auto transport from California to Illinois and Chicago. Real 2026 carrier pricing, 4-6 day transit, zero deposit.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://americacartransport.com/#website",
+          "@id": "https://www.americacartransport.com/#website",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com"
+          "url": "https://www.americacartransport.com"
         }
       },
       {
         "@type": "Service",
-        "@id": "https://americacartransport.com/routes/california-to-illinois#service",
+        "@id": "https://www.americacartransport.com/routes/california-to-illinois#service",
         "serviceType": "California to Illinois Car Shipping",
         "name": "California to Illinois Car Shipping Service",
         "provider": {
           "@type": "MovingCompany",
-          "@id": "https://americacartransport.com/#organization",
+          "@id": "https://www.americacartransport.com/#organization",
           "name": "America Car Transport",
-          "url": "https://americacartransport.com",
+          "url": "https://www.americacartransport.com",
           "telephone": "(530) 725-5383",
           "identifier": [
             { "@type": "PropertyValue", "propertyID": "USDOT", "value": "3849102" },
@@ -79,16 +79,16 @@ export default function CaliforniaToIllinoisRoutePage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://americacartransport.com/routes/california-to-illinois#breadcrumb",
+        "@id": "https://www.americacartransport.com/routes/california-to-illinois#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Routes", "item": "https://americacartransport.com/routes" },
-          { "@type": "ListItem", "position": 3, "name": "California to Illinois", "item": "https://americacartransport.com/routes/california-to-illinois" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
+          { "@type": "ListItem", "position": 2, "name": "Routes", "item": "https://www.americacartransport.com/routes" },
+          { "@type": "ListItem", "position": 3, "name": "California to Illinois", "item": "https://www.americacartransport.com/routes/california-to-illinois" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://americacartransport.com/routes/california-to-illinois#faq",
+        "@id": "https://www.americacartransport.com/routes/california-to-illinois#faq",
         "mainEntity": FAQS.map((faq) => ({
           "@type": "Question",
           "name": faq.question,

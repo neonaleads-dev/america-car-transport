@@ -38,7 +38,7 @@ export function getFallbackStateData(slug: string): StateData {
     heroSubtitle: `Ship your vehicle safely to or from ${formattedName} with America's leading bonded & insured carrier network. Guaranteed door-to-door delivery with zero upfront deposits.`,
     metaTitle: `${formattedName} Car Shipping | Direct Auto Transport Services`,
     metaDescription: `Professional ${formattedName} car shipping services. Compare open & enclosed auto transport rates. FMCSA licensed broker USDOT #3849102.`,
-    canonical: `https://americacartransport.com/locations/${slug}`,
+    canonical: `https://www.americacartransport.com/locations/${slug}`,
     
     population: "Statewide Coverage",
     capital: formattedName,

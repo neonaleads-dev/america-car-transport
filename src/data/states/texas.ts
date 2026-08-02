@@ -8,7 +8,7 @@ export const texasData: StateData = {
   heroSubtitle: "Ship your vehicle safely across Texas or nationwide. Bonded & insured auto transport with direct pickup in Houston, Dallas-Fort Worth, Austin, and San Antonio. Zero upfront deposit guaranteed.",
   metaTitle: "Texas Car Shipping | Direct Auto Transport Services",
   metaDescription: "Reliable Texas car shipping services. Compare open & enclosed auto transport rates in Houston, Dallas, Austin, and San Antonio. USDOT #3849102 licensed broker.",
-  canonical: "https://americacartransport.com/locations/texas",
+  canonical: "https://www.americacartransport.com/locations/texas",
   
   population: "30.5 Million",
   capital: "Austin",
