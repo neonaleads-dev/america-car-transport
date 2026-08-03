@@ -102,13 +102,16 @@ export default function Home() {
       {/* 1. Hero Section (Clean Floating Text over Scenic Background) */}
       <section id="hero-quote" className="relative min-h-[85vh] flex items-center px-4 md:px-8 lg:px-24 pt-10 pb-16 overflow-hidden bg-slate-50">
         
-        {/* Full Scenic Background Image Layer (100% Unblurred, Sharp & Crystal Clear) */}
+        {/* Full Scenic Background Image Layer */}
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <img 
             src="/hero-background-truck-bright.jpg" 
             alt="America Car Transport Carrier Truck Driving Along Scenic Coast Highway at Sunset" 
-            className="w-full h-full object-cover object-center contrast-[1.04] saturate-[1.05]"
+            className="w-full h-full object-cover object-center blur-[2px] contrast-[1.05] saturate-[1.05] scale-[1.02]"
           />
+          {/* Very subtle light overlay to make text pop without hiding the picture */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent"></div>
         </div>
 
         <div className="w-full max-w-[1400px] mx-auto z-10 relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
