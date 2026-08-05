@@ -253,7 +253,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What's the cheapest way to ship a car?",
+      "name": "What&apos;s the cheapest way to ship a car?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Open transport on a standard (non-expedited) timeline, booked during off-peak season, along a high-traffic corridor (like major interstate routes), is typically the lowest-cost option."
@@ -293,7 +293,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Is my quote the final price I'll pay?",
+      "name": "Is my quote the final price I&apos;ll pay?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Our quotes are all-inclusive of standard cargo insurance and door-to-door service, with no hidden pickup or fuel surcharge fees added later."
@@ -836,6 +836,49 @@ export default function CarShippingCostCalculatorPage() {
 
             <div className="space-y-6">
               
+              
+              {/* FAQ: New 1 */}
+              <div className="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-cyan-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Is shipping my car cheaper than driving it myself?</h3>
+                <p className="text-slate-700 text-sm leading-relaxed font-medium">Often, yes — once you factor in gas, meals, lodging, mileage wear, and your own time, shipping is frequently more cost-effective for trips over 750–1,000 miles, especially for a second or non-daily vehicle.</p>
+              </div>
+
+              {/* FAQ: New 2 */}
+              <div className="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-cyan-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">What&apos;s the cheapest way to ship a car?</h3>
+                <p className="text-slate-700 text-sm leading-relaxed font-medium">Open transport on a standard (non-expedited) timeline, booked during off-peak season, along a high-traffic corridor (like major interstate routes), is typically the lowest-cost option.</p>
+              </div>
+
+              {/* FAQ: New 3 */}
+              <div className="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-cyan-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Can I get an instant quote without a phone call?</h3>
+                <p className="text-slate-700 text-sm leading-relaxed font-medium">Yes — our calculator above gives you a real-time estimate based on your route, vehicle, and transport type with zero obligation and no call required.</p>
+              </div>
+
+              {/* FAQ: New 4 */}
+              <div className="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-cyan-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">How is my shipping quote calculated?</h3>
+                <p className="text-slate-700 text-sm leading-relaxed font-medium">Your quote is based on five main factors: distance, vehicle type/size, condition (running or non-running), transport type (open or enclosed), and current seasonal demand along your route.</p>
+              </div>
+
+              {/* FAQ: New 5 */}
+              <div className="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-cyan-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Does the price change by season?</h3>
+                <p className="text-slate-700 text-sm leading-relaxed font-medium">Yes. Snowbird season (fall and spring) and peak summer relocation months typically see 10–20% higher demand-driven pricing. Booking in off-peak months can lower your rate.</p>
+              </div>
+
+              {/* FAQ: New 6 */}
+              <div className="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-cyan-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Can I get a quote by ZIP code instead of city?</h3>
+                <p className="text-slate-700 text-sm leading-relaxed font-medium">Yes — the calculator accepts ZIP codes for both pickup and delivery locations for a more precise, address-level estimate.</p>
+              </div>
+
+              {/* FAQ: New 7 */}
+              <div className="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-cyan-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Is my quote the final price I&apos;ll pay?</h3>
+                <p className="text-slate-700 text-sm leading-relaxed font-medium">Our quotes are all-inclusive of standard cargo insurance and door-to-door service, with no hidden pickup or fuel surcharge fees added later.</p>
+              </div>
+
               {/* FAQ 1 */}
               <div className="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-cyan-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
                 <h3 className="font-bold text-slate-900 text-lg mb-2">
