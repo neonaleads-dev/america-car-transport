@@ -81,6 +81,17 @@ const POPULAR_ROUTES = [
     "badgeColor": "bg-purple-600"
   },
   {
+    "title": "Florida to New Jersey Car Shipping",
+    "origin": "Florida",
+    "dest": "New Jersey",
+    "miles": "~2,500 mi",
+    "time": "5 – 7 days",
+    "cost": "$1,000 – $1,500",
+    "href": "/routes/florida-to-new-jersey",
+    "badge": "Most Popular",
+    "badgeColor": "bg-amber-600"
+  },
+  {
     "title": "Florida to New York Car Shipping",
     "origin": "Florida",
     "dest": "New York",
