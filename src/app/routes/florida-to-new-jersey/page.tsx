@@ -23,7 +23,7 @@ export const metadata = {
 const ROUTE_FAQS = [
   {
     q: "How much does it cost to ship a car from Florida to New Jersey?",
-    a: "Cost depends on vehicle type, transport method, and season, and typically falls within a standard per-mile range for open transport ($900 – $1,400). Request a quote for an exact price based on your specific vehicle and route."
+    a: "Most shipments range from $650 to $1,200 on open transport, with enclosed transport running $950 to $1,750 depending on vehicle type and season. Request a quote for an exact price based on your specific vehicle and route."
   },
   {
     q: "How long does it take to ship a car from Florida to New Jersey?",
@@ -31,11 +31,11 @@ const ROUTE_FAQS = [
   },
   {
     q: "Is my car insured during transport?",
-    a: "Yes. Every carrier in our network carries cargo insurance covering your vehicle for the full duration of transit ($100k open / $500k enclosed), from pickup in Florida to delivery in New Jersey."
+    a: "Yes. Every carrier in our network carries cargo insurance covering your vehicle for the full duration of transit ($100,000 on open carriers / $500,000 on enclosed carriers), from pickup in Florida to delivery in New Jersey."
   },
   {
     q: "Can I put personal items in my car during shipping?",
-    a: "Carriers generally allow up to 100 lbs of personal items secured in the trunk or cargo area, though items are not covered by carrier insurance."
+    a: "Carriers generally allow a small number of personal items (under 100 lbs) in the trunk, but it's not guaranteed to be covered by insurance. Confirm with your carrier before pickup."
   },
   {
     q: "Do you offer door-to-door delivery, or do I have to use a terminal?",
@@ -48,6 +48,18 @@ const ROUTE_FAQS = [
   {
     q: "Do you ship motorcycles, RVs, and boats on this route?",
     a: "Yes, in addition to standard cars and trucks, we transport motorcycles, RVs, and boats between Florida and New Jersey."
+  },
+  {
+    q: "What paperwork do I need for Florida to New Jersey car shipping?",
+    a: "You'll sign a bill of lading at pickup and delivery documenting your vehicle's condition, plus provide proof of ownership or registration. No additional state-specific paperwork is required for this route."
+  },
+  {
+    q: "Are you a broker or a direct car carrier?",
+    a: "We operate as a licensed auto transport broker, matching your shipment with a vetted direct car carrier already running the Florida to New Jersey corridor — this typically gets you a faster pickup and more competitive rate than booking a single carrier directly."
+  },
+  {
+    q: "Is there Florida to New Jersey car transport near me?",
+    a: "Yes — our carrier network covers every city and zip code in Florida, so you'll always have local pickup options regardless of where in the state you're located."
   }
 ];
 
@@ -79,17 +91,44 @@ export default function FloridaToNewJerseyRoutePage() {
         "offers": {
           "@type": "AggregateOffer",
           "priceCurrency": "USD",
-          "lowPrice": "850",
-          "highPrice": "1900"
+          "lowPrice": "650",
+          "highPrice": "1750"
         }
       },
       {
         "@type": "FAQPage",
-        "mainEntity": ROUTE_FAQS.map(faq => ({
-          "@type": "Question",
-          "name": faq.q,
-          "acceptedAnswer": {"@type": "Answer", "text": faq.a}
-        }))
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does it cost to ship a car from Florida to New Jersey?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Most shipments range from $650 to $1,200 on open transport, with enclosed transport running $950 to $1,750 depending on vehicle type and season."}
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to ship a car from Florida to New Jersey?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Most Florida to New Jersey car shipments deliver within 3 to 6 days of pickup, depending on carrier availability and exact pickup/delivery cities."}
+          },
+          {
+            "@type": "Question",
+            "name": "Does car shipping from Florida to New Jersey include insurance?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Yes, every shipment includes cargo insurance in the quoted price — $100,000 on open carriers and $500,000 on enclosed carriers."}
+          },
+          {
+            "@type": "Question",
+            "name": "Are you a broker or a direct car carrier?",
+            "acceptedAnswer": {"@type": "Answer", "text": "We operate as a licensed auto transport broker, matching shipments with a vetted direct car carrier already running the Florida to New Jersey corridor."}
+          },
+          {
+            "@type": "Question",
+            "name": "Can I ship a car from Florida to Newark specifically?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Yes, Newark is the highest-volume New Jersey destination on this corridor, along with surrounding Essex County suburbs."}
+          },
+          {
+            "@type": "Question",
+            "name": "What paperwork do I need for Florida to New Jersey car shipping?",
+            "acceptedAnswer": {"@type": "Answer", "text": "You'll sign a bill of lading at pickup and delivery documenting the vehicle's condition, plus provide proof of ownership or registration. No additional state-specific paperwork is required."}
+          }
+        ]
       }
     ]
   };
@@ -151,23 +190,26 @@ export default function FloridaToNewJerseyRoutePage() {
 
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-5 border border-blue-200/80 shadow-sm">
               <MapPin className="w-4 h-4 text-blue-600" />
-              East Coast Corridor (~1,100–1,300 Miles)
+              East Coast Corridor (~924–1,278 Miles)
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.6rem] leading-[1.1] font-black text-slate-900 tracking-tight mb-5">
               Florida to New Jersey Car Transport
             </h1>
 
-            <p className="text-base md:text-lg text-slate-600 font-medium leading-relaxed max-w-xl mb-8">
-              Shipping a car from Florida to New Jersey is one of the most requested long-distance auto transport routes in the country, driven by snowbirds, retirees, relocations, and college students moving between the two states each year. Whether you&apos;re shipping a sedan, SUV, truck, motorcycle, or classic car, our service offers door-to-door pickup and delivery, real-time tracking, and full insurance coverage.
+            <p className="text-base md:text-lg text-slate-600 font-medium leading-relaxed max-w-xl mb-4">
+              Shipping a car from Florida to New Jersey is one of the most requested long-distance car transport routes in the country, driven by snowbirds, retirees, relocations, and college students moving between the two states each year. Whether you&apos;re shipping a sedan, SUV, truck, motorcycle, or classic car, our service offers door-to-door pickup and delivery, real-time tracking, and full insurance coverage from the first mile to the last.
+            </p>
+            <p className="text-xs md:text-sm text-slate-500 font-medium leading-relaxed max-w-xl mb-8">
+              As a licensed Florida to New Jersey auto transport broker, we work with a vetted network of direct car carriers rather than a single truck — meaning faster matching, competitive rates, and backup coverage if your original carrier falls through. Searching for &quot;car transport near me&quot; in Florida? Our carriers pick up in every city and zip code statewide.
             </p>
 
             <div className="grid grid-cols-3 gap-4 max-w-xl">
               <AnimatedCard delay={0.1}>
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                   <div className="text-xs text-slate-500 font-bold uppercase">Distance</div>
-                  <div className="text-xl font-black text-slate-900">1.1k+ mi</div>
-                  <div className="text-[11px] text-slate-500 font-semibold mt-1">East Coast</div>
+                  <div className="text-xl font-black text-slate-900">924–1,278 mi</div>
+                  <div className="text-[11px] text-slate-500 font-semibold mt-1">Verified Driving</div>
                 </div>
               </AnimatedCard>
 
@@ -182,7 +224,7 @@ export default function FloridaToNewJerseyRoutePage() {
               <AnimatedCard delay={0.3}>
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                   <div className="text-xs text-slate-500 font-bold uppercase">Cost Range</div>
-                  <div className="text-xl font-black text-emerald-700">$850+</div>
+                  <div className="text-xl font-black text-emerald-700">$650–$1,200</div>
                   <div className="text-[11px] text-slate-500 font-semibold mt-1">Zero Deposit</div>
                 </div>
               </AnimatedCard>
@@ -205,12 +247,42 @@ export default function FloridaToNewJerseyRoutePage() {
                 How Much Does It Cost to Ship a Car from Florida to New Jersey?
               </h2>
               <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium mt-2">
-                The average cost to transport a car from Florida to New Jersey typically ranges based on a few key factors:
+                Shipping a car from Florida to New Jersey typically costs <strong>$650–$1,200 on open transport</strong> and <strong>$950–$1,750 on enclosed transport</strong>, with delivery in 3–6 days. These ranges reflect published 2026 industry per-mile benchmarks (roughly $0.50–$0.95/mile for open transport on routes of this length) applied to verified driving distances — actual quotes vary by carrier, vehicle, and current demand.
               </p>
             </AnimatedSection>
 
             <AnimatedSection direction="up" delay={0.1}>
-              <div className="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm">
+              <div className="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm mb-6">
+                <table className="w-full text-left text-sm font-medium">
+                  <thead className="bg-slate-100 text-slate-900 font-black text-xs uppercase border-b border-slate-200">
+                    <tr>
+                      <th className="py-3.5 px-4">Transport Type</th>
+                      <th className="py-3.5 px-4">Typical Cost</th>
+                      <th className="py-3.5 px-4">Transit Time</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 text-slate-700">
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Open Carrier</td>
+                      <td className="py-3.5 px-4 font-extrabold text-blue-600">$650 – $1,200</td>
+                      <td className="py-3.5 px-4">3 – 6 days</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Enclosed Carrier</td>
+                      <td className="py-3.5 px-4 font-extrabold text-blue-600">$950 – $1,750</td>
+                      <td className="py-3.5 px-4">3 – 6 days</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Expedited (either type)</td>
+                      <td className="py-3.5 px-4 font-extrabold text-blue-600">+15–25% premium</td>
+                      <td className="py-3.5 px-4">2 – 4 days</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Key Factors Influencing Cost</h3>
+              <div className="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm mb-6">
                 <table className="w-full text-left text-sm font-medium">
                   <thead className="bg-slate-100 text-slate-900 font-black text-xs uppercase border-b border-slate-200">
                     <tr>
@@ -229,7 +301,7 @@ export default function FloridaToNewJerseyRoutePage() {
                     </tr>
                     <tr className="hover:bg-slate-50">
                       <td className="py-3.5 px-4 font-bold text-slate-900">Distance</td>
-                      <td className="py-3.5 px-4">Miami to Newark runs longer (and costs more) than Jacksonville to Trenton</td>
+                      <td className="py-3.5 px-4">Miami to Newark runs longer (and costs more in total, less per mile) than Jacksonville to Trenton</td>
                     </tr>
                     <tr className="hover:bg-slate-50">
                       <td className="py-3.5 px-4 font-bold text-slate-900">Season</td>
@@ -242,9 +314,73 @@ export default function FloridaToNewJerseyRoutePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-slate-500 mt-2 font-medium">
-                For the most accurate Florida to New Jersey auto transport cost, use our <Link href="/tools/car-shipping-cost-calculator" className="text-blue-600 underline font-bold">Cost Calculator</Link> — rates update daily based on carrier availability and fuel prices.
+            </AnimatedSection>
+          </article>
+
+          <article className="space-y-6">
+            <AnimatedSection direction="up">
+              <h3 className="text-2xl font-black text-slate-900 tracking-tight">
+                Verified Driving Distances by Florida Origin City
+              </h3>
+              <p className="text-slate-600 text-xs md:text-sm font-medium mt-1 mb-4">
+                Distances below are driving miles to Newark, NJ (the state&apos;s highest-volume delivery point); actual carrier routes to other NJ cities vary by a small margin.
               </p>
+            </AnimatedSection>
+
+            <AnimatedSection direction="up" delay={0.1}>
+              <div className="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm">
+                <table className="w-full text-left text-sm font-medium">
+                  <thead className="bg-slate-100 text-slate-900 font-black text-xs uppercase border-b border-slate-200">
+                    <tr>
+                      <th className="py-3.5 px-4">Origin City</th>
+                      <th className="py-3.5 px-4">Driving Distance to Newark, NJ</th>
+                      <th className="py-3.5 px-4">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 text-slate-700">
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Miami</td>
+                      <td className="py-3.5 px-4">~1,268 mi</td>
+                      <td className="py-3.5 px-4">Longest FL-side distance; high carrier availability</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Fort Lauderdale</td>
+                      <td className="py-3.5 px-4">~1,248 mi</td>
+                      <td className="py-3.5 px-4">Same I-95 corridor as Miami</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Naples</td>
+                      <td className="py-3.5 px-4">~1,278 mi</td>
+                      <td className="py-3.5 px-4">Southwest FL, longest overall distance on this route</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Fort Myers</td>
+                      <td className="py-3.5 px-4">~1,245 – 1,253 mi</td>
+                      <td className="py-3.5 px-4">Southwest FL, similar timing to Fort Lauderdale</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">West Palm Beach</td>
+                      <td className="py-3.5 px-4">~1,208 – 1,215 mi</td>
+                      <td className="py-3.5 px-4">Standard South Florida timing</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Tampa</td>
+                      <td className="py-3.5 px-4">~1,121 – 1,127 mi</td>
+                      <td className="py-3.5 px-4">West coast FL, mid-range distance</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Orlando</td>
+                      <td className="py-3.5 px-4">~1,072 mi</td>
+                      <td className="py-3.5 px-4">Central FL; shorter transit than South Florida</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Jacksonville</td>
+                      <td className="py-3.5 px-4">~924 mi</td>
+                      <td className="py-3.5 px-4">Northernmost major FL origin — shortest transit time</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </AnimatedSection>
           </article>
 
@@ -256,7 +392,7 @@ export default function FloridaToNewJerseyRoutePage() {
             </AnimatedSection>
 
             <AnimatedSection direction="up" delay={0.1}>
-              <div className="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm">
+              <div className="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm mb-6">
                 <table className="w-full text-left text-sm font-medium">
                   <thead className="bg-slate-100 text-slate-900 font-black text-xs uppercase border-b border-slate-200">
                     <tr>
@@ -304,9 +440,48 @@ export default function FloridaToNewJerseyRoutePage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-slate-500 mt-2 font-medium">
-                Don&apos;t see your city listed? We ship from every city and zip code in Florida to every city and zip code in New Jersey.
-              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Popular New Jersey Delivery Destinations</h3>
+              <div className="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm">
+                <table className="w-full text-left text-sm font-medium">
+                  <thead className="bg-slate-100 text-slate-900 font-black text-xs uppercase border-b border-slate-200">
+                    <tr>
+                      <th className="py-3.5 px-4">Destination</th>
+                      <th className="py-3.5 px-4">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 text-slate-700">
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Newark</td>
+                      <td className="py-3.5 px-4">Highest-demand NJ endpoint; frequent carrier trips, including surrounding Essex County suburbs</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Jersey City</td>
+                      <td className="py-3.5 px-4">High-volume Hudson County destination, standard timing from all FL origins</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Trenton</td>
+                      <td className="py-3.5 px-4">State capital, standard central-NJ timing</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Paterson</td>
+                      <td className="py-3.5 px-4">Northern NJ, similar timing to Newark-area</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Edison</td>
+                      <td className="py-3.5 px-4">Central NJ, standard timing</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Elizabeth</td>
+                      <td className="py-3.5 px-4">Union County, standard timing, close to Newark corridor</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="py-3.5 px-4 font-bold text-slate-900">Atlantic City</td>
+                      <td className="py-3.5 px-4">Shore destination, slightly longer final-mile routing during summer season</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </AnimatedSection>
           </article>
 
@@ -352,36 +527,6 @@ export default function FloridaToNewJerseyRoutePage() {
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>Full household relocation car shipping</span>
-                </li>
-              </ul>
-            </AnimatedSection>
-          </article>
-
-          <article className="space-y-4">
-            <AnimatedSection direction="up">
-              <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">
-                Preparing Your Car for Transport
-              </h2>
-              <ul className="space-y-2.5 text-xs md:text-sm text-slate-700 font-medium mt-4">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Wash your vehicle so pre-existing damage is easy to document</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Remove personal items — carriers are not licensed to transport household goods inside the vehicle</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Document your car&apos;s condition with photos before pickup</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Keep roughly a quarter tank of fuel</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Disable toll transponders and alarms</span>
                 </li>
               </ul>
             </AnimatedSection>
@@ -463,10 +608,10 @@ export default function FloridaToNewJerseyRoutePage() {
             </div>
           </div>
 
-          <div className="text-center pt-8 border-t border-slate-200 mt-12">
-             <p className="text-slate-500 font-medium text-sm">
-               Also shipping between Florida and New York? See our <Link href="/routes/florida-to-new-york" className="text-blue-600 font-bold hover:underline">Florida to New York</Link> route guide.
-             </p>
+          <div className="text-center pt-8 border-t border-slate-200 mt-12 flex flex-wrap justify-center gap-6 text-sm text-slate-500 font-medium">
+             <span>Also shipping nearby? See <Link href="/routes/new-york-to-florida" className="text-blue-600 font-bold hover:underline">New York to Florida</Link></span>
+             <span>•</span>
+             <span><Link href="/routes/florida-to-illinois" className="text-blue-600 font-bold hover:underline">Florida to Illinois</Link></span>
           </div>
 
         </div>

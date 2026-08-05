@@ -85,8 +85,8 @@ const POPULAR_ROUTES = [
     "origin": "Florida",
     "dest": "New Jersey",
     "miles": "~2,500 mi",
-    "time": "5 – 7 days",
-    "cost": "$1,000 – $1,500",
+    "time": "3 – 6 days",
+    "cost": "$650 – $1,200",
     "href": "/routes/florida-to-new-jersey",
     "badge": "Most Popular",
     "badgeColor": "bg-amber-600"
