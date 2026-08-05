@@ -95,7 +95,7 @@ const schemaData = {
           "@type": "WebPage",
           "name": "FMCSA & USDOT Licensing & Insurance",
           "url": "https://www.americacartransport.com/licensing-insurance",
-          "description": "Verify USDOT #3849102 and MC #1098472 credentials and cargo insurance policy."
+          "description": "Verify licensing credentials and cargo insurance policy."
         },
         {
           "@type": "WebPage",

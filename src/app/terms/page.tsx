@@ -94,7 +94,7 @@ export default function TermsPage() {
 
           <h2 className="text-xl font-bold text-slate-900 pt-4">1. Property Broker Authority</h2>
           <p>
-            America Car Transport operates as a licensed and bonded property broker (USDOT #3849102, MC #1098472) authorized by the Federal Motor Carrier Safety Administration (FMCSA). As a broker, we arrange vehicle transportation with independent, fully insured motor carriers.
+            America Car Transport operates as a licensed and bonded property broker (We are a licensed auto transport broker) authorized by the Federal Motor Carrier Safety Administration (FMCSA). As a broker, we arrange vehicle transportation with independent, fully insured motor carriers.
           </p>
 
           <h2 className="text-xl font-bold text-slate-900 pt-4">2. Zero Upfront Deposit &amp; Payment Terms</h2>

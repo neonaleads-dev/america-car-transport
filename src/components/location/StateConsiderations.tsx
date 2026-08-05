@@ -301,7 +301,7 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
               <ul className="space-y-3 text-xs md:text-sm font-medium text-slate-200 mb-8">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>Verify licensing directly:</strong> Every legitimate broker/carrier should have a real USDOT number and MC number you can <Link href="/licensing-insurance" className="text-blue-400 underline font-bold">verify yourself (USDOT #3849102 | MC #1098472)</Link>, not just a claim on their website.</span>
+                  <span><strong>Verify licensing directly:</strong> Every legitimate broker/carrier should have a real USDOT number and MC number you can <Link href="/licensing-insurance" className="text-blue-400 underline font-bold">verify yourself</Link>, not just a claim on their website.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />

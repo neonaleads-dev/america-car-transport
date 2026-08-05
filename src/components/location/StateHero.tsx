@@ -68,7 +68,7 @@ export default function StateHero({ state }: StateHeroProps) {
               </div>
               <div>
                 <div className="font-bold text-slate-900 text-xs leading-none">Accredited Business</div>
-                <div className="text-[10px] text-slate-500 font-medium mt-0.5">USDOT #{state.usdotNumber}</div>
+                <div className="text-[10px] text-slate-500 font-medium mt-0.5">FMCSA Broker</div>
               </div>
             </div>
           </div>

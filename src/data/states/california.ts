@@ -108,7 +108,7 @@ export const californiaData: CaliforniaStateData = {
   faqs: [
     {
       question: "How do I not get scammed shipping my car?",
-      answer: "Verify the company's USDOT and MC number directly on the official FMCSA SAFER registry (USDOT #3849102 | MC #1098472), avoid companies demanding large upfront deposits, check reviews across independent platforms, and get a written, itemized quote before booking. Read our full guide at How to Avoid Car Shipping Scams."
+      answer: "Verify the company's USDOT and MC number directly on the official FMCSA SAFER registry, avoid companies demanding large upfront deposits, check reviews across independent platforms, and get a written, itemized quote before booking. Read our full guide at How to Avoid Car Shipping Scams."
     },
     {
       question: "How much does it cost to ship a car 500 miles?",
@@ -160,6 +160,4 @@ export const californiaData: CaliforniaStateData = {
     }
   ],
   
-  fmcsaLicense: "MC #1098472",
-  usdotNumber: "3849102"
-};
+  };

@@ -201,7 +201,7 @@ export default function ExpeditedAutoTransportPage() {
                   </div>
                   <div>
                     <div className="font-bold text-white text-sm leading-none">Accredited Business</div>
-                    <div className="text-xs text-slate-400 font-medium mt-0.5">FMCSA USDOT #3849102</div>
+                    <div className="text-xs text-slate-400 font-medium mt-0.5">FMCSA Licensed Broker</div>
                   </div>
                 </div>
               </div>
@@ -659,7 +659,7 @@ export default function ExpeditedAutoTransportPage() {
                   <ShieldCheck className="w-8 h-8 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
                   <h3 className="font-bold text-lg mb-2 group-hover:text-amber-300 transition-colors">Fully Licensed & Bonded</h3>
                   <p className="text-xs md:text-sm text-slate-300 font-medium leading-relaxed mb-3">
-                    USDOT #3849102, MC #1098472. Verify credentials with FMCSA databases.
+                    We are a licensed auto transport broker. Verify credentials with FMCSA databases.
                   </p>
                 </div>
                 <Link href="/licensing-insurance" className="text-xs font-bold text-blue-400 hover:underline">

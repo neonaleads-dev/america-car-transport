@@ -557,7 +557,7 @@ export default function NewYorkToFloridaRoutePage() {
                 <ul className="space-y-3 text-xs md:text-sm text-slate-200 font-medium mb-8">
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                    <span><strong>Fully Licensed &amp; Bonded:</strong> USDOT #3849102, MC #1098472 (<Link href="/licensing-insurance" className="text-blue-400 underline font-bold">verify our credentials</Link>).</span>
+                    <span><strong>Fully Licensed &amp; Bonded:</strong> We are a licensed auto transport broker (<Link href="/licensing-insurance" className="text-blue-400 underline font-bold">verify our credentials</Link>).</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />

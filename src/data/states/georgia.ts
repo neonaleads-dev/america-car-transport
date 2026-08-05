@@ -53,6 +53,4 @@ export const georgiaData: StateData = {
     }
   ],
   
-  fmcsaLicense: "MC #1098472",
-  usdotNumber: "3849102"
-};
+  };

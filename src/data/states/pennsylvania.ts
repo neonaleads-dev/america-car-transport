@@ -7,7 +7,7 @@ export const pennsylvaniaData: StateData = {
   heroTitle: "Pennsylvania Car Shipping Services | Door-to-Door Auto Transport",
   heroSubtitle: "Ship your vehicle safely to or from Pennsylvania. Direct door-to-door auto shipping serving Philadelphia, Pittsburgh, Allentown, and Harrisburg with zero deposit.",
   metaTitle: "Pennsylvania Car Shipping | Direct Auto Transport Services",
-  metaDescription: "Top-rated Pennsylvania car shipping services. Compare open & enclosed auto transport quotes in Philadelphia, Pittsburgh, and Harrisburg. USDOT #3849102.",
+  metaDescription: "Top-rated Pennsylvania car shipping services. Compare open & enclosed auto transport quotes in Philadelphia, Pittsburgh, and Harrisburg. Fully licensed and bonded.",
   canonical: "https://www.americacartransport.com/locations/pennsylvania",
   
   population: "13.0 Million",
@@ -52,6 +52,4 @@ export const pennsylvaniaData: StateData = {
     }
   ],
   
-  fmcsaLicense: "MC #1098472",
-  usdotNumber: "3849102"
-};
+  };

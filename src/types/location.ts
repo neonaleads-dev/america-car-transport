@@ -63,6 +63,4 @@ export interface StateData {
   faqs: StateFAQItem[];
   
   // EEAT & Licensing
-  fmcsaLicense: string;
-  usdotNumber: string;
-}
+  }

@@ -287,7 +287,7 @@ export default function CaliforniaToNewYorkRoutePage() {
               <ShieldCheck className="w-8 h-8 text-blue-600 mb-3" />
               <h3 className="font-extrabold text-slate-900 text-lg mb-2">FMCSA Licensed Broker</h3>
               <p className="text-xs text-slate-600 font-medium leading-relaxed">
-                Bonded and insured property broker (USDOT #3849102 | MC #1098472). Verify our credentials anytime on the federal SAFER portal.
+                Bonded and insured property broker. Verify our credentials anytime on the federal SAFER portal.
               </p>
               <Link href="/licensing-insurance" className="text-xs font-bold text-blue-600 hover:underline mt-3 inline-block">
                 View Licensing Details ➔

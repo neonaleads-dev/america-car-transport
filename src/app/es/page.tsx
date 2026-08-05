@@ -123,7 +123,7 @@ export default function SpanishHomePage() {
               </div>
               <div className="flex items-center gap-3 text-xs md:text-sm font-bold text-slate-200">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Licencia Oficial USDOT #3849102 y MC #1098472</span>
+                <span>Licencia Oficial  y </span>
               </div>
               <div className="flex items-center gap-3 text-xs md:text-sm font-bold text-slate-200">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />

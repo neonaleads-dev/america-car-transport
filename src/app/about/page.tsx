@@ -7,7 +7,7 @@ import { ShieldCheck, Award, Clock, Users, Building, Phone, ArrowRight, CheckCir
 
 export const metadata = {
   title: "About Us | America Car Transport — Nationwide Auto Shipping Broker",
-  description: "Learn about America Car Transport — FMCSA licensed & bonded property broker (USDOT #3849102) providing zero deposit door-to-door auto transport nationwide.",
+  description: "Learn about America Car Transport — FMCSA licensed & bonded property broker providing zero deposit door-to-door auto transport nationwide.",
   alternates: {
     canonical: "https://www.americacartransport.com/about",
   },
@@ -47,7 +47,7 @@ export default function AboutPage() {
             "name": "Who is America Car Transport?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "America Car Transport is an FMCSA licensed and bonded property broker (USDOT #3849102, MC #1098472) providing door-to-door vehicle shipping across all 50 U.S. states with zero upfront deposit."
+              "text": "America Car Transport is an FMCSA licensed and bonded property broker (We are a licensed auto transport broker) providing door-to-door vehicle shipping across all 50 U.S. states with zero upfront deposit."
             }
           },
           {
@@ -123,7 +123,7 @@ export default function AboutPage() {
           <AnimatedSection direction="up">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-5 border border-blue-200/80 shadow-sm">
               <Building className="w-4 h-4 text-blue-600" />
-              FMCSA Bonded &amp; Insured Broker (USDOT #3849102 | MC #1098472)
+              FMCSA Bonded &amp; Insured Broker
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6 max-w-4xl mx-auto">

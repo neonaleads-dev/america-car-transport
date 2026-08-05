@@ -7,8 +7,8 @@ import AnimatedSection, { AnimatedCard } from "@/components/ui/AnimatedSection";
 import { ShieldCheck, Award, Lock, CheckCircle2, FileText, ExternalLink, AlertTriangle, Phone, HelpCircle, ChevronDown } from "lucide-react";
 
 export const metadata = {
-  title: "Licensing & Insurance | FMCSA USDOT #3849102 MC #1098472 | America Car Transport",
-  description: "Verify America Car Transport FMCSA licensing, USDOT #3849102, MC #1098472, $75K surety bond, and cargo insurance rules. Zero upfront deposit guarantee.",
+  title: "Licensing & Insurance | Fully Licensed & Bonded | America Car Transport",
+  description: "Verify America Car Transport FMCSA licensing, surety bond, and cargo insurance rules. Zero upfront deposit guarantee.",
   alternates: {
     canonical: "https://www.americacartransport.com/licensing-insurance",
   },
@@ -17,7 +17,7 @@ export const metadata = {
 const FAQS = [
   {
     question: "How can I verify America Car Transport's FMCSA license?",
-    answer: "You can verify our active federal license anytime on the official USDOT SAFER (Safety and Fitness Electronic Records) system using USDOT #3849102 or MC #1098472."
+    answer: "You can verify our active federal license anytime on the official USDOT SAFER (Safety and Fitness Electronic Records) system."
   },
   {
     question: "How much cargo insurance covers my vehicle during transit?",
@@ -41,7 +41,7 @@ export default function LicensingInsurancePage() {
         "@type": "WebPage",
         "@id": "https://www.americacartransport.com/licensing-insurance#webpage",
         "url": "https://www.americacartransport.com/licensing-insurance",
-        "name": "Licensing & Insurance | FMCSA USDOT #3849102",
+        "name": "Licensing & Insurance | Fully Licensed & Bonded",
         "description": "Official FMCSA licensing, USDOT registration, surety bond, and cargo insurance compliance for America Car Transport.",
         "isPartOf": {
           "@type": "WebSite",
@@ -55,19 +55,7 @@ export default function LicensingInsurancePage() {
         "@id": "https://www.americacartransport.com/#organization",
         "name": "America Car Transport",
         "url": "https://www.americacartransport.com",
-        "telephone": "(530) 725-5383",
-        "identifier": [
-          {
-            "@type": "PropertyValue",
-            "propertyID": "USDOT",
-            "value": "3849102"
-          },
-          {
-            "@type": "PropertyValue",
-            "propertyID": "MC",
-            "value": "1098472"
-          }
-        ]
+        "telephone": "(530) 725-5383"
       },
       {
         "@type": "FAQPage",
@@ -165,24 +153,16 @@ export default function LicensingInsurancePage() {
             </p>
 
             {/* Credential Badges Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-xl">
+            <div className="grid grid-cols-2 gap-4 max-w-xl">
               <AnimatedCard delay={0.1}>
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                  <div className="text-xs text-slate-500 font-bold uppercase">USDOT Number</div>
-                  <div className="text-xl font-black text-blue-600">3849102</div>
+                  <div className="text-xs text-slate-500 font-bold uppercase">Licensing</div>
+                  <div className="text-xl font-black text-blue-600">Fully Verified</div>
                   <div className="text-[11px] text-emerald-700 font-semibold mt-1">✓ Active Status</div>
                 </div>
               </AnimatedCard>
 
               <AnimatedCard delay={0.2}>
-                <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                  <div className="text-xs text-slate-500 font-bold uppercase">MC Docket #</div>
-                  <div className="text-xl font-black text-blue-600">1098472</div>
-                  <div className="text-[11px] text-emerald-700 font-semibold mt-1">✓ Property Broker</div>
-                </div>
-              </AnimatedCard>
-
-              <AnimatedCard delay={0.3}>
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                   <div className="text-xs text-slate-500 font-bold uppercase">Surety Bond</div>
                   <div className="text-xl font-black text-emerald-700">$75,000</div>
@@ -224,7 +204,7 @@ export default function LicensingInsurancePage() {
                 rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-500 text-white font-extrabold px-6 py-3.5 rounded-xl text-sm transition-colors flex items-center gap-2 shrink-0 shadow-md hover:shadow-lg"
               >
-                Verify USDOT #3849102 on SAFER
+                Verify on SAFER
                 <ExternalLink className="w-4 h-4" />
               </a>
             </div>
@@ -354,7 +334,7 @@ export default function LicensingInsurancePage() {
                 <span className="text-amber-600">3.</span> Missing or inactive USDOT / MC License numbers
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                Always demand USDOT and MC docket numbers and verify them on SAFER. America Car Transport displays USDOT #3849102 on every page.
+                Always demand USDOT and MC docket numbers and verify them on SAFER. America Car Transport is fully licensed and bonded.
               </p>
             </div>
 

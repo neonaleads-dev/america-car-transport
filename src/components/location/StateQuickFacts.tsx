@@ -124,7 +124,7 @@ export default function StateQuickFacts({ state }: StateQuickFactsProps) {
           </div>
           <div className="shrink-0">
             <span className="bg-blue-600 text-white font-extrabold text-xs px-4 py-2.5 rounded-xl inline-block shadow-sm">
-              USDOT Licensed Broker #{state.usdotNumber}
+              Fully Licensed Broker
             </span>
           </div>
         </div>

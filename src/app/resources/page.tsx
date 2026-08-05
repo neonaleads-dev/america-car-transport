@@ -24,7 +24,7 @@ const RESOURCES = [
   },
   {
     title: "FMCSA Licensing & Carrier Insurance Protocol",
-    desc: "Verify USDOT #3849102, MC #1098472, $75,000 surety bond, and cargo insurance rules protecting your vehicle.",
+    desc: "Verify We are a licensed auto transport broker, $75,000 surety bond, and cargo insurance rules protecting your vehicle.",
     category: "E-E-A-T & Trust",
     href: "/licensing-insurance",
     tag: "Verified",

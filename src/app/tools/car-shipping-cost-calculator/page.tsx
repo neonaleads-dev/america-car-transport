@@ -232,7 +232,7 @@ const faqSchema = {
       "name": "What is the safest way to ship a car?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Enclosed transport with a verified, licensed, and insured carrier (USDOT #3849102 | MC #1098472) is the safest method, protecting against road debris and weather."
+        "text": "Enclosed transport with a verified, licensed, and insured carrier is the safest method, protecting against road debris and weather."
       }
     },
     {
@@ -417,7 +417,7 @@ export default function CarShippingCostCalculatorPage() {
                   </div>
                   <div>
                     <div className="font-bold text-white text-sm leading-none">Accredited Business</div>
-                    <div className="text-xs text-slate-400 font-medium mt-0.5">FMCSA USDOT #3849102</div>
+                    <div className="text-xs text-slate-400 font-medium mt-0.5">FMCSA Licensed Broker</div>
                   </div>
                 </div>
               </div>
@@ -1105,7 +1105,7 @@ export default function CarShippingCostCalculatorPage() {
                   What is the safest way to ship a car?
                 </h3>
                 <p className="text-slate-700 text-sm leading-relaxed font-medium">
-                  Enclosed transport with a verified, licensed, and insured carrier (<Link href="/licensing-insurance" className="text-blue-600 font-bold underline">USDOT #3849102 | MC #1098472</Link>) is the safest combination available, protecting against road debris and weather.
+                  Enclosed transport with a verified, licensed, and insured carrier (<Link href="/licensing-insurance" className="text-blue-600 font-bold underline"> | </Link>) is the safest combination available, protecting against road debris and weather.
                 </p>
               </div>
 

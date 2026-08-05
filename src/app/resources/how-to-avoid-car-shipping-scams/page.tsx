@@ -196,7 +196,7 @@ export default function HowToAvoidCarShippingScamsPage() {
               href="/licensing-insurance" 
               className="bg-blue-600 hover:bg-blue-500 text-white font-extrabold px-5 py-3 rounded-xl text-xs md:text-sm transition-colors inline-flex items-center gap-2 shadow-md"
             >
-              Verify America Car Transport Licensing (USDOT #3849102) →
+              Verify America Car Transport Licensing () →
             </Link>
             <Link 
               href="/reviews" 
@@ -263,7 +263,7 @@ export default function HowToAvoidCarShippingScamsPage() {
                   Verify Their USDOT and MC Number on FMCSA&apos;s SAFER System
                 </h3>
                 <p className="text-xs md:text-sm text-slate-600 leading-relaxed font-medium">
-                  Every legitimate broker and carrier must be registered with the Federal Motor Carrier Safety Administration (FMCSA). Search the company&apos;s USDOT number on the official FMCSA SAFER Company Snapshot system and confirm the business name, address, and operating status match what the company told you. <Link href="/licensing-insurance" className="text-blue-600 font-bold underline">Verify America Car Transport&apos;s credentials (USDOT #3849102 | MC #1098472)</Link> here as an example.
+                  Every legitimate broker and carrier must be registered with the Federal Motor Carrier Safety Administration (FMCSA). Search the company&apos;s USDOT number on the official FMCSA SAFER Company Snapshot system and confirm the business name, address, and operating status match what the company told you. <Link href="/licensing-insurance" className="text-blue-600 font-bold underline">Verify America Car Transport&apos;s credentials</Link> here as an example.
                 </p>
               </div>
 
@@ -384,7 +384,7 @@ export default function HowToAvoidCarShippingScamsPage() {
             </div>
 
             <p className="text-xs md:text-sm text-slate-600 font-medium">
-              America Car Transport is fully licensed and bonded — <strong>USDOT #3849102, MC #1098472</strong> — with zero upfront deposit required. <Link href="/licensing-insurance" className="text-blue-600 font-bold underline">Verify our credentials directly on our Licensing Page</Link>.
+              America Car Transport is fully licensed and bonded — <strong>We are a licensed auto transport broker</strong> — with zero upfront deposit required. <Link href="/licensing-insurance" className="text-blue-600 font-bold underline">Verify our credentials directly on our Licensing Page</Link>.
             </p>
           </article>
 
@@ -488,7 +488,7 @@ export default function HowToAvoidCarShippingScamsPage() {
               <ul className="space-y-3 text-xs md:text-sm text-slate-200 font-medium mb-8">
                 <li className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span><strong>Fully Licensed &amp; Bonded:</strong> USDOT #3849102, MC #1098472 active on FMCSA SAFER.</span>
+                  <span><strong>Fully Licensed &amp; Bonded:</strong> We are a licensed auto transport broker active on FMCSA SAFER.</span>
                 </li>
                 <li className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />

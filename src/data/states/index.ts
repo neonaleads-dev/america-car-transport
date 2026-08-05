@@ -37,7 +37,7 @@ export function getFallbackStateData(slug: string): StateData {
     heroTitle: `${formattedName} Car Shipping Services | Door-to-Door Auto Transport`,
     heroSubtitle: `Ship your vehicle safely to or from ${formattedName} with America's leading bonded & insured carrier network. Guaranteed door-to-door delivery with zero upfront deposits.`,
     metaTitle: `${formattedName} Car Shipping | Direct Auto Transport Services`,
-    metaDescription: `Professional ${formattedName} car shipping services. Compare open & enclosed auto transport rates. FMCSA licensed broker USDOT #3849102.`,
+    metaDescription: `Professional ${formattedName} car shipping services. Compare open & enclosed auto transport rates. Fully licensed and bonded auto transport broker.`,
     canonical: `https://www.americacartransport.com/locations/${slug}`,
     
     population: "Statewide Coverage",
@@ -81,9 +81,7 @@ export function getFallbackStateData(slug: string): StateData {
       }
     ],
     
-    fmcsaLicense: "MC #1098472",
-    usdotNumber: "3849102"
-  };
+    };
 }
 
 export function getStateBySlug(slug: string): StateData {

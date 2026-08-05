@@ -72,7 +72,7 @@ export const MASTER_FAQ_CATEGORIES: FAQCategory[] = [
     faqs: [
       {
         q: "How do I not get scammed shipping my car in California?",
-        a: "Verify the company's USDOT and MC number directly on the official FMCSA SAFER registry (USDOT #3849102 | MC #1098472), avoid companies demanding large upfront deposits, check reviews across independent platforms, and get a written, itemized quote before booking.",
+        a: "Verify the company's USDOT and MC number directly on the official FMCSA SAFER registry, avoid companies demanding large upfront deposits, check reviews across independent platforms, and get a written, itemized quote before booking.",
         linkText: "Read our full California Car Shipping Guide",
         linkHref: "/locations/california"
       },
@@ -148,7 +148,7 @@ export const MASTER_FAQ_CATEGORIES: FAQCategory[] = [
       },
       {
         q: "What is the safest way to ship a car?",
-        a: "Enclosed transport with a verified, licensed, and insured carrier (USDOT #3849102 | MC #1098472) is the safest method available, protecting against road debris and weather while providing high-value cargo coverage.",
+        a: "Enclosed transport with a verified, licensed, and insured carrier is the safest method available, protecting against road debris and weather while providing high-value cargo coverage.",
         linkText: "Read how to spot fake shipping companies",
         linkHref: "/resources/how-to-avoid-car-shipping-scams"
       },
@@ -160,7 +160,7 @@ export const MASTER_FAQ_CATEGORIES: FAQCategory[] = [
       },
       {
         q: "What is the cheapest company to ship your car?",
-        a: "There's no single 'cheapest' company across every route and season. Look for zero-upfront-deposit policies and verified FMCSA licensing (USDOT #3849102 | MC #1098472) rather than chasing unusually low quote claims that often lead to bait-and-switch demands.",
+        a: "There's no single 'cheapest' company across every route and season. Look for zero-upfront-deposit policies and verified FMCSA licensing rather than chasing unusually low quote claims that often lead to bait-and-switch demands.",
         linkText: "Verify FMCSA SAFER licensing info",
         linkHref: "/licensing-insurance"
       }
