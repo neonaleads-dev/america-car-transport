@@ -70,6 +70,17 @@ const POPULAR_ROUTES = [
     "badgeColor": "bg-amber-600"
   },
   {
+    "title": "Florida to Illinois Car Shipping",
+    "origin": "Florida",
+    "dest": "Illinois",
+    "miles": "1,100–1,300 mi",
+    "time": "3 – 5 days",
+    "cost": "$750 – $1,200",
+    "href": "/routes/florida-to-illinois",
+    "badge": "Snowbird Route",
+    "badgeColor": "bg-purple-600"
+  },
+  {
     "title": "Florida to New York Car Shipping",
     "origin": "Florida",
     "dest": "New York",
