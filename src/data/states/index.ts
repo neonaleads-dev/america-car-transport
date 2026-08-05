@@ -89,8 +89,20 @@ export function getStateBySlug(slug: string): StateData {
   return TOP_STATES_DATA[normalized] || getFallbackStateData(normalized);
 }
 
+export const ALL_50_STATE_SLUGS: string[] = [
+  "alabama", "alaska", "arizona", "arkansas", "california", "colorado", 
+  "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho", 
+  "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", 
+  "maine", "maryland", "massachusetts", "michigan", "minnesota", "mississippi", 
+  "missouri", "montana", "nebraska", "nevada", "new-hampshire", "new-jersey", 
+  "new-mexico", "new-york", "north-carolina", "north-dakota", "ohio", "oklahoma", 
+  "oregon", "pennsylvania", "rhode-island", "south-carolina", "south-dakota", 
+  "tennessee", "texas", "utah", "vermont", "virginia", "washington", 
+  "west-virginia", "wisconsin", "wyoming"
+];
+
 export function getAllStateSlugs(): string[] {
-  return Object.keys(TOP_STATES_DATA);
+  return ALL_50_STATE_SLUGS;
 }
 
 export function getAllTopStates(): StateData[] {
