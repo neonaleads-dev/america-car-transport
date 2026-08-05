@@ -128,7 +128,7 @@ export default function ExpeditedAutoTransportPage() {
             <Link href="/#how-it-works" className="hover:text-blue-600 transition-colors">How It Works</Link>
             <Link href="/services" className="hover:text-blue-600 transition-colors">Services</Link>
             <Link href="/#why-us" className="hover:text-blue-600 transition-colors">Why Us</Link>
-            <Link href="/#popular-routes" className="hover:text-blue-600 transition-colors">Popular Routes</Link>
+            <Link href="/routes" className="hover:text-blue-600 transition-colors">Popular Routes</Link>
             <Link href="/locations" className="hover:text-blue-600 transition-colors">Locations</Link>
             <Link href="/faq" className="hover:text-blue-600 transition-colors">FAQ Hub</Link>
           </nav>

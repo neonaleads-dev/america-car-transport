@@ -15,48 +15,103 @@ export const metadata = {
 
 const POPULAR_ROUTES = [
   {
-    title: "California to Florida Car Shipping",
-    origin: "California",
-    dest: "Florida",
-    miles: "~2,700 mi",
-    time: "5–7 Days",
-    cost: "$1,050 – $1,600",
-    href: "/routes/california-to-florida",
-    badge: "Most Popular",
-    badgeColor: "bg-blue-600"
+    "title": "California to Florida Car Shipping",
+    "origin": "California",
+    "dest": "Florida",
+    "miles": "~2,700 mi",
+    "time": "5 – 7 days",
+    "cost": "$1,000 – $1,500",
+    "href": "/routes/california-to-florida",
+    "badge": "Most Popular",
+    "badgeColor": "bg-amber-600"
   },
   {
-    title: "California to New York Car Shipping",
-    origin: "California",
-    dest: "New York",
-    miles: "~2,789 mi",
-    time: "5–7 Days",
-    cost: "$1,150 – $1,750",
-    href: "/routes/california-to-florida",
-    badge: "Cross-Country",
-    badgeColor: "bg-purple-600"
+    "title": "California to Illinois Car Shipping",
+    "origin": "California",
+    "dest": "Illinois",
+    "miles": "~2,015 mi",
+    "time": "5 – 7 days",
+    "cost": "$1,000 – $1,500",
+    "href": "/routes/california-to-illinois",
+    "badge": "Cross-Country",
+    "badgeColor": "bg-rose-600"
   },
   {
-    title: "Texas to California Car Shipping",
-    origin: "Texas",
-    dest: "California",
-    miles: "~1,435 mi",
-    time: "3–5 Days",
-    cost: "$950 – $1,350",
-    href: "/locations/california",
-    badge: "High Volume",
-    badgeColor: "bg-emerald-600"
+    "title": "California to New York Car Shipping",
+    "origin": "California",
+    "dest": "New York",
+    "miles": "~2,800 mi",
+    "time": "5 – 7 days",
+    "cost": "$1,000 – $1,500",
+    "href": "/routes/california-to-new-york",
+    "badge": "Cross-Country",
+    "badgeColor": "bg-rose-600"
   },
   {
-    title: "Washington to California Auto Transport",
-    origin: "Washington",
-    dest: "California",
-    miles: "~1,250 mi",
-    time: "3–4 Days",
-    cost: "$890 – $1,250",
-    href: "/locations/california",
-    badge: "West Coast",
-    badgeColor: "bg-amber-600"
+    "title": "California to Texas Car Shipping",
+    "origin": "California",
+    "dest": "Texas",
+    "miles": "~1,540 mi",
+    "time": "5 – 7 days",
+    "cost": "$1,000 – $1,500",
+    "href": "/routes/california-to-texas",
+    "badge": "Snowbird Route",
+    "badgeColor": "bg-purple-600"
+  },
+  {
+    "title": "Florida to California Car Shipping",
+    "origin": "Florida",
+    "dest": "California",
+    "miles": "2,400–2,800 mi",
+    "time": "6 – 10 days",
+    "cost": "$1,000 – $1,800",
+    "href": "/routes/florida-to-california",
+    "badge": "Most Popular",
+    "badgeColor": "bg-amber-600"
+  },
+  {
+    "title": "Florida to New York Car Shipping",
+    "origin": "Florida",
+    "dest": "New York",
+    "miles": "1,100–1,300 mi",
+    "time": "3 – 6 days",
+    "cost": "$900 – $1,400",
+    "href": "/routes/florida-to-new-york",
+    "badge": "Snowbird Route",
+    "badgeColor": "bg-purple-600"
+  },
+  {
+    "title": "New York to California Car Shipping",
+    "origin": "New York",
+    "dest": "California",
+    "miles": "~2,800 mi",
+    "time": "5 – 7 days",
+    "cost": "$1,000 – $1,500",
+    "href": "/routes/new-york-to-california",
+    "badge": "Cross-Country",
+    "badgeColor": "bg-rose-600"
+  },
+  {
+    "title": "New York to Florida Car Shipping",
+    "origin": "New York",
+    "dest": "Florida",
+    "miles": "1,100–1,300 mi",
+    "time": "3 – 6 days",
+    "cost": "$900 – $1,400",
+    "href": "/routes/new-york-to-florida",
+    "badge": "Snowbird Route",
+    "badgeColor": "bg-purple-600"
+  },
+  {
+    "title": "Texas to California Car Shipping",
+    "origin": "Texas",
+    "dest": "California",
+    "miles": "~1,540 mi",
+    "time": "5 – 7 days",
+    "cost": "$1,000 – $1,500",
+    "href": "/routes/texas-to-california",
+    "badge": "Snowbird Route",
+    "badgeColor": "bg-purple-600"
   }
 ];
 

@@ -78,7 +78,7 @@ export default function Home() {
             <a href="#how-it-works" className="hover:text-blue-600 transition-colors whitespace-nowrap">How It Works</a>
             <Link href="/services" className="hover:text-blue-600 transition-colors whitespace-nowrap">Services</Link>
             <a href="#why-us" className="hover:text-blue-600 transition-colors whitespace-nowrap">Why Us</a>
-            <a href="#popular-routes" className="hover:text-blue-600 transition-colors whitespace-nowrap">Popular Routes</a>
+            <a href="/routes" className="hover:text-blue-600 transition-colors whitespace-nowrap">Popular Routes</a>
             <Link href="/locations" className="hover:text-blue-600 transition-colors whitespace-nowrap">Locations</Link>
             <Link href="/faq" className="hover:text-blue-600 transition-colors whitespace-nowrap">FAQ Hub</Link>
           </nav>
