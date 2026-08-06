@@ -48,6 +48,14 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
       <head>
         <meta name="google-site-verification" content="ddgFC7lCCFGcRISIspal82FrdtgAL6wFuWAVL5V6Kg8" />
+        <link rel="preconnect" href="https://www.americacartransport.com" />
+        <link 
+          rel="preload" 
+          as="image" 
+          href="/hero-background-truck-bright.jpg" 
+          // @ts-ignore
+          fetchpriority="high" 
+        />
         <StructuredData />
       </head>
       <body className="font-sans bg-slate-100 text-charcoal antialiased">

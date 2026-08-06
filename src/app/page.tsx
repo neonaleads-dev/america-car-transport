@@ -105,6 +105,9 @@ export default function Home() {
           <img 
             src="/hero-background-truck-bright.jpg" 
             alt="America Car Transport Carrier Truck Driving Along Scenic Coast Highway at Sunset" 
+            // @ts-ignore
+            fetchpriority="high"
+            loading="eager"
             className="w-full h-full object-cover object-center blur-[2px] contrast-[1.05] saturate-[1.05] scale-[1.02]"
           />
           {/* Very subtle light overlay to make text pop without hiding the picture */}
