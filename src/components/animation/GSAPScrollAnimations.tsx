@@ -13,8 +13,8 @@ export default function GSAPScrollAnimations() {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) return;
 
-    let ctx: gsap.Context;
-    const timer = requestAnimationFrame(() => {
+    let ctx: any;
+    const timer = setTimeout(() => {
       // Register ScrollTrigger plugin safely
       gsap.registerPlugin(ScrollTrigger);
 
@@ -70,10 +70,10 @@ export default function GSAPScrollAnimations() {
           });
         });
       });
-    });
+    }, 100);
 
     return () => {
-      cancelAnimationFrame(timer);
+      clearTimeout(timer);
       if (ctx) ctx.revert();
     };
   }, []);

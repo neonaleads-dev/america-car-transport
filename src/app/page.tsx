@@ -2,9 +2,7 @@
 
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CustomEase } from "gsap/CustomEase";
+
 import dynamic from "next/dynamic";
 import AnimatedText from "@/components/ui/AnimatedText";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
@@ -31,12 +29,21 @@ export default function Home() {
   const calcRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let ctx: gsap.Context;
-    const timer = requestAnimationFrame(() => {
-      gsap.registerPlugin(ScrollTrigger, CustomEase);
-      const smoothEase = CustomEase.create("smooth", "M0,0 C0.25,1 0.25,1 1,1");
-      
-      // Simple fast nav entry
+    let ctx: any;
+    const timer = setTimeout(() => {
+      Promise.all([
+        import("gsap"),
+        import("gsap/ScrollTrigger"),
+        import("gsap/CustomEase")
+      ]).then(([gsapModule, stModule, ceModule]) => {
+        const gsap = gsapModule.default;
+        const ScrollTrigger = stModule.ScrollTrigger;
+        const CustomEase = ceModule.CustomEase;
+
+        gsap.registerPlugin(ScrollTrigger, CustomEase);
+        const smoothEase = CustomEase.create("smooth", "M0,0 C0.25,1 0.25,1 1,1");
+        
+        // Simple fast nav entry
       if (navRef.current) {
         gsap.fromTo(
           navRef.current.children,
@@ -46,17 +53,18 @@ export default function Home() {
       }
 
       // Slide up calculator
-      if (calcRef.current) {
-        gsap.fromTo(
-          calcRef.current,
-          { y: 40, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, ease: smoothEase, delay: 0.2 }
-        );
-      }
-    });
+        if (calcRef.current) {
+          gsap.fromTo(
+            calcRef.current,
+            { y: 40, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, ease: smoothEase, delay: 0.2 }
+          );
+        }
+      });
+    }, 100);
 
     return () => {
-      cancelAnimationFrame(timer);
+      clearTimeout(timer);
     };
   }, []);
 
@@ -76,8 +84,7 @@ export default function Home() {
               title="America Car Transport Official Logo"
               width={160}
               height={72}
-              // @ts-ignore
-              fetchpriority="high"
+              fetchPriority="high"
               className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain transition-transform hover:scale-[1.02]"
             />
           </Link>
@@ -114,8 +121,7 @@ export default function Home() {
           <img 
             src="/hero-background-truck-bright.webp" 
             alt="America Car Transport Carrier Truck Driving Along Scenic Coast Highway at Sunset" 
-            // @ts-ignore
-            fetchpriority="high"
+            fetchPriority="high"
             loading="eager"
             className="w-full h-full object-cover object-center"
           />

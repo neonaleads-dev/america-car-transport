@@ -16,7 +16,8 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import StructuredData from "@/components/seo/StructuredData";
-import GSAPScrollAnimations from "@/components/animation/GSAPScrollAnimations";
+import dynamic from "next/dynamic";
+const GSAPScrollAnimations = dynamic(() => import("@/components/animation/GSAPScrollAnimations"), { ssr: false });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.americacartransport.com"),
@@ -54,8 +55,7 @@ export default function RootLayout({
           as="image" 
           href="/hero-background-truck-bright.webp" 
           type="image/webp"
-          // @ts-ignore
-          fetchpriority="high" 
+          fetchPriority="high" 
         />
         <StructuredData />
       </head>
