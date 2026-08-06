@@ -1,5 +1,9 @@
-> 0.5%
-last 2 versions
-Firefox ESR
+chrome >= 92
+firefox >= 90
+safari >= 15.4
+edge >= 92
+ios >= 15.4
+opera >= 78
 not dead
-not IE 11
+not op_mini all
+not and_uc > 0
