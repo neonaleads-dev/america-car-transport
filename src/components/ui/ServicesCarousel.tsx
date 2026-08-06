@@ -11,7 +11,7 @@ const servicesWeOffer = [
     img: "/america-car-transport-door-to-door-vehicle-shipping-service.png",
     alt: "America Car Transport door to door vehicle shipping service delivering a car directly to a driveway",
     tag: "Convenient",
-    tagColor: "bg-green-500",
+    tagColor: "bg-emerald-700",
     href: "/services/door-to-door-transport",
   },
   {
@@ -20,7 +20,7 @@ const servicesWeOffer = [
     img: "/america-car-transport-open-car-shipping-affordable.png",
     alt: "America Car Transport open car shipping carrier moving multiple vehicles affordably",
     tag: "Best Value",
-    tagColor: "bg-blue-500",
+    tagColor: "bg-blue-700",
     href: "/services/open-auto-transport",
   },
   {
@@ -29,7 +29,7 @@ const servicesWeOffer = [
     img: "/america-car-transport-enclosed-auto-transport-premium-protection.png",
     alt: "America Car Transport enclosed auto transport truck providing premium protection for luxury vehicles",
     tag: "Premium",
-    tagColor: "bg-purple-500",
+    tagColor: "bg-purple-700",
     href: "/services/enclosed-auto-transport",
   },
   {
@@ -38,7 +38,7 @@ const servicesWeOffer = [
     img: "/america-car-transport-expedited-fast-vehicle-shipping.png",
     alt: "America Car Transport expedited fast vehicle shipping service for urgent deliveries",
     tag: "Fast",
-    tagColor: "bg-red-500",
+    tagColor: "bg-red-700",
     href: "/services/expedited-auto-transport",
   },
 ];

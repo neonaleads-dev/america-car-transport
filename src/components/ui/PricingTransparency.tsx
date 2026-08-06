@@ -135,7 +135,7 @@ export default function PricingTransparency() {
 
             <div className="relative mb-12 mt-16">
               {/* Range Labels */}
-              <div className="flex justify-between text-xs font-bold text-slate-400 mb-2 uppercase tracking-widest">
+              <div className="flex justify-between text-xs font-bold text-slate-700 mb-2 uppercase tracking-widest">
                 <span>Low End</span>
                 <span>Avg. Paid</span>
                 <span>High End</span>
@@ -158,7 +158,7 @@ export default function PricingTransparency() {
               >
                 <div className="flex w-[100vw] gap-[2px]">
                    {ticks.map((_, i) => (
-                    <div key={i} className="flex-1 h-full bg-blue-600 rounded-full" style={{ minWidth: 'calc((100% - (39 * 2px)) / 40)' }}></div>
+                    <div key={i} className="flex-1 h-full bg-blue-700 rounded-full" style={{ minWidth: 'calc((100% - (39 * 2px)) / 40)' }}></div>
                   ))}
                 </div>
               </motion.div>
@@ -168,11 +168,11 @@ export default function PricingTransparency() {
                 initial={{ opacity: 0, left: "0%" }}
                 animate={isInView ? { opacity: 1, left: `${percentage}%` } : { opacity: 0, left: "0%" }}
                 transition={{ duration: 0.8, ease: "backOut" }}
-                className="absolute -top-14 transform -translate-x-1/2 bg-blue-500 text-white text-xs font-bold py-2 px-3 rounded-lg shadow-lg shadow-blue-500/30 whitespace-nowrap z-10 flex flex-col items-center"
+                className="absolute -top-14 transform -translate-x-1/2 bg-blue-700 text-white text-xs font-bold py-2 px-3 rounded-lg shadow-lg shadow-blue-700/30 whitespace-nowrap z-10 flex flex-col items-center"
               >
                 Average paid on this route: ${displayAvg.toLocaleString()}
                 {/* Little triangle pointing down */}
-                <div className="absolute -bottom-1 w-2 h-2 bg-blue-500 rotate-45"></div>
+                <div className="absolute -bottom-1 w-2 h-2 bg-blue-700 rotate-45"></div>
               </motion.div>
             </div>
 
