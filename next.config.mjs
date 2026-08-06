@@ -5,6 +5,9 @@ const nextConfig = {
   },
   outputFileTracing: false, // Disables trace scanning for 20-30 second ultra-fast Vercel builds!
   swcMinify: true,
+  experimental: {
+    optimizeCss: true,
+  },
   async redirects() {
     return [
       {
