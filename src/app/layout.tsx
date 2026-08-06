@@ -52,7 +52,8 @@ export default function RootLayout({
         <link 
           rel="preload" 
           as="image" 
-          href="/hero-background-truck-bright.jpg" 
+          href="/hero-background-truck-bright.webp" 
+          type="image/webp"
           // @ts-ignore
           fetchpriority="high" 
         />

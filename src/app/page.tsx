@@ -112,7 +112,7 @@ export default function Home() {
         {/* Full Scenic Background Image Layer */}
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <img 
-            src="/hero-background-truck-bright.jpg" 
+            src="/hero-background-truck-bright.webp" 
             alt="America Car Transport Carrier Truck Driving Along Scenic Coast Highway at Sunset" 
             // @ts-ignore
             fetchpriority="high"
