@@ -42,5 +42,16 @@
     "sharp": "^0.35.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  }
+  },
+  "browserslist": [
+    "chrome >= 92",
+    "firefox >= 90",
+    "safari >= 15.4",
+    "edge >= 92",
+    "ios >= 15.4",
+    "opera >= 78",
+    "not dead",
+    "not op_mini all",
+    "not and_uc > 0"
+  ]
 }
