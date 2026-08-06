@@ -5,24 +5,25 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
+import dynamic from "next/dynamic";
 import AnimatedText from "@/components/ui/AnimatedText";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
-import PricingTransparency from "@/components/ui/PricingTransparency";
-import DestinationsMap from "@/components/ui/DestinationsMap";
-import BookingProcess from "@/components/ui/BookingProcess";
-import TrustedSection from "@/components/ui/TrustedSection";
-import ServicesCarousel from "@/components/ui/ServicesCarousel";
-import B2BCarousel from "@/components/ui/B2BCarousel";
-import CTABanner from "@/components/ui/CTABanner";
-import FAQSection from "@/components/ui/FAQSection";
-import TestimonialsSection from "@/components/ui/TestimonialsSection";
 import RecentShipmentsTicker from "@/components/ui/RecentShipmentsTicker";
-import PopularRoutes from "@/components/ui/PopularRoutes";
 import StructuredData from "@/components/seo/StructuredData";
 import Footer from "@/components/ui/Footer";
 import { ShieldCheck, Truck, Clock, CheckCircle2, Phone, Star, Award, Shield } from "lucide-react";
 
-gsap.registerPlugin(ScrollTrigger, CustomEase);
+// Dynamic Import Below-the-Fold Components for JS Bundle Code-Splitting
+const PricingTransparency = dynamic(() => import("@/components/ui/PricingTransparency"));
+const DestinationsMap = dynamic(() => import("@/components/ui/DestinationsMap"));
+const BookingProcess = dynamic(() => import("@/components/ui/BookingProcess"));
+const TrustedSection = dynamic(() => import("@/components/ui/TrustedSection"));
+const ServicesCarousel = dynamic(() => import("@/components/ui/ServicesCarousel"));
+const B2BCarousel = dynamic(() => import("@/components/ui/B2BCarousel"));
+const CTABanner = dynamic(() => import("@/components/ui/CTABanner"));
+const FAQSection = dynamic(() => import("@/components/ui/FAQSection"));
+const TestimonialsSection = dynamic(() => import("@/components/ui/TestimonialsSection"));
+const PopularRoutes = dynamic(() => import("@/components/ui/PopularRoutes"));
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -30,25 +31,33 @@ export default function Home() {
   const calcRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const smoothEase = CustomEase.create("smooth", "M0,0 C0.25,1 0.25,1 1,1");
-    
-    // Simple fast nav entry
-    if (navRef.current) {
-      gsap.fromTo(
-        navRef.current.children,
-        { y: -20, opacity: 0 },
-        { y: 0, opacity: 1, stagger: 0.1, duration: 0.8, ease: smoothEase }
-      );
-    }
+    let ctx: gsap.Context;
+    const timer = requestAnimationFrame(() => {
+      gsap.registerPlugin(ScrollTrigger, CustomEase);
+      const smoothEase = CustomEase.create("smooth", "M0,0 C0.25,1 0.25,1 1,1");
+      
+      // Simple fast nav entry
+      if (navRef.current) {
+        gsap.fromTo(
+          navRef.current.children,
+          { y: -20, opacity: 0 },
+          { y: 0, opacity: 1, stagger: 0.1, duration: 0.8, ease: smoothEase }
+        );
+      }
 
-    // Slide up calculator
-    if (calcRef.current) {
-      gsap.fromTo(
-        calcRef.current,
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: smoothEase, delay: 0.2 }
-      );
-    }
+      // Slide up calculator
+      if (calcRef.current) {
+        gsap.fromTo(
+          calcRef.current,
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: smoothEase, delay: 0.2 }
+        );
+      }
+    });
+
+    return () => {
+      cancelAnimationFrame(timer);
+    };
   }, []);
 
   return (
@@ -108,7 +117,7 @@ export default function Home() {
             // @ts-ignore
             fetchpriority="high"
             loading="eager"
-            className="w-full h-full object-cover object-center blur-[2px] contrast-[1.05] saturate-[1.05] scale-[1.02]"
+            className="w-full h-full object-cover object-center"
           />
           {/* Very subtle light overlay to make text pop without hiding the picture */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/20 to-transparent"></div>
