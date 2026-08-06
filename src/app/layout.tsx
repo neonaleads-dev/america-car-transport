@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
-import { InlineTailwind } from "@/components/ui/InlineTailwind";
+import "./globals.css";
 const inter = Inter({ 
   subsets: ["latin"], 
   variable: "--font-inter",
@@ -47,7 +47,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
       <head>
-        <InlineTailwind />
         <meta name="google-site-verification" content="ddgFC7lCCFGcRISIspal82FrdtgAL6wFuWAVL5V6Kg8" />
         <link rel="preconnect" href="https://www.americacartransport.com" />
         <link 
