@@ -301,7 +301,7 @@ export default function QuoteCalculator() {
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
             <span className="text-green-700 font-semibold text-xs sm:text-sm">Instant Quote — 30 Secs</span>
-            <span className="bg-amber-100 text-amber-800 text-[10px] sm:text-[11px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full border border-amber-200">$25 OFF Applied</span>
+            <span className="bg-emerald-100 text-emerald-800 text-[10px] sm:text-[11px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full border border-emerald-200">Online Quote Promo: $25 OFF</span>
           </div>
           <h2 className="text-base sm:text-xl font-bold text-slate-900 tracking-tight">Get Your Free Car Shipping Quote</h2>
         </div>
@@ -650,8 +650,8 @@ export default function QuoteCalculator() {
               
               <div className="bg-[#f8fafc] border border-slate-200/90 rounded-2xl p-6 w-full mb-6 text-left space-y-3">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-                  <span className="text-xs font-bold text-slate-500 uppercase">Discount Code</span>
-                  <span className="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">$25 OFF Applied</span>
+                  <span className="text-xs font-bold text-slate-500 uppercase">Promotion Applied</span>
+                  <span className="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Online Quote Promo (-$25)</span>
                 </div>
                 <div className="text-xs text-slate-700 font-medium leading-relaxed">
                   Our dispatch specialists are matching your vehicle with active carriers on your route. We will reach out to you at <strong className="text-slate-900">{formData.phone}</strong> and email <strong className="text-slate-900">{formData.email}</strong> shortly with your guaranteed rate.
