@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
             Verified Customer Feedback
           </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
-            Trusted by Over 289,000 Vehicle Owners
+            Trusted by Over 10,450+ Vehicle Owners
           </h2>
           <p className="text-lg text-slate-600 font-medium max-w-2xl mx-auto">
             See what real car buyers, collectors, and families say about our nationwide door-to-door car shipping network.

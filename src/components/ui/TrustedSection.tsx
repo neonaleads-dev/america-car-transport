@@ -19,22 +19,22 @@ export default function TrustedSection() {
             />
           </div>
 
-          {/* Top Left Badge: 10+ Years */}
+          {/* Top Left Badge: FMCSA Licensed & Bonded */}
           <div className="feature-card absolute top-4 left-4 md:top-8 md:-left-12 bg-blue-600 text-white rounded-3xl p-6 md:p-8 shadow-2xl shadow-blue-600/30 flex flex-col items-center justify-center transform -rotate-2 hover:rotate-0 transition-transform duration-300">
-            <span className="text-3xl md:text-5xl font-black tracking-tighter mb-1">10+</span>
-            <span className="text-sm md:text-base font-bold uppercase tracking-widest text-blue-100 text-center">
-              Years of<br/>Excellence
+            <span className="text-2xl md:text-3xl font-black tracking-tight mb-1">FMCSA</span>
+            <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-blue-100 text-center">
+              Licensed &amp;<br/>Bonded Broker
             </span>
           </div>
 
-          {/* Bottom Right Badge: 289k+ Clients */}
+          {/* Bottom Right Badge: 10,450+ Verified Reviews */}
           <div className="feature-card absolute bottom-4 right-4 md:bottom-8 md:-right-12 bg-white rounded-2xl p-6 shadow-2xl shadow-slate-200 flex items-center gap-4 hover:-translate-y-2 transition-transform duration-300 border border-slate-50">
             <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
               <UserCheck className="w-7 h-7" />
             </div>
             <div>
-              <div className="stat-number text-2xl md:text-3xl font-black text-slate-900 tracking-tight" data-count="289">289k+</div>
-              <div className="text-sm md:text-base font-medium text-slate-500">Happy Clients</div>
+              <div className="stat-number text-2xl md:text-3xl font-black text-slate-900 tracking-tight">10,450+</div>
+              <div className="text-sm md:text-base font-medium text-slate-500">Verified Reviews</div>
             </div>
           </div>
         </div>

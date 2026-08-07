@@ -52,13 +52,13 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-bold text-base mb-5 tracking-wide">Ship by Vehicle Type</h3>
           <ul className="space-y-2.5 text-xs md:text-sm">
-            <li><Link href="/services" className="hover:text-blue-400 transition-colors font-medium">Classic &amp; Antique Cars</Link></li>
-            <li><Link href="/services" className="hover:text-blue-400 transition-colors font-medium">SUVs, Trucks &amp; Duallys</Link></li>
-            <li><Link href="/services" className="hover:text-blue-400 transition-colors font-medium">Electric Vehicles (EVs)</Link></li>
-            <li><Link href="/services" className="hover:text-blue-400 transition-colors font-medium">Motorcycles &amp; Powersports</Link></li>
-            <li><Link href="/services" className="hover:text-blue-400 transition-colors font-medium">Exotic &amp; Luxury Sports Cars</Link></li>
-            <li><Link href="/#b2b" className="hover:text-blue-400 transition-colors font-medium">Commercial Dealer Fleets</Link></li>
-            <li><Link href="/#b2b" className="hover:text-blue-400 transition-colors font-medium">Copart &amp; Manheim Auctions</Link></li>
+            <li><Link href="/services/classic-and-exotic-car-transport" className="hover:text-blue-400 transition-colors font-medium">Classic &amp; Antique Cars</Link></li>
+            <li><Link href="/ship-a-car/suv-and-truck" className="hover:text-blue-400 transition-colors font-medium">SUVs, Trucks &amp; Duallys</Link></li>
+            <li><Link href="/services/open-auto-transport" className="hover:text-blue-400 transition-colors font-medium">Electric Vehicles (EVs)</Link></li>
+            <li><Link href="/ship-a-car/motorcycle" className="hover:text-blue-400 transition-colors font-medium">Motorcycles &amp; Powersports</Link></li>
+            <li><Link href="/services/classic-and-exotic-car-transport" className="hover:text-blue-400 transition-colors font-medium">Exotic &amp; Luxury Sports Cars</Link></li>
+            <li><Link href="/services/dealer-and-auction-transport" className="hover:text-blue-400 transition-colors font-medium">Commercial Dealer Fleets</Link></li>
+            <li><Link href="/services/dealer-and-auction-transport" className="hover:text-blue-400 transition-colors font-medium">Copart &amp; Manheim Auctions</Link></li>
           </ul>
         </div>
 
