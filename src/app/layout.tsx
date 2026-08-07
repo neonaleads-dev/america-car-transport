@@ -26,13 +26,6 @@ export const metadata: Metadata = {
   verification: {
     google: "ddgFC7lCCFGcRISIspal82FrdtgAL6wFuWAVL5V6Kg8",
   },
-  alternates: {
-    canonical: "https://www.americacartransport.com",
-    languages: {
-      "en-US": "https://www.americacartransport.com",
-      "es-US": "https://www.americacartransport.com/es",
-    },
-  },
   openGraph: {
     url: "https://www.americacartransport.com",
     siteName: "America Car Transport",

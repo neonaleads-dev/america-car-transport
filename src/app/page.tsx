@@ -23,6 +23,18 @@ const FAQSection = dynamic(() => import("@/components/ui/FAQSection"));
 const TestimonialsSection = dynamic(() => import("@/components/ui/TestimonialsSection"));
 const PopularRoutes = dynamic(() => import("@/components/ui/PopularRoutes"));
 
+export const metadata = {
+  title: "America's Trusted Network for Vehicle Shipping",
+  description: "Compare verified car carriers, get instant quotes, and ship your vehicle safely anywhere in America.",
+  alternates: {
+    canonical: "https://www.americacartransport.com",
+    languages: {
+      "en-US": "https://www.americacartransport.com",
+      "es-US": "https://www.americacartransport.com/es",
+    },
+  },
+};
+
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -144,7 +156,7 @@ export default function Home() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-700 font-semibold leading-relaxed max-w-xl mb-8 drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-              America&apos;s leading bonded &amp; insured auto transport network. Compare verified carriers, lock in guaranteed rates, and enjoy zero upfront deposits.
+              America&apos;s leading bonded &amp; insured <Link href="/services" className="text-blue-700 underline decoration-blue-400/50 hover:decoration-blue-600 transition-colors">auto transport</Link> network. Compare verified carriers, lock in guaranteed rates, and enjoy zero upfront deposits.
             </p>
 
             {/* Google Rating & BBB Accreditation Badges */}

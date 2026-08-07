@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getAllTopStates } from "@/data/states";
 import Footer from "@/components/ui/Footer";
 import InteractiveUSMap from "@/components/ui/InteractiveUSMap";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { MapPin, Search, ArrowRight, ShieldCheck, Truck, Star } from "lucide-react";
 
 export const metadata = {
@@ -11,33 +12,21 @@ export const metadata = {
   description: "Explore America Car Transport coverage across all 50 states. Compare door-to-door car shipping rates, popular interstate routes, and local delivery hubs.",
   alternates: {
     canonical: "https://www.americacartransport.com/locations",
+    languages: {
+      "en-US": "https://www.americacartransport.com/locations",
+      "es-US": "https://www.americacartransport.com/es/ubicaciones",
+    },
   },
 };
 
 export default function LocationsHubPage() {
   const topStates = getAllTopStates();
 
-  const schemaGraph = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://www.americacartransport.com/locations#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com" },
-          { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://www.americacartransport.com/locations" }
-        ]
-      }
     ]
   };
 
   return (
     <main className="min-h-screen bg-slate-50 font-sans">
-      {/* Schema Injection */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
-      />
       
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
@@ -75,13 +64,7 @@ export default function LocationsHubPage() {
       </header>
 
       {/* Visual Breadcrumb Bar */}
-      <div className="bg-slate-900 border-b border-slate-800 py-3 px-4 md:px-8 text-xs font-semibold text-slate-400">
-        <div className="max-w-[1400px] mx-auto flex items-center gap-2">
-          <Link href="/" className="hover:text-blue-400 transition-colors">Home</Link>
-          <span className="text-slate-700">/</span>
-          <span className="text-white font-bold">Locations</span>
-        </div>
-      </div>
+      <Breadcrumbs items={[{ label: "Locations", url: "/locations" }]} />
 
       {/* Hero Section */}
       <section className="relative px-4 md:px-8 lg:px-24 pt-12 pb-16 bg-[#F8FAFC] bg-grid-pattern border-b border-slate-200">

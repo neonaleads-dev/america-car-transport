@@ -4,12 +4,17 @@ import { ShieldCheck, Phone, Star, ChevronRight, MapPin, DollarSign, Compass, Za
 import Footer from "@/components/ui/Footer";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import ServicesComparisonDashboard from "@/components/ui/ServicesComparisonDashboard";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 export const metadata = {
   title: "Auto Transport Services | Car Shipping Options",
   description: "Explore all America Car Transport services — open, enclosed, door-to-door, terminal, and expedited car shipping. Get an instant quote for any option.",
   alternates: {
     canonical: "https://www.americacartransport.com/services",
+    languages: {
+      "en-US": "https://www.americacartransport.com/services",
+      "es-US": "https://www.americacartransport.com/es/servicios",
+    },
   },
 };
 
@@ -35,14 +40,7 @@ const itemListSchema = {
   ]
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.americacartransport.com/services" }
-  ]
-};
+
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -88,7 +86,6 @@ export default function ServicesHubPage() {
     <>
       {/* Schema Graph Injections */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       {/* Global Header Navigation */}
@@ -130,14 +127,8 @@ export default function ServicesHubPage() {
 
       <main className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans">
         
-        {/* Clean Breadcrumb Bar */}
-        <div className="bg-slate-900 border-b border-slate-800 py-3 px-4 md:px-8 lg:px-24 text-xs font-semibold text-slate-400">
-          <div className="max-w-[1400px] mx-auto flex items-center gap-2">
-            <Link href="/" className="hover:text-blue-400 transition-colors">Home</Link>
-            <span className="text-slate-700">/</span>
-            <span className="text-white font-bold">Services</span>
-          </div>
-        </div>
+        {/* Dynamic Breadcrumb Component */}
+        <Breadcrumbs items={[{ label: "Services", url: "/services" }]} />
 
         {/* HERO SECTION — SLEEK DARK BLUE HERO BANNER WITH EMBEDDED CALCULATOR */}
         <section id="services-quote-widget" className="py-12 md:py-20 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white border-b border-slate-800 px-4 md:px-8 lg:px-24 relative overflow-hidden">

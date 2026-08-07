@@ -82,9 +82,9 @@ export default function FAQSection() {
                   aria-controls={`faq-answer-${index}`}
                   className="w-full text-left px-6 py-5 md:px-8 md:py-6 flex justify-between items-center focus:outline-none"
                 >
-                  <span className={`text-lg md:text-xl font-bold pr-8 transition-colors duration-300 ${isOpen ? 'text-blue-600' : 'text-slate-900'}`}>
+                  <h3 className={`text-lg md:text-xl font-bold pr-8 transition-colors duration-300 ${isOpen ? 'text-blue-600' : 'text-slate-900'}`}>
                     {faq.question}
-                  </span>
+                  </h3>
                   <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500'}`}>
                     {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                   </div>
