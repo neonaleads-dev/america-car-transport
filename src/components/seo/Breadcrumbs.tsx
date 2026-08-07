@@ -27,7 +27,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         "@type": "ListItem",
         "position": index + 2,
         "name": item.label,
-        "item": \`https://www.americacartransport.com\${item.url}\`
+        "item": `https://www.americacartransport.com${item.url}`
       }))
     ]
   };
