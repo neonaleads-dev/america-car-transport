@@ -104,6 +104,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/es/transporte-de-autos-estados-unidos`,
+      lastModified,
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
   ];
 
   // Specific Service Category Pages

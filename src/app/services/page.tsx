@@ -12,8 +12,10 @@ export const metadata = {
   alternates: {
     canonical: "https://www.americacartransport.com/services",
     languages: {
+      "en": "https://www.americacartransport.com/services",
       "en-US": "https://www.americacartransport.com/services",
-      "es-US": "https://www.americacartransport.com/es/servicios",
+      "es": "https://www.americacartransport.com/es/transporte-de-autos-estados-unidos",
+      "es-US": "https://www.americacartransport.com/es/transporte-de-autos-estados-unidos",
     },
   },
 };

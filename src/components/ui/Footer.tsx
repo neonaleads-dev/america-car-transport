@@ -72,6 +72,7 @@ export default function Footer() {
             <li><Link href="/licensing-insurance" className="hover:text-blue-400 transition-colors font-medium">FMCSA &amp; USDOT Licensing</Link></li>
             <li><Link href="/reviews" className="hover:text-blue-400 transition-colors font-medium">Verified Customer Reviews</Link></li>
             <li><Link href="/resources/how-to-avoid-car-shipping-scams" className="hover:text-blue-400 transition-colors font-medium">Scam Avoidance Guide</Link></li>
+            <li><Link href="/es/transporte-de-autos-estados-unidos" className="hover:text-blue-400 transition-colors font-medium">Transporte de Autos en EE.UU. (Español)</Link></li>
             <li><Link href="/tools/car-shipping-cost-calculator" className="hover:text-blue-400 transition-colors font-medium">Car Shipping Cost Calculator</Link></li>
             <li><Link href="/privacy-policy" className="hover:text-blue-400 transition-colors font-medium">Privacy Policy</Link></li>
             <li><Link href="/terms" className="hover:text-blue-400 transition-colors font-medium">Terms &amp; Conditions</Link></li>
