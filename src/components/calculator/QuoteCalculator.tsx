@@ -245,27 +245,33 @@ export default function QuoteCalculator() {
     return formData.vehicles.every(v => v.year && v.make && v.model);
   };
 
-  const calculateQuote = (): { price: number; distance: number } | null => {
+  const calculateQuote = (): { minPrice: number; maxPrice: number; price: number; distance: number } | null => {
     if (!locationFrom || !locationTo) return null;
     
     // 1. Calculate physical distance
     const distance = getDistanceMiles(locationFrom.lat, locationFrom.lon, locationTo.lat, locationTo.lon);
     
-    // 2. Base rate is roughly $1.20 per mile for open transport, with a $350 base minimum.
-    // Long distances get a slight bulk discount (e.g., $0.80 per mile for over 1000 miles)
-    const ratePerMile = distance > 1000 ? 0.80 : 1.20;
-    const basePrice = Math.max(350, Math.floor(distance * ratePerMile));
+    // 2. Base rate formula: $0.50 per mile (min) to $0.70 per mile (max), with $350 min / $450 max base for short trips
+    const minBase = Math.max(350, Math.floor(distance * 0.50));
+    const maxBase = Math.max(450, Math.floor(distance * 0.70));
 
     // 3. Accumulate per vehicle
-    let total = 0;
+    let minTotal = 0;
+    let maxTotal = 0;
     const typeModifier = formData.transportType === "enclosed" ? 1.5 : 1; // 50% more for enclosed
     
     formData.vehicles.forEach(v => {
       const conditionModifier = v.condition === "non-running" ? 150 : 0;
-      total += Math.floor(basePrice * typeModifier + conditionModifier);
+      minTotal += Math.floor(minBase * typeModifier + conditionModifier);
+      maxTotal += Math.floor(maxBase * typeModifier + conditionModifier);
     });
     
-    return { price: total, distance: Math.floor(distance) };
+    return { 
+      minPrice: minTotal, 
+      maxPrice: maxTotal, 
+      price: Math.round((minTotal + maxTotal) / 2), 
+      distance: Math.floor(distance) 
+    };
   };
 
   const slideVariants = {
@@ -653,9 +659,9 @@ export default function QuoteCalculator() {
                 <div className="text-xs font-bold uppercase tracking-wider text-blue-100 mb-1">Estimated Car Shipping Cost</div>
                 <div className="text-2xl sm:text-3xl font-black tracking-tight my-1 text-white">
                   {quoteData ? (
-                    <>${Math.round((quoteData.price * 0.9) / 10) * 10} – ${Math.round((quoteData.price * 1.15) / 10) * 10}</>
+                    <>${quoteData.minPrice} – ${quoteData.maxPrice}</>
                   ) : (
-                    <>$650 – $1,050</>
+                    <>$650 – $910</>
                   )}
                 </div>
                 <div className="flex justify-center items-center gap-3 text-xs font-bold text-blue-100 mt-2 pt-2 border-t border-blue-400/40">

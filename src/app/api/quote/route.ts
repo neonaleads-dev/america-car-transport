@@ -38,9 +38,10 @@ export async function POST(req: Request) {
     console.log(`Vehicles: ${vehicleSummary}`);
     console.log("==========================================");
 
-    // 2. Free Google Sheets Integration (If GOOGLE_SHEET_WEBHOOK_URL is set)
-    if (process.env.GOOGLE_SHEET_WEBHOOK_URL) {
-      await fetch(process.env.GOOGLE_SHEET_WEBHOOK_URL, {
+    // 2. Free Google Sheets / Zapier / Webhook Integration
+    const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || process.env.WEBHOOK_URL || process.env.ZAPIER_WEBHOOK_URL;
+    if (webhookUrl) {
+      await fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -52,15 +53,38 @@ export async function POST(req: Request) {
           origin: `${zipFrom} (${locationFrom?.city || ""}, ${locationFrom?.state || ""})`,
           destination: `${zipTo} (${locationTo?.city || ""}, ${locationTo?.state || ""})`,
           distance: `${distance} miles`,
-          calculatedPrice: `$${calculatedPrice}`,
+          calculatedPrice: typeof calculatedPrice === "string" ? calculatedPrice : `$${calculatedPrice}`,
           transportType,
           vehicles: vehicleSummary,
         }),
-      }).catch((err) => console.error("Google Sheet webhook error:", err));
+      }).catch((err) => console.error("Webhook dispatch error:", err));
     }
 
-    // 3. Free Resend Email Delivery (If RESEND_API_KEY is set)
+    // 3. Formspree Email Fallback (If FORMSPREE_URL is set)
+    if (process.env.FORMSPREE_URL) {
+      await fetch(process.env.FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          name: fullName,
+          phone,
+          email,
+          pickupDate,
+          origin: `${zipFrom} (${locationFrom?.city || ""}, ${locationFrom?.state || ""})`,
+          destination: `${zipTo} (${locationTo?.city || ""}, ${locationTo?.state || ""})`,
+          distance: `${distance} miles`,
+          priceEstimate: typeof calculatedPrice === "string" ? calculatedPrice : `$${calculatedPrice}`,
+          transportType,
+          vehicles: vehicleSummary,
+        }),
+      }).catch((err) => console.error("Formspree dispatch error:", err));
+    }
+
+    // 4. Resend Email Delivery (If RESEND_API_KEY is set)
     if (process.env.RESEND_API_KEY) {
+      const recipientEmail = process.env.LEAD_NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || "support@americacartransport.com";
+      const senderEmail = process.env.RESEND_SENDER_EMAIL || "onboarding@resend.dev";
+
       await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
@@ -68,8 +92,8 @@ export async function POST(req: Request) {
           Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: process.env.RESEND_SENDER_EMAIL || "onboarding@resend.dev",
-          to: process.env.LEAD_NOTIFICATION_EMAIL || "support@americacartransport.com",
+          from: senderEmail,
+          to: recipientEmail,
           subject: `🚗 New Lead: ${fullName} (${locationFrom?.city || zipFrom} -> ${locationTo?.city || zipTo})`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; background-color: #ffffff;">
@@ -83,7 +107,7 @@ export async function POST(req: Request) {
                 <tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Destination:</td><td style="padding: 8px 0; color: #0f172a;">${zipTo} (${locationTo?.city || ""}, ${locationTo?.state || ""})</td></tr>
                 <tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Distance:</td><td style="padding: 8px 0; color: #0f172a;">${distance} miles</td></tr>
                 <tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Transport Type:</td><td style="padding: 8px 0; color: #0f172a; text-transform: capitalize;">${transportType} Carrier</td></tr>
-                <tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Estimated Quote:</td><td style="padding: 8px 0; color: #16a34a; font-size: 18px; font-weight: bold;">$${calculatedPrice}</td></tr>
+                <tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Estimated Quote:</td><td style="padding: 8px 0; color: #16a34a; font-size: 18px; font-weight: bold;">${typeof calculatedPrice === "string" ? calculatedPrice : `$${calculatedPrice}`}</td></tr>
                 <tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Vehicles:</td><td style="padding: 8px 0; color: #0f172a;">${vehicleSummary}</td></tr>
               </table>
             </div>
