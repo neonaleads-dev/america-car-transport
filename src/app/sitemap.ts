@@ -47,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/resources`,
       lastModified,
       changeFrequency: "weekly" as const,
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/licensing-insurance`,
@@ -102,7 +102,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/es/servicios`,
       lastModified,
       changeFrequency: "weekly" as const,
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/es/transporte-de-autos-estados-unidos`,
@@ -112,11 +112,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Specific Service Category Pages
+  // Specific Service Category Pages (All 13 Service Routes)
   const servicePages = [
     "open-auto-transport",
     "enclosed-auto-transport",
     "door-to-door-transport",
+    "door-to-door-auto-transport",
     "expedited-auto-transport",
     "terminal-to-terminal-shipping",
     "hawaii-car-shipping",
@@ -129,10 +130,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
     lastModified,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
+    changeFrequency: "daily" as const,
+    priority: 0.9,
   }));
 
+  // Vehicle Category Pages
   const vehiclePages = [
     "motorcycle",
     "suv-and-truck",
@@ -140,11 +142,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((slug) => ({
     url: `${baseUrl}/ship-a-car/${slug}`,
     lastModified,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
+    changeFrequency: "daily" as const,
+    priority: 0.9,
   }));
 
-  // State Landing Pages
+  // State Landing Pages (All 50 US States)
   const stateSlugs = getAllStateSlugs();
   const statePages = stateSlugs.map((slug) => ({
     url: `${baseUrl}/locations/${slug}`,
@@ -153,14 +155,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Route Landing Pages
+  // Interstate Route Landing Pages (All 11 Active Corridor Routes)
   const routePages = [
     "california-to-florida",
-    "california-to-texas",
-    "texas-to-california",
-    "california-to-new-york",
-    "new-york-to-california",
     "california-to-illinois",
+    "california-to-new-york",
+    "california-to-texas",
+    "florida-to-california",
+    "florida-to-illinois",
+    "florida-to-new-jersey",
+    "florida-to-new-york",
+    "new-york-to-california",
+    "new-york-to-florida",
+    "texas-to-california",
   ].map((slug) => ({
     url: `${baseUrl}/routes/${slug}`,
     lastModified,
@@ -175,8 +182,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((slug) => ({
     url: `${baseUrl}/resources/${slug}`,
     lastModified,
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
   }));
 
   return [

@@ -77,22 +77,6 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "How much does it cost per mile to drive a car (IRS rate)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The 2022 IRS business mileage rate was 58.5 cents per mile for the first half of the year, raised mid-year to 62.5 cents per mile from July through December 2022 due to fuel price spikes. Multiply the IRS rate by your route's mileage to estimate your true per-mile cost of driving (fuel, wear, depreciation) versus shipping."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the current freight rate per mile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "General dry van freight has been running roughly $2.00 to $2.80 per mile on the spot market through 2026. However, car haulers price per vehicle unit (carrying 7–10 cars per truck) based on route demand, vehicle size, and transport method rather than a flat per-mile freight rate."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "What is the cheapest way to ship a car within the USA?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -618,17 +602,17 @@ export default function CarShippingCostCalculatorPage() {
                     </thead>
                     <tbody className="divide-y divide-slate-200 text-sm font-medium text-slate-700">
                       <tr className="hover:bg-slate-50 transition-colors">
-                        <td className="p-4 font-bold text-slate-900">Under 500 miles</td>
-                        <td className="p-4 bg-cyan-50/50 font-extrabold text-slate-900">$400 – $900</td>
-                        <td className="p-4 font-semibold text-slate-600">$1.20 – $2.20</td>
+                        <td className="p-4 font-bold text-slate-900">Under 500 miles (Short-haul)</td>
+                        <td className="p-4 bg-cyan-50/50 font-extrabold text-slate-900">$400 – $850</td>
+                        <td className="p-4 font-semibold text-slate-600">$1.20 – $2.00</td>
                       </tr>
                       <tr className="hover:bg-slate-50 transition-colors">
-                        <td className="p-4 font-bold text-slate-900">500 – 1,500 miles</td>
-                        <td className="p-4 bg-cyan-50/50 font-extrabold text-slate-900">$700 – $1,300</td>
+                        <td className="p-4 font-bold text-slate-900">500 – 1,500 miles (Mid-haul)</td>
+                        <td className="p-4 bg-cyan-50/50 font-extrabold text-slate-900">$700 – $1,250</td>
                         <td className="p-4 font-semibold text-slate-600">$0.70 – $1.00</td>
                       </tr>
                       <tr className="hover:bg-slate-50 transition-colors">
-                        <td className="p-4 font-bold text-slate-900">1,500+ miles (cross-country)</td>
+                        <td className="p-4 font-bold text-slate-900">1,500+ miles (Cross-country)</td>
                         <td className="p-4 bg-cyan-50/50 font-extrabold text-slate-900">$1,000 – $1,800</td>
                         <td className="p-4 font-semibold text-slate-600">$0.40 – $0.70</td>
                       </tr>
@@ -803,6 +787,71 @@ export default function CarShippingCostCalculatorPage() {
           </div>
         </section>
 
+        {/* H2: How to Save Money on Car Shipping */}
+        <section className="py-20 px-4 md:px-8 lg:px-24 bg-white border-b border-slate-200">
+          <div className="max-w-[1400px] mx-auto">
+            <div className="text-center mb-12">
+              <div className="text-cyan-600 font-extrabold tracking-widest uppercase text-xs mb-3">Cost Optimization Guide</div>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                How to Save Money on Car Shipping
+              </h2>
+              <p className="text-slate-600 font-medium text-lg max-w-2xl mx-auto">
+                Practical strategies to lower your vehicle shipping quote without compromising safety or reliability.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div className="w-10 h-10 bg-cyan-100 text-cyan-700 rounded-xl flex items-center justify-center font-black text-lg mb-4">1</div>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Choose Open Auto Transport</h3>
+                <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                  Open carrier shipping is 30% to 60% cheaper than enclosed transport and handles over 90% of all vehicle shipments in the U.S.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div className="w-10 h-10 bg-cyan-100 text-cyan-700 rounded-xl flex items-center justify-center font-black text-lg mb-4">2</div>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Book 1–2 Weeks in Advance</h3>
+                <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                  Advance booking gives dispatchers time to pair your vehicle with trucks already running your route, avoiding expensive last-minute expedited surcharges.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div className="w-10 h-10 bg-cyan-100 text-cyan-700 rounded-xl flex items-center justify-center font-black text-lg mb-4">3</div>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Be Flexible on Pickup Dates</h3>
+                <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                  Allowing a 3 to 5-day pickup window instead of demanding an exact date saves 10% to 20% on carrier dispatch rates.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div className="w-10 h-10 bg-cyan-100 text-cyan-700 rounded-xl flex items-center justify-center font-black text-lg mb-4">4</div>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Ship Outside Peak Seasons</h3>
+                <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                  Summer relocation months and fall/spring snowbird migrations drive up prices. Late winter and early spring offer the lowest baseline rates.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div className="w-10 h-10 bg-cyan-100 text-cyan-700 rounded-xl flex items-center justify-center font-black text-lg mb-4">5</div>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Ensure Vehicle is Operable</h3>
+                <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                  Non-running vehicles require winches and special loading equipment, adding $150 to $300. Inflate tires and fix minor starting issues beforehand.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div className="w-10 h-10 bg-cyan-100 text-cyan-700 rounded-xl flex items-center justify-center font-black text-lg mb-4">6</div>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Choose Zero-Deposit Brokers</h3>
+                <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                  Avoid paying upfront fees before a carrier is assigned. America Car Transport never charges upfront deposits until your driver is confirmed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* H2: Is This Estimate Binding? */}
         <section className="py-16 px-4 md:px-8 lg:px-24 bg-slate-50 border-b border-slate-200">
           <div className="max-w-[1000px] mx-auto text-center">
@@ -906,26 +955,6 @@ export default function CarShippingCostCalculatorPage() {
                 </h3>
                 <p className="text-slate-700 text-sm leading-relaxed font-medium">
                   A 1,000-mile shipment typically takes 3 to 5 days in transit, plus a pickup window of 1–3 days between booking and an available carrier arriving — so total door-to-door time usually lands between 4 and 8 days.
-                </p>
-              </div>
-
-              {/* FAQ 4 */}
-              <div className="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-cyan-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                <h3 className="font-bold text-slate-900 text-lg mb-2">
-                  How much does it cost per mile to drive a car (IRS rate)?
-                </h3>
-                <p className="text-slate-700 text-sm leading-relaxed font-medium">
-                  The 2022 IRS business mileage rate was 58.5 cents per mile for the first half of the year, raised mid-year to 62.5 cents per mile from July through December 2022 due to fuel price spikes. Multiply the IRS rate by your route&apos;s mileage to estimate your true per-mile cost of driving (fuel, wear, depreciation) versus shipping.
-                </p>
-              </div>
-
-              {/* FAQ 5 */}
-              <div className="bg-slate-50 hover:bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-cyan-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                <h3 className="font-bold text-slate-900 text-lg mb-2">
-                  What is the current freight rate per mile?
-                </h3>
-                <p className="text-slate-700 text-sm leading-relaxed font-medium">
-                  General dry van freight has been running roughly $2.00 to $2.80 per mile on the spot market through 2026. However, car haulers price per vehicle unit (carrying 7–10 cars per truck) based on route demand, vehicle size, and transport method rather than a flat per-mile freight rate.
                 </p>
               </div>
 

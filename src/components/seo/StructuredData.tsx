@@ -81,9 +81,33 @@ const schemaData = {
       "hasPart": [
         {
           "@type": "WebPage",
-          "name": "Car Shipping Cost Calculator (2026)",
+          "name": "Car Shipping Cost Calculator",
           "url": "https://www.americacartransport.com/tools/car-shipping-cost-calculator",
           "description": "Calculate instant auto transport quotes by route distance and vehicle type."
+        },
+        {
+          "@type": "WebPage",
+          "name": "Auto Shipping Services",
+          "url": "https://www.americacartransport.com/services",
+          "description": "Explore open, enclosed, door-to-door, expedited, and terminal auto shipping options."
+        },
+        {
+          "@type": "WebPage",
+          "name": "Locations Directory",
+          "url": "https://www.americacartransport.com/locations",
+          "description": "State-by-state vehicle shipping guides and local logistics hubs."
+        },
+        {
+          "@type": "WebPage",
+          "name": "Interstate Route Directory",
+          "url": "https://www.americacartransport.com/routes",
+          "description": "Compare distance, cost, and transit times across top US vehicle shipping corridors."
+        },
+        {
+          "@type": "WebPage",
+          "name": "Verified Customer Reviews",
+          "url": "https://www.americacartransport.com/reviews",
+          "description": "Read verified 4.9-star ratings and route-specific customer experiences."
         },
         {
           "@type": "WebPage",
@@ -99,21 +123,9 @@ const schemaData = {
         },
         {
           "@type": "WebPage",
-          "name": "Auto Shipping Services",
-          "url": "https://www.americacartransport.com/services",
-          "description": "Explore open, enclosed, door-to-door, expedited, and terminal auto shipping options."
-        },
-        {
-          "@type": "WebPage",
-          "name": "Locations & State Hubs Directory",
-          "url": "https://www.americacartransport.com/locations",
-          "description": "State-by-state vehicle shipping guides and local logistics hubs."
-        },
-        {
-          "@type": "WebPage",
-          "name": "Interstate Route Directory",
-          "url": "https://www.americacartransport.com/routes",
-          "description": "Compare distance, cost, and transit times across top US vehicle shipping corridors."
+          "name": "About America Car Transport",
+          "url": "https://www.americacartransport.com/about",
+          "description": "Learn about America's trusted bonded and insured auto transport logistics network."
         }
       ]
     },

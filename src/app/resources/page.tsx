@@ -15,6 +15,14 @@ export const metadata = {
 
 const RESOURCES = [
   {
+    title: "How to Avoid Car Shipping Scams (Official Checklist)",
+    desc: "Protect yourself from illegal lead generators and price bait-and-switch tactics. Verify USDOT/MC licenses and cargo insurance.",
+    category: "Consumer Protection",
+    href: "/resources/how-to-avoid-car-shipping-scams",
+    tag: "Essential Guide",
+    tagColor: "bg-red-600"
+  },
+  {
     title: "California Driving Laws (2026 Guide)",
     desc: "Fact-checked answers to the top 10 questions about California Vehicle Code rules, no-touch phone laws, speed buffers, and teen curfews.",
     category: "State Driving Rules",
