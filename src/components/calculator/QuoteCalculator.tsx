@@ -546,31 +546,6 @@ export default function QuoteCalculator() {
                 <Plus className="w-4 h-4" /> Add Another Vehicle
               </button>
 
-              {/* Instant Estimated Price Result Display */}
-              {isVehiclesValid() && (
-                <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 via-indigo-50 to-cyan-50 border border-blue-200/90 rounded-2xl shadow-sm">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">Instant Estimated Cost</span>
-                    <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200">No Email Required</span>
-                  </div>
-                  <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight my-1">
-                    {quoteData ? (
-                      <>${Math.round((quoteData.price * 0.9) / 10) * 10} – ${Math.round((quoteData.price * 1.15) / 10) * 10}</>
-                    ) : (
-                      <>$650 – $1,050</>
-                    )}
-                  </div>
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold text-slate-600">
-                    <span>Estimated transit: <strong>{quoteData ? (quoteData.distance < 500 ? "1–3 days" : quoteData.distance < 1500 ? "3–5 days" : "5–7 days") : "3–5 days"}</strong> ({quoteData ? quoteData.distance : 850} mi)</span>
-                    <span>•</span>
-                    <span className="capitalize">{formData.transportType} transport</span>
-                  </div>
-                  <p className="text-[11px] text-slate-500 font-medium mt-2 leading-tight">
-                    Real-time market range based on current route data. Zero upfront deposit.
-                  </p>
-                </div>
-              )}
-
               <div className="mt-auto pt-6 flex gap-3">
                 <button 
                   onClick={handleBack} 
@@ -581,9 +556,9 @@ export default function QuoteCalculator() {
                 <button 
                   onClick={handleNext}
                   disabled={!isVehiclesValid()}
-                  className="w-2/3 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-4 rounded-xl flex items-center justify-center gap-2 text-base md:text-lg shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0.5 disabled:opacity-40 disabled:bg-slate-300 disabled:from-slate-300 disabled:to-slate-300 disabled:shadow-none disabled:transform-none disabled:cursor-not-allowed cursor-pointer"
+                  className="w-2/3 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] hover:from-[#1d4ed8] hover:to-[#1e40af] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 text-base md:text-lg shadow-[0_8px_20px_-4px_rgba(37,99,235,0.4)] hover:shadow-[0_12px_28px_-4px_rgba(37,99,235,0.5)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0.5 disabled:opacity-40 disabled:bg-slate-300 disabled:from-slate-300 disabled:to-slate-300 disabled:shadow-none disabled:transform-none disabled:cursor-not-allowed cursor-pointer"
                 >
-                  Lock In Rate →
+                  Contact Details →
                 </button>
               </div>
             </motion.div>
@@ -591,25 +566,7 @@ export default function QuoteCalculator() {
 
           {step === 3 && (
             <motion.div key="step3" variants={slideVariants} initial="initial" animate="animate" exit="exit" className="flex flex-col flex-grow">
-              {/* Estimated Price Banner in Step 3 */}
-              <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider block">Estimated Price Range</span>
-                  <span className="text-lg font-black text-slate-900">
-                    {quoteData ? (
-                      <>${Math.round((quoteData.price * 0.9) / 10) * 10} – ${Math.round((quoteData.price * 1.15) / 10) * 10}</>
-                    ) : (
-                      <>$650 – $1,050</>
-                    )}
-                  </span>
-                </div>
-                <div className="text-right">
-                  <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200 block">Zero Upfront Deposit</span>
-                  <span className="text-xs text-slate-500 font-medium">Locked with carrier</span>
-                </div>
-              </div>
-
-              <label className="text-slate-600 text-sm font-medium mb-3">Lock in your exact carrier quote:</label>
+              <label className="text-slate-600 text-sm font-medium mb-4">Where should we send your instant rate?</label>
               
               <div className="space-y-3">
                 <div className="bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-3">
@@ -675,34 +632,51 @@ export default function QuoteCalculator() {
                   disabled={!formData.fullName || !formData.email || !formData.phone || !formData.pickupDate || !formData.consent}
                   className="w-2/3 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 md:py-4 rounded-xl flex items-center justify-center gap-2 text-base md:text-lg shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] active:shadow-[0_4px_10px_-2px_rgba(255,107,0,0.4)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0.5 disabled:opacity-40 disabled:bg-slate-300 disabled:from-slate-300 disabled:to-slate-300 disabled:shadow-none disabled:transform-none disabled:cursor-not-allowed cursor-pointer"
                 >
-                  Get Free Quote →
+                  Get My Rate →
                 </button>
               </div>
             </motion.div>
           )}
 
           {step === 4 && (
-            <motion.div key="step4" variants={slideVariants} initial="initial" animate="animate" exit="exit" className="flex flex-col flex-grow items-center justify-center text-center py-4">
-              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4 shadow-sm">
-                <CheckCircle2 className="w-8 h-8 text-emerald-600" />
+            <motion.div key="step4" variants={slideVariants} initial="initial" animate="animate" exit="exit" className="flex flex-col flex-grow items-center justify-center text-center py-2">
+              <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-2 shadow-sm">
+                <CheckCircle2 className="w-7 h-7 text-emerald-600" />
               </div>
-              <h2 className="text-2xl font-black text-slate-900 mb-2">Quote Request Received!</h2>
-              <p className="text-sm text-slate-600 font-medium mb-6 leading-relaxed max-w-sm">
-                Thank you, <strong className="text-slate-900">{formData.fullName}</strong>! Your route details for <strong className="text-blue-600">{locationFrom?.city || formData.zipFrom} → {locationTo?.city || formData.zipTo}</strong> have been submitted.
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-1">Your Rate Is Ready!</h2>
+              <p className="text-xs text-slate-600 font-medium mb-3 leading-relaxed max-w-sm">
+                Thank you, <strong className="text-slate-900">{formData.fullName}</strong>! Here is your calculated rate range for <strong className="text-blue-600">{locationFrom?.city || formData.zipFrom} → {locationTo?.city || formData.zipTo}</strong>:
               </p>
+
+              {/* Calculated Rate Box Display */}
+              <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl p-4 w-full mb-3 text-center shadow-lg">
+                <div className="text-xs font-bold uppercase tracking-wider text-blue-100 mb-1">Estimated Car Shipping Cost</div>
+                <div className="text-2xl sm:text-3xl font-black tracking-tight my-1 text-white">
+                  {quoteData ? (
+                    <>${Math.round((quoteData.price * 0.9) / 10) * 10} – ${Math.round((quoteData.price * 1.15) / 10) * 10}</>
+                  ) : (
+                    <>$650 – $1,050</>
+                  )}
+                </div>
+                <div className="flex justify-center items-center gap-3 text-xs font-bold text-blue-100 mt-2 pt-2 border-t border-blue-400/40">
+                  <span>Transit: {quoteData ? (quoteData.distance < 500 ? "1–3 days" : quoteData.distance < 1500 ? "3–5 days" : "5–7 days") : "3–5 days"} ({quoteData ? quoteData.distance : 850} mi)</span>
+                  <span>•</span>
+                  <span className="capitalize">{formData.transportType} Transport</span>
+                </div>
+              </div>
               
-              <div className="bg-[#f8fafc] border border-slate-200/90 rounded-2xl p-6 w-full mb-6 text-left space-y-3">
-                <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+              <div className="bg-[#f8fafc] border border-slate-200/90 rounded-xl p-3.5 w-full mb-4 text-left space-y-2">
+                <div className="flex items-center justify-between border-b border-slate-200 pb-1.5">
                   <span className="text-xs font-bold text-slate-500 uppercase">Promotion Applied</span>
                   <span className="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Online Quote Promo (-$25)</span>
                 </div>
                 <div className="text-xs text-slate-700 font-medium leading-relaxed">
-                  Our dispatch specialists are matching your vehicle with active carriers on your route. We will reach out to you at <strong className="text-slate-900">{formData.phone}</strong> and email <strong className="text-slate-900">{formData.email}</strong> shortly with your guaranteed rate.
+                  Lead details dispatched! We will reach out to <strong className="text-slate-900">{formData.phone}</strong> and <strong className="text-slate-900">{formData.email}</strong> shortly with your locked rate.
                 </div>
               </div>
               
-              <a href="tel:5307255383" className="w-full bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] transition-all mb-3">
-                <Phone className="w-4 h-4" /> Call Now: (530) 725-5383
+              <a href="tel:5307255383" className="w-full bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] transition-all mb-2">
+                <Phone className="w-4 h-4" /> Call Dispatch: (530) 725-5383
               </a>
 
               <button onClick={() => {
@@ -715,7 +689,7 @@ export default function QuoteCalculator() {
                 setLocationFrom(null);
                 setLocationTo(null);
               }} className="text-slate-400 hover:text-slate-600 text-xs font-bold transition-colors">
-                Submit Another Route Request
+                Calculate Another Route
               </button>
             </motion.div>
           )}
