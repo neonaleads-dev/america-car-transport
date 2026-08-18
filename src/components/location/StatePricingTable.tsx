@@ -98,6 +98,52 @@ export default function StatePricingTable({ state }: StatePricingTableProps) {
             </table>
           </div>
 
+          {/* Cost Per Mile Table for Virginia & State Pages */}
+          <div className="mt-12 bg-white rounded-2xl border border-slate-200/90 p-6 md:p-8 shadow-sm">
+            <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-2">
+              {state.name} Car Shipping Cost Per Mile (2026)
+            </h3>
+            <p className="text-xs md:text-sm text-slate-600 font-medium mb-6">
+              Per-mile baseline rates decrease over longer distances as fixed carrier loading and dispatch costs are distributed across more miles.
+            </p>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr className="bg-slate-100/80 text-slate-700 text-xs font-extrabold uppercase border-b border-slate-200">
+                    <th className="py-3 px-4">Distance Tier</th>
+                    <th className="py-3 px-4">Cost Per Mile</th>
+                    <th className="py-3 px-4">Example Route</th>
+                    <th className="py-3 px-4">Total Cost Range (Open Sedan)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200/80 text-slate-800 font-medium">
+                  <tr className="hover:bg-slate-50">
+                    <td className="py-3 px-4 font-bold">Short (&lt;500 mi)</td>
+                    <td className="py-3 px-4 font-extrabold text-blue-700">$1.20 – $2.20 / mi</td>
+                    <td className="py-3 px-4">Norfolk → Arlington (200 mi)</td>
+                    <td className="py-3 px-4 font-extrabold text-emerald-700">$250 – $400</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50">
+                    <td className="py-3 px-4 font-bold">Medium (500–1,500 mi)</td>
+                    <td className="py-3 px-4 font-extrabold text-blue-700">$0.70 – $1.00 / mi</td>
+                    <td className="py-3 px-4">Richmond → Miami (950 mi)</td>
+                    <td className="py-3 px-4 font-extrabold text-emerald-700">$500 – $900</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50">
+                    <td className="py-3 px-4 font-bold">Long (&gt;1,500 mi)</td>
+                    <td className="py-3 px-4 font-extrabold text-blue-700">$0.40 – $0.70 / mi</td>
+                    <td className="py-3 px-4">Virginia → Los Angeles (2,650 mi)</td>
+                    <td className="py-3 px-4 font-extrabold text-emerald-700">$1,100 – $1,700</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-[11px] text-slate-500 font-medium mt-3 italic">
+              *Data based on 2026 Virginia shipments. Open transport baseline for standard sedans. SUVs and trucks add $100–$200. Enclosed transport adds 50–70%.
+            </p>
+          </div>
+
           <div className="bg-slate-900 text-slate-300 px-6 py-4 flex flex-col md:flex-row justify-between items-center text-xs gap-3">
             <span className="font-semibold text-slate-300">
               * Pricing is calculated dynamically based on carrier availability, fuel prices, and vehicle size.

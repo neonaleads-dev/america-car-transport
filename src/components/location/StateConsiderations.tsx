@@ -375,6 +375,82 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
                   </table>
                 </div>
               </div>
+
+              {/* Virginia vs. National Average Comparison Table */}
+              <div className="bg-slate-50 border border-slate-200 p-8 rounded-3xl space-y-4">
+                <h3 className="text-2xl font-black text-slate-900">
+                  Virginia Car Shipping vs. National Average (2026)
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse text-xs md:text-sm">
+                    <thead>
+                      <tr className="bg-white border-b border-slate-200 font-bold text-slate-900">
+                        <th className="p-3">Metric</th>
+                        <th className="p-3">Virginia Benchmark</th>
+                        <th className="p-3">National Average</th>
+                        <th className="p-3">Key Difference</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-200 text-slate-700 font-medium">
+                      <tr>
+                        <td className="p-3 font-bold">Avg. Cost Per Mile (Long Haul)</td>
+                        <td className="p-3 font-extrabold text-blue-700">$0.40 – $0.70</td>
+                        <td className="p-3">$0.40 – $0.60</td>
+                        <td className="p-3 text-slate-500">Baseline Alignment</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Avg. Cost Per Mile (Short Haul)</td>
+                        <td className="p-3 font-extrabold text-amber-700">$1.20 – $2.20</td>
+                        <td className="p-3">$0.85 – $1.00</td>
+                        <td className="p-3 text-amber-700 font-bold">+15% to +25% (I-95 corridor congestion)</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Avg. Transit Time (Long Haul)</td>
+                        <td className="p-3 font-extrabold text-blue-700">7–10 Days</td>
+                        <td className="p-3">7–10 Days</td>
+                        <td className="p-3 text-slate-500">Baseline Alignment</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Military PCS Volume</td>
+                        <td className="p-3 font-extrabold text-emerald-700">Extremely High (27+ Bases)</td>
+                        <td className="p-3">Moderate</td>
+                        <td className="p-3 text-emerald-700 font-bold">+50% Higher Staging Density</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-[11px] text-slate-500 font-medium italic">
+                  *Virginia short-haul rates reflect higher toll structures and Mid-Atlantic corridor demand, while high military base concentration ensures fast dispatch availability.
+                </p>
+              </div>
+
+              {/* Virginia Car Shipping Resources (Authoritative E-E-A-T Links) */}
+              <div className="bg-white border border-slate-200 p-8 rounded-3xl space-y-4 shadow-xs">
+                <h3 className="text-2xl font-black text-slate-900">
+                  Virginia Car Shipping &amp; Transport Resources
+                </h3>
+                <p className="text-xs text-slate-600 font-medium">
+                  Official state and federal transport resources to verify regulations, tolls, and licensing:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-semibold">
+                  <a href="https://www.dmv.virginia.gov/vehicles/register" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-blue-50 hover:border-blue-300 transition-colors text-blue-700">
+                    <span>• Virginia DMV — Vehicle Registration Guide</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                  <a href="https://www.vsp.virginia.gov/Inspections.shtm" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-blue-50 hover:border-blue-300 transition-colors text-blue-700">
+                    <span>• Virginia State Police — Safety Inspection Rules</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                  <a href="https://www.fmcsa.dot.gov/" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-blue-50 hover:border-blue-300 transition-colors text-blue-700">
+                    <span>• FMCSA — Verify USDOT &amp; MC Carrier Licensing</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                  <a href="https://www.virginiadot.org/travel/real-time/" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-blue-50 hover:border-blue-300 transition-colors text-blue-700">
+                    <span>• VDOT — Real-Time Traffic &amp; Toll Information</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
             </div>
           </AnimatedSection>
         )}

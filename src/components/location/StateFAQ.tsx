@@ -43,6 +43,15 @@ export default function StateFAQ({ state }: StateFAQProps) {
           ))}
         </div>
 
+        <div className="text-center mt-10">
+          <a 
+            href="/faq" 
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-extrabold px-6 py-3 rounded-xl text-sm transition-all shadow-sm hover:shadow-md"
+          >
+            View Full {state.name} Auto Transport FAQ Hub →
+          </a>
+        </div>
+
       </div>
     </section>
   );
