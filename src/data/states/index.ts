@@ -9,6 +9,7 @@ import { pennsylvaniaData } from "./pennsylvania";
 import { georgiaData } from "./georgia";
 import { ohioData } from "./ohio";
 import { northCarolinaData } from "./north-carolina";
+import { virginiaData } from "./virginia";
 
 export const TOP_STATES_DATA: Record<string, StateData> = {
   california: californiaData,
@@ -21,6 +22,7 @@ export const TOP_STATES_DATA: Record<string, StateData> = {
   georgia: georgiaData,
   ohio: ohioData,
   "north-carolina": northCarolinaData,
+  virginia: virginiaData,
 };
 
 // Fallback generator for remaining 41 US states to ensure 100% 50-state coverage

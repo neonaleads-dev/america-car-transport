@@ -197,25 +197,25 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
           </AnimatedSection>
         )}
 
-        {/* Localized California Customer Testimonials */}
-        {caData?.localizedReviews && (
+        {/* Localized Customer Testimonials (CA, VA & generic states) */}
+        {(state as any).localizedReviews && (
           <AnimatedSection direction="up" delay={0.1}>
             <div className="space-y-6">
               <div className="text-center max-w-2xl mx-auto space-y-2">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-900 rounded-full text-xs font-bold uppercase tracking-wider">
                   <Star className="w-4 h-4 text-amber-600 fill-amber-500" />
-                  Verified Shipper Feedback
+                  Verified {state.name} Shipper Feedback
                 </div>
                 <h2 className="text-3xl font-black text-slate-900 tracking-tight">
-                  What California Shippers Say About Us
+                  What {state.name} Shippers Say About Us
                 </h2>
                 <p className="text-xs text-slate-600 font-medium">
-                  Real reviews from customers shipping vehicles to and from California cities.
+                  Real reviews from verified vehicle owners shipping to and from {state.name}.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {caData.localizedReviews.map((rev, idx) => (
+                {(state as any).localizedReviews.map((rev: any, idx: number) => (
                   <AnimatedCard key={idx} delay={idx * 0.1}>
                     <div className="bg-slate-50 border border-slate-200/80 p-6 rounded-2xl space-y-4 h-full flex flex-col justify-between shadow-xs hover:shadow-md transition-all">
                       <div className="space-y-3">
@@ -240,6 +240,140 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
                     </div>
                   </AnimatedCard>
                 ))}
+              </div>
+            </div>
+          </AnimatedSection>
+        )}
+
+        {/* Virginia Military & Auction Car Shipping Section */}
+        {state.slug === "virginia" && (
+          <AnimatedSection direction="up" delay={0.1}>
+            <div className="space-y-8">
+              <div className="text-center max-w-2xl mx-auto space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-900 rounded-full text-xs font-bold uppercase tracking-wider">
+                  <ShieldCheck className="w-4 h-4 text-blue-600" />
+                  Virginia Staging Expertise
+                </div>
+                <h2 className="text-3xl font-black text-slate-900 tracking-tight">
+                  Virginia Military PCS &amp; Auction Transport
+                </h2>
+                <p className="text-xs text-slate-600 font-medium">
+                  Specialized logistics for military service members and high-volume vehicle auction buyers across Virginia.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Military PCS Card */}
+                <div className="bg-slate-900 text-white p-8 rounded-3xl space-y-4 shadow-xl">
+                  <h3 className="text-2xl font-black text-white flex items-center gap-2">
+                    🎖️ Military PCS Moves from Virginia Bases
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                    Virginia hosts over 27 major military installations — more than any other state. We coordinate seamless PCS shipments with full military order integration, flexible 1–3 day pickup windows, and military discounts across:
+                  </p>
+                  <ul className="grid grid-cols-2 gap-2 text-xs font-semibold text-blue-200">
+                    <li>• Naval Station Norfolk</li>
+                    <li>• Joint Base Langley-Eustis</li>
+                    <li>• MCB Quantico</li>
+                    <li>• Fort Belvoir</li>
+                    <li>• NAS Oceana</li>
+                    <li>• The Pentagon (Arlington)</li>
+                  </ul>
+                </div>
+
+                {/* Auction Shipping Card */}
+                <div className="bg-slate-900 text-white p-8 rounded-3xl space-y-4 shadow-xl">
+                  <h3 className="text-2xl font-black text-white flex items-center gap-2">
+                    🚗 Virginia Outbound Auction Shipping
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                    As an East Coast auto auction hub, Virginia handles thousands of dealer and salvage trades weekly. We handle rapid pickup from all major sites with winch-equipped carriers for non-running units:
+                  </p>
+                  <ul className="space-y-2 text-xs font-semibold text-emerald-300">
+                    <li>• <strong>Manheim Fredericksburg:</strong> Mid-Atlantic dealer auction hub</li>
+                    <li>• <strong>Copart Manassas:</strong> Salvage &amp; insurance vehicle pickups</li>
+                    <li>• <strong>IAA Manassas:</strong> Fleet &amp; salvage outbound transport</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Virginia DMV Requirements Section */}
+              <div className="bg-slate-50 border border-slate-200 p-8 rounded-3xl space-y-4">
+                <h3 className="text-2xl font-black text-slate-900">
+                  Moving to Virginia? Vehicle Registration &amp; Insurance Guidelines
+                </h3>
+                <p className="text-xs text-slate-700 font-medium leading-relaxed">
+                  If you are shipping a car into Virginia, state law mandates registering your vehicle with the Virginia DMV within <strong>30 days</strong> of arrival.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-medium text-slate-700">
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
+                    <strong className="text-slate-900 block font-bold">Proof of Insurance:</strong>
+                    Minimum liability coverage of <strong>25/50/20</strong> is required before registration.
+                  </div>
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
+                    <strong className="text-slate-900 block font-bold">Safety Inspection:</strong>
+                    Virginia requires an annual safety inspection at certified stations.
+                  </div>
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
+                    <strong className="text-slate-900 block font-bold">Emissions Testing:</strong>
+                    Required for Northern Virginia counties (Arlington, Fairfax, Loudoun, Prince William).
+                  </div>
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
+                    <strong className="text-slate-900 block font-bold">E-ZPass Transponder Tip:</strong>
+                    Remove your E-ZPass from the windshield before shipping to avoid false toll charges.
+                  </div>
+                </div>
+              </div>
+
+              {/* Virginia Seasonal Pricing Table */}
+              <div className="bg-white border border-slate-200 p-8 rounded-3xl space-y-4 shadow-xs">
+                <h3 className="text-2xl font-black text-slate-900">
+                  Virginia Car Shipping Seasonal Pricing Guide (2026)
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse text-xs md:text-sm">
+                    <thead>
+                      <tr className="bg-slate-100 border-b border-slate-200 font-bold text-slate-900">
+                        <th className="p-3">Season</th>
+                        <th className="p-3">Demand Level</th>
+                        <th className="p-3">Price Impact</th>
+                        <th className="p-3">Best For</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-200 text-slate-700 font-medium">
+                      <tr>
+                        <td className="p-3 font-bold">Jan–Feb</td>
+                        <td className="p-3">Low</td>
+                        <td className="p-3 text-emerald-700 font-extrabold">-10% to -15%</td>
+                        <td className="p-3">Budget-conscious relocations</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Mar–May</td>
+                        <td className="p-3">High (Snowbird Return)</td>
+                        <td className="p-3 text-amber-700 font-extrabold">+10% to +20%</td>
+                        <td className="p-3">Florida → Virginia moves</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Jun–Aug</td>
+                        <td className="p-3">Very High (PCS, College)</td>
+                        <td className="p-3 text-red-700 font-extrabold">+15% to +25%</td>
+                        <td className="p-3">Military PCS &amp; student moves</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Sep–Nov</td>
+                        <td className="p-3">Low–Moderate</td>
+                        <td className="p-3 text-emerald-700 font-extrabold">-5% to -10%</td>
+                        <td className="p-3">Best overall shipping rates</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Dec</td>
+                        <td className="p-3">Moderate</td>
+                        <td className="p-3 font-extrabold">Baseline</td>
+                        <td className="p-3">Holiday relocations</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </AnimatedSection>

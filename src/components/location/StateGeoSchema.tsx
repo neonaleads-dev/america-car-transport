@@ -99,6 +99,31 @@ export default function StateGeoSchema({ state }: StateGeoSchemaProps) {
             "name": `${port} Maritime Auto Hub`
           }))
         ]
+      },
+      {
+        "@type": "AutoTransport",
+        "@id": `${state.canonical}#autotransport`,
+        "name": `America Car Transport ${state.name}`,
+        "areaServed": {
+          "@type": "State",
+          "name": state.name
+        },
+        "serviceType": ["Open Transport", "Enclosed Transport", "Military PCS Shipping", "Auction Vehicle Transport"],
+        "priceRange": "$250–$2,550",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": `${state.name} Routes`,
+          "itemListElement": state.popularRoutesOut.map((route) => ({
+            "@type": "Offer",
+            "name": `${state.name} to ${route.destCity} Car Shipping`,
+            "price": route.openPriceRange,
+            "priceCurrency": "USD"
+          }))
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": state.abbreviation
+        }
       }
     ]
   };

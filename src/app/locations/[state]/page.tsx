@@ -114,14 +114,14 @@ export default function StatePage({ params }: StatePageProps) {
       {/* 1. Hero Section with Quote Calculator */}
       <StateHero state={stateData} />
 
-      {/* 2. Live Shipments Ticker */}
+      {/* 2. Worked Pricing Matrix (Above the Fold) */}
+      <StatePricingTable state={stateData} />
+
+      {/* 3. Live Shipments Ticker */}
       <RecentShipmentsTicker />
 
-      {/* 3. Logistics & Quick Facts Grid */}
+      {/* 4. Logistics & Quick Facts Grid */}
       <StateQuickFacts state={stateData} />
-
-      {/* 4. Worked Pricing Matrix */}
-      <StatePricingTable state={stateData} />
 
       {/* 5. Major Cities & Delivery Hubs */}
       <StateCityGrid state={stateData} />
