@@ -455,6 +455,213 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
           </AnimatedSection>
         )}
 
+        {/* Florida Military, Snowbird & Auction Car Shipping Section */}
+        {state.slug === "florida" && (
+          <AnimatedSection direction="up" delay={0.1}>
+            <div className="space-y-8">
+              <div className="text-center max-w-2xl mx-auto space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-900 rounded-full text-xs font-bold uppercase tracking-wider">
+                  <ShieldCheck className="w-4 h-4 text-blue-600" />
+                  Florida Staging &amp; Snowbird Expertise
+                </div>
+                <h2 className="text-3xl font-black text-slate-900 tracking-tight">
+                  Florida Snowbird, Military PCS &amp; Auction Shipping
+                </h2>
+                <p className="text-xs text-slate-600 font-medium">
+                  Specialized logistics for snowbird retirees, military service members, and high-volume vehicle auction buyers across Florida.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Military PCS Card */}
+                <div className="bg-slate-900 text-white p-8 rounded-3xl space-y-4 shadow-xl">
+                  <h3 className="text-2xl font-black text-white flex items-center gap-2">
+                    🎖️ Military PCS Moves from Florida Bases
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                    Florida hosts over 10 major military installations. We coordinate seamless PCS shipments with full military order integration, flexible 1–3 day pickup windows, and military discounts across:
+                  </p>
+                  <ul className="grid grid-cols-2 gap-2 text-xs font-semibold text-blue-200">
+                    <li>• Naval Station Jacksonville</li>
+                    <li>• NAS Pensacola</li>
+                    <li>• MacDill AFB (Tampa)</li>
+                    <li>• Patrick SFB (Space Coast)</li>
+                    <li>• Homestead ARB (Miami)</li>
+                    <li>• Eglin AFB (Panhandle)</li>
+                  </ul>
+                </div>
+
+                {/* Auction & Snowbird Shipping Card */}
+                <div className="bg-slate-900 text-white p-8 rounded-3xl space-y-4 shadow-xl">
+                  <h3 className="text-2xl font-black text-white flex items-center gap-2">
+                    🌴 Snowbird &amp; Outbound Auction Logistics
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                    As the primary East Coast snowbird destination and vehicle auction hub, Florida handles thousands of seasonal and dealer shipments weekly:
+                  </p>
+                  <ul className="space-y-2 text-xs font-semibold text-emerald-300">
+                    <li>• <strong>Manheim Orlando:</strong> High-volume Southeast dealer auction hub</li>
+                    <li>• <strong>Copart Miami:</strong> Salvage &amp; insurance vehicle pickups</li>
+                    <li>• <strong>IAA Tampa:</strong> Fleet &amp; salvage outbound transport</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Florida DMV Requirements Section */}
+              <div className="bg-slate-50 border border-slate-200 p-8 rounded-3xl space-y-4">
+                <h3 className="text-2xl font-black text-slate-900">
+                  Moving to Florida? Vehicle Registration &amp; Insurance Guidelines
+                </h3>
+                <p className="text-xs text-slate-700 font-medium leading-relaxed">
+                  If you are shipping a car into Florida, state law mandates registering your vehicle with the Florida DMV within <strong>30 days</strong> of arrival.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-medium text-slate-700">
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
+                    <strong className="text-slate-900 block font-bold">Proof of Insurance:</strong>
+                    Minimum liability coverage of <strong>10/20/10</strong> is required before registration.
+                  </div>
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
+                    <strong className="text-slate-900 block font-bold">Safety Inspection:</strong>
+                    Florida does <strong>not</strong> require annual vehicle safety inspections.
+                  </div>
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
+                    <strong className="text-slate-900 block font-bold">Emissions Testing:</strong>
+                    Florida does <strong>not</strong> require vehicle emissions testing.
+                  </div>
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1">
+                    <strong className="text-slate-900 block font-bold">SunPass Transponder Tip:</strong>
+                    Remove your SunPass from the windshield before shipping to avoid false toll charges.
+                  </div>
+                </div>
+              </div>
+
+              {/* Florida Seasonal Pricing Table */}
+              <div className="bg-white border border-slate-200 p-8 rounded-3xl space-y-4 shadow-xs">
+                <h3 className="text-2xl font-black text-slate-900">
+                  Florida Car Shipping Seasonal Pricing Guide (2026)
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse text-xs md:text-sm">
+                    <thead>
+                      <tr className="bg-slate-100 border-b border-slate-200 font-bold text-slate-900">
+                        <th className="p-3">Season</th>
+                        <th className="p-3">Demand Level</th>
+                        <th className="p-3">Price Impact</th>
+                        <th className="p-3">Best For</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-200 text-slate-700 font-medium">
+                      <tr>
+                        <td className="p-3 font-bold">Jan–Feb</td>
+                        <td className="p-3">Moderate</td>
+                        <td className="p-3 font-extrabold">Baseline</td>
+                        <td className="p-3">Winter relocations</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Mar–May</td>
+                        <td className="p-3">Very High (Northbound Snowbirds)</td>
+                        <td className="p-3 text-red-700 font-extrabold">+15% to +25%</td>
+                        <td className="p-3">Florida → Northern states</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Jun–Aug</td>
+                        <td className="p-3">Low–Moderate</td>
+                        <td className="p-3 text-emerald-700 font-extrabold">-10% to -15%</td>
+                        <td className="p-3">Best overall shipping rates</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Sep–Oct</td>
+                        <td className="p-3">Very High (Southbound Snowbirds)</td>
+                        <td className="p-3 text-amber-700 font-extrabold">+15% to +25%</td>
+                        <td className="p-3">Northern states → Florida</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Nov–Dec</td>
+                        <td className="p-3">High (Holiday Travel)</td>
+                        <td className="p-3 text-amber-700 font-extrabold">+10% to +15%</td>
+                        <td className="p-3">Holiday relocations</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Florida vs. National Average Comparison Table */}
+              <div className="bg-slate-50 border border-slate-200 p-8 rounded-3xl space-y-4">
+                <h3 className="text-2xl font-black text-slate-900">
+                  Florida Car Shipping vs. National Average (2026)
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse text-xs md:text-sm">
+                    <thead>
+                      <tr className="bg-white border-b border-slate-200 font-bold text-slate-900">
+                        <th className="p-3">Metric</th>
+                        <th className="p-3">Florida Benchmark</th>
+                        <th className="p-3">National Average</th>
+                        <th className="p-3">Key Difference</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-200 text-slate-700 font-medium">
+                      <tr>
+                        <td className="p-3 font-bold">Avg. Cost Per Mile (Long Haul)</td>
+                        <td className="p-3 font-extrabold text-blue-700">$0.50 – $0.75</td>
+                        <td className="p-3">$0.40 – $0.60</td>
+                        <td className="p-3 text-amber-700 font-bold">+10–15% (Snowbird demand)</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Avg. Cost Per Mile (Short Haul)</td>
+                        <td className="p-3 font-extrabold text-amber-700">$1.00 – $1.60</td>
+                        <td className="p-3">$0.85 – $1.00</td>
+                        <td className="p-3 text-amber-700 font-bold">+15–25% (Turnpike tolls &amp; metro traffic)</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Avg. Transit Time (Long Haul)</td>
+                        <td className="p-3 font-extrabold text-emerald-700">6–8 Days</td>
+                        <td className="p-3">7–10 Days</td>
+                        <td className="p-3 text-emerald-700 font-bold">1–2 Days Faster (I-95 corridor density)</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-bold">Snowbird Relocation Volume</td>
+                        <td className="p-3 font-extrabold text-emerald-700">Extremely High</td>
+                        <td className="p-3">Moderate</td>
+                        <td className="p-3 text-emerald-700 font-bold">+100% Higher Seasonal Demand</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Florida Car Shipping Resources (Authoritative E-E-A-T Links) */}
+              <div className="bg-white border border-slate-200 p-8 rounded-3xl space-y-4 shadow-xs">
+                <h3 className="text-2xl font-black text-slate-900">
+                  Florida Car Shipping &amp; Transport Resources
+                </h3>
+                <p className="text-xs text-slate-600 font-medium">
+                  Official state and federal transport resources to verify regulations, tolls, and licensing:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-semibold">
+                  <a href="https://www.flhsmv.gov/" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-blue-50 hover:border-blue-300 transition-colors text-blue-700">
+                    <span>• Florida DMV — FLHSMV Vehicle Registration</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                  <a href="https://www.flhsmv.gov/" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-blue-50 hover:border-blue-300 transition-colors text-blue-700">
+                    <span>• Florida Highway Patrol — Safety Information</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                  <a href="https://www.fmcsa.dot.gov/" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-blue-50 hover:border-blue-300 transition-colors text-blue-700">
+                    <span>• FMCSA — Verify USDOT &amp; MC Carrier Licensing</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                  <a href="https://www.fdot.gov/" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between hover:bg-blue-50 hover:border-blue-300 transition-colors text-blue-700">
+                    <span>• FDOT — Real-Time Traffic &amp; Highway Information</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        )}
+
         {/* California Overseas & Port Relocations Section */}
         {isCalifornia && (
           <AnimatedSection direction="up" delay={0.1}>
