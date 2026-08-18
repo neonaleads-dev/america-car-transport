@@ -245,8 +245,8 @@ export default function QuoteCalculator() {
     return formData.vehicles.every(v => v.year && v.make && v.model);
   };
 
-  const calculateQuote = () => {
-    if (!locationFrom || !locationTo) return 0;
+  const calculateQuote = (): { price: number; distance: number } | null => {
+    if (!locationFrom || !locationTo) return null;
     
     // 1. Calculate physical distance
     const distance = getDistanceMiles(locationFrom.lat, locationFrom.lon, locationTo.lat, locationTo.lon);
@@ -554,14 +554,14 @@ export default function QuoteCalculator() {
                     <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200">No Email Required</span>
                   </div>
                   <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight my-1">
-                    {quoteData && quoteData.price > 0 ? (
+                    {quoteData ? (
                       <>${Math.round((quoteData.price * 0.9) / 10) * 10} – ${Math.round((quoteData.price * 1.15) / 10) * 10}</>
                     ) : (
                       <>$650 – $1,050</>
                     )}
                   </div>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold text-slate-600">
-                    <span>Estimated transit: <strong>{quoteData && quoteData.distance ? (quoteData.distance < 500 ? "1–3 days" : quoteData.distance < 1500 ? "3–5 days" : "5–7 days") : "3–5 days"}</strong> ({quoteData?.distance || 850} mi)</span>
+                    <span>Estimated transit: <strong>{quoteData ? (quoteData.distance < 500 ? "1–3 days" : quoteData.distance < 1500 ? "3–5 days" : "5–7 days") : "3–5 days"}</strong> ({quoteData ? quoteData.distance : 850} mi)</span>
                     <span>•</span>
                     <span className="capitalize">{formData.transportType} transport</span>
                   </div>
@@ -596,7 +596,7 @@ export default function QuoteCalculator() {
                 <div>
                   <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider block">Estimated Price Range</span>
                   <span className="text-lg font-black text-slate-900">
-                    {quoteData && quoteData.price > 0 ? (
+                    {quoteData ? (
                       <>${Math.round((quoteData.price * 0.9) / 10) * 10} – ${Math.round((quoteData.price * 1.15) / 10) * 10}</>
                     ) : (
                       <>$650 – $1,050</>
