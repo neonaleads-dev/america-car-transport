@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Flag, ArrowDownUp, Phone, Lock, CheckCircle2, Car, Calendar, Loader2, Plus, Trash2, X } from "lucide-react";
+import { MapPin, Flag, ArrowDownUp, Phone, Lock, CheckCircle2, Car, Calendar, Loader2, Plus, Trash2, X, User, Mail, Truck, Shield } from "lucide-react";
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -78,6 +78,7 @@ export default function QuoteCalculator() {
   const [locationFrom, setLocationFrom] = useState<LocationData | null>(null);
   const [locationTo, setLocationTo] = useState<LocationData | null>(null);
   const [loadingFrom, setLoadingFrom] = useState(false);
+  const [isBookingSubmitted, setIsBookingSubmitted] = useState(false);
   const [loadingTo, setLoadingTo] = useState(false);
 
   const inputRefFrom = useRef<HTMLInputElement>(null);
@@ -281,6 +282,26 @@ export default function QuoteCalculator() {
   };
 
   const quoteData = calculateQuote();
+
+  const handleBookOrder = () => {
+    setIsBookingSubmitted(true);
+    if (quoteData) {
+      fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          locationFrom,
+          locationTo,
+          calculatedPrice: `$${quoteData.minPrice} - $${quoteData.maxPrice}`,
+          minPrice: quoteData.minPrice,
+          maxPrice: quoteData.maxPrice,
+          distance: quoteData.distance,
+          bookingRequested: true,
+        }),
+      }).catch((err) => console.error("Error submitting order booking:", err));
+    }
+  };
 
   return (
     <div className="w-full max-w-[500px] mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden font-sans text-slate-800 flex flex-col relative z-20 border border-slate-100">
@@ -552,17 +573,17 @@ export default function QuoteCalculator() {
                 <Plus className="w-4 h-4" /> Add Another Vehicle
               </button>
 
-              <div className="mt-auto pt-6 flex gap-3">
+              <div className="mt-auto pt-4 flex gap-3">
                 <button 
-                  onClick={handleBack} 
-                  className="w-1/3 bg-slate-100 text-slate-700 font-bold py-4 rounded-xl flex items-center justify-center hover:bg-slate-200 transition-colors"
+                  onClick={handleBack}
+                  className="w-1/3 bg-slate-100 text-slate-700 font-bold py-3.5 rounded-xl flex items-center justify-center hover:bg-slate-200 transition-colors text-sm"
                 >
                   Back
                 </button>
                 <button 
                   onClick={handleNext}
                   disabled={!isVehiclesValid()}
-                  className="w-2/3 bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] hover:from-[#1d4ed8] hover:to-[#1e40af] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 text-base md:text-lg shadow-[0_8px_20px_-4px_rgba(37,99,235,0.4)] hover:shadow-[0_12px_28px_-4px_rgba(37,99,235,0.5)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0.5 disabled:opacity-40 disabled:bg-slate-300 disabled:from-slate-300 disabled:to-slate-300 disabled:shadow-none disabled:transform-none disabled:cursor-not-allowed cursor-pointer"
+                  className="w-2/3 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] cursor-pointer"
                 >
                   Contact Details →
                 </button>
@@ -572,47 +593,57 @@ export default function QuoteCalculator() {
 
           {step === 3 && (
             <motion.div key="step3" variants={slideVariants} initial="initial" animate="animate" exit="exit" className="flex flex-col flex-grow">
-              <label className="text-slate-600 text-sm font-medium mb-4">Where should we send your instant rate?</label>
-              
               <div className="space-y-3">
-                <div className="bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-3">
-                  <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">Full Name *</label>
-                  <input 
-                    type="text" placeholder="John Doe"
-                    value={formData.fullName} onChange={(e) => setFormData({...formData, fullName: e.target.value})}
-                    className="w-full bg-transparent text-slate-800 placeholder-slate-400 focus:outline-none font-medium"
-                  />
-                </div>
-                
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-3">
-                    <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">Email *</label>
+                <div>
+                  <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">Full Name</label>
+                  <div className="relative">
+                    <User className="absolute left-3.5 top-3.5 w-5 h-5 text-slate-400" />
                     <input 
-                      type="email" placeholder="john@example.com"
-                      value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full bg-transparent text-slate-800 placeholder-slate-400 focus:outline-none font-medium"
-                    />
-                  </div>
-                  <div className="bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-3">
-                    <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">Phone *</label>
-                    <input 
-                      type="tel" placeholder="(555) 000-0000"
-                      value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      className="w-full bg-transparent text-slate-800 placeholder-slate-400 focus:outline-none font-medium"
+                      type="text" placeholder="John Doe"
+                      value={formData.fullName} onChange={(e) => setFormData({...formData, fullName: e.target.value})}
+                      className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 font-semibold text-slate-800 text-sm"
                     />
                   </div>
                 </div>
 
-                <div className="bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-3 relative">
-                  <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">Pickup Date *</label>
-                  <input 
-                    type="date" 
-                    value={formData.pickupDate} onChange={(e) => setFormData({...formData, pickupDate: e.target.value})}
-                    className="w-full bg-transparent text-slate-800 focus:outline-none font-medium cursor-pointer"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">Email Address</label>
+                    <div className="relative">
+                      <Mail className="absolute left-3.5 top-3.5 w-5 h-5 text-slate-400" />
+                      <input 
+                        type="email" placeholder="john@example.com"
+                        value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 font-semibold text-slate-800 text-sm"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">Phone Number</label>
+                    <div className="relative">
+                      <Phone className="absolute left-3.5 top-3.5 w-5 h-5 text-slate-400" />
+                      <input 
+                        type="tel" placeholder="(555) 000-0000"
+                        value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                        className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 font-semibold text-slate-800 text-sm"
+                      />
+                    </div>
+                  </div>
                 </div>
-                
-                <div className="flex items-start gap-3 mt-2">
+
+                <div>
+                  <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">Preferred Pickup Date</label>
+                  <div className="relative">
+                    <Calendar className="absolute left-3.5 top-3.5 w-5 h-5 text-slate-400" />
+                    <input 
+                      type="date" 
+                      value={formData.pickupDate} onChange={(e) => setFormData({...formData, pickupDate: e.target.value})}
+                      className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 font-semibold text-slate-800 text-sm cursor-pointer"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2.5 pt-1">
                   <input 
                     type="checkbox" 
                     id="consent"
@@ -621,22 +652,22 @@ export default function QuoteCalculator() {
                     className="mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer"
                   />
                   <label htmlFor="consent" className="text-xs text-slate-500 leading-relaxed cursor-pointer">
-                    By checking this box, I confirm that I have read and agree to the Terms & Conditions and Privacy Policy. I also consent to receive calls, SMS, or emails regarding my quote request so I can be provided with accurate pricing, carrier options, and updates about my vehicle shipment.
+                    By checking this box, I confirm that I have read and agree to the Terms &amp; Conditions and Privacy Policy. I also consent to receive calls, SMS, or emails regarding my quote request so I can be provided with accurate pricing, carrier options, and updates about my vehicle shipment.
                   </label>
                 </div>
               </div>
 
-              <div className="mt-auto pt-4 md:pt-6 flex gap-3">
+              <div className="mt-auto pt-4 flex gap-3">
                 <button 
-                  onClick={handleBack} 
-                  className="w-1/3 bg-slate-100 text-slate-700 font-bold py-3.5 md:py-4 rounded-xl flex items-center justify-center hover:bg-slate-200 transition-colors text-sm md:text-base"
+                  onClick={handleBack}
+                  className="w-1/3 bg-slate-100 text-slate-700 font-bold py-3.5 rounded-xl flex items-center justify-center hover:bg-slate-200 transition-colors text-sm"
                 >
                   Back
                 </button>
                 <button 
                   onClick={handleNext}
                   disabled={!formData.fullName || !formData.email || !formData.phone || !formData.pickupDate || !formData.consent}
-                  className="w-2/3 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 md:py-4 rounded-xl flex items-center justify-center gap-2 text-base md:text-lg shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] active:shadow-[0_4px_10px_-2px_rgba(255,107,0,0.4)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0.5 disabled:opacity-40 disabled:bg-slate-300 disabled:from-slate-300 disabled:to-slate-300 disabled:shadow-none disabled:transform-none disabled:cursor-not-allowed cursor-pointer"
+                  className="w-2/3 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] cursor-pointer"
                 >
                   Get My Rate →
                 </button>
@@ -671,22 +702,48 @@ export default function QuoteCalculator() {
                 </div>
               </div>
               
-              <div className="bg-[#f8fafc] border border-slate-200/90 rounded-xl p-3.5 w-full mb-4 text-left space-y-2">
-                <div className="flex items-center justify-between border-b border-slate-200 pb-1.5">
-                  <span className="text-xs font-bold text-slate-500 uppercase">Promotion Applied</span>
-                  <span className="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Online Quote Promo (-$25)</span>
+              {isBookingSubmitted ? (
+                <div className="bg-emerald-50 border border-emerald-300 rounded-xl p-3.5 w-full mb-4 text-left space-y-1">
+                  <div className="flex items-center gap-2 text-emerald-800 font-extrabold text-xs uppercase">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Order Booking Requested!
+                  </div>
+                  <div className="text-xs text-slate-700 font-medium leading-relaxed">
+                    Thank you! Our dispatch team is locking in your carrier assignment. We will contact you at <strong className="text-slate-900">{formData.phone}</strong> and <strong className="text-slate-900">{formData.email}</strong> to finalize your order.
+                  </div>
                 </div>
-                <div className="text-xs text-slate-700 font-medium leading-relaxed">
-                  Lead details dispatched! We will reach out to <strong className="text-slate-900">{formData.phone}</strong> and <strong className="text-slate-900">{formData.email}</strong> shortly with your locked rate.
+              ) : (
+                <div className="bg-[#f8fafc] border border-slate-200/90 rounded-xl p-3.5 w-full mb-4 text-left space-y-2">
+                  <div className="flex items-center justify-between border-b border-slate-200 pb-1.5">
+                    <span className="text-xs font-bold text-slate-500 uppercase">Promotion Applied</span>
+                    <span className="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Online Quote Promo (-$25)</span>
+                  </div>
+                  <div className="text-xs text-slate-700 font-medium leading-relaxed">
+                    Lead details dispatched! We will reach out to <strong className="text-slate-900">{formData.phone}</strong> and <strong className="text-slate-900">{formData.email}</strong> shortly with your locked rate.
+                  </div>
                 </div>
-              </div>
+              )}
               
-              <a href="tel:5307255383" className="w-full bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] transition-all mb-2">
-                <Phone className="w-4 h-4" /> Call Dispatch: (530) 725-5383
-              </a>
+              <div className="w-full space-y-2 mb-3">
+                <button 
+                  onClick={handleBookOrder}
+                  disabled={isBookingSubmitted}
+                  className={`w-full font-black py-4 rounded-xl flex items-center justify-center gap-2 text-base md:text-lg transition-all duration-200 shadow-md ${
+                    isBookingSubmitted 
+                      ? "bg-emerald-600 text-white cursor-default"
+                      : "bg-emerald-600 hover:bg-emerald-700 text-white shadow-[0_8px_20px_-4px_rgba(16,185,129,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(16,185,129,0.55)] cursor-pointer"
+                  }`}
+                >
+                  {isBookingSubmitted ? "✓ Order Booking Requested" : "📦 BOOK MY ORDER"}
+                </button>
+
+                <a href="tel:5307255383" className="w-full bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] transition-all">
+                  <Phone className="w-4 h-4" /> Call Dispatch: (530) 725-5383
+                </a>
+              </div>
 
               <button onClick={() => {
                 setStep(1);
+                setIsBookingSubmitted(false);
                 setFormData({
                   zipFrom: "", zipTo: "", transportType: "open",
                   vehicles: [{ id: Date.now(), year: "", make: "", model: "", condition: "running" }],

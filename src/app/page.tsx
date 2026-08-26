@@ -1,8 +1,8 @@
 import HomeClient from "./page.client";
 
 export const metadata = {
-  title: "America's Trusted Network for Vehicle Shipping",
-  description: "Compare verified car carriers, get instant quotes, and ship your vehicle safely anywhere in America.",
+  title: "Car Shipping & Auto Transport Nationwide | America Car Transport",
+  description: "Get a free car shipping quote from America Car Transport. Compare open, enclosed, door-to-door, and expedited auto transport across the U.S. No upfront deposit.",
   alternates: {
     canonical: "https://www.americacartransport.com",
     languages: {

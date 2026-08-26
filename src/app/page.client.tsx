@@ -135,16 +135,16 @@ export default function HomeClient() {
           {/* Left Column: Clean Floating Typography (NO BOX) */}
           <div className="flex flex-col justify-center lg:col-span-6 xl:col-span-7">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-6 w-max border border-blue-200 shadow-sm">
-              <Award className="w-4 h-4 text-blue-600" />
-              #1 Rated Auto Transport Network
+              <ShieldCheck className="w-4 h-4 text-blue-600" />
+              Licensed &amp; Bonded Auto Transport Broker
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-[4.2rem] leading-[1.1] font-black tracking-tight text-slate-900 mb-6 drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-              Instantly Compare &amp; Book <span className="text-blue-600">Trusted Car Shipping</span> Nationwide
+              Nationwide Car Shipping <span className="text-blue-600">With Transparent Rates</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-700 font-semibold leading-relaxed max-w-xl mb-8 drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-              America&apos;s leading bonded &amp; insured <Link href="/services" className="text-blue-700 underline decoration-blue-400/50 hover:decoration-blue-600 transition-colors">auto transport</Link> network. Compare verified carriers, lock in guaranteed rates, and enjoy zero upfront deposits.
+              America&apos;s trusted <Link href="/services" className="text-blue-700 underline decoration-blue-400/50 hover:decoration-blue-600 transition-colors">auto transport</Link> broker network. Get instant quotes, compare verified carriers, and enjoy zero upfront deposits.
             </p>
 
             {/* Google Rating & BBB Accreditation Badges */}

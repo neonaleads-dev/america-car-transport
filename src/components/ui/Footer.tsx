@@ -84,12 +84,16 @@ export default function Footer() {
       {/* Bottom Bar: Copyright & EEAT Credentials */}
       <div className="border-t border-slate-800 bg-slate-950">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-24 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <div>
+          <div className="space-y-1">
             <p className="text-sm font-medium text-slate-400">
               &copy; {new Date().getFullYear()} America Car Transport. All rights reserved.
             </p>
+            <p className="text-xs text-slate-500 max-w-2xl font-medium">
+              America Car Transport is an FMCSA-compliant auto transport broker. We arrange vehicle shipments by connecting customers with fully licensed, bonded, and insured motor carriers nationwide.
+            </p>
           </div>
-          <div className="flex items-center gap-6 text-sm font-medium text-slate-400">
+          <div className="flex items-center gap-6 text-sm font-medium text-slate-400 shrink-0">
+            <Link href="/licensing-insurance" className="hover:text-blue-400 transition-colors">FMCSA Licensing</Link>
             <Link href="/privacy-policy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-blue-400 transition-colors">Terms &amp; Conditions</Link>
           </div>

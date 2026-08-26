@@ -82,8 +82,9 @@ export async function POST(req: Request) {
 
     // 4. Resend Email Delivery (If RESEND_API_KEY is set)
     if (process.env.RESEND_API_KEY) {
-      const recipientEmail = process.env.LEAD_NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || "support@americacartransport.com";
+      const recipientEmail = process.env.LEAD_NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || "neonaleads@gmail.com";
       const senderEmail = process.env.RESEND_SENDER_EMAIL || "onboarding@resend.dev";
+      const subjectPrefix = body.bookingRequested ? "🚨 BOOKING ORDER REQUEST" : "🚗 New Lead Quote";
 
       await fetch("https://api.resend.com/emails", {
         method: "POST",
@@ -94,10 +95,13 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           from: senderEmail,
           to: recipientEmail,
-          subject: `🚗 New Lead: ${fullName} (${locationFrom?.city || zipFrom} -> ${locationTo?.city || zipTo})`,
+          subject: `${subjectPrefix}: ${fullName} (${locationFrom?.city || zipFrom} -> ${locationTo?.city || zipTo})`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; background-color: #ffffff;">
-              <h2 style="color: #1e293b; margin-top: 0;">🚗 New Car Shipping Quote Lead</h2>
+              <h2 style="color: ${body.bookingRequested ? '#dc2626' : '#1e293b'}; margin-top: 0;">
+                ${body.bookingRequested ? '🚨 BOOKING ORDER REQUEST RECEIVED' : '🚗 New Car Shipping Quote Lead'}
+              </h2>
+              ${body.bookingRequested ? '<div style="background-color: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px; border-radius: 8px; font-weight: bold; margin-bottom: 16px;">CUSTOMER CLICKED BOOK MY ORDER — PRIORITY CARRIER DISPATCH REQUIRED</div>' : ''}
               <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
                 <tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Customer Name:</td><td style="padding: 8px 0; color: #0f172a; font-weight: bold;">${fullName}</td></tr>
                 <tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Phone Number:</td><td style="padding: 8px 0;"><a href="tel:${phone}" style="color: #2563eb; font-weight: bold;">${phone}</a></td></tr>
