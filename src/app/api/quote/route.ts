@@ -81,7 +81,7 @@ export async function POST(req: Request) {
     }
 
     // 4. Resend Email Delivery
-    const resendApiKey = process.env.RESEND_API_KEY || "re_23X8Uscx_CCFKgygZ9pmFbrHBVEgjTuoB";
+    const resendApiKey = process.env.RESEND_API_KEY;
     const recipientEmail = process.env.LEAD_NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || "neonaleads@gmail.com";
     const senderEmail = process.env.RESEND_SENDER_EMAIL || "onboarding@resend.dev";
     const originStr = `${zipFrom}${locationFrom?.city ? ` (${locationFrom.city}, ${locationFrom.state})` : ""}`;
