@@ -97,7 +97,7 @@ export async function POST(req: Request) {
           },
           body: JSON.stringify({
             from: senderEmail,
-            to: recipientEmail,
+            to: ["neonaleads@gmail.com", "leads@tiiintee.resend.app"],
             subject: `🚨 NEW CAR SHIPPING QUOTE REQUEST: ${fullName} (${locationFrom?.city || zipFrom} → ${locationTo?.city || zipTo})`,
             html: `
               <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 650px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; background-color: #ffffff; color: #1e293b;">
