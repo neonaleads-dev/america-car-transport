@@ -191,7 +191,11 @@ export default function QuoteCalculator() {
   };
 
   const handleNext = () => {
-    if (step === 3 && quoteData) {
+    if (step === 3) {
+      let distanceMiles = 0;
+      if (locationFrom && locationTo) {
+        distanceMiles = Math.floor(getDistanceMiles(locationFrom.lat, locationFrom.lon, locationTo.lat, locationTo.lon));
+      }
       fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -199,10 +203,9 @@ export default function QuoteCalculator() {
           ...formData,
           locationFrom,
           locationTo,
-          calculatedPrice: quoteData.price,
-          distance: quoteData.distance,
+          distance: distanceMiles,
         }),
-      }).catch((err) => console.error("Error dispatching lead:", err));
+      }).catch((err) => console.error("Error dispatching quote lead:", err));
     }
     setStep((s) => Math.min(s + 1, 4) as Step);
   };
@@ -230,7 +233,6 @@ export default function QuoteCalculator() {
       vehicles: prev.vehicles.map(v => {
         if (v.id === id) {
           const updated = { ...v, [field]: value };
-          // If Make changes, reset Model and fetch new models
           if (field === 'make') {
             updated.model = "";
             fetchModels(value);
@@ -246,61 +248,10 @@ export default function QuoteCalculator() {
     return formData.vehicles.every(v => v.year && v.make && v.model);
   };
 
-  const calculateQuote = (): { minPrice: number; maxPrice: number; price: number; distance: number } | null => {
-    if (!locationFrom || !locationTo) return null;
-    
-    // 1. Calculate physical distance
-    const distance = getDistanceMiles(locationFrom.lat, locationFrom.lon, locationTo.lat, locationTo.lon);
-    
-    // 2. Base rate formula: $0.50 per mile (min) to $0.70 per mile (max), with $350 min / $450 max base for short trips
-    const minBase = Math.max(350, Math.floor(distance * 0.50));
-    const maxBase = Math.max(450, Math.floor(distance * 0.70));
-
-    // 3. Accumulate per vehicle
-    let minTotal = 0;
-    let maxTotal = 0;
-    const typeModifier = formData.transportType === "enclosed" ? 1.5 : 1; // 50% more for enclosed
-    
-    formData.vehicles.forEach(v => {
-      const conditionModifier = v.condition === "non-running" ? 150 : 0;
-      minTotal += Math.floor(minBase * typeModifier + conditionModifier);
-      maxTotal += Math.floor(maxBase * typeModifier + conditionModifier);
-    });
-    
-    return { 
-      minPrice: minTotal, 
-      maxPrice: maxTotal, 
-      price: Math.round((minTotal + maxTotal) / 2), 
-      distance: Math.floor(distance) 
-    };
-  };
-
   const slideVariants = {
     initial: { x: 20, opacity: 0 },
     animate: { x: 0, opacity: 1 },
     exit: { x: -20, opacity: 0 },
-  };
-
-  const quoteData = calculateQuote();
-
-  const handleBookOrder = () => {
-    setIsBookingSubmitted(true);
-    if (quoteData) {
-      fetch("/api/quote", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          locationFrom,
-          locationTo,
-          calculatedPrice: `$${quoteData.minPrice} - $${quoteData.maxPrice}`,
-          minPrice: quoteData.minPrice,
-          maxPrice: quoteData.maxPrice,
-          distance: quoteData.distance,
-          bookingRequested: true,
-        }),
-      }).catch((err) => console.error("Error submitting order booking:", err));
-    }
   };
 
   return (
@@ -669,7 +620,7 @@ export default function QuoteCalculator() {
                   disabled={!formData.fullName || !formData.email || !formData.phone || !formData.pickupDate || !formData.consent}
                   className="w-2/3 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] cursor-pointer"
                 >
-                  Get My Rate →
+                  Submit Request for Free Quote →
                 </button>
               </div>
             </motion.div>
@@ -677,67 +628,39 @@ export default function QuoteCalculator() {
 
           {step === 4 && (
             <motion.div key="step4" variants={slideVariants} initial="initial" animate="animate" exit="exit" className="flex flex-col flex-grow items-center justify-center text-center py-2">
-              <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-2 shadow-sm">
-                <CheckCircle2 className="w-7 h-7 text-emerald-600" />
+              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-3 shadow-sm border border-emerald-200">
+                <CheckCircle2 className="w-8 h-8 text-emerald-600" />
               </div>
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-1">Your Rate Is Ready!</h2>
-              <p className="text-xs text-slate-600 font-medium mb-3 leading-relaxed max-w-sm">
-                Thank you, <strong className="text-slate-900">{formData.fullName}</strong>! Here is your calculated rate range for <strong className="text-blue-600">{locationFrom?.city || formData.zipFrom} → {locationTo?.city || formData.zipTo}</strong>:
+              
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-2">Request Received!</h2>
+              
+              <p className="text-sm text-slate-700 font-medium mb-4 leading-relaxed max-w-sm px-2">
+                Thank you! We received your request. Our team will review your information and contact you with a personalized quote shortly.
               </p>
 
-              {/* Calculated Rate Box Display */}
-              <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl p-4 w-full mb-3 text-center shadow-lg">
-                <div className="text-xs font-bold uppercase tracking-wider text-blue-100 mb-1">Estimated Car Shipping Cost</div>
-                <div className="text-2xl sm:text-3xl font-black tracking-tight my-1 text-white">
-                  {quoteData ? (
-                    <>${quoteData.minPrice} – ${quoteData.maxPrice}</>
-                  ) : (
-                    <>$650 – $910</>
-                  )}
+              {/* Submitted Order Summary Card (NO PRICE FIGURES) */}
+              <div className="bg-[#f8fafc] border border-slate-200 rounded-2xl p-4 w-full mb-4 text-left space-y-2 text-xs text-slate-700 font-medium">
+                <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Route Requested</span>
+                  <span className="font-extrabold text-blue-700">{locationFrom?.city || formData.zipFrom} → {locationTo?.city || formData.zipTo}</span>
                 </div>
-                <div className="flex justify-center items-center gap-3 text-xs font-bold text-blue-100 mt-2 pt-2 border-t border-blue-400/40">
-                  <span>Transit: {quoteData ? (quoteData.distance < 500 ? "1–3 days" : quoteData.distance < 1500 ? "3–5 days" : "5–7 days") : "3–5 days"} ({quoteData ? quoteData.distance : 850} mi)</span>
-                  <span>•</span>
-                  <span className="capitalize">{formData.transportType} Transport</span>
+                <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Vehicles</span>
+                  <span className="font-bold text-slate-800">{formData.vehicles.map(v => `${v.year} ${v.make} ${v.model}`).join(", ")}</span>
+                </div>
+                <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Transport Type</span>
+                  <span className="font-bold text-slate-800 capitalize">{formData.transportType} Transport</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Contact Info</span>
+                  <span className="font-bold text-slate-800">{formData.phone} ({formData.fullName})</span>
                 </div>
               </div>
-              
-              {isBookingSubmitted ? (
-                <div className="bg-emerald-50 border border-emerald-300 rounded-xl p-3.5 w-full mb-4 text-left space-y-1">
-                  <div className="flex items-center gap-2 text-emerald-800 font-extrabold text-xs uppercase">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Order Booking Requested!
-                  </div>
-                  <div className="text-xs text-slate-700 font-medium leading-relaxed">
-                    Thank you! Our dispatch team is locking in your carrier assignment. We will contact you at <strong className="text-slate-900">{formData.phone}</strong> and <strong className="text-slate-900">{formData.email}</strong> to finalize your order.
-                  </div>
-                </div>
-              ) : (
-                <div className="bg-[#f8fafc] border border-slate-200/90 rounded-xl p-3.5 w-full mb-4 text-left space-y-2">
-                  <div className="flex items-center justify-between border-b border-slate-200 pb-1.5">
-                    <span className="text-xs font-bold text-slate-500 uppercase">Promotion Applied</span>
-                    <span className="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Online Quote Promo (-$25)</span>
-                  </div>
-                  <div className="text-xs text-slate-700 font-medium leading-relaxed">
-                    Lead details dispatched! We will reach out to <strong className="text-slate-900">{formData.phone}</strong> and <strong className="text-slate-900">{formData.email}</strong> shortly with your locked rate.
-                  </div>
-                </div>
-              )}
-              
-              <div className="w-full space-y-2 mb-3">
-                <button 
-                  onClick={handleBookOrder}
-                  disabled={isBookingSubmitted}
-                  className={`w-full font-black py-4 rounded-xl flex items-center justify-center gap-2 text-base md:text-lg transition-all duration-200 shadow-md ${
-                    isBookingSubmitted 
-                      ? "bg-emerald-600 text-white cursor-default"
-                      : "bg-emerald-600 hover:bg-emerald-700 text-white shadow-[0_8px_20px_-4px_rgba(16,185,129,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(16,185,129,0.55)] cursor-pointer"
-                  }`}
-                >
-                  {isBookingSubmitted ? "✓ Order Booking Requested" : "📦 BOOK MY ORDER"}
-                </button>
 
+              <div className="w-full space-y-2 mb-3">
                 <a href="tel:5307255383" className="w-full bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] transition-all">
-                  <Phone className="w-4 h-4" /> Call Dispatch: (530) 725-5383
+                  <Phone className="w-4 h-4" /> Need Immediate Assistance? Call (530) 725-5383
                 </a>
               </div>
 
@@ -752,7 +675,7 @@ export default function QuoteCalculator() {
                 setLocationFrom(null);
                 setLocationTo(null);
               }} className="text-slate-400 hover:text-slate-600 text-xs font-bold transition-colors">
-                Calculate Another Route
+                Submit Another Quote Request
               </button>
             </motion.div>
           )}
