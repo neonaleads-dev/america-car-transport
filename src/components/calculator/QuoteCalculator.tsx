@@ -190,22 +190,31 @@ export default function QuoteCalculator() {
     if (inputRefTo.current) inputRefTo.current.focus();
   };
 
-  const handleNext = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleNext = async () => {
     if (step === 3) {
+      setIsSubmitting(true);
       let distanceMiles = 0;
       if (locationFrom && locationTo) {
         distanceMiles = Math.floor(getDistanceMiles(locationFrom.lat, locationFrom.lon, locationTo.lat, locationTo.lon));
       }
-      fetch("/api/quote", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          locationFrom,
-          locationTo,
-          distance: distanceMiles,
-        }),
-      }).catch((err) => console.error("Error dispatching quote lead:", err));
+      try {
+        await fetch("/api/quote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...formData,
+            locationFrom,
+            locationTo,
+            distance: distanceMiles,
+          }),
+        });
+      } catch (err) {
+        console.error("Error dispatching quote lead:", err);
+      } finally {
+        setIsSubmitting(false);
+      }
     }
     setStep((s) => Math.min(s + 1, 4) as Step);
   };
@@ -617,10 +626,17 @@ export default function QuoteCalculator() {
                 </button>
                 <button 
                   onClick={handleNext}
-                  disabled={!formData.fullName || !formData.email || !formData.phone || !formData.pickupDate || !formData.consent}
-                  className="w-2/3 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] cursor-pointer"
+                  disabled={isSubmitting || !formData.fullName || !formData.email || !formData.phone || !formData.pickupDate || !formData.consent}
+                  className="w-2/3 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] cursor-pointer disabled:opacity-75"
                 >
-                  Submit Request for Free Quote →
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <span>Submitting...</span>
+                    </>
+                  ) : (
+                    "Submit Request for Free Quote →"
+                  )}
                 </button>
               </div>
             </motion.div>
