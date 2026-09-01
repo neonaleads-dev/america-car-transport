@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Flag, ArrowDownUp, Phone, Lock, CheckCircle2, Car, Calendar, Loader2, Plus, Trash2, X, User, Mail, Truck, Shield } from "lucide-react";
+import { MapPin, Flag, ArrowDownUp, Phone, Lock, CheckCircle2, Car, Calendar, Loader2, Plus, Trash2, X, User, Mail, Truck, Shield, AlertTriangle } from "lucide-react";
 
 type Step = 1 | 2 | 3 | 4;
 
