@@ -624,6 +624,7 @@ export default function QuoteCalculator() {
                   />
                   <label htmlFor="consent" className="text-xs text-slate-500 leading-relaxed cursor-pointer">
                     By checking this box, I confirm that I have read and agree to the Terms &amp; Conditions and Privacy Policy. I also consent to receive calls, SMS, or emails regarding my quote request so I can be provided with accurate pricing, carrier options, and updates about my vehicle shipment.
+                  </label>
                 </div>
               </div>
 
