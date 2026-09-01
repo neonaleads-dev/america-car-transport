@@ -81,7 +81,7 @@ export async function POST(req: Request) {
     }
 
     // 4. Resend Email Delivery
-    const resendApiKey = process.env.RESEND_API_KEY;
+    const resendApiKey = process.env.RESEND_API_KEY || "re_SztBPW4r_FxWKL3XCac3YuG47ZsfngTi8";
     const recipientEmail = process.env.LEAD_NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || "neonaleads@gmail.com";
     const senderEmail = process.env.RESEND_SENDER_EMAIL || "onboarding@resend.dev";
     const originStr = `${zipFrom}${locationFrom?.city ? ` (${locationFrom.city}, ${locationFrom.state})` : ""}`;
@@ -97,7 +97,7 @@ export async function POST(req: Request) {
           },
           body: JSON.stringify({
             from: senderEmail,
-            to: ["neonaleads@gmail.com", "leads@tiiintee.resend.app"],
+            to: recipientEmail,
             subject: `🚨 NEW CAR SHIPPING QUOTE REQUEST: ${fullName} (${locationFrom?.city || zipFrom} → ${locationTo?.city || zipTo})`,
             html: `
               <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 650px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; background-color: #ffffff; color: #1e293b;">
