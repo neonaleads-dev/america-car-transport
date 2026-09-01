@@ -138,10 +138,30 @@ export async function POST(req: Request) {
 
         const resendData = await resendRes.json();
         console.log("Resend API Response Status:", resendRes.status, resendData);
-        if (resendRes.ok) resendStatus = true;
-      } catch (err) {
+        if (resendRes.ok) {
+          resendStatus = true;
+        } else {
+          return NextResponse.json(
+            { 
+              success: false, 
+              error: resendData.message || `Resend API returned status ${resendRes.status}`,
+              resendError: resendData 
+            },
+            { status: resendRes.status || 500 }
+          );
+        }
+      } catch (err: any) {
         console.error("Resend API error:", err);
+        return NextResponse.json(
+          { success: false, error: err.message || "Failed to reach Resend API server" },
+          { status: 500 }
+        );
       }
+    } else {
+      return NextResponse.json(
+        { success: false, error: "No Resend API Key configured on server" },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({ success: true, message: "Lead recorded successfully", emailSent: resendStatus });

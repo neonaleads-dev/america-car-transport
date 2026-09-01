@@ -191,8 +191,10 @@ export default function QuoteCalculator() {
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleNext = async () => {
+    setSubmitError(null);
     if (step === 3) {
       setIsSubmitting(true);
       let distanceMiles = 0;
@@ -200,7 +202,7 @@ export default function QuoteCalculator() {
         distanceMiles = Math.floor(getDistanceMiles(locationFrom.lat, locationFrom.lon, locationTo.lat, locationTo.lon));
       }
       try {
-        await fetch("/api/quote", {
+        const response = await fetch("/api/quote", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -210,13 +212,22 @@ export default function QuoteCalculator() {
             distance: distanceMiles,
           }),
         });
-      } catch (err) {
+        const resData = await response.json();
+        if (!response.ok || !resData.success || !resData.emailSent) {
+          setSubmitError(resData.error || "Email delivery failed via Resend API. Please verify your Resend API key or call (530) 725-5383.");
+          setIsSubmitting(false);
+          return;
+        }
+        setStep(4);
+      } catch (err: any) {
         console.error("Error dispatching quote lead:", err);
+        setSubmitError("Network error. Please try again or call us at (530) 725-5383.");
       } finally {
         setIsSubmitting(false);
       }
+    } else {
+      setStep((s) => Math.min(s + 1, 4) as Step);
     }
-    setStep((s) => Math.min(s + 1, 4) as Step);
   };
   const handleBack = () => setStep((s) => Math.max(s - 1, 1) as Step);
 
@@ -613,9 +624,15 @@ export default function QuoteCalculator() {
                   />
                   <label htmlFor="consent" className="text-xs text-slate-500 leading-relaxed cursor-pointer">
                     By checking this box, I confirm that I have read and agree to the Terms &amp; Conditions and Privacy Policy. I also consent to receive calls, SMS, or emails regarding my quote request so I can be provided with accurate pricing, carrier options, and updates about my vehicle shipment.
-                  </label>
                 </div>
               </div>
+
+              {submitError && (
+                <div className="mt-3 p-3 bg-rose-50 border border-rose-200 rounded-xl text-rose-700 text-xs font-semibold flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0" />
+                  <span>{submitError}</span>
+                </div>
+              )}
 
               <div className="mt-auto pt-4 flex gap-3">
                 <button 
