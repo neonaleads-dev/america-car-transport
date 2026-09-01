@@ -5,23 +5,30 @@ export async function POST(req: Request) {
     const body = await req.json();
 
     const {
-      zipFrom,
-      zipTo,
-      locationFrom,
-      locationTo,
-      transportType,
-      vehicles,
-      fullName,
-      email,
-      phone,
-      pickupDate,
-      calculatedPrice,
-      distance,
+      zipFrom = "",
+      zipTo = "",
+      locationFrom = null,
+      locationTo = null,
+      transportType = "open",
+      vehicles = [],
+      fullName = "",
+      email = "",
+      phone = "",
+      pickupDate = "",
+      calculatedPrice = "",
+      distance = 0,
     } = body;
 
-    const vehicleSummary = vehicles
-      .map((v: any) => `${v.year} ${v.make} ${v.model} (${v.condition})`)
+    const safeVehicles = Array.isArray(vehicles) && vehicles.length > 0 
+      ? vehicles 
+      : [{ year: "", make: "Vehicle", model: "", condition: "running" }];
+
+    const vehicleSummary = safeVehicles
+      .map((v: any) => `${v.year || ""} ${v.make || ""} ${v.model || ""} (${v.condition || "running"})`.trim())
       .join(", ");
+
+    const originStr = `${zipFrom || ""}${locationFrom?.city ? ` (${locationFrom.city}, ${locationFrom.state})` : ""}`.trim() || "Not Specified";
+    const destStr = `${zipTo || ""}${locationTo?.city ? ` (${locationTo.city}, ${locationTo.state})` : ""}`.trim() || "Not Specified";
 
     // 1. Console Log on Server
     console.log("==========================================");
@@ -31,62 +38,19 @@ export async function POST(req: Request) {
     console.log(`Phone: ${phone}`);
     console.log(`Email: ${email}`);
     console.log(`Pickup Date: ${pickupDate}`);
-    console.log(`Origin: ${zipFrom} (${locationFrom?.city}, ${locationFrom?.state})`);
-    console.log(`Destination: ${zipTo} (${locationTo?.city}, ${locationTo?.state})`);
-    console.log(`Distance: ${distance} miles | Estimated Quote: $${calculatedPrice}`);
+    console.log(`Origin: ${originStr}`);
+    console.log(`Destination: ${destStr}`);
     console.log(`Transport Type: ${transportType}`);
     console.log(`Vehicles: ${vehicleSummary}`);
     console.log("==========================================");
 
-    // 2. Free Google Sheets / Zapier / Webhook Integration
-    const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || process.env.WEBHOOK_URL || process.env.ZAPIER_WEBHOOK_URL;
-    if (webhookUrl) {
-      await fetch(webhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          dateSubmitted: new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
-          fullName,
-          phone,
-          email,
-          pickupDate,
-          origin: `${zipFrom} (${locationFrom?.city || ""}, ${locationFrom?.state || ""})`,
-          destination: `${zipTo} (${locationTo?.city || ""}, ${locationTo?.state || ""})`,
-          distance: `${distance} miles`,
-          calculatedPrice: typeof calculatedPrice === "string" ? calculatedPrice : `$${calculatedPrice}`,
-          transportType,
-          vehicles: vehicleSummary,
-        }),
-      }).catch((err) => console.error("Webhook dispatch error:", err));
-    }
-
-    // 3. Formspree Email Fallback (If FORMSPREE_URL is set)
-    if (process.env.FORMSPREE_URL) {
-      await fetch(process.env.FORMSPREE_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-          name: fullName,
-          phone,
-          email,
-          pickupDate,
-          origin: `${zipFrom} (${locationFrom?.city || ""}, ${locationFrom?.state || ""})`,
-          destination: `${zipTo} (${locationTo?.city || ""}, ${locationTo?.state || ""})`,
-          distance: `${distance} miles`,
-          priceEstimate: typeof calculatedPrice === "string" ? calculatedPrice : `$${calculatedPrice}`,
-          transportType,
-          vehicles: vehicleSummary,
-        }),
-      }).catch((err) => console.error("Formspree dispatch error:", err));
-    }
-
-    // 4. Resend Email Delivery
+    // 2. Resend Email Delivery (PRIMARY PRIORITY)
     const fallbackKey = Buffer.from("cmVfU3p0QlBXNHJfRnhXS0wzWENhYzNZdUc0N1pzZm5nVGk4", "base64").toString("utf-8");
     const resendApiKey = process.env.RESEND_API_KEY || fallbackKey;
     const recipientEmail = process.env.LEAD_NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || "neonaleads@gmail.com";
     const senderEmail = process.env.RESEND_SENDER_EMAIL || "onboarding@resend.dev";
-    const originStr = `${zipFrom}${locationFrom?.city ? ` (${locationFrom.city}, ${locationFrom.state})` : ""}`;
-    const destStr = `${zipTo}${locationTo?.city ? ` (${locationTo.city}, ${locationTo.state})` : ""}`;
+
+    let resendStatus = false;
 
     if (resendApiKey) {
       try {
@@ -99,7 +63,7 @@ export async function POST(req: Request) {
           body: JSON.stringify({
             from: senderEmail,
             to: recipientEmail,
-            subject: `🚨 NEW CAR SHIPPING QUOTE REQUEST: ${fullName} (${locationFrom?.city || zipFrom} → ${locationTo?.city || zipTo})`,
+            subject: `🚨 NEW CAR SHIPPING QUOTE REQUEST: ${fullName || "Customer"} (${locationFrom?.city || zipFrom || "Origin"} → ${locationTo?.city || zipTo || "Destination"})`,
             html: `
               <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 650px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; background-color: #ffffff; color: #1e293b;">
                 
@@ -132,7 +96,7 @@ export async function POST(req: Request) {
                     <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
                       <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b; width: 140px;">Origin (Pickup):</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${originStr}</td></tr>
                       <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Destination:</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${destStr}</td></tr>
-                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Est. Distance:</td><td style="padding: 6px 0; font-weight: 600; color: #0f172a;">${distance ? `${distance} miles` : "Calculating"}</td></tr>
+                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Est. Distance:</td><td style="padding: 6px 0; font-weight: 600; color: #0f172a;">${distance ? `${distance} miles` : "N/A"}</td></tr>
                     </table>
                   </div>
 
@@ -142,10 +106,10 @@ export async function POST(req: Request) {
                       🚘 Vehicle Information
                     </h2>
                     <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                      ${vehicles.map((v: any, index: number) => `
+                      ${safeVehicles.map((v: any, index: number) => `
                         <tr>
                           <td style="padding: 6px 0; font-weight: 600; color: #64748b; width: 140px;">Vehicle #${index + 1}:</td>
-                          <td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${v.year} ${v.make} ${v.model} (<span style="color: ${v.condition === 'non-running' ? '#dc2626' : '#16a34a'};">${v.condition}</span>)</td>
+                          <td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${v.year || ""} ${v.make || ""} ${v.model || ""} (<span style="color: ${v.condition === 'non-running' ? '#dc2626' : '#16a34a'};">${v.condition || "running"}</span>)</td>
                         </tr>
                       `).join("")}
                     </table>
@@ -158,7 +122,6 @@ export async function POST(req: Request) {
                     </h2>
                     <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
                       <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b; width: 140px;">Transport Method:</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a; text-transform: capitalize;">${transportType} Transport</td></tr>
-                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Pricing Status:</td><td style="padding: 6px 0; font-weight: 700; color: #dc2626;">Pending Quote (No price shown to customer)</td></tr>
                     </table>
                   </div>
 
@@ -174,13 +137,14 @@ export async function POST(req: Request) {
         });
 
         const resendData = await resendRes.json();
-        console.log("Resend Dispatch Status:", resendRes.status, resendData);
+        console.log("Resend API Response Status:", resendRes.status, resendData);
+        if (resendRes.ok) resendStatus = true;
       } catch (err) {
         console.error("Resend API error:", err);
       }
     }
 
-    return NextResponse.json({ success: true, message: "Lead recorded successfully" });
+    return NextResponse.json({ success: true, message: "Lead recorded successfully", emailSent: resendStatus });
   } catch (error) {
     console.error("Error processing quote lead:", error);
     return NextResponse.json(
