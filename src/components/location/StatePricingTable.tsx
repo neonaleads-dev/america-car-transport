@@ -58,6 +58,16 @@ export default function StatePricingTable({ state }: StatePricingTableProps) {
               </thead>
               <tbody className="divide-y divide-slate-200/80 text-sm font-medium text-slate-800">
                 {allExamples.map((item, idx) => {
+                  const formatEndpoint = (city: string, stateAbbr?: string) => {
+                    if (!city) return "";
+                    let trimmed = city.trim();
+                    if (trimmed.includes(",")) return trimmed;
+                    if (stateAbbr) return `${trimmed}, ${stateAbbr}`;
+                    return trimmed;
+                  };
+
+                  const originStr = formatEndpoint(item.originCity, state.abbreviation);
+                  const destStr = formatEndpoint(item.destCity, item.destState);
                   const routeHref = getRouteLink(item.originCity, item.destCity, item.destState);
 
                   return (
@@ -65,11 +75,11 @@ export default function StatePricingTable({ state }: StatePricingTableProps) {
                       <td className="py-4 px-6 font-bold text-slate-900">
                         {routeHref ? (
                           <Link href={routeHref} className="text-blue-600 hover:text-blue-800 underline font-extrabold inline-flex items-center gap-1">
-                            {item.originCity} → {item.destCity}, {item.destState}
+                            {originStr} → {destStr}
                             <ArrowRight className="w-3.5 h-3.5" />
                           </Link>
                         ) : (
-                          <span>{item.originCity} → {item.destCity}, {item.destState}</span>
+                          <span>{originStr} → {destStr}</span>
                         )}
                       </td>
                       <td className="py-4 px-6 text-slate-600">
@@ -100,60 +110,78 @@ export default function StatePricingTable({ state }: StatePricingTableProps) {
 
           {/* Cost Per Mile Table for State Pages */}
           {(() => {
+            const formatEndpoint = (city: string, stateAbbr?: string) => {
+              if (!city) return "";
+              let trimmed = city.trim();
+              if (trimmed.includes(",")) return trimmed;
+              if (stateAbbr) return `${trimmed}, ${stateAbbr}`;
+              return trimmed;
+            };
+
             const examples = (() => {
               const name = state.name;
-              
+              const st = state.abbreviation;
+              const cities = state.majorCities && state.majorCities.length > 0
+                ? state.majorCities
+                : [{ name: name, slug: state.slug }];
+
+              const c1 = cities[0]?.name || name;
+              const c2 = cities[1]?.name || cities[0]?.name || name;
+
               // 1. Short Route (<500 mi)
-              let shortRoute = `${name} Short-Haul`;
+              let shortRoute = `${formatEndpoint(c1, st)} → ${formatEndpoint(c2, st)}`;
               let shortMiles = "250 mi";
               let shortCost = "$350 – $550";
-              
-              if (state.majorCities && state.majorCities.length >= 2) {
-                shortRoute = `${state.majorCities[0].name} → ${state.majorCities[1].name}`;
+
+              if (cities.length >= 2 && c1 !== c2) {
+                shortRoute = `${formatEndpoint(c1, st)} → ${formatEndpoint(c2, st)}`;
                 shortMiles = "350 mi";
                 shortCost = "$350 – $550";
               } else if (state.popularRoutesOut && state.popularRoutesOut.some(r => r.distanceMiles < 500)) {
                 const r = state.popularRoutesOut.find(r => r.distanceMiles < 500)!;
-                shortRoute = `${r.originCity} → ${r.destCity}, ${r.destState}`;
+                const orig = formatEndpoint(r.originCity, st);
+                const dest = formatEndpoint(r.destCity, r.destState);
+                shortRoute = `${orig} → ${dest}`;
                 shortMiles = `${r.distanceMiles} mi`;
                 shortCost = r.openPriceRange;
               }
 
               // 2. Medium Route (500-1500 mi)
-              let mediumRoute = `${name} → Regional Hub`;
+              const medOut = state.popularRoutesOut?.find(r => r.distanceMiles >= 500 && r.distanceMiles <= 1500);
+              let mediumRoute = "";
               let mediumMiles = "850 mi";
               let mediumCost = "$650 – $1,050";
-              
-              const medOut = state.popularRoutesOut?.find(r => r.distanceMiles >= 500 && r.distanceMiles <= 1500);
+
               if (medOut) {
-                mediumRoute = `${medOut.originCity} → ${medOut.destCity}, ${medOut.destState}`;
+                const orig = formatEndpoint(medOut.originCity, st);
+                const dest = formatEndpoint(medOut.destCity, medOut.destState);
+                mediumRoute = `${orig} → ${dest}`;
                 mediumMiles = `${medOut.distanceMiles} mi`;
                 mediumCost = medOut.openPriceRange;
-              } else if (state.popularRoutesIn?.find(r => r.distanceMiles >= 500 && r.distanceMiles <= 1500)) {
-                const r = state.popularRoutesIn.find(r => r.distanceMiles >= 500 && r.distanceMiles <= 1500)!;
-                mediumRoute = `${r.originCity} → ${name}`;
-                mediumMiles = `${r.distanceMiles} mi`;
-                mediumCost = r.openPriceRange;
+              } else {
+                const destCity = (st === "TX" || st === "OK") ? "Atlanta, GA" : "Dallas, TX";
+                mediumRoute = `${formatEndpoint(c1, st)} → ${destCity}`;
+                mediumMiles = "900 mi";
               }
 
               // 3. Long Route (>1500 mi)
-              let longRoute = `${name} → Cross-Country`;
+              const longOut = state.popularRoutesOut?.find(r => r.distanceMiles > 1500);
+              let longRoute = "";
               let longMiles = "2,400 mi";
               let longCost = "$1,100 – $1,700";
 
-              const longOut = state.popularRoutesOut?.find(r => r.distanceMiles > 1500);
               if (longOut) {
-                longRoute = `${longOut.originCity} → ${longOut.destCity}, ${longOut.destState}`;
+                const orig = formatEndpoint(longOut.originCity, st);
+                const dest = formatEndpoint(longOut.destCity, longOut.destState);
+                longRoute = `${orig} → ${dest}`;
                 longMiles = `${longOut.distanceMiles} mi`;
                 longCost = longOut.openPriceRange;
-              } else if (state.popularRoutesIn?.find(r => r.distanceMiles > 1500)) {
-                const r = state.popularRoutesIn.find(r => r.distanceMiles > 1500)!;
-                longRoute = `${r.originCity} → ${name}`;
-                longMiles = `${r.distanceMiles} mi`;
-                longCost = r.openPriceRange;
               } else {
-                const crossDest = name === "California" ? "Miami, FL" : "Los Angeles, CA";
-                longRoute = `${name} → ${crossDest}`;
+                const crossDest = (st === "CA" || st === "WA" || st === "OR" || st === "NV" || st === "AZ")
+                  ? "Miami, FL"
+                  : "Los Angeles, CA";
+                longRoute = `${formatEndpoint(c1, st)} → ${crossDest}`;
+                longMiles = "2,200 mi";
               }
 
               return {

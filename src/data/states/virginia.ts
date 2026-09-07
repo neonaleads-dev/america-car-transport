@@ -93,18 +93,18 @@ export const virginiaData: VirginiaStateData = {
   },
 
   popularRoutesOut: [
-    { originCity: "Virginia", destCity: "Miami", destState: "FL", distanceMiles: 950, openPriceRange: "$500 - $900", enclosedPriceRange: "$850 - $1,350", transitDays: "3-5 Days" },
-    { originCity: "Virginia", destCity: "Dallas", destState: "TX", distanceMiles: 1300, openPriceRange: "$750 - $1,300", enclosedPriceRange: "$1,125 - $1,950", transitDays: "4-7 Days" },
-    { originCity: "Virginia", destCity: "Los Angeles", destState: "CA", distanceMiles: 2650, openPriceRange: "$1,100 - $1,700", enclosedPriceRange: "$1,700 - $2,550", transitDays: "7-10 Days" },
-    { originCity: "Virginia", destCity: "Chicago", destState: "IL", distanceMiles: 750, openPriceRange: "$650 - $1,100", enclosedPriceRange: "$975 - $1,650", transitDays: "3-5 Days" },
-    { originCity: "Virginia", destCity: "New York", destState: "NY", distanceMiles: 450, openPriceRange: "$450 - $800", enclosedPriceRange: "$750 - $1,200", transitDays: "2-4 Days" }
+    { originCity: "Norfolk, VA", destCity: "Miami", destState: "FL", distanceMiles: 950, openPriceRange: "$500 - $900", enclosedPriceRange: "$850 - $1,350", transitDays: "3-5 Days" },
+    { originCity: "Richmond, VA", destCity: "Dallas", destState: "TX", distanceMiles: 1300, openPriceRange: "$750 - $1,300", enclosedPriceRange: "$1,125 - $1,950", transitDays: "4-7 Days" },
+    { originCity: "Virginia Beach, VA", destCity: "Los Angeles", destState: "CA", distanceMiles: 2650, openPriceRange: "$1,100 - $1,700", enclosedPriceRange: "$1,700 - $2,550", transitDays: "7-10 Days" },
+    { originCity: "Arlington, VA", destCity: "Chicago", destState: "IL", distanceMiles: 750, openPriceRange: "$650 - $1,100", enclosedPriceRange: "$975 - $1,650", transitDays: "3-5 Days" },
+    { originCity: "Alexandria, VA", destCity: "New York", destState: "NY", distanceMiles: 240, openPriceRange: "$450 - $800", enclosedPriceRange: "$750 - $1,200", transitDays: "2-4 Days" }
   ],
   popularRoutesIn: [
-    { originCity: "Miami, FL", destCity: "Virginia", destState: "VA", distanceMiles: 950, openPriceRange: "$500 - $900", enclosedPriceRange: "$850 - $1,350", transitDays: "3-5 Days" },
-    { originCity: "Dallas, TX", destCity: "Virginia", destState: "VA", distanceMiles: 1300, openPriceRange: "$750 - $1,300", enclosedPriceRange: "$1,125 - $1,950", transitDays: "4-7 Days" },
-    { originCity: "Los Angeles, CA", destCity: "Virginia", destState: "VA", distanceMiles: 2650, openPriceRange: "$1,100 - $1,700", enclosedPriceRange: "$1,700 - $2,550", transitDays: "7-10 Days" },
-    { originCity: "Detroit, MI", destCity: "Virginia", destState: "VA", distanceMiles: 650, openPriceRange: "$650 - $1,100", enclosedPriceRange: "$975 - $1,650", transitDays: "3-5 Days" },
-    { originCity: "Charlotte, NC", destCity: "Virginia", destState: "VA", distanceMiles: 300, openPriceRange: "$300 - $600", enclosedPriceRange: "$550 - $900", transitDays: "1-3 Days" }
+    { originCity: "Miami, FL", destCity: "Norfolk", destState: "VA", distanceMiles: 950, openPriceRange: "$500 - $900", enclosedPriceRange: "$850 - $1,350", transitDays: "3-5 Days" },
+    { originCity: "Dallas, TX", destCity: "Richmond", destState: "VA", distanceMiles: 1300, openPriceRange: "$750 - $1,300", enclosedPriceRange: "$1,125 - $1,950", transitDays: "4-7 Days" },
+    { originCity: "Los Angeles, CA", destCity: "Virginia Beach", destState: "VA", distanceMiles: 2650, openPriceRange: "$1,100 - $1,700", enclosedPriceRange: "$1,700 - $2,550", transitDays: "7-10 Days" },
+    { originCity: "Detroit, MI", destCity: "Arlington", destState: "VA", distanceMiles: 520, openPriceRange: "$650 - $1,100", enclosedPriceRange: "$975 - $1,650", transitDays: "3-5 Days" },
+    { originCity: "Charlotte, NC", destCity: "Roanoke", destState: "VA", distanceMiles: 180, openPriceRange: "$300 - $600", enclosedPriceRange: "$550 - $900", transitDays: "1-3 Days" }
   ],
   intraStateRoutes: [
     { originCity: "Norfolk, VA", destCity: "Arlington", destState: "VA", distanceMiles: 200, openPriceRange: "$250 - $400", enclosedPriceRange: "$450 - $600", transitDays: "1 Day" },

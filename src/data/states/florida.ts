@@ -90,18 +90,18 @@ export const floridaData: FloridaStateData = {
   popularRoutesOut: [
     { originCity: "Miami, FL", destCity: "Orlando", destState: "FL", distanceMiles: 235, openPriceRange: "$400 - $650", enclosedPriceRange: "$650 - $950", transitDays: "1 Day" },
     { originCity: "Tampa, FL", destCity: "Jacksonville", destState: "FL", distanceMiles: 200, openPriceRange: "$400 - $600", enclosedPriceRange: "$650 - $900", transitDays: "1 Day" },
-    { originCity: "Florida", destCity: "New York", destState: "NY", distanceMiles: 1280, openPriceRange: "$900 - $1,200", enclosedPriceRange: "$1,300 - $1,600", transitDays: "3-5 Days" },
-    { originCity: "Florida", destCity: "Dallas", destState: "TX", distanceMiles: 1150, openPriceRange: "$850 - $1,100", enclosedPriceRange: "$1,200 - $1,450", transitDays: "3-4 Days" },
-    { originCity: "Florida", destCity: "Los Angeles", destState: "CA", distanceMiles: 2700, openPriceRange: "$1,400 - $1,800", enclosedPriceRange: "$1,900 - $2,300", transitDays: "6-8 Days" },
-    { originCity: "Florida", destCity: "Chicago", destState: "IL", distanceMiles: 1180, openPriceRange: "$800 - $1,150", enclosedPriceRange: "$1,200 - $1,700", transitDays: "4-6 Days" },
-    { originCity: "Florida", destCity: "Atlanta", destState: "GA", distanceMiles: 400, openPriceRange: "$400 - $650", enclosedPriceRange: "$650 - $950", transitDays: "1-2 Days" }
+    { originCity: "Miami, FL", destCity: "New York", destState: "NY", distanceMiles: 1280, openPriceRange: "$900 - $1,200", enclosedPriceRange: "$1,300 - $1,600", transitDays: "3-5 Days" },
+    { originCity: "Orlando, FL", destCity: "Dallas", destState: "TX", distanceMiles: 1150, openPriceRange: "$850 - $1,100", enclosedPriceRange: "$1,200 - $1,450", transitDays: "3-4 Days" },
+    { originCity: "Tampa, FL", destCity: "Los Angeles", destState: "CA", distanceMiles: 2700, openPriceRange: "$1,400 - $1,800", enclosedPriceRange: "$1,900 - $2,300", transitDays: "6-8 Days" },
+    { originCity: "Jacksonville, FL", destCity: "Chicago", destState: "IL", distanceMiles: 1050, openPriceRange: "$800 - $1,150", enclosedPriceRange: "$1,200 - $1,700", transitDays: "4-5 Days" },
+    { originCity: "Miami, FL", destCity: "Atlanta", destState: "GA", distanceMiles: 660, openPriceRange: "$550 - $800", enclosedPriceRange: "$850 - $1,200", transitDays: "2-3 Days" }
   ],
   popularRoutesIn: [
     { originCity: "New York, NY", destCity: "Miami", destState: "FL", distanceMiles: 1280, openPriceRange: "$900 - $1,200", enclosedPriceRange: "$1,300 - $1,600", transitDays: "3-5 Days" },
-    { originCity: "Dallas, TX", destCity: "Florida", destState: "FL", distanceMiles: 1150, openPriceRange: "$850 - $1,100", enclosedPriceRange: "$1,200 - $1,450", transitDays: "3-4 Days" },
-    { originCity: "Los Angeles, CA", destCity: "Florida", destState: "FL", distanceMiles: 2700, openPriceRange: "$1,400 - $1,800", enclosedPriceRange: "$1,900 - $2,300", transitDays: "6-8 Days" },
+    { originCity: "Dallas, TX", destCity: "Miami", destState: "FL", distanceMiles: 1150, openPriceRange: "$850 - $1,100", enclosedPriceRange: "$1,200 - $1,450", transitDays: "3-4 Days" },
+    { originCity: "Los Angeles, CA", destCity: "Orlando", destState: "FL", distanceMiles: 2500, openPriceRange: "$1,400 - $1,800", enclosedPriceRange: "$1,900 - $2,300", transitDays: "5-6 Days" },
     { originCity: "Chicago, IL", destCity: "Tampa", destState: "FL", distanceMiles: 1190, openPriceRange: "$1,100 - $1,700", enclosedPriceRange: "$1,350 - $1,600", transitDays: "3-5 Days" },
-    { originCity: "Atlanta, GA", destCity: "Orlando", destState: "FL", distanceMiles: 440, openPriceRange: "$700 - $1,100", enclosedPriceRange: "$1,050 - $1,650", transitDays: "1-3 Days" }
+    { originCity: "Atlanta, GA", destCity: "Orlando", destState: "FL", distanceMiles: 440, openPriceRange: "$500 - $800", enclosedPriceRange: "$850 - $1,200", transitDays: "1-2 Days" }
   ],
   intraStateRoutes: [
     { originCity: "Miami, FL", destCity: "Orlando", destState: "FL", distanceMiles: 235, openPriceRange: "$400 - $650", enclosedPriceRange: "$650 - $950", transitDays: "1 Day" },

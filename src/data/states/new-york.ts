@@ -38,12 +38,12 @@ export const newYorkData: StateData = {
   openVsEnclosedNotes: "Enclosed shipping is heavily utilized in NYC and Westchester County for exotic sports cars, classic luxury vehicles, and winter protection against road salt.",
   
   popularRoutesOut: [
-    { originCity: "New York, NY", destCity: "Miami", destState: "FL", distanceMiles: 1280, openPriceRange: "$920 - $1,250", enclosedPriceRange: "$1,450 - $1,850", transitDays: "3-5 Days" },
-    { originCity: "New York, NY", destCity: "Los Angeles", destState: "CA", distanceMiles: 2790, openPriceRange: "$1,350 - $1,750", enclosedPriceRange: "$2,100 - $2,700", transitDays: "6-8 Days" }
+    { originCity: "New York City, NY", destCity: "Miami", destState: "FL", distanceMiles: 1280, openPriceRange: "$920 - $1,250", enclosedPriceRange: "$1,450 - $1,850", transitDays: "3-5 Days" },
+    { originCity: "New York City, NY", destCity: "Los Angeles", destState: "CA", distanceMiles: 2790, openPriceRange: "$1,350 - $1,750", enclosedPriceRange: "$2,100 - $2,700", transitDays: "6-8 Days" }
   ],
   popularRoutesIn: [
-    { originCity: "Miami, FL", destCity: "New York", destState: "NY", distanceMiles: 1280, openPriceRange: "$850 - $1,150", enclosedPriceRange: "$1,350 - $1,750", transitDays: "3-4 Days" },
-    { originCity: "Los Angeles, CA", destCity: "New York", destState: "NY", distanceMiles: 2790, openPriceRange: "$1,350 - $1,750", enclosedPriceRange: "$2,100 - $2,700", transitDays: "6-8 Days" }
+    { originCity: "Miami, FL", destCity: "New York City", destState: "NY", distanceMiles: 1280, openPriceRange: "$850 - $1,150", enclosedPriceRange: "$1,350 - $1,750", transitDays: "3-4 Days" },
+    { originCity: "Los Angeles, CA", destCity: "New York City", destState: "NY", distanceMiles: 2790, openPriceRange: "$1,350 - $1,750", enclosedPriceRange: "$2,100 - $2,700", transitDays: "6-8 Days" }
   ],
   
   faqs: [
