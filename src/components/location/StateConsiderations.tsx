@@ -23,7 +23,28 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
             <span className="font-extrabold text-blue-900 block text-xs uppercase tracking-wider mb-1">
               ⚡ Quick Direct Answer — {state.name} Auto Shipping Overview
             </span>
-            <strong>{state.name} car shipping</strong> connects the state&apos;s major cities to nationwide auto transport routes, with pricing typically driven by distance, vehicle type, and transport method (open or enclosed). Cross-country routes like {state.name} to Florida or {state.name} to New York are among the most commonly booked long-haul shipments in the country.
+            {(() => {
+              const currentSlug = state.slug;
+              let dest1 = "Florida";
+              let dest2 = "New York";
+
+              if (currentSlug === "florida") {
+                dest1 = "California";
+                dest2 = "New York";
+              } else if (currentSlug === "new-york") {
+                dest1 = "Florida";
+                dest2 = "California";
+              } else if (currentSlug === "california") {
+                dest1 = "Florida";
+                dest2 = "Texas";
+              }
+
+              return (
+                <span>
+                  <strong>{state.name} car shipping</strong> connects the state&apos;s major cities to nationwide auto transport routes, with pricing typically driven by distance, vehicle type, and transport method (open or enclosed). Cross-country routes like {state.name} to {dest1} or {state.name} to {dest2} are among the most commonly booked long-haul shipments in the country.
+                </span>
+              );
+            })()}
           </div>
         </AnimatedSection>
 

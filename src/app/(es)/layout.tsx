@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+
 const inter = Inter({ 
   subsets: ["latin"], 
   variable: "--font-inter",
@@ -20,25 +21,25 @@ const GSAPScrollAnimations = dynamic(() => import("@/components/animation/GSAPSc
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.americacartransport.com"),
-  title: "America's Trusted Network for Vehicle Shipping",
+  title: "Transporte de Autos en EE.UU. | America Car Transport",
   description:
-    "Compare verified car carriers, get instant quotes, and ship your vehicle safely anywhere in America.",
+    "Cotice y envíe su vehículo a cualquier lugar de Estados Unidos con la red de transportistas verificados de America Car Transport.",
   verification: {
     google: "ddgFC7lCCFGcRISIspal82FrdtgAL6wFuWAVL5V6Kg8",
   },
   openGraph: {
-    url: "https://www.americacartransport.com",
+    url: "https://www.americacartransport.com/es",
     siteName: "America Car Transport",
   },
 };
 
-export default function RootLayout({
+export default function EsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
+    <html lang="es" className={`${inter.variable} ${plusJakarta.variable}`}>
       <head>
         <meta name="google-site-verification" content="ddgFC7lCCFGcRISIspal82FrdtgAL6wFuWAVL5V6Kg8" />
         <link rel="preconnect" href="https://www.americacartransport.com" />

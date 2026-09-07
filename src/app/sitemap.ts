@@ -3,121 +3,102 @@ import { getAllStateSlugs } from "@/data/states";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.americacartransport.com";
-  const lastModified = new Date();
 
   // Core Static Top-Level Pages (High Sitelink Candidates)
   const staticPages = [
     {
       url: `${baseUrl}`,
-      lastModified,
       changeFrequency: "daily" as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/tools/car-shipping-cost-calculator`,
-      lastModified,
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified,
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified,
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/locations`,
-      lastModified,
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/routes`,
-      lastModified,
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/resources`,
-      lastModified,
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/licensing-insurance`,
-      lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/reviews`,
-      lastModified,
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.5,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.5,
     },
     // Spanish Subpaths
     {
       url: `${baseUrl}/es`,
-      lastModified,
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/es/calculadora`,
-      lastModified,
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/es/servicios`,
-      lastModified,
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/es/transporte-de-autos-estados-unidos`,
-      lastModified,
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
   ];
 
-  // Specific Service Category Pages (All 13 Service Routes)
+  // Specific Service Category Pages (Clean 200 OK Routes Only)
   const servicePages = [
     "open-auto-transport",
     "enclosed-auto-transport",
     "door-to-door-transport",
-    "door-to-door-auto-transport",
     "expedited-auto-transport",
     "terminal-to-terminal-shipping",
     "hawaii-car-shipping",
@@ -129,7 +110,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "corporate-relocation-transport",
   ].map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
-    lastModified,
     changeFrequency: "daily" as const,
     priority: 0.9,
   }));
@@ -141,7 +121,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "non-running",
   ].map((slug) => ({
     url: `${baseUrl}/ship-a-car/${slug}`,
-    lastModified,
     changeFrequency: "daily" as const,
     priority: 0.9,
   }));
@@ -150,7 +129,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const stateSlugs = getAllStateSlugs();
   const statePages = stateSlugs.map((slug) => ({
     url: `${baseUrl}/locations/${slug}`,
-    lastModified,
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
@@ -170,7 +148,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "texas-to-california",
   ].map((slug) => ({
     url: `${baseUrl}/routes/${slug}`,
-    lastModified,
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
@@ -181,7 +158,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "how-to-avoid-car-shipping-scams",
   ].map((slug) => ({
     url: `${baseUrl}/resources/${slug}`,
-    lastModified,
     changeFrequency: "weekly" as const,
     priority: 0.9,
   }));

@@ -89,7 +89,7 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} America Car Transport. All rights reserved.
             </p>
             <p className="text-xs text-slate-500 max-w-2xl font-medium">
-              America Car Transport is an FMCSA-compliant auto transport broker. We arrange vehicle shipments by connecting customers with fully licensed, bonded, and insured motor carriers nationwide.
+              America Car Transport is an FMCSA-compliant auto transport broker. We arrange vehicle shipments by connecting customers with fully licensed, bonded, and insured motor carriers nationwide. Verify license status on the official <a href="https://safer.fmcsa.dot.gov/CompanySnapshot.aspx" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline font-semibold">FMCSA SAFER Snapshot</a>.
             </p>
           </div>
           <div className="flex items-center gap-6 text-sm font-medium text-slate-400 shrink-0">
