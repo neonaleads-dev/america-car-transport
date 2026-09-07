@@ -1,12 +1,24 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { Plus, Minus } from "lucide-react";
 
-const faqs = [
+interface FAQItem {
+  question: string;
+  answer: React.ReactNode;
+  schemaAnswer?: string;
+}
+
+const faqs: FAQItem[] = [
   {
     question: "How much does it cost to transport a car?",
-    answer: "The cost to transport a car depends on several factors including the distance, vehicle size, transport type (open vs. enclosed), and the time of year. On average, shipping a car within the continental US ranges from $500 to $1,500. Use our instant quote calculator above for a precise, real-time estimate."
+    answer: (
+      <>
+        Car shipping rates average $0.60 to $1.20 per mile depending on distance, vehicle size, and carrier type. Short routes run $500–$900, while cross-country shipments average $1,200–$1,700. For exact real-time estimates on your route, check our <Link href="/tools/car-shipping-cost-calculator" className="text-blue-600 font-bold hover:underline">car shipping cost calculator</Link>.
+      </>
+    ),
+    schemaAnswer: "Car shipping rates average $0.60 to $1.20 per mile depending on distance, vehicle size, and carrier type. Short routes run $500–$900, while cross-country shipments average $1,200–$1,700."
   },
   {
     question: "How long does auto transport take?",
@@ -41,7 +53,7 @@ export default function FAQSection() {
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer
+        "text": faq.schemaAnswer || (typeof faq.answer === "string" ? faq.answer : "")
       }
     }))
   };

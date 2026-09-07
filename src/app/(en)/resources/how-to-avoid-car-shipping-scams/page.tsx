@@ -317,7 +317,7 @@ export default function HowToAvoidCarShippingScamsPage() {
 
             <div className="space-y-3">
               <div className="p-4 bg-red-50/70 border border-red-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium">
-                <strong className="text-red-900 font-extrabold">1. An unusually low quote (Bait-and-Switch):</strong> A price 25–50% below the typical market average for your route is one of the most reliable scam indicators; the low price is bait to collect a deposit, followed by demands for hundreds more once your car is stranded.
+                <strong className="text-red-900 font-extrabold">1. An unusually low quote (Bait-and-Switch):</strong> A price 25–50% below the typical market average for your route is one of the most reliable scam indicators. Before accepting a suspiciously cheap offer, calculate an accurate <Link href="/tools/car-shipping-cost-calculator" className="text-blue-600 font-bold hover:underline">car shipping estimate</Link> to know realistic market rates.
               </div>
               <div className="p-4 bg-red-50/70 border border-red-200 rounded-xl text-xs md:text-sm text-slate-800 font-medium">
                 <strong className="text-red-900 font-extrabold">2. Demands for untraceable payment:</strong> Wire transfers (Western Union), Zelle, gift cards, or cash-only requests are major warning signs. Legitimate companies accept traceable payment methods like credit cards.

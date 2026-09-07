@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { motion, useInView, animate } from "framer-motion";
 import { Truck, Car, Package, MapPin, Snowflake, Play } from "lucide-react";
 
@@ -177,10 +178,13 @@ export default function PricingTransparency() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
-              <button className="flex-1 bg-[#3b63d9] hover:bg-[#2d4cb3] text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-blue-600/20 transition-all flex items-center justify-center gap-2">
+              <a href="#hero-quote" className="flex-1 bg-[#3b63d9] hover:bg-[#2d4cb3] text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-blue-600/20 transition-all flex items-center justify-center gap-2">
                 Get Your Exact Quote →
-              </button>
+              </a>
             </div>
+            <p className="text-xs text-slate-500 font-medium text-center mt-3">
+              Looking for a route breakdown? <Link href="/tools/car-shipping-cost-calculator" className="text-blue-600 font-bold hover:underline">Get exact car shipping costs</Link> using our online calculator.
+            </p>
           </div>
         </div>
 

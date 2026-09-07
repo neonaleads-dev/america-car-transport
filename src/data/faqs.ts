@@ -23,19 +23,19 @@ export const MASTER_FAQ_CATEGORIES: FAQCategory[] = [
       {
         q: "How much does it cost to ship a car 2,000 miles?",
         a: "A 2,000-mile move — a typical West Coast-to-Midwest or West Coast-to-Northeast distance — generally runs $1,000 to $1,600 on open transport for a standard sedan or midsize SUV, with enclosed transport typically adding 40–60% on top of that. Long-haul routes like this actually carry a lower per-mile rate than short hauls, since fixed costs spread across more miles.",
-        linkText: "Calculate your route cost with no email required",
+        linkText: "instant car shipping cost calculator",
         linkHref: "/tools/car-shipping-cost-calculator"
       },
       {
         q: "How much does it cost to ship a car 200 miles?",
         a: "Short hauls under 200–300 miles typically cost $300 to $600, but carry the highest per-mile rate of any distance tier because loading, dispatch, and minimum-trip costs don't shrink with distance. Routes between major metro pairs (e.g., Los Angeles to San Diego, Dallas to Houston) tend to price toward the lower end of this range.",
-        linkText: "Try our Car Shipping Cost Calculator",
+        linkText: "instant car shipping cost calculator",
         linkHref: "/tools/car-shipping-cost-calculator"
       },
       {
         q: "How do you calculate car shipping cost?",
         a: "Car shipping cost comes down to five factors multiplied together, not a flat per-mile rate: distance, vehicle size/weight, transport type (open vs. enclosed), route popularity, and timing. Distance sets the baseline, but short hauls carry higher per-mile rates than long-haul routes.",
-        linkText: "Learn more in our Cost Calculator Guide",
+        linkText: "instant car shipping cost calculator",
         linkHref: "/tools/car-shipping-cost-calculator"
       },
       {
@@ -47,13 +47,13 @@ export const MASTER_FAQ_CATEGORIES: FAQCategory[] = [
       {
         q: "How much does it cost per mile to drive a car (IRS rate)?",
         a: "The 2022 IRS business mileage rate was 58.5 cents per mile for the first half of the year, raised mid-year to 62.5 cents per mile from July through December 2022 due to fuel price spikes. Multiply the IRS rate by your route's mileage to estimate your true per-mile cost of driving (fuel, wear, depreciation) versus shipping.",
-        linkText: "See driving vs. shipping comparison",
+        linkText: "instant car shipping cost calculator",
         linkHref: "/tools/car-shipping-cost-calculator"
       },
       {
         q: "What is the current freight rate per mile?",
         a: "General dry van freight has been running roughly $2.00 to $2.80 per mile on the spot market through 2026. However, car haulers price per vehicle unit (carrying 7–10 cars per truck) based on route demand, vehicle size, and transport method rather than a flat per-mile freight rate.",
-        linkText: "Check real route quote estimates",
+        linkText: "instant car shipping cost calculator",
         linkHref: "/tools/car-shipping-cost-calculator"
       },
       {

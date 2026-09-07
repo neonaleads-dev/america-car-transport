@@ -442,7 +442,7 @@ export default function EnclosedAutoTransportPage() {
                   </table>
                 </div>
                 <p className="text-xs text-slate-500 font-medium mt-3 italic">
-                  Prices reflect typical national ranges for standard enclosed transport and increase further for exotic, low-clearance, or non-running vehicles requiring specialized equipment. Get an exact quote using the calculator above.
+                  Prices reflect typical national ranges for standard enclosed transport and increase further for exotic, low-clearance, or non-running vehicles requiring specialized equipment. Calculate your exact <Link href="/tools/car-shipping-cost-calculator" className="text-blue-600 font-bold hover:underline">car shipping cost</Link> using our online calculator.
                 </p>
               </div>
 

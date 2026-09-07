@@ -92,6 +92,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/es/cuanto-cuesta-enviar-un-carro`,
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/es/transporte-de-carros-texas`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/es/transporte-de-carros-california`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/es/transporte-de-carros-florida`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/es/transporte-de-carros-nueva-york`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/es/estafas-de-transporte-de-autos`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/es/transporte-de-carros-entre-estados`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
   ];
 
   // Specific Service Category Pages (Clean 200 OK Routes Only)
@@ -156,6 +191,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const resourcePages = [
     "california-driving-laws",
     "how-to-avoid-car-shipping-scams",
+    "car-shipping-rates-by-state",
+    "ship-car-vs-driving-cost",
+    "how-car-shipping-quotes-work",
   ].map((slug) => ({
     url: `${baseUrl}/resources/${slug}`,
     changeFrequency: "weekly" as const,

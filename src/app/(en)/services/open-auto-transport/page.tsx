@@ -441,7 +441,7 @@ export default function OpenAutoTransportPage() {
                   </table>
                 </div>
                 <p className="text-xs text-slate-500 font-medium mt-3 italic">
-                  Prices reflect typical national ranges for a standard operable sedan on open transport and will vary by exact route, vehicle size, season, and carrier availability. Get an exact quote using the calculator above.
+                  Prices reflect typical national ranges for a standard operable sedan on open transport and will vary by exact route, vehicle size, season, and carrier availability. Estimate your <Link href="/tools/car-shipping-cost-calculator" className="text-blue-600 font-bold hover:underline">car shipping cost</Link> using our online calculator.
                 </p>
               </div>
 

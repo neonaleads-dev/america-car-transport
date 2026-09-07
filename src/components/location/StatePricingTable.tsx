@@ -233,7 +233,7 @@ export default function StatePricingTable({ state }: StatePricingTableProps) {
                   </table>
                 </div>
                 <p className="text-[11px] text-slate-500 font-medium mt-3 italic">
-                  *Data based on 2026 {state.name} shipments. Open transport baseline for standard sedans. SUVs and trucks add $100–$200. Enclosed transport adds 50–70%.
+                  *Data based on 2026 {state.name} shipments. Open transport baseline for standard sedans. SUVs and trucks add $100–$200. Enclosed transport adds 50–70%. Calculate your exact <Link href="/tools/car-shipping-cost-calculator" className="text-blue-600 font-bold hover:underline">car shipping cost from {state.name}</Link> instantly.
                 </p>
               </div>
             );

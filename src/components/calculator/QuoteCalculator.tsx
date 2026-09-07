@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Flag, ArrowDownUp, Phone, Lock, CheckCircle2, Car, Calendar, Loader2, Plus, Trash2, X, User, Mail, Truck, Shield, AlertTriangle } from "lucide-react";
+import { MapPin, Flag, ArrowDownUp, Phone, Lock, CheckCircle2, Car, Calendar, Loader2, Plus, Trash2, X, User, Mail, AlertTriangle } from "lucide-react";
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -21,9 +21,8 @@ interface Vehicle {
   condition: string;
 }
 
-// Haversine formula to calculate miles between two coordinates
 function getDistanceMiles(lat1: number, lon1: number, lat2: number, lon2: number) {
-  const R = 3958.8; // Earth radius in miles
+  const R = 3958.8;
   const dLat = (lat2 - lat1) * (Math.PI / 180);
   const dLon = (lon2 - lon1) * (Math.PI / 180);
   const a = 
@@ -42,7 +41,6 @@ const TOP_MAKES = [
   "Volkswagen", "Volvo"
 ];
 
-// Top 50 major US cities for the datalist autocomplete
 const US_CITIES = [
   "New York, NY 10001", "Los Angeles, CA 90001", "Chicago, IL 60601", "Houston, TX 77001", 
   "Phoenix, AZ 85001", "Philadelphia, PA 19101", "San Antonio, TX 78201", "San Diego, CA 92101", 
@@ -61,10 +59,15 @@ const US_CITIES = [
 
 const YEARS = Array.from(new Array(47), (val, index) => new Date().getFullYear() + 1 - index);
 
-export default function QuoteCalculator() {
+interface QuoteCalculatorProps {
+  lang?: "en" | "es";
+}
+
+export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
+  const isEs = lang === "es";
   const [step, setStep] = useState<Step>(1);
   const [formData, setFormData] = useState({
-    zipFrom: "", // Contains the raw input (e.g. "Miami, FL 33101" or "33101")
+    zipFrom: "",
     zipTo: "",
     transportType: "open",
     vehicles: [{ id: Date.now(), year: "", make: "", model: "", condition: "running" }],
@@ -78,23 +81,19 @@ export default function QuoteCalculator() {
   const [locationFrom, setLocationFrom] = useState<LocationData | null>(null);
   const [locationTo, setLocationTo] = useState<LocationData | null>(null);
   const [loadingFrom, setLoadingFrom] = useState(false);
-  const [isBookingSubmitted, setIsBookingSubmitted] = useState(false);
   const [loadingTo, setLoadingTo] = useState(false);
 
   const inputRefFrom = useRef<HTMLInputElement>(null);
   const inputRefTo = useRef<HTMLInputElement>(null);
 
-  // Caching fetched models: { "Ford": ["Mustang", "F-150", ...], ... }
   const [modelsCache, setModelsCache] = useState<Record<string, string[]>>({});
   const [fetchingModels, setFetchingModels] = useState<Record<string, boolean>>({});
 
-  // Helper to extract 5 digits from a string (e.g. from "Miami, FL 33101")
   const extractZip = (str: string) => {
     const match = str.match(/\b\d{5}\b/);
     return match ? match[0] : str.replace(/\D/g, '').substring(0, 5);
   };
 
-  // Fetch Location for ZipFrom
   useEffect(() => {
     const zip = extractZip(formData.zipFrom);
     if (zip.length === 5) {
@@ -120,7 +119,6 @@ export default function QuoteCalculator() {
     }
   }, [formData.zipFrom]);
 
-  // Fetch Location for ZipTo
   useEffect(() => {
     const zip = extractZip(formData.zipTo);
     if (zip.length === 5) {
@@ -146,7 +144,6 @@ export default function QuoteCalculator() {
     }
   }, [formData.zipTo]);
 
-  // Fetch Models from NHTSA API
   const fetchModels = async (make: string) => {
     if (!make || modelsCache[make] || fetchingModels[make]) return;
 
@@ -156,7 +153,6 @@ export default function QuoteCalculator() {
       const data = await res.json();
       if (data && data.Results) {
         const modelNames = data.Results.map((r: any) => r.Model_Name);
-        // Deduplicate and sort alphabetically
         const uniqueModels = Array.from(new Set(modelNames)).sort() as string[];
         setModelsCache(prev => ({ ...prev, [make]: uniqueModels }));
       }
@@ -214,14 +210,14 @@ export default function QuoteCalculator() {
         });
         const resData = await response.json();
         if (!response.ok || !resData.success || !resData.emailSent) {
-          setSubmitError(resData.error || "Email delivery failed via Resend API. Please verify your Resend API key or call (530) 725-5383.");
+          setSubmitError(resData.error || (isEs ? "Error al enviar la cotización. Por favor intente de nuevo o llame al (530) 725-5383." : "Email delivery failed via Resend API. Please verify your Resend API key or call (530) 725-5383."));
           setIsSubmitting(false);
           return;
         }
         setStep(4);
       } catch (err: any) {
         console.error("Error dispatching quote lead:", err);
-        setSubmitError("Network error. Please try again or call us at (530) 725-5383.");
+        setSubmitError(isEs ? "Error de red. Intente nuevamente o llame al (530) 725-5383." : "Network error. Please try again or call us at (530) 725-5383.");
       } finally {
         setIsSubmitting(false);
       }
@@ -231,7 +227,6 @@ export default function QuoteCalculator() {
   };
   const handleBack = () => setStep((s) => Math.max(s - 1, 1) as Step);
 
-  // Vehicle Management
   const addVehicle = () => {
     setFormData(prev => ({
       ...prev,
@@ -277,7 +272,6 @@ export default function QuoteCalculator() {
   return (
     <div className="w-full max-w-[500px] mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden font-sans text-slate-800 flex flex-col relative z-20 border border-slate-100">
       
-      {/* Hidden Datalists for Smart Dropdowns */}
       <datalist id="us-cities">
         {US_CITIES.map(city => <option key={city} value={city} />)}
       </datalist>
@@ -286,7 +280,6 @@ export default function QuoteCalculator() {
         {TOP_MAKES.map(make => <option key={make} value={make} />)}
       </datalist>
 
-      {/* Render dynamic datalists for models based on cached makes */}
       {Object.entries(modelsCache).map(([make, models]) => (
         <datalist id={`models-${make}`} key={make}>
           {models.slice(0, 100).map(model => <option key={model} value={model} />)}
@@ -298,14 +291,20 @@ export default function QuoteCalculator() {
         <div>
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-green-700 font-semibold text-xs sm:text-sm">Instant Quote — 30 Secs</span>
-            <span className="bg-emerald-100 text-emerald-800 text-[10px] sm:text-[11px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full border border-emerald-200">Online Quote Promo: $25 OFF</span>
+            <span className="text-green-700 font-semibold text-xs sm:text-sm">
+              {isEs ? "Cotización Instantánea — 30 Seg" : "Instant Quote — 30 Secs"}
+            </span>
+            <span className="bg-emerald-100 text-emerald-800 text-[10px] sm:text-[11px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full border border-emerald-200">
+              {isEs ? "Oferta En Línea: $25 DESC" : "Online Quote Promo: $25 OFF"}
+            </span>
           </div>
-          <h2 className="text-base sm:text-xl font-bold text-slate-900 tracking-tight">Get Your Free Car Shipping Quote</h2>
+          <h2 className="text-base sm:text-xl font-bold text-slate-900 tracking-tight">
+            {isEs ? "Obtenga su Cotización Gratuita de Transporte" : "Get Your Free Car Shipping Quote"}
+          </h2>
         </div>
-        <button className="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 bg-white border border-blue-200 text-blue-600 font-semibold text-xs sm:text-sm rounded-xl shadow-sm hover:bg-blue-50 transition-colors shrink-0">
-          Call <Phone className="w-3.5 h-3.5" />
-        </button>
+        <a href="tel:5307255383" className="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 bg-white border border-blue-200 text-blue-600 font-semibold text-xs sm:text-sm rounded-xl shadow-sm hover:bg-blue-50 transition-colors shrink-0">
+          {isEs ? "Llamar" : "Call"} <Phone className="w-3.5 h-3.5" />
+        </a>
       </div>
 
       <div className="px-4 py-4 md:px-6 md:py-6 flex-grow flex flex-col">
@@ -315,7 +314,9 @@ export default function QuoteCalculator() {
             <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${step === 1 ? 'border-blue-600 text-blue-600 bg-blue-50' : step > 1 ? 'border-green-500 bg-green-500 text-white' : 'border-slate-300 text-slate-400'}`}>
               {step > 1 ? <CheckCircle2 className="w-4 h-4" /> : <MapPin className="w-4 h-4" />}
             </div>
-            <span className={`text-sm font-semibold ${step >= 1 ? 'text-blue-600' : 'text-slate-400'}`}>Destination</span>
+            <span className={`text-sm font-semibold ${step >= 1 ? 'text-blue-600' : 'text-slate-400'}`}>
+              {isEs ? "Origen/Destino" : "Destination"}
+            </span>
           </div>
           
           <div className={`flex-1 h-[2px] mx-2 ${step > 1 ? 'bg-blue-200' : 'bg-slate-100'}`}></div>
@@ -324,7 +325,9 @@ export default function QuoteCalculator() {
             <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${step === 2 ? 'border-blue-600 text-blue-600 bg-blue-50' : step > 2 ? 'border-green-500 bg-green-500 text-white' : 'border-slate-300 text-slate-400'}`}>
               {step > 2 ? <CheckCircle2 className="w-4 h-4" /> : <Car className="w-4 h-4" />}
             </div>
-            <span className={`text-sm font-semibold hidden sm:block ${step >= 2 ? 'text-blue-600' : 'text-slate-400'}`}>Vehicle</span>
+            <span className={`text-sm font-semibold hidden sm:block ${step >= 2 ? 'text-blue-600' : 'text-slate-400'}`}>
+              {isEs ? "Vehículo" : "Vehicle"}
+            </span>
           </div>
           
           <div className={`flex-1 h-[2px] mx-2 ${step > 2 ? 'bg-blue-200' : 'bg-slate-100'}`}></div>
@@ -333,16 +336,19 @@ export default function QuoteCalculator() {
             <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${step === 3 || step === 4 ? 'border-blue-600 text-blue-600 bg-blue-50' : 'border-slate-300 text-slate-400'}`}>
               <Calendar className="w-4 h-4" />
             </div>
-            <span className={`text-sm font-semibold hidden sm:block ${step >= 3 ? 'text-blue-600' : 'text-slate-400'}`}>Date</span>
+            <span className={`text-sm font-semibold hidden sm:block ${step >= 3 ? 'text-blue-600' : 'text-slate-400'}`}>
+              {isEs ? "Contacto" : "Date"}
+            </span>
           </div>
         </div>
 
         <AnimatePresence mode="wait">
           {step === 1 && (
             <motion.div key="step1" variants={slideVariants} initial="initial" animate="animate" exit="exit" className="flex flex-col flex-grow">
-              <label className="text-slate-600 text-sm font-medium mb-2">Pickup & Delivery Location</label>
+              <label className="text-slate-600 text-sm font-medium mb-2">
+                {isEs ? "Ubicación de Recogida y Entrega" : "Pickup & Delivery Location"}
+              </label>
               
-              {/* Stacked Inputs with Swap Button */}
               <div className="relative bg-[#f8fafc] border border-slate-200 rounded-xl mb-6">
                 
                 {/* Pickup Input */}
@@ -353,14 +359,14 @@ export default function QuoteCalculator() {
                       ref={inputRefFrom}
                       type="text" 
                       list="us-cities"
-                      placeholder="City or ZIP code..."
+                      placeholder={isEs ? "Ciudad o código ZIP de origen..." : "City or ZIP code..."}
                       value={formData.zipFrom}
                       onChange={(e) => setFormData({...formData, zipFrom: e.target.value})}
                       className="w-full bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none font-semibold text-sm sm:text-base"
                     />
                     {locationFrom && (
                       <div className="text-xs text-emerald-600 font-bold mt-0.5 flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3 shrink-0" /> Verified: {locationFrom.city}, {locationFrom.state}
+                        <CheckCircle2 className="w-3 h-3 shrink-0" /> {isEs ? "Verificado:" : "Verified:"} {locationFrom.city}, {locationFrom.state}
                       </div>
                     )}
                   </div>
@@ -385,14 +391,14 @@ export default function QuoteCalculator() {
                       ref={inputRefTo}
                       type="text" 
                       list="us-cities"
-                      placeholder="City or ZIP code..."
+                      placeholder={isEs ? "Ciudad o código ZIP de destino..." : "City or ZIP code..."}
                       value={formData.zipTo}
                       onChange={(e) => setFormData({...formData, zipTo: e.target.value})}
                       className="w-full bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none font-semibold text-sm sm:text-base"
                     />
                     {locationTo && (
                       <div className="text-xs text-emerald-600 font-bold mt-0.5 flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3 shrink-0" /> Verified: {locationTo.city}, {locationTo.state}
+                        <CheckCircle2 className="w-3 h-3 shrink-0" /> {isEs ? "Verificado:" : "Verified:"} {locationTo.city}, {locationTo.state}
                       </div>
                     )}
                   </div>
@@ -409,7 +415,6 @@ export default function QuoteCalculator() {
                   )}
                 </div>
 
-                {/* Floating Swap Button */}
                 <button 
                   type="button"
                   onClick={handleSwap}
@@ -420,12 +425,14 @@ export default function QuoteCalculator() {
                 </button>
               </div>
 
-              {/* Transport Type Segmented Control */}
+              {/* Transport Type */}
               <div className="flex justify-between items-center mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200/80">
                 <div>
-                  <label className="text-slate-900 font-bold text-sm block">Transport Type <span className="text-red-500">*</span></label>
+                  <label className="text-slate-900 font-bold text-sm block">{isEs ? "Tipo de Transporte *" : "Transport Type *"}</label>
                   <p className="text-xs text-slate-500 font-medium">
-                    {formData.transportType === 'open' ? 'Open Carrier · Most Affordable' : 'Enclosed Carrier · Premium Protection'}
+                    {formData.transportType === 'open' 
+                      ? (isEs ? 'Transporte Abierto · Más Económico' : 'Open Carrier · Most Affordable') 
+                      : (isEs ? 'Transporte Cerrado · Protección Máxima' : 'Enclosed Carrier · Premium Protection')}
                   </p>
                 </div>
                 <div className="w-[170px] shrink-0">
@@ -435,14 +442,14 @@ export default function QuoteCalculator() {
                       onClick={() => setFormData({...formData, transportType: "open"})}
                       className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-md text-xs font-bold transition-all ${formData.transportType === 'open' ? 'bg-[#2563eb] text-white shadow-sm' : 'text-slate-700 hover:text-slate-900'}`}
                     >
-                      <Car className="w-3.5 h-3.5" /> Open
+                      <Car className="w-3.5 h-3.5" /> {isEs ? "Abierto" : "Open"}
                     </button>
                     <button 
                       type="button"
                       onClick={() => setFormData({...formData, transportType: "enclosed"})}
                       className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-md text-xs font-bold transition-all ${formData.transportType === 'enclosed' ? 'bg-[#2563eb] text-white shadow-sm' : 'text-slate-700 hover:text-slate-900'}`}
                     >
-                      <Car className="w-3.5 h-3.5" /> Closed
+                      <Car className="w-3.5 h-3.5" /> {isEs ? "Cerrado" : "Closed"}
                     </button>
                   </div>
                 </div>
@@ -452,14 +459,13 @@ export default function QuoteCalculator() {
                 <button 
                   type="button"
                   onClick={() => {
-                    // Fallback defaults if user clicks directly to proceed
                     if (!formData.zipFrom) setFormData(prev => ({ ...prev, zipFrom: "Miami, FL 33101" }));
                     if (!formData.zipTo) setFormData(prev => ({ ...prev, zipTo: "New York, NY 10001" }));
                     handleNext();
                   }}
                   className="w-full bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 md:py-4 rounded-xl flex items-center justify-center gap-2 text-base md:text-lg shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] active:shadow-inner transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0.5 cursor-pointer animate-cta-pulse"
                 >
-                  Vehicle Details →
+                  {isEs ? "Detalles del Vehículo →" : "Vehicle Details →"}
                 </button>
               </div>
             </motion.div>
@@ -467,14 +473,18 @@ export default function QuoteCalculator() {
 
           {step === 2 && (
             <motion.div key="step2" variants={slideVariants} initial="initial" animate="animate" exit="exit" className="flex flex-col flex-grow">
-              <label className="text-slate-600 text-sm font-medium mb-4">What vehicle(s) are you shipping?</label>
+              <label className="text-slate-600 text-sm font-medium mb-4">
+                {isEs ? "¿Qué vehículo(s) va a transportar?" : "What vehicle(s) are you shipping?"}
+              </label>
               
               <div className="space-y-6 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                 {formData.vehicles.map((vehicle, index) => (
                   <div key={vehicle.id} className="relative bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
                     {formData.vehicles.length > 1 && (
                       <div className="flex justify-between items-center mb-3 pb-2 border-b border-slate-100">
-                        <span className="text-sm font-bold text-slate-800">Vehicle {index + 1}</span>
+                        <span className="text-sm font-bold text-slate-800">
+                          {isEs ? `Vehículo ${index + 1}` : `Vehicle ${index + 1}`}
+                        </span>
                         <button onClick={() => removeVehicle(vehicle.id)} className="text-slate-400 hover:text-red-500 transition-colors">
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -483,22 +493,26 @@ export default function QuoteCalculator() {
                     
                     <div className="grid grid-cols-2 gap-3 mb-3">
                       <div>
-                        <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">Year *</label>
+                        <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">
+                          {isEs ? "Año *" : "Year *"}
+                        </label>
                         <select 
                           value={vehicle.year} 
                           onChange={(e) => updateVehicle(vehicle.id, 'year', e.target.value)}
                           className="w-full bg-[#f8fafc] border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm appearance-none cursor-pointer"
                         >
-                          <option value="" disabled>Select Year</option>
+                          <option value="" disabled>{isEs ? "Seleccionar Año" : "Select Year"}</option>
                           {YEARS.map(y => <option key={y} value={y}>{y}</option>)}
                         </select>
                       </div>
                       <div className="relative">
-                        <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">Make *</label>
+                        <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">
+                          {isEs ? "Marca *" : "Make *"}
+                        </label>
                         <input 
                           type="text" 
                           list="top-makes"
-                          placeholder="e.g. BMW"
+                          placeholder={isEs ? "ej. BMW" : "e.g. BMW"}
                           value={vehicle.make} 
                           onChange={(e) => updateVehicle(vehicle.id, 'make', e.target.value)}
                           className="w-full bg-[#f8fafc] border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm"
@@ -511,25 +525,29 @@ export default function QuoteCalculator() {
 
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">Model *</label>
+                        <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">
+                          {isEs ? "Modelo *" : "Model *"}
+                        </label>
                         <input 
                           type="text" 
                           list={modelsCache[vehicle.make] ? `models-${vehicle.make}` : undefined}
-                          placeholder={vehicle.make && !modelsCache[vehicle.make] && !fetchingModels[vehicle.make] ? "Loading..." : "e.g. X5"}
+                          placeholder={vehicle.make && !modelsCache[vehicle.make] && !fetchingModels[vehicle.make] ? (isEs ? "Cargando..." : "Loading...") : (isEs ? "ej. X5" : "e.g. X5")}
                           value={vehicle.model} 
                           onChange={(e) => updateVehicle(vehicle.id, 'model', e.target.value)}
                           className="w-full bg-[#f8fafc] border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm"
                         />
                       </div>
                       <div>
-                        <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">Condition</label>
+                        <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1 block">
+                          {isEs ? "Estado" : "Condition"}
+                        </label>
                         <select 
                           value={vehicle.condition} 
                           onChange={(e) => updateVehicle(vehicle.id, 'condition', e.target.value)}
                           className="w-full bg-[#f8fafc] border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm appearance-none cursor-pointer"
                         >
-                          <option value="running">Running</option>
-                          <option value="non-running">Non-Running</option>
+                          <option value="running">{isEs ? "En Funcionamiento" : "Running"}</option>
+                          <option value="non-running">{isEs ? "Sin Funcionar" : "Non-Running"}</option>
                         </select>
                       </div>
                     </div>
@@ -541,7 +559,7 @@ export default function QuoteCalculator() {
                 onClick={addVehicle}
                 className="mt-4 flex items-center justify-center gap-2 w-full py-3 border-2 border-dashed border-slate-200 rounded-xl text-blue-600 font-semibold hover:border-blue-300 hover:bg-blue-50 transition-all text-sm"
               >
-                <Plus className="w-4 h-4" /> Add Another Vehicle
+                <Plus className="w-4 h-4" /> {isEs ? "+ Agregar Otro Vehículo" : "+ Add Another Vehicle"}
               </button>
 
               <div className="mt-auto pt-4 flex gap-3">
@@ -549,14 +567,14 @@ export default function QuoteCalculator() {
                   onClick={handleBack}
                   className="w-1/3 bg-slate-100 text-slate-700 font-bold py-3.5 rounded-xl flex items-center justify-center hover:bg-slate-200 transition-colors text-sm"
                 >
-                  Back
+                  {isEs ? "Atrás" : "Back"}
                 </button>
                 <button 
                   onClick={handleNext}
                   disabled={!isVehiclesValid()}
                   className="w-2/3 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] cursor-pointer"
                 >
-                  Contact Details →
+                  {isEs ? "Datos de Contacto →" : "Contact Details →"}
                 </button>
               </div>
             </motion.div>
@@ -566,11 +584,13 @@ export default function QuoteCalculator() {
             <motion.div key="step3" variants={slideVariants} initial="initial" animate="animate" exit="exit" className="flex flex-col flex-grow">
               <div className="space-y-3">
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">Full Name</label>
+                  <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">
+                    {isEs ? "Nombre Completo *" : "Full Name *"}
+                  </label>
                   <div className="relative">
                     <User className="absolute left-3.5 top-3.5 w-5 h-5 text-slate-400" />
                     <input 
-                      type="text" placeholder="John Doe"
+                      type="text" placeholder={isEs ? "Juan Pérez" : "John Doe"}
                       value={formData.fullName} onChange={(e) => setFormData({...formData, fullName: e.target.value})}
                       className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 font-semibold text-slate-800 text-sm"
                     />
@@ -579,18 +599,22 @@ export default function QuoteCalculator() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">Email Address</label>
+                    <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">
+                      {isEs ? "Correo Electrónico *" : "Email Address *"}
+                    </label>
                     <div className="relative">
                       <Mail className="absolute left-3.5 top-3.5 w-5 h-5 text-slate-400" />
                       <input 
-                        type="email" placeholder="john@example.com"
+                        type="email" placeholder={isEs ? "juan@ejemplo.com" : "john@example.com"}
                         value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}
                         className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 font-semibold text-slate-800 text-sm"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">Phone Number</label>
+                    <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">
+                      {isEs ? "Número de Teléfono *" : "Phone Number *"}
+                    </label>
                     <div className="relative">
                       <Phone className="absolute left-3.5 top-3.5 w-5 h-5 text-slate-400" />
                       <input 
@@ -603,7 +627,9 @@ export default function QuoteCalculator() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">Preferred Pickup Date</label>
+                  <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1">
+                    {isEs ? "Fecha Preferida de Recogida *" : "Preferred Pickup Date *"}
+                  </label>
                   <div className="relative">
                     <Calendar className="absolute left-3.5 top-3.5 w-5 h-5 text-slate-400" />
                     <input 
@@ -623,7 +649,9 @@ export default function QuoteCalculator() {
                     className="mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer"
                   />
                   <label htmlFor="consent" className="text-xs text-slate-500 leading-relaxed cursor-pointer">
-                    By checking this box, I confirm that I have read and agree to the Terms &amp; Conditions and Privacy Policy. I also consent to receive calls, SMS, or emails regarding my quote request so I can be provided with accurate pricing, carrier options, and updates about my vehicle shipment.
+                    {isEs 
+                      ? "Al marcar esta casilla, confirmo que he leído y acepto los Términos y Condiciones y la Política de Privacidad. También doy mi consentimiento para recibir llamadas, SMS o correos electrónicos sobre mi solicitud de cotización."
+                      : "By checking this box, I confirm that I have read and agree to the Terms & Conditions and Privacy Policy. I also consent to receive calls, SMS, or emails regarding my quote request so I can be provided with accurate pricing, carrier options, and updates about my vehicle shipment."}
                   </label>
                 </div>
               </div>
@@ -640,7 +668,7 @@ export default function QuoteCalculator() {
                   onClick={handleBack}
                   className="w-1/3 bg-slate-100 text-slate-700 font-bold py-3.5 rounded-xl flex items-center justify-center hover:bg-slate-200 transition-colors text-sm"
                 >
-                  Back
+                  {isEs ? "Atrás" : "Back"}
                 </button>
                 <button 
                   onClick={handleNext}
@@ -650,10 +678,10 @@ export default function QuoteCalculator() {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      <span>Submitting...</span>
+                      <span>{isEs ? "Enviando..." : "Submitting..."}</span>
                     </>
                   ) : (
-                    "Submit Request for Free Quote →"
+                    isEs ? "Solicitar Cotización Gratuita →" : "Submit Request for Free Quote →"
                   )}
                 </button>
               </div>
@@ -666,41 +694,43 @@ export default function QuoteCalculator() {
                 <CheckCircle2 className="w-8 h-8 text-emerald-600" />
               </div>
               
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-2">Request Received!</h2>
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-2">
+                {isEs ? "¡Solicitud Recibida!" : "Request Received!"}
+              </h2>
               
               <p className="text-sm text-slate-700 font-medium mb-4 leading-relaxed max-w-sm px-2">
-                Thank you! We received your request. Our team will review your information and contact you with a personalized quote shortly.
+                {isEs 
+                  ? "¡Muchas gracias! Hemos recibido su información. Nuestro equipo revisará su solicitud y se comunicará con usted a la brevedad con su cotización personalizada."
+                  : "Thank you! We received your request. Our team will review your information and contact you with a personalized quote shortly."}
               </p>
 
-              {/* Submitted Order Summary Card (NO PRICE FIGURES) */}
               <div className="bg-[#f8fafc] border border-slate-200 rounded-2xl p-4 w-full mb-4 text-left space-y-2 text-xs text-slate-700 font-medium">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Route Requested</span>
+                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">{isEs ? "Ruta Solicitada" : "Route Requested"}</span>
                   <span className="font-extrabold text-blue-700">{locationFrom?.city || formData.zipFrom} → {locationTo?.city || formData.zipTo}</span>
                 </div>
                 <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Vehicles</span>
+                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">{isEs ? "Vehículos" : "Vehicles"}</span>
                   <span className="font-bold text-slate-800">{formData.vehicles.map(v => `${v.year} ${v.make} ${v.model}`).join(", ")}</span>
                 </div>
                 <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Transport Type</span>
+                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">{isEs ? "Tipo de Transporte" : "Transport Type"}</span>
                   <span className="font-bold text-slate-800 capitalize">{formData.transportType} Transport</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Contact Info</span>
+                  <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">{isEs ? "Información de Contacto" : "Contact Info"}</span>
                   <span className="font-bold text-slate-800">{formData.phone} ({formData.fullName})</span>
                 </div>
               </div>
 
               <div className="w-full space-y-2 mb-3">
                 <a href="tel:5307255383" className="w-full bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] transition-all">
-                  <Phone className="w-4 h-4" /> Need Immediate Assistance? Call (530) 725-5383
+                  <Phone className="w-4 h-4" /> {isEs ? "¿Asistencia Inmediata? Llame al (530) 725-5383" : "Need Immediate Assistance? Call (530) 725-5383"}
                 </a>
               </div>
 
               <button onClick={() => {
                 setStep(1);
-                setIsBookingSubmitted(false);
                 setFormData({
                   zipFrom: "", zipTo: "", transportType: "open",
                   vehicles: [{ id: Date.now(), year: "", make: "", model: "", condition: "running" }],
@@ -709,16 +739,15 @@ export default function QuoteCalculator() {
                 setLocationFrom(null);
                 setLocationTo(null);
               }} className="text-slate-400 hover:text-slate-600 text-xs font-bold transition-colors">
-                Submit Another Quote Request
+                {isEs ? "Enviar Otra Solicitud de Cotización" : "Submit Another Quote Request"}
               </button>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Clean Security Note */}
         <div className="flex items-center justify-center gap-2 text-slate-500 text-xs font-semibold mt-4 pt-3 border-t border-slate-100 text-center">
           <Lock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-          <span>Guaranteed Rates · Zero Upfront Deposit · 100% Free Quote</span>
+          <span>{isEs ? "Tarifas Garantizadas · Sin Depósito Anticipado · Cotización 100% Gratis" : "Guaranteed Rates · Zero Upfront Deposit · 100% Free Quote"}</span>
         </div>
       </div>
     </div>
