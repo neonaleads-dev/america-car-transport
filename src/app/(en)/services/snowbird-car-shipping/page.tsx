@@ -220,6 +220,11 @@ export default function SnowbirdCarShippingPage() {
                 </p>
               </div>
             </div>
+
+            <div className="p-4 bg-amber-50 border border-amber-200 rounded-2xl text-xs md:text-sm font-semibold text-amber-900 flex items-center justify-between gap-3">
+              <span>📊 Read our 2026–2027 Data Report: <Link href="/resources/snowbird-car-shipping-report" className="text-blue-700 font-extrabold underline hover:text-blue-900">How Snowbird Season Drives Up Car Shipping Prices</Link></span>
+              <ArrowRight className="w-4 h-4 text-amber-700 shrink-0" />
+            </div>
           </article>
 
           {/* Main Corridors */}

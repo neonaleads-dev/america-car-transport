@@ -15,6 +15,38 @@ export const metadata = {
 
 const RESOURCES = [
   {
+    title: "How Snowbird Season Drives Up Car Shipping Prices (2026–2027 Report)",
+    desc: "Comprehensive 2026–2027 corridor research report detailing October–November southbound price spikes (+15–25%), peak timing, and carrier mechanics.",
+    category: "Market Research",
+    href: "/resources/snowbird-car-shipping-report",
+    tag: "New Report",
+    tagColor: "bg-amber-600"
+  },
+  {
+    title: "Car Shipping Rates by State (2026 Data Index)",
+    desc: "Complete 50-state rate matrix with per-mile averages, popular route baselines, and state pricing guides.",
+    category: "Cost & Data",
+    href: "/resources/car-shipping-rates-by-state",
+    tag: "50-State Data",
+    tagColor: "bg-emerald-600"
+  },
+  {
+    title: "Ship vs. Drive: The Real Cost Comparison (2026)",
+    desc: "Worked math breakdown comparing driving expenses (fuel, wear, hotel, meals) vs auto transport costs for 500, 1500, and 2800 mile routes.",
+    category: "Cost Analysis",
+    href: "/resources/ship-car-vs-driving-cost",
+    tag: "Cost Guide",
+    tagColor: "bg-blue-600"
+  },
+  {
+    title: "How Car Shipping Quotes Are Calculated",
+    desc: "Explanatory technical breakdown of the 5 core variables used by auto transport dispatchers to determine vehicle shipping rates.",
+    category: "Pricing Mechanics",
+    href: "/resources/how-car-shipping-quotes-work",
+    tag: "Calculation Guide",
+    tagColor: "bg-indigo-600"
+  },
+  {
     title: "How to Avoid Car Shipping Scams (Official Checklist)",
     desc: "Protect yourself from illegal lead generators and price bait-and-switch tactics. Verify USDOT/MC licenses and cargo insurance.",
     category: "Consumer Protection",

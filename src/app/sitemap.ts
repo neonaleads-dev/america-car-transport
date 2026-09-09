@@ -194,6 +194,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "car-shipping-rates-by-state",
     "ship-car-vs-driving-cost",
     "how-car-shipping-quotes-work",
+    "snowbird-car-shipping-report",
   ].map((slug) => ({
     url: `${baseUrl}/resources/${slug}`,
     changeFrequency: "weekly" as const,
