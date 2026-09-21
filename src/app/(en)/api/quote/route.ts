@@ -54,17 +54,30 @@ export async function POST(req: Request) {
       return match ? match[0] : (str || "").trim().substring(0, 10);
     };
 
-    const originZip = extractZip(zipFrom);
-    const destZip = extractZip(zipTo);
+    const originZip = extractZip(zipFrom) || locationFrom?.zip || "";
+    const destZip = extractZip(zipTo) || locationTo?.zip || "";
+
+    const originCity = locationFrom?.city || "";
+    const originState = locationFrom?.state || "";
+    const destCity = locationTo?.city || "";
+    const destState = locationTo?.state || "";
 
     const primaryVehicle = safeVehicles[0] || {};
     const vehicleYear = primaryVehicle.year || "";
     const vehicleMake = primaryVehicle.make || "Vehicle";
     const vehicleModel = primaryVehicle.model || "";
-    const vehicleType = primaryVehicle.type || "Car";
+    const isOperable = primaryVehicle.condition !== "non-running" && primaryVehicle.condition !== "inoperable";
+
+    const formattedTrailerType = transportType
+      ? transportType.charAt(0).toUpperCase() + transportType.slice(1)
+      : "Open";
+
+    const numericPrice = typeof calculatedPrice === "number"
+      ? calculatedPrice
+      : parseFloat(String(calculatedPrice).replace(/[^0-9.]/g, "")) || calculatedPrice || 0;
 
     // 3. Dispatch to CRM Webhook Endpoint
-    const crmEndpoint = process.env.CRM_WEBHOOK_URL || "http://localhost:3000/api/elementor-webhook";
+    const crmEndpoint = process.env.CRM_WEBHOOK_URL || "https://neon-crm-app.vercel.app/api/webhooks/leads";
     let crmStatus = false;
 
     try {
@@ -72,18 +85,26 @@ export async function POST(req: Request) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          name: fullName || "Customer",
           first_name: firstName,
           last_name: lastName,
           email: email,
           phone: phone,
+          origin_city: originCity,
+          origin_state: originState,
           origin_zip: originZip,
+          destination_city: destCity,
+          destination_state: destState,
           destination_zip: destZip,
-          vehicle_year: vehicleYear,
-          vehicle_make: vehicleMake,
-          vehicle_model: vehicleModel,
-          vehicle_type: vehicleType,
-          trailer_type: transportType || "Open",
-          source: "AmericaCarTransport.com Calculator",
+          year: vehicleYear,
+          make: vehicleMake,
+          model: vehicleModel,
+          vehicle_type: primaryVehicle.type || "Car",
+          trailer_type: formattedTrailerType,
+          is_operable: isOperable,
+          price: numericPrice,
+          estimated_pickup_date: pickupDate,
+          source: "America Car Transport",
         }),
       });
 
