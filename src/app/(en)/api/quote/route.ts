@@ -44,7 +44,58 @@ export async function POST(req: Request) {
     console.log(`Vehicles: ${vehicleSummary}`);
     console.log("==========================================");
 
-    // 2. Resend Email Delivery (PRIMARY PRIORITY)
+    // 2. Extract structured fields for CRM payload
+    const nameParts = (fullName || "").trim().split(/\s+/);
+    const firstName = nameParts[0] || "Customer";
+    const lastName = nameParts.slice(1).join(" ") || "";
+
+    const extractZip = (str: string) => {
+      const match = (str || "").match(/\b\d{5}\b/);
+      return match ? match[0] : (str || "").trim().substring(0, 10);
+    };
+
+    const originZip = extractZip(zipFrom);
+    const destZip = extractZip(zipTo);
+
+    const primaryVehicle = safeVehicles[0] || {};
+    const vehicleYear = primaryVehicle.year || "";
+    const vehicleMake = primaryVehicle.make || "Vehicle";
+    const vehicleModel = primaryVehicle.model || "";
+    const vehicleType = primaryVehicle.type || "Car";
+
+    // 3. Dispatch to CRM Webhook Endpoint
+    const crmEndpoint = process.env.CRM_WEBHOOK_URL || "http://localhost:3000/api/elementor-webhook";
+    let crmStatus = false;
+
+    try {
+      const crmRes = await fetch(crmEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          first_name: firstName,
+          last_name: lastName,
+          email: email,
+          phone: phone,
+          origin_zip: originZip,
+          destination_zip: destZip,
+          vehicle_year: vehicleYear,
+          vehicle_make: vehicleMake,
+          vehicle_model: vehicleModel,
+          vehicle_type: vehicleType,
+          trailer_type: transportType || "Open",
+          source: "AmericaCarTransport.com Calculator",
+        }),
+      });
+
+      console.log("CRM Webhook Response Status:", crmRes.status);
+      if (crmRes.ok) {
+        crmStatus = true;
+      }
+    } catch (crmErr) {
+      console.error("CRM Webhook Dispatch Error (non-blocking):", crmErr);
+    }
+
+    // 4. Resend Email Delivery (PRIMARY PRIORITY)
     const fallbackKey = Buffer.from("cmVfU3p0QlBXNHJfRnhXS0wzWENhYzNZdUc0N1pzZm5nVGk4", "base64").toString("utf-8");
     const resendApiKey = process.env.RESEND_API_KEY || fallbackKey;
     const recipientEmail = process.env.LEAD_NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || "neonaleads@gmail.com";
@@ -164,7 +215,12 @@ export async function POST(req: Request) {
       );
     }
 
-    return NextResponse.json({ success: true, message: "Lead recorded successfully", emailSent: resendStatus });
+    return NextResponse.json({
+      success: true,
+      message: "Lead recorded and dispatched to CRM and email successfully",
+      emailSent: resendStatus,
+      crmSent: crmStatus,
+    });
   } catch (error) {
     console.error("Error processing quote lead:", error);
     return NextResponse.json(
