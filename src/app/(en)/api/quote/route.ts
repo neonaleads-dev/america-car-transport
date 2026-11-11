@@ -44,40 +44,47 @@ export async function POST(req: Request) {
     console.log(`Vehicles: ${vehicleSummary}`);
     console.log("==========================================");
 
-    // 2. Extract structured fields for CRM payload
-    const nameParts = (fullName || "").trim().split(/\s+/);
-    const firstName = nameParts[0] || "Customer";
-    const lastName = nameParts.slice(1).join(" ") || "";
-
+    // 2. Build the CRM lead payload (neon-crm-app webhook schema)
     const extractZip = (str: string) => {
       const match = (str || "").match(/\b\d{5}\b/);
-      return match ? match[0] : (str || "").trim().substring(0, 10);
+      return match ? match[0] : "";
     };
 
-    const originZip = extractZip(zipFrom) || locationFrom?.zip || "";
-    const destZip = extractZip(zipTo) || locationTo?.zip || "";
-
-    const originCity = locationFrom?.city || "";
-    const originState = locationFrom?.state || "";
-    const destCity = locationTo?.city || "";
-    const destState = locationTo?.state || "";
-
-    const primaryVehicle = safeVehicles[0] || {};
-    const vehicleYear = primaryVehicle.year || "";
-    const vehicleMake = primaryVehicle.make || "Vehicle";
-    const vehicleModel = primaryVehicle.model || "";
-    const isOperable = primaryVehicle.condition !== "non-running" && primaryVehicle.condition !== "inoperable";
-
-    const formattedTrailerType = transportType
-      ? transportType.charAt(0).toUpperCase() + transportType.slice(1)
-      : "Open";
+    // "City, ST, ZIP" when the ZIP lookup found a city; otherwise what the customer typed.
+    const formatLocation = (raw: string, loc: any) => {
+      if (!loc?.city) return (raw || "").trim();
+      const zip = extractZip(raw) || loc?.zip || "";
+      return [loc.city, loc.state, zip].filter(Boolean).join(", ");
+    };
 
     const numericPrice = typeof calculatedPrice === "number"
       ? calculatedPrice
-      : parseFloat(String(calculatedPrice).replace(/[^0-9.]/g, "")) || calculatedPrice || 0;
+      : parseFloat(String(calculatedPrice).replace(/[^0-9.]/g, "")) || 0;
 
-    // 3. Dispatch to CRM Webhook Endpoint
-    const crmEndpoint = process.env.CRM_WEBHOOK_URL || "https://neon-crm-app.vercel.app/api/webhooks/leads";
+    const conditionLabel = (c: string) =>
+      c === "non-running" || c === "inoperable" ? "Non-running" : "Running";
+    const conditions = Array.from(new Set(safeVehicles.map((v: any) => conditionLabel(v.condition))));
+    const transportLabel = transportType === "enclosed" ? "enclosed" : "open";
+    const notes = `${conditions.join(" / ")}, ${transportLabel} transport`;
+
+    const crmLead = {
+      name: fullName || "Customer",
+      phone: phone,
+      email: email,
+      pickup_location: formatLocation(zipFrom, locationFrom),
+      dropoff_location: formatLocation(zipTo, locationTo),
+      vehicles: safeVehicles.map((v: any) => ({
+        year: String(v.year || ""),
+        make: v.make || "",
+        model: v.model || "",
+      })),
+      pickup_date: pickupDate,
+      price: numericPrice,
+      notes: notes,
+    };
+
+    // 3. Dispatch to CRM Webhook Endpoint (the only CRM: neon-crm-app)
+    const crmEndpoint = "https://neon-crm-app.vercel.app/api/webhooks/leads";
     const crmWebhookKey = process.env.ACT_WEBHOOK_KEY;
     let crmStatus = false;
 
@@ -90,33 +97,15 @@ export async function POST(req: Request) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          ...(crmWebhookKey ? { "x-webhook-secret": crmWebhookKey } : {}),
+          "x-webhook-secret": crmWebhookKey || "",
         },
-        body: JSON.stringify({
-          name: fullName || "Customer",
-          first_name: firstName,
-          last_name: lastName,
-          email: email,
-          phone: phone,
-          origin_city: originCity,
-          origin_state: originState,
-          origin_zip: originZip,
-          destination_city: destCity,
-          destination_state: destState,
-          destination_zip: destZip,
-          year: vehicleYear,
-          make: vehicleMake,
-          model: vehicleModel,
-          vehicle_type: primaryVehicle.type || "Car",
-          trailer_type: formattedTrailerType,
-          is_operable: isOperable,
-          price: numericPrice,
-          estimated_pickup_date: pickupDate,
-          source: "America Car Transport",
-        }),
+        body: JSON.stringify(crmLead),
       });
 
       console.log("CRM Webhook Response Status:", crmRes.status);
+      if (!crmRes.ok) {
+        console.error("CRM Webhook Response Body:", (await crmRes.text()).slice(0, 500));
+      }
       if (crmRes.ok) {
         crmStatus = true;
       }
