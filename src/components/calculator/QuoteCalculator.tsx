@@ -209,8 +209,8 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
           }),
         });
         const resData = await response.json();
-        if (!response.ok || !resData.success || !resData.emailSent) {
-          setSubmitError(resData.error || (isEs ? "Error al enviar la cotización. Por favor intente de nuevo o llame al (530) 725-5383." : "Email delivery failed via Resend API. Please verify your Resend API key or call (530) 725-5383."));
+        if (!response.ok || !resData.success) {
+          setSubmitError(isEs ? "Error al enviar la cotización. Por favor intente de nuevo o llame al (530) 725-5383." : "We couldn't submit your quote. Please try again or call us at (530) 725-5383.");
           setIsSubmitting(false);
           return;
         }

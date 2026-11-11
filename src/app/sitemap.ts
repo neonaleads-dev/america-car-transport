@@ -168,7 +168,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Interstate Route Landing Pages (All 11 Active Corridor Routes)
+  // Interstate Route Landing Pages (all route folders under src/app/(en)/routes)
   const routePages = [
     "california-to-florida",
     "california-to-illinois",
@@ -181,6 +181,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "new-york-to-california",
     "new-york-to-florida",
     "texas-to-california",
+    "california-to-washington",
+    "georgia-to-new-york",
+    "illinois-to-florida",
+    "texas-to-florida",
+    "texas-to-new-york",
   ].map((slug) => ({
     url: `${baseUrl}/routes/${slug}`,
     changeFrequency: "weekly" as const,

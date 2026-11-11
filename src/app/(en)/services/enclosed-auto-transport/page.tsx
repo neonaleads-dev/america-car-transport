@@ -490,7 +490,7 @@ export default function EnclosedAutoTransportPage() {
 
               {/* Internal Link */}
               <div className="mt-6 pt-6 border-t border-slate-200/80 text-xs md:text-sm font-bold text-slate-900">
-                See our full <Link href="/resources/car-shipping-cost-guide" className="text-blue-600 hover:underline">Car Shipping Cost Guide</Link> for a state-by-state and route-by-route breakdown.
+                See our full <Link href="/resources/car-shipping-rates-by-state" className="text-blue-600 hover:underline">Car Shipping Cost Guide</Link> for a state-by-state and route-by-route breakdown.
               </div>
             </div>
 

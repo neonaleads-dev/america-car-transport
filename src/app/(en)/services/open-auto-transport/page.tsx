@@ -489,7 +489,7 @@ export default function OpenAutoTransportPage() {
 
               {/* Internal Link */}
               <div className="mt-6 pt-6 border-t border-slate-200/80 text-xs md:text-sm font-bold text-slate-900">
-                See our full <Link href="/resources/car-shipping-cost-guide" className="text-blue-600 hover:underline">Car Shipping Cost Guide</Link> for a state-by-state and route-by-route breakdown.
+                See our full <Link href="/resources/car-shipping-rates-by-state" className="text-blue-600 hover:underline">Car Shipping Cost Guide</Link> for a state-by-state and route-by-route breakdown.
               </div>
             </div>
 
@@ -598,17 +598,17 @@ export default function OpenAutoTransportPage() {
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                  <Link href="/ship-a-car/sedan" className="bg-slate-50 hover:bg-blue-50/90 border border-slate-200 hover:border-blue-400 p-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-lg font-bold text-slate-900 text-center block group">
+                  <Link href="/tools/car-shipping-cost-calculator" className="bg-slate-50 hover:bg-blue-50/90 border border-slate-200 hover:border-blue-400 p-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-lg font-bold text-slate-900 text-center block group">
                     <Car className="w-8 h-8 text-blue-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                     <span>Sedans</span>
                   </Link>
 
-                  <Link href="/ship-a-car/suv" className="bg-slate-50 hover:bg-blue-50/90 border border-slate-200 hover:border-blue-400 p-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-lg font-bold text-slate-900 text-center block group">
+                  <Link href="/ship-a-car/suv-and-truck" className="bg-slate-50 hover:bg-blue-50/90 border border-slate-200 hover:border-blue-400 p-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-lg font-bold text-slate-900 text-center block group">
                     <Truck className="w-8 h-8 text-blue-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                     <span>SUVs</span>
                   </Link>
 
-                  <Link href="/ship-a-car/truck" className="bg-slate-50 hover:bg-blue-50/90 border border-slate-200 hover:border-blue-400 p-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-lg font-bold text-slate-900 text-center block group">
+                  <Link href="/ship-a-car/suv-and-truck" className="bg-slate-50 hover:bg-blue-50/90 border border-slate-200 hover:border-blue-400 p-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-lg font-bold text-slate-900 text-center block group">
                     <Truck className="w-8 h-8 text-blue-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                     <span>Trucks</span>
                   </Link>
@@ -618,7 +618,7 @@ export default function OpenAutoTransportPage() {
                     <span>Motorcycles</span>
                   </Link>
 
-                  <Link href="/ship-a-car/non-running-vehicle" className="bg-slate-50 hover:bg-blue-50/90 border border-slate-200 hover:border-amber-400 p-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-lg font-bold text-slate-900 text-center block group sm:col-span-2 lg:col-span-2">
+                  <Link href="/ship-a-car/non-running" className="bg-slate-50 hover:bg-blue-50/90 border border-slate-200 hover:border-amber-400 p-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-lg font-bold text-slate-900 text-center block group sm:col-span-2 lg:col-span-2">
                     <AlertCircle className="w-8 h-8 text-amber-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                     <span>Non-running vehicles (special equipment required — additional fee applies)</span>
                   </Link>

@@ -12,7 +12,7 @@ export const metadata = {
   alternates: {
     canonical: "https://www.americacartransport.com/es/cuanto-cuesta-enviar-un-carro",
     languages: {
-      "en-US": "https://www.americacartransport.com/resources/car-shipping-cost-calculator",
+      "en-US": "https://www.americacartransport.com/tools/car-shipping-cost-calculator",
       "es-US": "https://www.americacartransport.com/es/cuanto-cuesta-enviar-un-carro",
     },
   },

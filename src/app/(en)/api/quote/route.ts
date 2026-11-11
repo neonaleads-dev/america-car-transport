@@ -1,5 +1,14 @@
 import { NextResponse } from "next/server";
 
+// Escape customer-typed text before putting it into the notification email HTML.
+const esc = (value: unknown) =>
+  String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -114,8 +123,7 @@ export async function POST(req: Request) {
     }
 
     // 4. Resend Email Delivery (PRIMARY PRIORITY)
-    const fallbackKey = Buffer.from("cmVfU3p0QlBXNHJfRnhXS0wzWENhYzNZdUc0N1pzZm5nVGk4", "base64").toString("utf-8");
-    const resendApiKey = process.env.RESEND_API_KEY || fallbackKey;
+    const resendApiKey = process.env.RESEND_API_KEY;
     const recipientEmail = process.env.LEAD_NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || "neonaleads@gmail.com";
     const senderEmail = process.env.RESEND_SENDER_EMAIL || "onboarding@resend.dev";
 
@@ -150,10 +158,10 @@ export async function POST(req: Request) {
                       👤 Customer Information
                     </h2>
                     <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b; width: 140px;">Full Name:</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${fullName}</td></tr>
-                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Phone Number:</td><td style="padding: 6px 0;"><a href="tel:${phone}" style="color: #2563eb; font-weight: 700; text-decoration: none;">${phone}</a></td></tr>
-                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Email Address:</td><td style="padding: 6px 0;"><a href="mailto:${email}" style="color: #2563eb; font-weight: 600; text-decoration: none;">${email}</a></td></tr>
-                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Preferred Pickup:</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${pickupDate || "Not Specified"}</td></tr>
+                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b; width: 140px;">Full Name:</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${esc(fullName)}</td></tr>
+                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Phone Number:</td><td style="padding: 6px 0;"><a href="tel:${esc(phone)}" style="color: #2563eb; font-weight: 700; text-decoration: none;">${esc(phone)}</a></td></tr>
+                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Email Address:</td><td style="padding: 6px 0;"><a href="mailto:${esc(email)}" style="color: #2563eb; font-weight: 600; text-decoration: none;">${esc(email)}</a></td></tr>
+                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Preferred Pickup:</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${esc(pickupDate || "Not Specified")}</td></tr>
                     </table>
                   </div>
 
@@ -163,9 +171,9 @@ export async function POST(req: Request) {
                       📍 Pickup &amp; Delivery Information
                     </h2>
                     <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b; width: 140px;">Origin (Pickup):</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${originStr}</td></tr>
-                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Destination:</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${destStr}</td></tr>
-                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Est. Distance:</td><td style="padding: 6px 0; font-weight: 600; color: #0f172a;">${distance ? `${distance} miles` : "N/A"}</td></tr>
+                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b; width: 140px;">Origin (Pickup):</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${esc(originStr)}</td></tr>
+                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Destination:</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${esc(destStr)}</td></tr>
+                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b;">Est. Distance:</td><td style="padding: 6px 0; font-weight: 600; color: #0f172a;">${distance ? `${esc(distance)} miles` : "N/A"}</td></tr>
                     </table>
                   </div>
 
@@ -178,7 +186,7 @@ export async function POST(req: Request) {
                       ${safeVehicles.map((v: any, index: number) => `
                         <tr>
                           <td style="padding: 6px 0; font-weight: 600; color: #64748b; width: 140px;">Vehicle #${index + 1}:</td>
-                          <td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${v.year || ""} ${v.make || ""} ${v.model || ""} (<span style="color: ${v.condition === 'non-running' ? '#dc2626' : '#16a34a'};">${v.condition || "running"}</span>)</td>
+                          <td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${esc(v.year)} ${esc(v.make)} ${esc(v.model)} (<span style="color: ${v.condition === 'non-running' ? '#dc2626' : '#16a34a'};">${esc(v.condition || "running")}</span>)</td>
                         </tr>
                       `).join("")}
                     </table>
@@ -190,7 +198,7 @@ export async function POST(req: Request) {
                       🚚 Shipping Information
                     </h2>
                     <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b; width: 140px;">Transport Method:</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a; text-transform: capitalize;">${transportType} Transport</td></tr>
+                      <tr><td style="padding: 6px 0; font-weight: 600; color: #64748b; width: 140px;">Transport Method:</td><td style="padding: 6px 0; font-weight: 700; color: #0f172a; text-transform: capitalize;">${esc(transportType)} Transport</td></tr>
                     </table>
                   </div>
 
@@ -205,37 +213,27 @@ export async function POST(req: Request) {
           }),
         });
 
-        const resendData = await resendRes.json();
+        const resendData = await resendRes.json().catch(() => ({}));
         console.log("Resend API Response Status:", resendRes.status, resendData);
-        if (resendRes.ok) {
-          resendStatus = true;
-        } else {
-          return NextResponse.json(
-            { 
-              success: false, 
-              error: resendData.message || `Resend API returned status ${resendRes.status}`,
-              resendError: resendData 
-            },
-            { status: resendRes.status || 500 }
-          );
-        }
+        resendStatus = resendRes.ok;
       } catch (err: any) {
         console.error("Resend API error:", err);
-        return NextResponse.json(
-          { success: false, error: err.message || "Failed to reach Resend API server" },
-          { status: 500 }
-        );
       }
     } else {
+      console.error("RESEND_API_KEY is not set; lead notification email was not sent.");
+    }
+
+    // The lead is saved if either the CRM or the email got it. Only fail when both failed.
+    if (!crmStatus && !resendStatus) {
       return NextResponse.json(
-        { success: false, error: "No Resend API Key configured on server" },
-        { status: 500 }
+        { success: false, error: "We could not submit your quote right now.", emailSent: false, crmSent: false },
+        { status: 502 }
       );
     }
 
     return NextResponse.json({
       success: true,
-      message: "Lead recorded and dispatched to CRM and email successfully",
+      message: "Lead received",
       emailSent: resendStatus,
       crmSent: crmStatus,
     });

@@ -14,7 +14,6 @@ export const metadata = {
     canonical: "https://www.americacartransport.com/locations",
     languages: {
       "en-US": "https://www.americacartransport.com/locations",
-      "es-US": "https://www.americacartransport.com/es/ubicaciones",
     },
   },
 };
