@@ -78,12 +78,20 @@ export async function POST(req: Request) {
 
     // 3. Dispatch to CRM Webhook Endpoint
     const crmEndpoint = process.env.CRM_WEBHOOK_URL || "https://neon-crm-app.vercel.app/api/webhooks/leads";
+    const crmWebhookKey = process.env.ACT_WEBHOOK_KEY;
     let crmStatus = false;
+
+    if (!crmWebhookKey) {
+      console.error("ACT_WEBHOOK_KEY is not set; the CRM will reject this lead with 401.");
+    }
 
     try {
       const crmRes = await fetch(crmEndpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(crmWebhookKey ? { "x-webhook-secret": crmWebhookKey } : {}),
+        },
         body: JSON.stringify({
           name: fullName || "Customer",
           first_name: firstName,
