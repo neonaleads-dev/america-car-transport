@@ -636,7 +636,7 @@ export default function EnclosedAutoTransportPage() {
                 </div>
 
                 <p className="text-sm font-semibold text-slate-600">
-                  Related vehicle pages: <Link href="/services/classic-and-exotic-car-transport" className="text-blue-600 hover:underline">Classic & Exotic Car Transport</Link> · <Link href="/ship-a-car/non-running-vehicle" className="text-blue-600 hover:underline">Non-Running Vehicle Shipping</Link>
+                  Related vehicle pages: <Link href="/services/classic-and-exotic-car-transport" className="text-blue-600 hover:underline">Classic & Exotic Car Transport</Link> · <Link href="/ship-a-car/non-running" className="text-blue-600 hover:underline">Non-Running Vehicle Shipping</Link>
                 </p>
               </div>
 
