@@ -2,6 +2,8 @@ import React from "react";
 import Metadata from "next";
 import Link from "next/link";
 import Footer from "@/components/ui/Footer";
+import SpanishGuideContent from "@/components/es/SpanishGuideContent";
+import { esGuides } from "@/data/es-guides";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import { Phone, MapPin, CheckCircle2, ArrowRight, ShieldCheck, DollarSign } from "lucide-react";
@@ -81,6 +83,8 @@ export default function TransporteDeCarrosTexasPage() {
           </div>
         </div>
       </section>
+
+      <SpanishGuideContent guide={esGuides["texas"]} />
 
       <Footer />
     </main>

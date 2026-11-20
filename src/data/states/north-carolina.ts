@@ -50,6 +50,38 @@ export const northCarolinaData: StateData = {
     {
       question: "How fast can I get a car shipped between North Carolina and New York?",
       answer: "Direct transport along I-95 between North Carolina and New York takes only 1 to 2 days."
+    },
+    {
+      question: "How much does it cost to ship a car from North Carolina?",
+      answer: "Shipping a standard sedan out of North Carolina on open transport typically costs $590 to $780 from Charlotte to Miami (about 720 miles) and $480 to $650 from Raleigh to New York (about 500 miles). Enclosed transport usually costs 40 to 60% more. For an exact price on your ZIP codes, use the quote calculator at the top of this page — no email required."
+    },
+    {
+      question: "How much does it cost to ship a car to North Carolina?",
+      answer: "Inbound prices depend on where the car starts. For example, Los Angeles, CA to Charlotte runs about $1,250 to $1,580 on an open carrier. SUVs cost about 10 to 15% more and pickup trucks about 15 to 20% more than a sedan."
+    },
+    {
+      question: "How long does it take to ship a car from North Carolina?",
+      answer: "Transit time depends on distance: Charlotte to Miami takes about 2 to 3 days and Raleigh to New York takes about 1 to 2 days. Add 1 to 5 days after booking for a carrier to be assigned and arrive for pickup."
+    },
+    {
+      question: "When is the cheapest time to ship a car in North Carolina?",
+      answer: "Late winter and early spring (roughly February through April) usually bring the lowest prices and fastest carrier assignment. Local demand in North Carolina: Heavy military relocations near Fort Liberty (Fayetteville) and Camp Lejeune, alongside Research Triangle tech moves. Booking 1 to 2 weeks ahead and keeping your pickup dates flexible also lowers the price."
+    },
+    {
+      question: "Do you offer door-to-door car shipping in North Carolina?",
+      answer: "Yes. We arrange door-to-door pickup and delivery across North Carolina, including Charlotte, Raleigh, Greensboro, Durham, Winston-Salem and Fayetteville. If a full-size carrier can't safely reach your street, the driver will meet you at a nearby open spot such as a large parking lot."
+    },
+    {
+      question: "Should I choose open or enclosed transport in North Carolina?",
+      answer: "Open transport is the most affordable option and works well for everyday cars. Open carriers are ideal for standard cars. Enclosed haulers serve NASCAR race shops around Charlotte and classic car collectors in Raleigh. Enclosed transport typically costs 40 to 60% more than open."
+    },
+    {
+      question: "What documents do I need to ship a car from North Carolina?",
+      answer: "Have a photo ID, the vehicle registration (or title), and proof of insurance ready. At pickup and delivery you'll sign the Bill of Lading, which records the car's condition, so keep a copy from both ends. If someone else will hand over or receive the car, give them a signed authorization note."
+    },
+    {
+      question: "Do I have to pay a deposit to ship my car from North Carolina?",
+      answer: "No. America Car Transport does not ask for an upfront deposit. Be cautious with any company that demands a large payment before a verified carrier has been assigned to your vehicle."
     }
   ],
   

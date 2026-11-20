@@ -56,6 +56,38 @@ export const texasData: StateData = {
     {
       question: "Can I ship an oversized truck or dually in Texas?",
       answer: "Yes! Texas is one of our highest-volume regions for shipping heavy-duty trucks, lifted pickups, and duallys. Be sure to specify vehicle modifications when requesting your quote."
+    },
+    {
+      question: "How much does it cost to ship a car from Texas?",
+      answer: "Shipping a standard sedan out of Texas on open transport typically costs $920 to $1,180 from Dallas to Los Angeles (about 1,435 miles), $780 to $1,020 from Houston to Chicago (about 1,080 miles) and $1,150 to $1,480 from Austin to Seattle (about 2,120 miles). Enclosed transport usually costs 40 to 60% more. For an exact price on your ZIP codes, use the quote calculator at the top of this page — no email required."
+    },
+    {
+      question: "How much does it cost to ship a car to Texas?",
+      answer: "Inbound prices depend on where the car starts. For example, Los Angeles, CA to Dallas runs about $950 to $1,250 on an open carrier and Miami, FL to Houston runs about $800 to $1,050 on an open carrier. SUVs cost about 10 to 15% more and pickup trucks about 15 to 20% more than a sedan."
+    },
+    {
+      question: "How long does it take to ship a car from Texas?",
+      answer: "Transit time depends on distance: Dallas to Los Angeles takes about 3 to 5 days, Houston to Chicago takes about 3 to 4 days and Austin to Seattle takes about 5 to 6 days. Add 1 to 5 days after booking for a carrier to be assigned and arrive for pickup."
+    },
+    {
+      question: "When is the cheapest time to ship a car in Texas?",
+      answer: "Late winter and early spring (roughly February through April) usually bring the lowest prices and fastest carrier assignment. Local demand in Texas: High year-round corporate relocation volume into Austin and Dallas-Fort Worth. Heavy inter-state trade along I-35 between San Antonio, Austin, DFW, and Oklahoma. Booking 1 to 2 weeks ahead and keeping your pickup dates flexible also lowers the price."
+    },
+    {
+      question: "Do you offer door-to-door car shipping in Texas?",
+      answer: "Yes. We arrange door-to-door pickup and delivery across Texas, including Houston, Dallas, Fort Worth, San Antonio, Austin and El Paso. If a full-size carrier can't safely reach your street, the driver will meet you at a nearby open spot such as a large parking lot."
+    },
+    {
+      question: "Should I choose open or enclosed transport in Texas?",
+      answer: "Open transport is the most affordable option and works well for everyday cars. Standard vehicles thrive on open multi-car haulers across Texas highways. Enclosed trailers are recommended for high-value trucks, luxury SUVs in Dallas, and sports cars bound for Austin tech hubs. Enclosed transport typically costs 40 to 60% more than open."
+    },
+    {
+      question: "What documents do I need to ship a car from Texas?",
+      answer: "Have a photo ID, the vehicle registration (or title), and proof of insurance ready. At pickup and delivery you'll sign the Bill of Lading, which records the car's condition, so keep a copy from both ends. If someone else will hand over or receive the car, give them a signed authorization note."
+    },
+    {
+      question: "Do I have to pay a deposit to ship my car from Texas?",
+      answer: "No. America Car Transport does not ask for an upfront deposit. Be cautious with any company that demands a large payment before a verified carrier has been assigned to your vehicle."
     }
   ],
   

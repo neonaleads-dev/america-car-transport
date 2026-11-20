@@ -2,6 +2,8 @@ import React from "react";
 import Metadata from "next";
 import Link from "next/link";
 import Footer from "@/components/ui/Footer";
+import SpanishGuideContent from "@/components/es/SpanishGuideContent";
+import { esGuides } from "@/data/es-guides";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import { Phone, AlertTriangle, ShieldCheck, CheckCircle2, Lock } from "lucide-react";
 
@@ -68,6 +70,8 @@ export default function EstafasDeTransporteDeAutosPage() {
           </div>
         </div>
       </section>
+
+      <SpanishGuideContent guide={esGuides["estafas"]} />
 
       <Footer />
     </main>
