@@ -42,8 +42,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.americacartransport.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.americacartransport.com/tools" },
-    { "@type": "ListItem", "position": 3, "name": "Car Shipping Cost Calculator", "item": "https://www.americacartransport.com/tools/car-shipping-cost-calculator" }
+    { "@type": "ListItem", "position": 2, "name": "Car Shipping Cost Calculator", "item": "https://www.americacartransport.com/tools/car-shipping-cost-calculator" }
   ]
 };
 
@@ -351,8 +350,6 @@ export default function CarShippingCostCalculatorPage() {
         <div className="bg-slate-950 border-b border-slate-800 py-3 px-4 md:px-8 lg:px-24 text-xs font-semibold text-slate-400">
           <div className="max-w-[1400px] mx-auto flex items-center gap-2">
             <Link href="/" className="hover:text-cyan-400 transition-colors">Home</Link>
-            <span className="text-slate-700">/</span>
-            <span className="text-slate-400">Tools</span>
             <span className="text-slate-700">/</span>
             <span className="text-white font-bold">Car Shipping Cost Calculator</span>
           </div>
