@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     url: "https://www.americacartransport.com",
     siteName: "America Car Transport",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function EnLayout({

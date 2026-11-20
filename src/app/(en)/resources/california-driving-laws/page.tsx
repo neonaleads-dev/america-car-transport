@@ -11,6 +11,7 @@ export const metadata = {
     canonical: "https://www.americacartransport.com/resources/california-driving-laws",
   },
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "America Car Transport car shipping" }],
     title: "California Driving Laws 2026 | Rules Every Driver Should Know",
     description: "Answers to the most-asked California driving law questions for 2026 — phone use, speed limits, teen curfews, tailgating, and more. Fact-checked guide.",
     url: "https://www.americacartransport.com/resources/california-driving-laws",

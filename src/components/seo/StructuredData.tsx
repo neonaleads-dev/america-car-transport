@@ -177,36 +177,6 @@ const schemaData = {
           }
         ]
       }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.americacartransport.com/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How much does it cost to transport a car?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The cost to transport a car depends on distance, vehicle size, transport type (open vs. enclosed), and seasonal demand. Typical domestic shipments range from $500 to $1,500."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is my vehicle insured during transport?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, every carrier in our network is fully vetted, licensed with USDOT/FMCSA, and carries full cargo insurance with $0 deductible for vehicle owners."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does auto transport take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Short-distance trips (100-500 miles) take 1-2 days, while cross-country shipments (e.g., CA to NY) take 5-7 days."
-          }
-        }
-      ]
     }
   ]
 };

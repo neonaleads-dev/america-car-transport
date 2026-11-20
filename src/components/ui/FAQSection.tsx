@@ -26,7 +26,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Is my vehicle insured during transport?",
-    answer: "Yes, absolutely. Every carrier in the AmericaCarTransport network is fully vetted and carries comprehensive cargo insurance. Your vehicle is fully protected from the moment it is loaded onto the truck until it is safely delivered to your destination, with a $0 deductible for you."
+    answer: "Yes, absolutely. Every carrier in the America Car Transport network is fully vetted and carries comprehensive cargo insurance. Your vehicle is fully protected from the moment it is loaded onto the truck until it is safely delivered to your destination, with a $0 deductible for you."
   },
   {
     question: "Can I put personal items in my car during transport?",
@@ -97,7 +97,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-slate-600 font-medium max-w-2xl mx-auto">
-            Everything you need to know about shipping your vehicle with AmericaCarTransport.
+            Everything you need to know about shipping your vehicle with America Car Transport.
           </p>
         </div>
 

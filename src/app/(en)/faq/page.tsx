@@ -13,6 +13,7 @@ export const metadata = {
     canonical: "https://www.americacartransport.com/faq",
   },
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "America Car Transport car shipping" }],
     title: "Car Shipping FAQ Hub | Complete Auto Transport Knowledge Base",
     description: "Find direct, expert answers to every auto transport question — car shipping costs, California state rules, scam protection, carrier insurance, and route transit times.",
     url: "https://www.americacartransport.com/faq",

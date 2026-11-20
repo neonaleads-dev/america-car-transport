@@ -12,7 +12,11 @@ export default function TrustedSection() {
           {/* Main Image */}
           <div className="relative w-full aspect-square md:aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200/50">
             <img 
-              src="/america-car-transport-trusted-auto-carrier-scenic-highway.png" 
+              src="/america-car-transport-trusted-auto-carrier-scenic-highway-650.webp"
+              width={650}
+              height={650}
+              loading="lazy"
+              decoding="async"
               alt="America Car Transport trusted auto carrier truck driving safely on a scenic coastal highway" 
               title="America Car Transport - Safe and Reliable Vehicle Shipping Nationwide"
               className="w-full h-full object-cover"

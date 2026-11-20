@@ -11,6 +11,7 @@ export const metadata = {
     canonical: "https://www.americacartransport.com/resources/how-to-avoid-car-shipping-scams",
   },
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "America Car Transport car shipping" }],
     title: "How to Avoid Car Shipping Scams | Complete 2026 Guide",
     description: "Real answers on car shipping scams, red flags, damage risk, and how to verify a legit company — before you book. Fact-checked, no fear-mongering.",
     url: "https://www.americacartransport.com/resources/how-to-avoid-car-shipping-scams",

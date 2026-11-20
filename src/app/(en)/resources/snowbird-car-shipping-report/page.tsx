@@ -11,6 +11,7 @@ export const metadata = {
     canonical: "https://www.americacartransport.com/resources/snowbird-car-shipping-report",
   },
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "America Car Transport car shipping" }],
     title: "How Snowbird Season Drives Up Car Shipping Prices (2026–2027 Report)",
     description: "Snowbird season raises car shipping prices 15–25% on lanes like NY→Miami and Chicago→Phoenix. See 2026–2027 corridor data, timing windows, and when to book.",
     url: "https://www.americacartransport.com/resources/snowbird-car-shipping-report",

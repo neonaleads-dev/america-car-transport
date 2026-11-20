@@ -49,6 +49,7 @@ export async function generateMetadata({ params }: StatePageProps) {
       url: stateData.canonical,
       siteName: "America Car Transport",
       type: "website",
+      images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: `${stateData.name} car shipping with America Car Transport` }],
     },
   };
 }

@@ -12,6 +12,7 @@ export const metadata = {
     canonical: "https://www.americacartransport.com/routes/florida-to-new-jersey",
   },
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "America Car Transport car shipping" }],
     title: "Florida to New Jersey Car Transport | Cost, Time & Quotes — America Car Transport",
     description: "Ship your car from Florida to New Jersey with licensed, insured carriers. Get an instant quote, compare open vs. enclosed rates, and see real transit times.",
     url: "https://www.americacartransport.com/routes/florida-to-new-jersey",

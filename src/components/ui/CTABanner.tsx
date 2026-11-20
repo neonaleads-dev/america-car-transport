@@ -28,7 +28,7 @@ export default function CTABanner() {
         {/* Text Content */}
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
-            Ready To Book Your Vehicle Shipment With AmericaCarTransport?
+            Ready To Book Your Vehicle Shipment With America Car Transport?
           </h2>
           <p className="text-blue-100 text-lg md:text-xl font-medium max-w-2xl">
             Get your free quote in 30 seconds and experience hassle-free auto transport.

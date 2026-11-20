@@ -12,6 +12,7 @@ export const metadata = {
     canonical: "https://www.americacartransport.com/routes/new-york-to-florida",
   },
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "America Car Transport car shipping" }],
     title: "New York to Florida Car Transport | Cost, Time & Quotes — America Car Transport",
     description: "Ship your car from New York to Florida with licensed, insured carriers. Get an instant quote, compare open vs. enclosed rates, and see real transit times for this popular snowbird route.",
     url: "https://www.americacartransport.com/routes/new-york-to-florida",

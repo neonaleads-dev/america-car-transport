@@ -13,6 +13,7 @@ export const metadata = {
     canonical: "https://www.americacartransport.com/routes/california-to-florida",
   },
   openGraph: {
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630, alt: "America Car Transport car shipping" }],
     title: "California to Florida Car Shipping | Cost & Transit Time",
     description: "Ship a car from California to Florida — real 2026 pricing, transit times, and answers to common questions. Zero upfront deposit. Get an instant quote.",
     url: "https://www.americacartransport.com/routes/california-to-florida",

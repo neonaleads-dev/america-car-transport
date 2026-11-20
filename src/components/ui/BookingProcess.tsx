@@ -60,7 +60,11 @@ export default function BookingProcess() {
           <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border-4 border-white transform hover:scale-[1.02] transition-transform duration-500">
             {/* Using standard img tag since next/image sometimes requires domain configuration for external urls, but here we use a local public file. */}
             <img 
-              src="/america-car-transport-booking-process-auto-carrier.png" 
+              src="/america-car-transport-booking-process-auto-carrier-650.webp"
+              width={650}
+              height={650}
+              loading="lazy"
+              decoding="async"
               alt="America Car Transport modern auto carrier truck transporting multiple vehicles safely" 
               title="America Car Transport - Easy 3 Step Booking Process for Auto Shipping"
               className="w-full h-full object-cover"

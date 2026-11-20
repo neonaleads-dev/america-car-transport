@@ -134,7 +134,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div className="text-right">
                   <div className="text-xs font-bold text-slate-800">{rev.vehicle}</div>
-                  <div className="text-[11px] text-slate-400 font-mono">{rev.route}</div>
+                  <div className="text-[11px] text-slate-600 font-mono">{rev.route}</div>
                 </div>
               </div>
             </div>

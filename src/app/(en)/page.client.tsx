@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 
 import dynamic from "next/dynamic";
@@ -29,45 +29,8 @@ export default function HomeClient() {
   const navRef = useRef<HTMLElement>(null);
   const calcRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    let ctx: any;
-    const timer = setTimeout(() => {
-      Promise.all([
-        import("gsap"),
-        import("gsap/ScrollTrigger"),
-        import("gsap/CustomEase")
-      ]).then(([gsapModule, stModule, ceModule]) => {
-        const gsap = gsapModule.default;
-        const ScrollTrigger = stModule.ScrollTrigger;
-        const CustomEase = ceModule.CustomEase;
-
-        gsap.registerPlugin(ScrollTrigger, CustomEase);
-        const smoothEase = CustomEase.create("smooth", "M0,0 C0.25,1 0.25,1 1,1");
-        
-        // Simple fast nav entry
-      if (navRef.current) {
-        gsap.fromTo(
-          navRef.current.children,
-          { y: -20, opacity: 0 },
-          { y: 0, opacity: 1, stagger: 0.1, duration: 0.8, ease: smoothEase }
-        );
-      }
-
-      // Slide up calculator
-        if (calcRef.current) {
-          gsap.fromTo(
-            calcRef.current,
-            { y: 40, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1, ease: smoothEase, delay: 0.2 }
-          );
-        }
-      });
-    }, 100);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+  // The GSAP entrance animation was removed: it hid the quote form until a
+  // 3-module animation bundle loaded, which delayed the first view on mobile.
 
   return (
     <>

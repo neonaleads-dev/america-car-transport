@@ -142,7 +142,7 @@ export default function Footer() {
             <p className="text-sm font-medium text-slate-400">
               &copy; {new Date().getFullYear()} America Car Transport. {isEs ? "Todos los derechos reservados." : "All rights reserved."}
             </p>
-            <p className="text-xs text-slate-500 max-w-2xl font-medium">
+            <p className="text-xs text-slate-400 max-w-2xl font-medium">
               {isEs 
                 ? "America Car Transport es un agente registrado con la FMCSA. Coordinamos el transporte de vehículos conectando a nuestros clientes con transportistas autorizados y asegurados en todo el país. Verifique nuestro registro oficial en el sitio de la FMCSA."
                 : "America Car Transport is an FMCSA-compliant auto transport broker. We arrange vehicle shipments by connecting customers with fully licensed, bonded, and insured motor carriers nationwide. Verify license status on the official FMCSA SAFER Snapshot."}
