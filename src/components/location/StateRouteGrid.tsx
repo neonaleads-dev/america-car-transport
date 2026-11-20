@@ -28,7 +28,22 @@ const TOP_CALIFORNIA_INBOUND_ROUTES: RouteLink[] = [
   { title: "Arizona to California", slug: "/routes", distance: "400 mi", avgPrice: "$450 - $700" },
 ];
 
+const TOP_NEW_YORK_OUTBOUND_ROUTES: RouteLink[] = [
+  { title: "New York to Florida", slug: "/routes/new-york-to-florida", distance: "1,300 mi", avgPrice: "$900 - $1,400" },
+  { title: "New York to California", slug: "/routes/new-york-to-california", distance: "2,800 mi", avgPrice: "$1,350 - $1,750" },
+];
+
+const TOP_NEW_YORK_INBOUND_ROUTES: RouteLink[] = [
+  { title: "Florida to New York", slug: "/routes/florida-to-new-york", distance: "1,300 mi", avgPrice: "$900 - $1,400" },
+  { title: "California to New York", slug: "/routes/california-to-new-york", distance: "2,800 mi", avgPrice: "$1,150 - $1,650" },
+  { title: "Texas to New York", slug: "/routes/texas-to-new-york", distance: "1,700 mi", avgPrice: "$850 - $1,350" },
+  { title: "Georgia to New York", slug: "/routes/georgia-to-new-york", distance: "1,000 mi", avgPrice: "$600 - $950" },
+];
+
 export default function StateRouteGrid({ stateName }: { stateName: string }) {
+  const isNewYork = stateName === "New York";
+  const outboundRoutes = isNewYork ? TOP_NEW_YORK_OUTBOUND_ROUTES : TOP_CALIFORNIA_OUTBOUND_ROUTES;
+  const inboundRoutes = isNewYork ? TOP_NEW_YORK_INBOUND_ROUTES : TOP_CALIFORNIA_INBOUND_ROUTES;
   return (
     <section className="py-16 bg-slate-900 text-white font-sans">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 space-y-12">
@@ -57,7 +72,7 @@ export default function StateRouteGrid({ stateName }: { stateName: string }) {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {TOP_CALIFORNIA_OUTBOUND_ROUTES.map((route, idx) => (
+              {outboundRoutes.map((route, idx) => (
                 <Link
                   key={idx}
                   href={route.slug}
@@ -86,7 +101,7 @@ export default function StateRouteGrid({ stateName }: { stateName: string }) {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {TOP_CALIFORNIA_INBOUND_ROUTES.map((route, idx) => (
+              {inboundRoutes.map((route, idx) => (
                 <Link
                   key={idx}
                   href={route.slug}

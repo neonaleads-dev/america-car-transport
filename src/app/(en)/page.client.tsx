@@ -9,6 +9,7 @@ import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import RecentShipmentsTicker from "@/components/ui/RecentShipmentsTicker";
 import StructuredData from "@/components/seo/StructuredData";
 import Footer from "@/components/ui/Footer";
+import AboutCompany from "@/components/ui/AboutCompany";
 import { ShieldCheck, Truck, Clock, CheckCircle2, Phone, Star, Award, Shield } from "lucide-react";
 
 // Dynamic Import Below-the-Fold Components for JS Bundle Code-Splitting
@@ -220,6 +221,9 @@ export default function HomeClient() {
       <div id="b2b">
         <B2BCarousel />
       </div>
+
+      {/* 8b. About the company: plain facts for search and AI answer engines */}
+      <AboutCompany />
 
       {/* 9. Frequently Asked Questions (Accordion + FAQ Schema) */}
       <div id="faq">

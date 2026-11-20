@@ -35,6 +35,28 @@ const faqs: FAQItem[] = [
   {
     question: "How far in advance should I book my auto transport?",
     answer: "We recommend booking your auto transport at least 1-2 weeks in advance. This gives us ample time to secure the best possible carrier and rate for your specific route. However, if you are in a rush, we do offer expedited and last-minute booking options."
+  },
+  {
+    question: "How much does it cost to ship a car to another state?",
+    answer: (
+      <>
+        Shipping a sedan to another state on an open carrier usually costs $500 to $1,600. Neighboring states (under 500 miles) often run $400 to $850, while coast-to-coast moves typically run $1,050 to $1,750. SUVs cost about 10–15% more, pickup trucks about 15–20% more, and enclosed transport about 40–60% more. See popular examples on our <Link href="/routes" className="text-blue-600 font-bold hover:underline">car shipping routes</Link> page.
+      </>
+    ),
+    schemaAnswer: "Shipping a sedan to another state on an open carrier usually costs $500 to $1,600. Neighboring states (under 500 miles) often run $400 to $850, while coast-to-coast moves typically run $1,050 to $1,750. SUVs cost about 10–15% more, pickup trucks about 15–20% more, and enclosed transport about 40–60% more."
+  },
+  {
+    question: "Do I have to pay a deposit to book?",
+    answer: "No. America Car Transport does not ask for an upfront deposit. Be careful with any company that demands a large payment before a verified carrier has been assigned to your vehicle."
+  },
+  {
+    question: "Do you offer car shipping quotes in Spanish?",
+    answer: (
+      <>
+        Yes. You can get a free quote in Spanish with our <Link href="/es/calculadora" className="text-blue-600 font-bold hover:underline">calculadora de envío de autos</Link>, or call (530) 725-5383 to speak with a Spanish-speaking advisor.
+      </>
+    ),
+    schemaAnswer: "Yes. You can get a free quote in Spanish with the Spanish car shipping calculator at americacartransport.com/es/calculadora, or call (530) 725-5383 to speak with a Spanish-speaking advisor."
   }
 ];
 

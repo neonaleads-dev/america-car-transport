@@ -11,7 +11,24 @@ export default function StatePricingTable({ state }: StatePricingTableProps) {
   const intraState = (state as any).intraStateRoutes || [];
   const allExamples = [...intraState, ...state.popularRoutesOut, ...state.popularRoutesIn];
 
+  const ROUTE_STATE_SLUGS: Record<string, string> = {
+    CA: "california", FL: "florida", NY: "new-york", TX: "texas", IL: "illinois",
+    GA: "georgia", NJ: "new-jersey", WA: "washington",
+  };
+  const ROUTE_PAGES = new Set([
+    "california-to-florida", "california-to-illinois", "california-to-new-york", "california-to-texas",
+    "california-to-washington", "florida-to-california", "florida-to-illinois", "florida-to-new-jersey",
+    "florida-to-new-york", "georgia-to-new-york", "illinois-to-florida", "new-york-to-california",
+    "new-york-to-florida", "texas-to-california", "texas-to-florida", "texas-to-new-york",
+  ]);
+
   const getRouteLink = (origin: string, destCity: string, destState: string) => {
+    const originAbbr = (origin.split(",").pop() || "").trim().toUpperCase();
+    const fromSlug = ROUTE_STATE_SLUGS[originAbbr];
+    const toSlug = ROUTE_STATE_SLUGS[destState.trim().toUpperCase()];
+    if (fromSlug && toSlug && ROUTE_PAGES.has(`${fromSlug}-to-${toSlug}`)) {
+      return `/routes/${fromSlug}-to-${toSlug}`;
+    }
     const origLower = origin.toLowerCase();
     const destStateLower = destState.toLowerCase();
     const destCityLower = destCity.toLowerCase();
