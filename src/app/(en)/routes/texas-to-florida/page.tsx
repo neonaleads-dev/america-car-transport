@@ -2,6 +2,8 @@ import React from "react";
 import Metadata from "next";
 import Link from "next/link";
 import Footer from "@/components/ui/Footer";
+import RouteGuideContent from "@/components/routes/RouteGuideContent";
+import { routeGuides } from "@/data/route-guides";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import AuthorProfile from "@/components/ui/AuthorProfile";
 import PricingMethodology from "@/components/ui/PricingMethodology";
@@ -15,7 +17,7 @@ export const metadata = {
   },
 };
 
-const FAQS = [
+const BASE_FAQS = [
   {
     question: "How much does it cost to ship a car from Texas to Florida?",
     answer: "Shipping a car from Texas to Florida typically costs between $650 and $1,050 for open transport. Enclosed transport for luxury or classic vehicles runs between $1,000 and $1,550. Rates vary depending on exact city pairs (e.g. Houston to Miami vs Dallas to Orlando), vehicle size, and seasonal demand."
@@ -33,6 +35,8 @@ const FAQS = [
     answer: "No. America Car Transport enforces a strict Zero Upfront Deposit policy. You only pay after your carrier is dispatched and assigned with a verified driver."
   }
 ];
+
+const FAQS = [...BASE_FAQS, ...routeGuides["texas-to-florida"].faqs];
 
 export default function TexasToFloridaRoutePage() {
   const schemaGraph = {
@@ -176,6 +180,9 @@ export default function TexasToFloridaRoutePage() {
           </div>
         </div>
       </section>
+
+      <RouteGuideContent guide={routeGuides["texas-to-florida"]} />
+
 
       <Footer />
     </main>

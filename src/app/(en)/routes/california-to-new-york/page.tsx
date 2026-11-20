@@ -2,6 +2,8 @@ import React from "react";
 import Metadata from "next";
 import Link from "next/link";
 import Footer from "@/components/ui/Footer";
+import RouteGuideContent from "@/components/routes/RouteGuideContent";
+import { routeGuides } from "@/data/route-guides";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import AnimatedSection, { AnimatedCard } from "@/components/ui/AnimatedSection";
 import { ShieldCheck, Award, Clock, DollarSign, ArrowRight, ArrowLeftRight, CheckCircle2, Phone, HelpCircle, MapPin, Truck, ChevronDown, Lock } from "lucide-react";
@@ -14,7 +16,7 @@ export const metadata = {
   },
 };
 
-const FAQS = [
+const BASE_FAQS = [
   {
     question: "How much does it cost to ship a car from California to New York?",
     answer: "Shipping a car from California to New York typically costs between $1,150 and $1,700 on open transport, reflecting this route's status as one of the longest coast-to-coast corridors in the country (~2,800 miles). Enclosed transport for luxury or classic vehicles runs 30–50% higher ($1,650 to $2,400)."
@@ -32,6 +34,8 @@ const FAQS = [
     answer: "No. America Car Transport operates under a strict Zero Upfront Deposit policy. You only pay after your vehicle is dispatched and assigned with a verified driver."
   }
 ];
+
+const FAQS = [...BASE_FAQS, ...routeGuides["california-to-new-york"].faqs];
 
 export default function CaliforniaToNewYorkRoutePage() {
   const schemaGraph = {
@@ -352,6 +356,8 @@ export default function CaliforniaToNewYorkRoutePage() {
       </section>
 
       {/* Global Footer */}
+      <RouteGuideContent guide={routeGuides["california-to-new-york"]} />
+
       <Footer />
     </main>
   );

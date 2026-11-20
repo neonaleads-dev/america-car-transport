@@ -2,6 +2,8 @@ import React from "react";
 import Metadata from "next";
 import Link from "next/link";
 import Footer from "@/components/ui/Footer";
+import RouteGuideContent from "@/components/routes/RouteGuideContent";
+import { routeGuides } from "@/data/route-guides";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import AuthorProfile from "@/components/ui/AuthorProfile";
 import PricingMethodology from "@/components/ui/PricingMethodology";
@@ -15,7 +17,7 @@ export const metadata = {
   },
 };
 
-const FAQS = [
+const BASE_FAQS = [
   {
     question: "How much does it cost to ship a car from Texas to New York?",
     answer: "Shipping a car from Texas to New York costs between $850 and $1,350 for open transport. Enclosed transport for luxury or classic vehicles runs between $1,300 and $1,900. Rates depend on exact origin/destination cities, vehicle size, and seasonal carrier availability."
@@ -25,6 +27,8 @@ const FAQS = [
     answer: "Transit time from Texas to New York is typically 3 to 5 days. Highways I-30, I-40, and I-81 provide direct carrier transit between Houston/Dallas and NYC/Upstate New York."
   }
 ];
+
+const FAQS = [...BASE_FAQS, ...routeGuides["texas-to-new-york"].faqs];
 
 export default function TexasToNewYorkRoutePage() {
   const schemaGraph = {
@@ -133,6 +137,9 @@ export default function TexasToNewYorkRoutePage() {
           </div>
         </div>
       </section>
+
+      <RouteGuideContent guide={routeGuides["texas-to-new-york"]} />
+
 
       <Footer />
     </main>

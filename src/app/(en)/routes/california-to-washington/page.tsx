@@ -2,6 +2,8 @@ import React from "react";
 import Metadata from "next";
 import Link from "next/link";
 import Footer from "@/components/ui/Footer";
+import RouteGuideContent from "@/components/routes/RouteGuideContent";
+import { routeGuides } from "@/data/route-guides";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import AuthorProfile from "@/components/ui/AuthorProfile";
 import PricingMethodology from "@/components/ui/PricingMethodology";
@@ -15,7 +17,7 @@ export const metadata = {
   },
 };
 
-const FAQS = [
+const BASE_FAQS = [
   {
     question: "How much does it cost to ship a car from California to Washington?",
     answer: "Shipping a car from California to Washington (I-5 corridor) typically costs between $550 and $950 for open transport. Enclosed transport runs between $850 and $1,350 depending on exact cities (e.g. LA to Seattle vs San Diego to Spokane)."
@@ -25,6 +27,8 @@ const FAQS = [
     answer: "Carriers traveling north along Interstate 5 complete California to Washington shipments in 2 to 4 days."
   }
 ];
+
+const FAQS = [...BASE_FAQS, ...routeGuides["california-to-washington"].faqs];
 
 export default function CaliforniaToWashingtonRoutePage() {
   const schemaGraph = {
@@ -133,6 +137,9 @@ export default function CaliforniaToWashingtonRoutePage() {
           </div>
         </div>
       </section>
+
+      <RouteGuideContent guide={routeGuides["california-to-washington"]} />
+
 
       <Footer />
     </main>

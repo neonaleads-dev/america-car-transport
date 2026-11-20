@@ -240,7 +240,7 @@ export default function MilitaryCarShippingPage() {
               <strong>America Car Transport specializes in CONUS-to-CONUS (continental U.S.) moves.</strong> If your PCS orders are OCONUS (overseas — Hawaii, Alaska, Guam, Europe), your vehicle shipment is arranged directly by the Department of Defense through its official POV contractor at <a href="https://www.move.mil" target="_blank" rel="noopener noreferrer" className="text-amber-900 font-bold underline inline-flex items-center gap-1">Move.mil <ExternalLink className="w-3 h-3" /></a>.
             </p>
             <p>
-              For CONUS moves, we provide fully insured, licensed transport with gate rendezvous pickup near major installations including Fort Liberty, Fort Cavazos, Naval Station Norfolk, Camp Pendleton, Joint Base San Antonio, and Luke AFB.
+              For CONUS moves, we provide fully insured, licensed transport with gate rendezvous pickup near major installations including Fort Bragg, Fort Hood, Naval Station Norfolk, Camp Pendleton, Joint Base San Antonio, and Luke AFB.
             </p>
           </div>
 

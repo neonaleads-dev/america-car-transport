@@ -30,7 +30,7 @@ export const northCarolinaData: StateData = {
   averagePricePerMile: "$0.90 - $1.25",
   
   climateNotes: "Mild climate overall. Hurricane season can occasionally affect coastal routes near Wilmington, but mainland I-85/I-40 corridors run year-round without disruption.",
-  seasonality: "Heavy military relocations near Fort Liberty (Fayetteville) and Camp Lejeune, alongside Research Triangle tech moves.",
+  seasonality: "Heavy military relocations near Fort Bragg (Fayetteville) and Camp Lejeune, alongside Research Triangle tech moves.",
   peakMonths: "May through October",
   carShippingDemand: "High",
   
@@ -65,7 +65,7 @@ export const northCarolinaData: StateData = {
     },
     {
       question: "When is the cheapest time to ship a car in North Carolina?",
-      answer: "Late winter and early spring (roughly February through April) usually bring the lowest prices and fastest carrier assignment. Local demand in North Carolina: Heavy military relocations near Fort Liberty (Fayetteville) and Camp Lejeune, alongside Research Triangle tech moves. Booking 1 to 2 weeks ahead and keeping your pickup dates flexible also lowers the price."
+      answer: "Late winter and early spring (roughly February through April) usually bring the lowest prices and fastest carrier assignment. Local demand in North Carolina: Heavy military relocations near Fort Bragg (Fayetteville) and Camp Lejeune, alongside Research Triangle tech moves. Booking 1 to 2 weeks ahead and keeping your pickup dates flexible also lowers the price."
     },
     {
       question: "Do you offer door-to-door car shipping in North Carolina?",

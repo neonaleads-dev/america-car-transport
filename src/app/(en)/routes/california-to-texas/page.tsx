@@ -2,6 +2,8 @@ import React from "react";
 import Metadata from "next";
 import Link from "next/link";
 import Footer from "@/components/ui/Footer";
+import RouteGuideContent from "@/components/routes/RouteGuideContent";
+import { routeGuides } from "@/data/route-guides";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import AnimatedSection, { AnimatedCard } from "@/components/ui/AnimatedSection";
 import { ShieldCheck, Award, Clock, DollarSign, ArrowRight, ArrowLeftRight, CheckCircle2, Phone, HelpCircle, MapPin, Truck, ChevronDown, Lock } from "lucide-react";
@@ -14,7 +16,7 @@ export const metadata = {
   },
 };
 
-const FAQS = [
+const BASE_FAQS = [
   {
     question: "How much does it cost to ship a car from California to Texas?",
     answer: "Shipping a car from California to Texas typically costs between $950 and $1,400 on open transport. Enclosed transport for luxury or classic vehicles runs 30–50% higher ($1,350 to $1,950). Rates vary depending on exact city pairs, vehicle size, and seasonal carrier demand."
@@ -32,6 +34,8 @@ const FAQS = [
     answer: "No. America Car Transport enforces a strict Zero Upfront Deposit policy. You only pay after your carrier is dispatched and assigned with a verified driver."
   }
 ];
+
+const FAQS = [...BASE_FAQS, ...routeGuides["california-to-texas"].faqs];
 
 export default function CaliforniaToTexasRoutePage() {
   const schemaGraph = {
@@ -352,6 +356,8 @@ export default function CaliforniaToTexasRoutePage() {
       </section>
 
       {/* Global Footer */}
+      <RouteGuideContent guide={routeGuides["california-to-texas"]} />
+
       <Footer />
     </main>
   );

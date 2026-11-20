@@ -2,6 +2,8 @@ import React from "react";
 import Metadata from "next";
 import Link from "next/link";
 import Footer from "@/components/ui/Footer";
+import RouteGuideContent from "@/components/routes/RouteGuideContent";
+import { routeGuides } from "@/data/route-guides";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import AuthorProfile from "@/components/ui/AuthorProfile";
 import PricingMethodology from "@/components/ui/PricingMethodology";
@@ -15,7 +17,7 @@ export const metadata = {
   },
 };
 
-const FAQS = [
+const BASE_FAQS = [
   {
     question: "How much does it cost to ship a car from Illinois to Florida?",
     answer: "Shipping a car from Illinois to Florida costs between $650 and $1,050 for open transport. Enclosed transport runs between $1,000 and $1,550 depending on exact cities (e.g. Chicago to Miami vs Rockford to Tampa)."
@@ -25,6 +27,8 @@ const FAQS = [
     answer: "Carriers traveling south along Interstate 65 and Interstate 75 complete Illinois to Florida shipments in 2 to 4 days."
   }
 ];
+
+const FAQS = [...BASE_FAQS, ...routeGuides["illinois-to-florida"].faqs];
 
 export default function IllinoisToFloridaRoutePage() {
   const schemaGraph = {
@@ -133,6 +137,9 @@ export default function IllinoisToFloridaRoutePage() {
           </div>
         </div>
       </section>
+
+      <RouteGuideContent guide={routeGuides["illinois-to-florida"]} />
+
 
       <Footer />
     </main>

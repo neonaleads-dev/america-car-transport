@@ -2,6 +2,8 @@ import React from "react";
 import Metadata from "next";
 import Link from "next/link";
 import Footer from "@/components/ui/Footer";
+import RouteGuideContent from "@/components/routes/RouteGuideContent";
+import { routeGuides } from "@/data/route-guides";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import AnimatedSection, { AnimatedCard } from "@/components/ui/AnimatedSection";
 import { ShieldCheck, Award, Clock, DollarSign, ArrowRight, ArrowLeftRight, CheckCircle2, Phone, HelpCircle, MapPin, Truck, ChevronDown, Lock } from "lucide-react";
@@ -14,7 +16,7 @@ export const metadata = {
   },
 };
 
-const FAQS = [
+const BASE_FAQS = [
   {
     question: "How much does it cost to ship a car from California to Illinois?",
     answer: "Shipping a car from California to Illinois typically costs between $1,000 and $1,450 on open transport, for this roughly 2,000-mile Midwest corridor connecting California to the Chicago metro area. Enclosed transport for luxury or classic vehicles runs 30–50% higher ($1,450 to $2,050)."
@@ -32,6 +34,8 @@ const FAQS = [
     answer: "No. America Car Transport operates under a strict Zero Upfront Deposit policy. You only pay after your vehicle is dispatched and assigned with a verified driver."
   }
 ];
+
+const FAQS = [...BASE_FAQS, ...routeGuides["california-to-illinois"].faqs];
 
 export default function CaliforniaToIllinoisRoutePage() {
   const schemaGraph = {
@@ -365,6 +369,8 @@ export default function CaliforniaToIllinoisRoutePage() {
       </section>
 
       {/* Global Footer */}
+      <RouteGuideContent guide={routeGuides["california-to-illinois"]} />
+
       <Footer />
     </main>
   );
