@@ -206,6 +206,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // Date of the last site-wide content update. Bump it when pages change so
+  // search engines know to recrawl.
+  const lastModified = new Date("2026-11-21");
+
   return [
     ...staticPages,
     ...servicePages,
@@ -213,5 +217,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...statePages,
     ...routePages,
     ...resourcePages,
-  ];
+  ].map((entry) => ({ ...entry, lastModified }));
 }
