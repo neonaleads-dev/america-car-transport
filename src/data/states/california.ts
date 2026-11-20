@@ -141,6 +141,14 @@ export const californiaData: CaliforniaStateData = {
       answer: "Shipping a standard sedan from Florida to California on open transport typically costs $1,050 to $1,600 for this roughly 2,500 to 2,700-mile cross-country route — for example, Miami to Los Angeles runs about $1,100 to $1,600, and Orlando to San Diego about $1,050 to $1,500. Enclosed transport usually costs $1,700 to $2,400. Transit takes about 5 to 7 days once the car is picked up. Prices rise during summer and are often lower in late winter and early spring. See our Florida to California route page for city-by-city details, or get an exact price for your ZIP codes with the quote calculator above."
     },
     {
+      question: "How much does it cost to ship a car from Hawaii to California?",
+      answer: "Shipping a car from Hawaii to California goes by ocean freight from Honolulu (or a neighbor-island port) to a West Coast port such as Los Angeles, Long Beach or Oakland. Expect roughly $1,100 to $1,700 port to port for a standard car, with about 9 to 24 days in transit depending on the sailing schedule. We can arrange truck delivery from the California port to your door."
+    },
+    {
+      question: "How much does it cost to ship a car to California from the Midwest or East Coast?",
+      answer: "Long cross-country moves into California usually cost about $1,050 to $1,750 on an open carrier. For example, New York City to Los Angeles runs about $1,350 to $1,750, Miami to Los Angeles about $1,100 to $1,600, and Detroit or Charlotte to California typically falls between $1,050 and $1,550. Transit is about 5 to 8 days once the car is picked up."
+    },
+    {
       question: "How long does it take to ship a car from California to Florida?",
       answer: "Shipping from California to Florida typically takes 5 to 7 days for this roughly 2,700-mile cross-country route, depending on carrier availability and pickup flexibility. Check our California to Florida Route Page for full city pair breakdowns."
     },

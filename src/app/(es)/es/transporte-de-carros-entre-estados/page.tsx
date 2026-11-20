@@ -10,7 +10,7 @@ import { Phone, MapPin, Truck } from "lucide-react";
 
 export const metadata = {
   title: "Transporte de Carro Entre Estados en Estados Unidos | Servicio Licenciado",
-  description: "Servicio especializado de transporte de carro entre estados en EE.UU. Cotizaciones instantáneas, seguro completo y sin depósito.",
+  description: "Cómo enviar un carro dentro de EE.UU.: precios entre estados ($500–$1,600), documentos necesarios y tiempos de tránsito. Cotización gratis en español, sin depósito.",
   alternates: {
     canonical: "https://www.americacartransport.com/es/transporte-de-carros-entre-estados",
     languages: {

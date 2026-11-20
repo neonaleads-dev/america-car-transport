@@ -6,7 +6,7 @@ export const washingtonData: StateData = {
   abbreviation: "WA",
   heroTitle: "Washington Car Shipping Services | Door-to-Door Auto Transport",
   heroSubtitle: "Ship your vehicle safely to or from Washington state. Direct door-to-door auto transport serving Seattle, Tacoma, Spokane, and Bellevue with zero upfront deposit.",
-  metaTitle: "Washington Car Shipping | Direct Auto Transport Services",
+  metaTitle: "Washington Car Shipping & Auto Transport | Rates & Quotes",
   metaDescription: "Top-rated Washington car shipping services. Compare open & enclosed auto transport rates in Seattle, Tacoma, and Spokane. FMCSA licensed broker.",
   canonical: "https://www.americacartransport.com/locations/washington",
   

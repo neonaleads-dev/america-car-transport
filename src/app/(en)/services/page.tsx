@@ -7,8 +7,8 @@ import ServicesComparisonDashboard from "@/components/ui/ServicesComparisonDashb
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 export const metadata = {
-  title: "Auto Transport Services | Car Shipping Options",
-  description: "Explore all America Car Transport services — open, enclosed, door-to-door, terminal, and expedited car shipping. Get an instant quote for any option.",
+  title: "Nationwide Car Shipping Services | Open, Enclosed & Door-to-Door",
+  description: "Nationwide car shipping and auto transport services from America Car Transport: open, enclosed, door-to-door, terminal and expedited. Instant quote, no deposit.",
   alternates: {
     canonical: "https://www.americacartransport.com/services",
     languages: {

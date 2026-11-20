@@ -5,7 +5,7 @@ import Footer from "@/components/ui/Footer";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 
 export const metadata = {
-  title: "Open Auto Transport | Fast & Affordable Car Shipping",
+  title: "Open Car Transport & Open Auto Shipping | Affordable Rates",
   description: "Ship your car nationwide with open auto transport — America's most affordable, fastest way to move a vehicle. Get an instant quote, zero upfront deposit.",
   alternates: {
     canonical: "https://www.americacartransport.com/services/open-auto-transport",

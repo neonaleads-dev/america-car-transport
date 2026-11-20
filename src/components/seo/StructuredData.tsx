@@ -40,6 +40,15 @@ const schemaData = {
       "image": "https://www.americacartransport.com/america-car-transport-logo.png",
       "telephone": "(530) 725-5383",
       "priceRange": "$$",
+      "areaServed": { "@type": "Country", "name": "United States" },
+      "knowsLanguage": ["en", "es"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-530-725-5383",
+        "contactType": "customer service",
+        "areaServed": "US",
+        "availableLanguage": ["English", "Spanish"]
+      },
       "description": "America's leading bonded & insured auto transport network. Compare verified carriers, lock in instant rates, and ship vehicles nationwide with zero upfront deposit.",
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",

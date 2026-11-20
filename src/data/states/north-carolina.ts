@@ -6,7 +6,7 @@ export const northCarolinaData: StateData = {
   abbreviation: "NC",
   heroTitle: "North Carolina Car Shipping Services | Door-to-Door Auto Transport",
   heroSubtitle: "Ship your vehicle safely to or from North Carolina. Direct door-to-door car transport in Charlotte, Raleigh, Greensboro, and Wilmington with zero deposit.",
-  metaTitle: "North Carolina Car Shipping | Direct Auto Transport Services",
+  metaTitle: "North Carolina Car Shipping & Auto Transport | Rates & Quotes",
   metaDescription: "Reliable North Carolina car shipping services. Compare open & enclosed auto transport quotes in Charlotte, Raleigh, and Greensboro. Fully licensed and bonded.",
   canonical: "https://www.americacartransport.com/locations/north-carolina",
   

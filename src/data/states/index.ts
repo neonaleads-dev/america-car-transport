@@ -98,8 +98,8 @@ export function getFallbackStateData(slug: string): StateData {
     abbreviation: st,
     heroTitle: `${formattedName} Car Shipping Services | Door-to-Door Auto Transport`,
     heroSubtitle: `Ship your vehicle safely to or from ${formattedName} with America's leading bonded & insured carrier network. Guaranteed door-to-door delivery with zero upfront deposits.`,
-    metaTitle: `${formattedName} Car Shipping | Direct Auto Transport Services`,
-    metaDescription: `Professional ${formattedName} car shipping services. Compare open & enclosed auto transport rates. Fully licensed and bonded auto transport broker.`,
+    metaTitle: `${formattedName} Car Shipping & Auto Transport | Rates & Quotes`,
+    metaDescription: `Compare ${formattedName} car shipping rates from ${city1} and statewide. Open and enclosed auto transport, door-to-door, real 2026 prices and no upfront deposit.`,
     canonical: `https://www.americacartransport.com/locations/${slug}`,
     
     population: "Statewide Coverage",

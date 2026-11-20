@@ -6,13 +6,13 @@ import AnimatedSection, { AnimatedCard } from "@/components/ui/AnimatedSection";
 import { ShieldCheck, MapPin, Clock, DollarSign, Train, AlertCircle, FileText, CheckCircle2, Phone, HelpCircle, ChevronDown, ExternalLink, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Florida to California Car Transport | Cost, Time & Quotes — America Car Transport",
+  title: "Ship a Car from Florida to California | Cost & Transit 2026",
   description: "Ship your car from Florida to California with licensed, insured carriers. Get an instant quote, compare open vs. enclosed rates, and see real transit times for this popular cross-country route.",
   alternates: {
     canonical: "https://www.americacartransport.com/routes/florida-to-california",
   },
   openGraph: {
-    title: "Florida to California Car Transport | Cost, Time & Quotes — America Car Transport",
+    title: "Ship a Car from Florida to California | Cost & Transit 2026",
     description: "Ship your car from Florida to California with licensed, insured carriers. Get an instant quote, compare open vs. enclosed rates, and see real transit times for this popular cross-country route.",
     url: "https://www.americacartransport.com/routes/florida-to-california",
     siteName: "America Car Transport",
@@ -176,7 +176,7 @@ export default function FloridaToCaliforniaRoutePage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.6rem] leading-[1.1] font-black text-slate-900 tracking-tight mb-5">
-              Florida to California Car Transport
+              Ship a Car from Florida to California: Cost &amp; Transit Time
             </h1>
 
             <p className="text-base md:text-lg text-slate-600 font-medium leading-relaxed max-w-xl mb-8">

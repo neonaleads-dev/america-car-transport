@@ -6,7 +6,7 @@ export const illinoisData: StateData = {
   abbreviation: "IL",
   heroTitle: "Illinois Car Shipping Services | Door-to-Door Auto Transport",
   heroSubtitle: "Ship your car to or from Illinois with America's leading bonded & insured carriers. Direct door-to-door shipping in Chicago, Peoria, Rockford, and Springfield.",
-  metaTitle: "Illinois Car Shipping | Direct Auto Transport Services",
+  metaTitle: "Illinois Car Shipping & Auto Transport | Rates & Quotes",
   metaDescription: "Reliable Illinois car shipping services. Compare open & enclosed auto transport rates in Chicago, Rockford, and Peoria. Zero upfront deposit policy.",
   canonical: "https://www.americacartransport.com/locations/illinois",
   

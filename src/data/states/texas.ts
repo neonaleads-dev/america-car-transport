@@ -6,7 +6,7 @@ export const texasData: StateData = {
   abbreviation: "TX",
   heroTitle: "Texas Car Shipping Services | Door-to-Door Auto Transport",
   heroSubtitle: "Ship your vehicle safely across Texas or nationwide. Bonded & insured auto transport with direct pickup in Houston, Dallas-Fort Worth, Austin, and San Antonio. Zero upfront deposit guaranteed.",
-  metaTitle: "Texas Car Shipping | Direct Auto Transport Services",
+  metaTitle: "Texas Car Shipping & Auto Transport | Rates & Quotes",
   metaDescription: "Reliable Texas car shipping services. Compare open & enclosed auto transport rates in Houston, Dallas, Austin, and San Antonio. Fully licensed and bonded auto transport broker.",
   canonical: "https://www.americacartransport.com/locations/texas",
   

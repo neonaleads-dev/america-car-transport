@@ -6,7 +6,7 @@ export const newYorkData: StateData = {
   abbreviation: "NY",
   heroTitle: "New York Car Shipping Services | Door-to-Door Auto Transport",
   heroSubtitle: "Ship your vehicle to or from New York with top-rated, bonded & insured carriers. Direct door-to-door shipping for NYC boroughs, Long Island, Westchester, and Upstate NY.",
-  metaTitle: "New York Car Shipping | Direct Auto Transport Services",
+  metaTitle: "New York Car Shipping & Auto Transport | Rates & Quotes",
   metaDescription: "Professional New York car shipping services. Compare open & enclosed auto transport rates in NYC, Buffalo, Rochester, and Albany. Zero deposit policy.",
   canonical: "https://www.americacartransport.com/locations/new-york",
   

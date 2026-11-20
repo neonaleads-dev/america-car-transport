@@ -6,7 +6,7 @@ export const pennsylvaniaData: StateData = {
   abbreviation: "PA",
   heroTitle: "Pennsylvania Car Shipping Services | Door-to-Door Auto Transport",
   heroSubtitle: "Ship your vehicle safely to or from Pennsylvania. Direct door-to-door auto shipping serving Philadelphia, Pittsburgh, Allentown, and Harrisburg with zero deposit.",
-  metaTitle: "Pennsylvania Car Shipping | Direct Auto Transport Services",
+  metaTitle: "Pennsylvania Car Shipping & Auto Transport | Rates & Quotes",
   metaDescription: "Top-rated Pennsylvania car shipping services. Compare open & enclosed auto transport quotes in Philadelphia, Pittsburgh, and Harrisburg. Fully licensed and bonded.",
   canonical: "https://www.americacartransport.com/locations/pennsylvania",
   

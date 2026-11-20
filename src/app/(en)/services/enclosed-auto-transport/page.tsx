@@ -5,8 +5,8 @@ import Footer from "@/components/ui/Footer";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 
 export const metadata = {
-  title: "Enclosed Auto Transport | Premium Car Shipping Protection",
-  description: "Ship your luxury, exotic, or classic car with fully enclosed auto transport. Weather-protected, insured, white-glove handling. Get an instant quote.",
+  title: "Enclosed Car Shipping & Auto Transport | Cost and Quotes",
+  description: "Enclosed car shipping for luxury, exotic and classic cars. Enclosed auto transport costs about 40–60% more than open, fully insured and weather-protected. Instant quote.",
   alternates: {
     canonical: "https://www.americacartransport.com/services/enclosed-auto-transport",
   },
