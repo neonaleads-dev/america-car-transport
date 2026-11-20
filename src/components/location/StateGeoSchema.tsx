@@ -113,7 +113,7 @@ export default function StateGeoSchema({ state }: StateGeoSchemaProps) {
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": `${state.name} Routes`,
-          "itemListElement": state.popularRoutesOut.map((route) => ({
+          "itemListElement": state.popularRoutesOut.filter((route) => route.openPriceRange.startsWith("$")).map((route) => ({
             "@type": "Offer",
             "name": `${state.name} to ${route.destCity} Car Shipping`,
             "price": route.openPriceRange,

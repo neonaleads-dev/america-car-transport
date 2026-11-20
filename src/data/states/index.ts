@@ -10,6 +10,7 @@ import { georgiaData } from "./georgia";
 import { ohioData } from "./ohio";
 import { northCarolinaData } from "./north-carolina";
 import { virginiaData } from "./virginia";
+import { STATE_FACTS, HUBS, roadMiles, priceTier } from "./fallback-facts";
 
 export const TOP_STATES_DATA: Record<string, StateData> = {
   california: californiaData,
@@ -142,9 +143,93 @@ export function getFallbackStateData(slug: string): StateData {
   };
 }
 
+// Replaces the generic fallback routes, notes and FAQs with real per-state facts.
+function withStateFacts(base: StateData, slug: string): StateData {
+  const f = STATE_FACTS[slug];
+  const meta = STATE_HUB_MAP[slug];
+  if (!f || !meta) return base;
+  const name = meta.name;
+  const st = meta.abbr;
+  const city1 = meta.cities[0].name;
+  const cityList = meta.cities.map((c) => c.name).join(", ");
+
+  type Route = StateData["popularRoutesOut"][number];
+  let routesOut: Route[];
+  let routesIn: Route[];
+  if (f.special === "hawaii") {
+    const sea = { distanceMiles: 2220, openPriceRange: "$1,100 - $1,700", enclosedPriceRange: "$2,500 - $4,500", transitDays: "9-24 Days" };
+    routesOut = [{ originCity: `Honolulu, ${st}`, destCity: "Los Angeles", destState: "CA", ...sea }];
+    routesIn = [{ originCity: "Los Angeles, CA", destCity: "Honolulu", destState: st, ...sea }];
+  } else if (f.special === "alaska") {
+    const sea = { distanceMiles: 1450, openPriceRange: "Custom quote", enclosedPriceRange: "Custom quote", transitDays: "Varies by sailing" };
+    routesOut = [{ originCity: `Anchorage, ${st}`, destCity: "Seattle", destState: "WA", ...sea }];
+    routesIn = [{ originCity: "Seattle, WA", destCity: "Anchorage", destState: st, ...sea }];
+  } else {
+    const make = (origin: string, dest: string, fromC: [number, number], toHub: string): Route => {
+      const hub = HUBS[toHub];
+      const miles = roadMiles(fromC, hub.c);
+      const p = priceTier(miles);
+      return { originCity: origin, destCity: dest, destState: hub.st, distanceMiles: miles, openPriceRange: p.open, enclosedPriceRange: p.enclosed, transitDays: p.days };
+    };
+    routesOut = f.out.map((h) => make(`${city1}, ${st}`, h, f.city1, h));
+    const inHub = HUBS[f.in];
+    const inMiles = roadMiles(inHub.c, f.city1);
+    const inP = priceTier(inMiles);
+    routesIn = [{ originCity: `${f.in}, ${inHub.st}`, destCity: city1, destState: st, distanceMiles: inMiles, openPriceRange: inP.open, enclosedPriceRange: inP.enclosed, transitDays: inP.days }];
+  }
+
+  const all = [...routesOut, ...routesIn];
+  const avgMiles = Math.round(all.reduce((s, r) => s + r.distanceMiles, 0) / all.length / 10) * 10;
+  const days = (r: Route) => r.transitDays.replace("-", " to ").replace(" Days", " days");
+  const routeText = (r: Route) => `${r.originCity.split(",")[0]} to ${r.destCity}`;
+  const sea = f.special === "hawaii" || f.special === "alaska";
+
+  const faqs = sea
+    ? [
+        { question: `How do you ship a car to or from ${name}?`, answer: f.special === "hawaii"
+          ? `Cars move to and from ${name} by ocean freight between West Coast ports such as Los Angeles, Long Beach and Oakland and the island ports. We can arrange door-to-port or door-to-door service on the mainland side. A typical Los Angeles to Honolulu shipment costs about $1,100 to $1,700 and takes 9 to 24 days including port time.`
+          : `Most cars move to and from ${name} by ocean freight between the Port of Tacoma or Seattle and Anchorage, sometimes combined with overland transport. Because sailings, port fees and pickup locations vary, we give a custom quote for each ${name} shipment.` },
+        { question: `How long does it take to ship a car to ${name}?`, answer: f.special === "hawaii"
+          ? "Plan on about 9 to 24 days from West Coast port to island port, depending on the sailing schedule and which island you're shipping to, plus time to get the car to and from the port."
+          : "Transit depends on the sailing schedule and your pickup city on the mainland. Ask for a quote with your dates and we'll give you a realistic timeline." },
+        { question: `What do I need to ship my car to ${name}?`, answer: "A photo ID, the vehicle registration or title, and proof of insurance. Ocean carriers usually require the gas tank to be a quarter full or less and no personal items inside the car. If the car has a lien, the lienholder may need to authorize the shipment." },
+        { question: `Do you pick up from ${cityList}?`, answer: `Yes. We arrange pickup and delivery in ${cityList} and other ${name} communities, coordinated with the port schedule.` },
+        { question: "Do I need to pay a deposit to book?", answer: "No. America Car Transport does not ask for an upfront deposit." },
+      ]
+    : [
+        { question: `How much does it cost to ship a car from ${name}?`, answer: `Shipping a standard sedan out of ${name} on an open carrier typically costs ${routesOut.map((r) => `${r.openPriceRange.replace(" - ", " to ")} from ${routeText(r)} (about ${r.distanceMiles.toLocaleString("en-US")} miles)`).join(" and ")}. Enclosed transport usually costs 40 to 60% more. For an exact price on your ZIP codes, use the quote calculator at the top of this page — no email required.` },
+        { question: `How much does it cost to ship a car to ${name}?`, answer: `Inbound prices depend on where the car starts. For example, ${routesIn.map((r) => `${r.originCity} to ${r.destCity} runs about ${r.openPriceRange.replace(" - ", " to ")} on an open carrier for roughly ${r.distanceMiles.toLocaleString("en-US")} miles`).join(", ")}. SUVs cost about 10 to 15% more and pickup trucks about 15 to 20% more than a sedan.` },
+        { question: `How long does it take to ship a car from ${name}?`, answer: `Transit time depends on distance: ${routesOut.map((r) => `${routeText(r)} takes about ${days(r)}`).join(", and ")}. Add 1 to 5 days after booking for a carrier to be assigned and arrive for pickup.` },
+        { question: `When is the cheapest time to ship a car in ${name}?`, answer: `Late winter and early spring usually bring the lowest prices and fastest carrier assignment. Busiest months in ${name}: ${f.peak.toLowerCase()}. ${f.season}` },
+        { question: `Do you offer door-to-door car shipping in ${name}?`, answer: `Yes. We arrange door-to-door pickup and delivery across ${name}, including ${cityList} and the capital, ${f.capital}. Carriers use ${f.interstates.join(", ")}. If a full-size truck can't safely reach your street, the driver will meet you at a nearby open spot.` },
+        { question: `Does weather affect car shipping in ${name}?`, answer: `${f.climate} Our dispatchers adjust pickup and delivery times when weather requires it.` },
+        { question: `What documents do I need to ship a car from ${name}?`, answer: "Have a photo ID, the vehicle registration (or title), and proof of insurance ready. At pickup and delivery you'll sign the Bill of Lading, which records the car's condition, so keep a copy from both ends." },
+        { question: `Do I have to pay a deposit to ship my car from ${name}?`, answer: "No. America Car Transport does not ask for an upfront deposit. Be cautious with any company that demands a large payment before a verified carrier has been assigned to your vehicle." },
+      ];
+
+  const lowPerMile = routesOut[0] && !sea ? priceTier(routesOut[0].distanceMiles).low / routesOut[0].distanceMiles : 0;
+  const highPerMile = routesOut[0] && !sea ? priceTier(routesOut[0].distanceMiles).high / routesOut[0].distanceMiles : 0;
+
+  return {
+    ...base,
+    capital: f.capital,
+    majorInterstates: f.interstates,
+    averageDistanceMiles: avgMiles,
+    averageTransitDays: sea ? routesOut[0].transitDays : priceTier(avgMiles).days,
+    averagePricePerMile: sea ? "Port-to-port quote" : `$${lowPerMile.toFixed(2)} - $${highPerMile.toFixed(2)}`,
+    climateNotes: f.climate,
+    seasonality: f.season,
+    peakMonths: f.peak,
+    stateOverview: `America Car Transport ships vehicles to and from ${name}, including ${cityList}. ${sea ? f.climate : `Carriers run ${f.interstates.join(", ")}, connecting ${name} with the rest of the country.`}`,
+    popularRoutesOut: routesOut,
+    popularRoutesIn: routesIn,
+    faqs,
+  };
+}
+
 export function getStateBySlug(slug: string): StateData {
   const normalized = slug.toLowerCase();
-  return TOP_STATES_DATA[normalized] || getFallbackStateData(normalized);
+  return TOP_STATES_DATA[normalized] || withStateFacts(getFallbackStateData(normalized), normalized);
 }
 
 export const ALL_50_STATE_SLUGS: string[] = [
