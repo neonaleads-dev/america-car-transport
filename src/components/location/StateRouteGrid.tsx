@@ -40,10 +40,53 @@ const TOP_NEW_YORK_INBOUND_ROUTES: RouteLink[] = [
   { title: "Georgia to New York", slug: "/routes/georgia-to-new-york", distance: "1,000 mi", avgPrice: "$600 - $950" },
 ];
 
+// Every route page that exists under /routes, with the open-transport price shown on that page.
+const ROUTE_PAGES: Array<RouteLink & { from: string; to: string }> = [
+  { from: "California", to: "Florida", title: "California to Florida", slug: "/routes/california-to-florida", distance: "2,700 mi", avgPrice: "$1,100 - $1,600" },
+  { from: "California", to: "Texas", title: "California to Texas", slug: "/routes/california-to-texas", distance: "1,540 mi", avgPrice: "$1,000 - $1,400" },
+  { from: "California", to: "New York", title: "California to New York", slug: "/routes/california-to-new-york", distance: "2,800 mi", avgPrice: "$1,150 - $1,650" },
+  { from: "California", to: "Illinois", title: "California to Illinois", slug: "/routes/california-to-illinois", distance: "2,015 mi", avgPrice: "$1,000 - $1,450" },
+  { from: "California", to: "Washington", title: "California to Washington", slug: "/routes/california-to-washington", distance: "1,150 mi", avgPrice: "$550 - $950" },
+  { from: "Florida", to: "California", title: "Florida to California", slug: "/routes/florida-to-california", distance: "2,800 mi", avgPrice: "$1,000 - $1,800" },
+  { from: "Florida", to: "New York", title: "Florida to New York", slug: "/routes/florida-to-new-york", distance: "1,300 mi", avgPrice: "$900 - $1,400" },
+  { from: "Florida", to: "Illinois", title: "Florida to Illinois", slug: "/routes/florida-to-illinois", distance: "1,300 mi", avgPrice: "$1,100 - $1,700" },
+  { from: "Florida", to: "New Jersey", title: "Florida to New Jersey", slug: "/routes/florida-to-new-jersey", distance: "1,200 mi", avgPrice: "$650 - $1,200" },
+  { from: "New York", to: "Florida", title: "New York to Florida", slug: "/routes/new-york-to-florida", distance: "1,300 mi", avgPrice: "$900 - $1,400" },
+  { from: "New York", to: "California", title: "New York to California", slug: "/routes/new-york-to-california", distance: "2,800 mi", avgPrice: "$1,150 - $1,700" },
+  { from: "Texas", to: "California", title: "Texas to California", slug: "/routes/texas-to-california", distance: "1,540 mi", avgPrice: "$1,000 - $1,400" },
+  { from: "Texas", to: "Florida", title: "Texas to Florida", slug: "/routes/texas-to-florida", distance: "1,150 mi", avgPrice: "$650 - $1,050" },
+  { from: "Texas", to: "New York", title: "Texas to New York", slug: "/routes/texas-to-new-york", distance: "1,700 mi", avgPrice: "$850 - $1,350" },
+  { from: "Illinois", to: "Florida", title: "Illinois to Florida", slug: "/routes/illinois-to-florida", distance: "1,350 mi", avgPrice: "$650 - $1,050" },
+  { from: "Georgia", to: "New York", title: "Georgia to New York", slug: "/routes/georgia-to-new-york", distance: "1,000 mi", avgPrice: "$600 - $950" },
+];
+
+// Shown when a state has no route pages of its own, so the grid never claims another
+// state's routes as this state's.
+const NATIONAL_ROUTES_A = ["/routes/new-york-to-florida", "/routes/california-to-florida", "/routes/florida-to-california", "/routes/texas-to-california", "/routes/california-to-new-york", "/routes/illinois-to-florida"];
+const NATIONAL_ROUTES_B = ["/routes/florida-to-new-york", "/routes/california-to-texas", "/routes/texas-to-florida", "/routes/georgia-to-new-york", "/routes/florida-to-new-jersey", "/routes/california-to-washington"];
+const pick = (slugs: string[]) => slugs.map((s) => ROUTE_PAGES.find((r) => r.slug === s)!).filter(Boolean);
+
+function routesForState(stateName: string) {
+  if (stateName === "California") {
+    return { outbound: TOP_CALIFORNIA_OUTBOUND_ROUTES, inbound: TOP_CALIFORNIA_INBOUND_ROUTES, outTitle: `Top Outbound Routes from ${stateName}`, inTitle: `Top Inbound Routes to ${stateName}` };
+  }
+  if (stateName === "New York") {
+    return { outbound: TOP_NEW_YORK_OUTBOUND_ROUTES, inbound: TOP_NEW_YORK_INBOUND_ROUTES, outTitle: `Top Outbound Routes from ${stateName}`, inTitle: `Top Inbound Routes to ${stateName}` };
+  }
+  const outbound = ROUTE_PAGES.filter((r) => r.from === stateName);
+  const inbound = ROUTE_PAGES.filter((r) => r.to === stateName);
+  const own = new Set([...outbound, ...inbound].map((r) => r.slug));
+  const national = (slugs: string[]) => pick(slugs).filter((r) => !own.has(r.slug));
+  return {
+    outbound: outbound.length > 0 ? outbound : national(NATIONAL_ROUTES_A),
+    inbound: inbound.length > 0 ? inbound : national(NATIONAL_ROUTES_B),
+    outTitle: outbound.length > 0 ? `Top Outbound Routes from ${stateName}` : "Popular National Car Shipping Routes",
+    inTitle: inbound.length > 0 ? `Top Inbound Routes to ${stateName}` : "More Popular Routes Nationwide",
+  };
+}
+
 export default function StateRouteGrid({ stateName }: { stateName: string }) {
-  const isNewYork = stateName === "New York";
-  const outboundRoutes = isNewYork ? TOP_NEW_YORK_OUTBOUND_ROUTES : TOP_CALIFORNIA_OUTBOUND_ROUTES;
-  const inboundRoutes = isNewYork ? TOP_NEW_YORK_INBOUND_ROUTES : TOP_CALIFORNIA_INBOUND_ROUTES;
+  const { outbound: outboundRoutes, inbound: inboundRoutes, outTitle, inTitle } = routesForState(stateName);
   return (
     <section className="py-16 bg-slate-900 text-white font-sans">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 space-y-12">
@@ -68,7 +111,7 @@ export default function StateRouteGrid({ stateName }: { stateName: string }) {
           <AnimatedSection direction="left" className="bg-slate-800/80 border border-slate-700/80 rounded-3xl p-6 md:p-8 space-y-6">
             <div className="flex items-center gap-3 border-b border-slate-700 pb-4">
               <MapPin className="w-5 h-5 text-blue-400" />
-              <h3 className="text-xl font-bold text-white">Top Outbound Routes from {stateName}</h3>
+              <h3 className="text-xl font-bold text-white">{outTitle}</h3>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -97,7 +140,7 @@ export default function StateRouteGrid({ stateName }: { stateName: string }) {
           <AnimatedSection direction="right" className="bg-slate-800/80 border border-slate-700/80 rounded-3xl p-6 md:p-8 space-y-6">
             <div className="flex items-center gap-3 border-b border-slate-700 pb-4">
               <Navigation className="w-5 h-5 text-purple-400" />
-              <h3 className="text-xl font-bold text-white">Top Inbound Routes to {stateName}</h3>
+              <h3 className="text-xl font-bold text-white">{inTitle}</h3>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
