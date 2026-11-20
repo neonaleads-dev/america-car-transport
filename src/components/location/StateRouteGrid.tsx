@@ -12,18 +12,18 @@ interface RouteLink {
 
 const TOP_CALIFORNIA_OUTBOUND_ROUTES: RouteLink[] = [
   { title: "California to Florida", slug: "/routes/california-to-florida", distance: "2,700 mi", avgPrice: "$1,050 - $1,600" },
-  { title: "California to Texas", slug: "/routes", distance: "1,500 mi", avgPrice: "$950 - $1,300" },
-  { title: "California to New York", slug: "/routes", distance: "2,800 mi", avgPrice: "$1,150 - $1,650" },
-  { title: "California to Washington", slug: "/routes", distance: "1,100 mi", avgPrice: "$750 - $1,050" },
-  { title: "California to Illinois", slug: "/routes", distance: "2,100 mi", avgPrice: "$950 - $1,350" },
+  { title: "California to Texas", slug: "/routes/california-to-texas", distance: "1,500 mi", avgPrice: "$950 - $1,300" },
+  { title: "California to New York", slug: "/routes/california-to-new-york", distance: "2,800 mi", avgPrice: "$1,150 - $1,650" },
+  { title: "California to Washington", slug: "/routes/california-to-washington", distance: "1,100 mi", avgPrice: "$750 - $1,050" },
+  { title: "California to Illinois", slug: "/routes/california-to-illinois", distance: "2,100 mi", avgPrice: "$950 - $1,350" },
   { title: "California to Hawaii (Port Shipping)", slug: "/services", distance: "2,400 mi", avgPrice: "Port Quote" },
 ];
 
 const TOP_CALIFORNIA_INBOUND_ROUTES: RouteLink[] = [
-  { title: "Texas to California", slug: "/routes", distance: "1,540 mi", avgPrice: "$980 - $1,280" },
+  { title: "Texas to California", slug: "/routes/texas-to-california", distance: "1,540 mi", avgPrice: "$980 - $1,280" },
   { title: "Washington to California", slug: "/routes", distance: "1,250 mi", avgPrice: "$890 - $1,200" },
-  { title: "New York to California", slug: "/routes", distance: "2,800 mi", avgPrice: "$1,150 - $1,650" },
-  { title: "Florida to California", slug: "/routes", distance: "2,700 mi", avgPrice: "$1,100 - $1,600" },
+  { title: "New York to California", slug: "/routes/new-york-to-california", distance: "2,800 mi", avgPrice: "$1,150 - $1,650" },
+  { title: "Florida to California", slug: "/routes/florida-to-california", distance: "2,700 mi", avgPrice: "$1,100 - $1,600" },
   { title: "Illinois to California", slug: "/routes", distance: "2,100 mi", avgPrice: "$950 - $1,350" },
   { title: "Arizona to California", slug: "/routes", distance: "400 mi", avgPrice: "$450 - $700" },
 ];

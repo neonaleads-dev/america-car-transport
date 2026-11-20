@@ -70,7 +70,9 @@ export const californiaData: CaliforniaStateData = {
   ],
   popularRoutesIn: [
     { originCity: "Seattle, WA", destCity: "San Diego", destState: "CA", distanceMiles: 1250, openPriceRange: "$890+", enclosedPriceRange: "$1,350+", transitDays: "3-4 Days" },
-    { originCity: "Houston, TX", destCity: "Los Angeles", destState: "CA", distanceMiles: 1540, openPriceRange: "$980 - $1,280", enclosedPriceRange: "$1,500 - $1,900", transitDays: "3-5 Days" }
+    { originCity: "Houston, TX", destCity: "Los Angeles", destState: "CA", distanceMiles: 1540, openPriceRange: "$980 - $1,280", enclosedPriceRange: "$1,500 - $1,900", transitDays: "3-5 Days" },
+    { originCity: "Miami, FL", destCity: "Los Angeles", destState: "CA", distanceMiles: 2700, openPriceRange: "$1,100 - $1,600", enclosedPriceRange: "$1,800 - $2,400", transitDays: "5-7 Days" },
+    { originCity: "Orlando, FL", destCity: "San Diego", destState: "CA", distanceMiles: 2500, openPriceRange: "$1,050 - $1,500", enclosedPriceRange: "$1,700 - $2,300", transitDays: "5-7 Days" }
   ],
   intraStateRoutes: [
     { originCity: "San Francisco, CA", destCity: "Los Angeles", destState: "CA", distanceMiles: 380, openPriceRange: "$450 - $650", enclosedPriceRange: "$750 - $950", transitDays: "1-2 Days" },
@@ -133,6 +135,10 @@ export const californiaData: CaliforniaStateData = {
     {
       question: "How long does it take to ship a car 3,000 miles?",
       answer: "A coast-to-coast move of around 3,000 miles — for example, Los Angeles to New York — typically takes 7 to 10 days in transit, on top of the pickup window (the time between booking and an available carrier arriving, often 1–5 days). Total time from booking to delivery is usually somewhere between 8 and 14 days for a route this long, though it can stretch during peak summer moving season or snowbird season in the fall. Expedited service can shorten transit time for an added cost if you're working against a hard deadline."
+    },
+    {
+      question: "How much does it cost to ship a car from Florida to California?",
+      answer: "Shipping a standard sedan from Florida to California on open transport typically costs $1,050 to $1,600 for this roughly 2,500 to 2,700-mile cross-country route — for example, Miami to Los Angeles runs about $1,100 to $1,600, and Orlando to San Diego about $1,050 to $1,500. Enclosed transport usually costs $1,700 to $2,400. Transit takes about 5 to 7 days once the car is picked up. Prices rise during summer and are often lower in late winter and early spring. See our Florida to California route page for city-by-city details, or get an exact price for your ZIP codes with the quote calculator above."
     },
     {
       question: "How long does it take to ship a car from California to Florida?",

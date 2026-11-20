@@ -17,6 +17,33 @@ export const metadata = {
   },
 };
 
+const calculadoraFaqs = [
+  {
+    q: "¿Cuánto cuesta enviar un auto en Estados Unidos?",
+    a: "El costo promedio para transportar un carro en EE.UU. varía entre $500 y $1,600 según la distancia. Rutas cortas (<500 millas) promedian $1.20–$2.20 por milla, mientras que envíos de costa a costa (>1,500 millas) promedian $0.40–$0.70 por milla.",
+  },
+  {
+    q: "¿Hay cargos ocultos en la calculadora de envio?",
+    a: "No. Todas las cotizaciones emitidas por America Car Transport incluyen seguro de carga completo, combustible, peajes y servicio puerta a puerta sin depósitos ni tarifas ocultas.",
+  },
+  {
+    q: "¿Qué datos necesito para usar la calculadora?",
+    a: "Solo el código postal (ZIP) de recogida y de entrega, el año, la marca y el modelo de su vehículo, el tipo de transporte (abierto o cerrado) y la fecha aproximada de envío. No necesita pagar nada para recibir su cotización.",
+  },
+  {
+    q: "¿Cuánto más cuesta enviar una SUV o una camioneta pickup?",
+    a: "Los vehículos más grandes ocupan más espacio en el camión. Como referencia, una SUV o minivan cuesta alrededor de 10–15% más que un sedán, y una camioneta pickup alrededor de 15–20% más.",
+  },
+  {
+    q: "¿Cuánto tarda el envío de un carro entre estados?",
+    a: "En trayectos cortos (menos de 500 millas) el tránsito suele tomar de 1 a 3 días; en distancias medias (500–1,500 millas) de 3 a 5 días; y de costa a costa (más de 1,500 millas) de 6 a 9 días, más el tiempo para asignar un transportista.",
+  },
+  {
+    q: "¿Puedo enviar un carro que no enciende?",
+    a: "Sí. Los vehículos que no funcionan se pueden transportar, pero requieren un camión con malacate (winch) para cargarlos, lo que agrega un costo adicional. Indíquelo en la calculadora al elegir la condición del vehículo.",
+  },
+];
+
 export default function SpanishCalculatorPage() {
   const schemaGraph = {
     "@context": "https://schema.org",
@@ -32,24 +59,11 @@ export default function SpanishCalculatorPage() {
       {
         "@type": "FAQPage",
         "@id": "https://www.americacartransport.com/es/calculadora#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "¿Cuánto cuesta enviar un auto en Estados Unidos?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "El costo promedio para transportar un carro en EE.UU. varía entre $500 y $1,600 según la distancia. Rutas cortas (<500 millas) promedian $1.20–$2.20 por milla, mientras que envíos de costa a costa (>1,500 millas) promedian $0.40–$0.70 por milla."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Hay cargos ocultos en la calculadora de envio?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Todas las cotizaciones emitidas por America Car Transport incluyen seguro de carga completo, combustible, peajes y servicio puerta a puerta sin depósitos ni tarifas ocultas."
-            }
-          }
-        ]
+        "mainEntity": calculadoraFaqs.map((f) => ({
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": { "@type": "Answer", "text": f.a },
+        }))
       },
       {
         "@type": "BreadcrumbList",
@@ -199,6 +213,93 @@ export default function SpanishCalculatorPage() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          {/* How the calculator works */}
+          <div>
+            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">Cómo Funciona la Calculadora de Envío</h2>
+            <p className="text-sm md:text-base text-slate-600 font-medium mb-6 leading-relaxed">
+              Calcular el costo de transportar su carro toma menos de un minuto. La calculadora usa la distancia real entre los códigos postales, el tamaño de su vehículo y el tipo de camión para darle un precio estimado.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                <div className="text-blue-600 font-black text-sm mb-1">Paso 1</div>
+                <div className="font-extrabold text-slate-900 mb-1">Origen y destino</div>
+                <p className="text-sm text-slate-600 font-medium">Escriba el código postal (ZIP) de recogida y de entrega. La calculadora reconoce la ciudad y el estado.</p>
+              </div>
+              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                <div className="text-blue-600 font-black text-sm mb-1">Paso 2</div>
+                <div className="font-extrabold text-slate-900 mb-1">Su vehículo</div>
+                <p className="text-sm text-slate-600 font-medium">Elija año, marca y modelo, si el carro funciona o no, y si prefiere transporte abierto o cerrado.</p>
+              </div>
+              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                <div className="text-blue-600 font-black text-sm mb-1">Paso 3</div>
+                <div className="font-extrabold text-slate-900 mb-1">Reciba su cotización</div>
+                <p className="text-sm text-slate-600 font-medium">Deje su nombre y teléfono y un asesor en español le confirma el precio final, sin depósito por adelantado.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Price adjustment by vehicle type */}
+          <div>
+            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">Costo de Envío Según el Tipo de Vehículo</h2>
+            <p className="text-sm md:text-base text-slate-600 font-medium mb-6 leading-relaxed">
+              Los precios de la tabla anterior son para un sedán en transporte abierto. Los vehículos más grandes o el transporte cerrado cambian el precio así:
+            </p>
+            <div className="overflow-x-auto bg-white rounded-2xl border border-slate-200 shadow-sm">
+              <table className="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr className="bg-slate-900 text-white font-extrabold uppercase text-[11px] tracking-wider">
+                    <th className="py-4 px-6">Tipo de Vehículo o Servicio</th>
+                    <th className="py-4 px-6">Ajuste Aproximado</th>
+                    <th className="py-4 px-6">Motivo</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200 font-medium text-slate-800">
+                  <tr>
+                    <td className="py-4 px-6 font-bold text-slate-900">Sedán / Compacto</td>
+                    <td className="py-4 px-6 text-blue-700 font-extrabold">Precio base</td>
+                    <td className="py-4 px-6 text-slate-600">El más fácil y rápido de cargar</td>
+                  </tr>
+                  <tr className="bg-slate-50/50">
+                    <td className="py-4 px-6 font-bold text-slate-900">SUV / Minivan</td>
+                    <td className="py-4 px-6 text-blue-700 font-extrabold">+10–15%</td>
+                    <td className="py-4 px-6 text-slate-600">Ocupa más espacio en el camión</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-6 font-bold text-slate-900">Camioneta Pickup</td>
+                    <td className="py-4 px-6 text-blue-700 font-extrabold">+15–20%</td>
+                    <td className="py-4 px-6 text-slate-600">Mayor tamaño y peso</td>
+                  </tr>
+                  <tr className="bg-slate-50/50">
+                    <td className="py-4 px-6 font-bold text-slate-900">Transporte Cerrado</td>
+                    <td className="py-4 px-6 text-blue-700 font-extrabold">+40–60%</td>
+                    <td className="py-4 px-6 text-slate-600">Protección total contra clima y polvo</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-6 font-bold text-slate-900">Carro que no enciende</td>
+                    <td className="py-4 px-6 text-blue-700 font-extrabold">Cargo adicional</td>
+                    <td className="py-4 px-6 text-slate-600">Requiere camión con malacate (winch)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Visible FAQ (matches FAQPage schema) */}
+          <div>
+            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-6">Preguntas Frecuentes sobre la Calculadora</h2>
+            <div className="space-y-4">
+              {calculadoraFaqs.map((f) => (
+                <details key={f.q} className="bg-slate-50 rounded-2xl border border-slate-200 p-5 group">
+                  <summary className="font-extrabold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                    <span>{f.q}</span>
+                    <HelpCircle className="w-5 h-5 text-blue-600 shrink-0" />
+                  </summary>
+                  <p className="mt-3 text-sm md:text-base text-slate-700 font-medium leading-relaxed">{f.a}</p>
+                </details>
+              ))}
             </div>
           </div>
 

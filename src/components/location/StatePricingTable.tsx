@@ -22,6 +22,12 @@ export default function StatePricingTable({ state }: StatePricingTableProps) {
     ) {
       return "/routes/california-to-florida";
     }
+    if (
+      (origLower.includes("florida") || origLower.includes(", fl") || origLower.includes("miami") || origLower.includes("orlando") || origLower.includes("tampa")) &&
+      destStateLower === "ca"
+    ) {
+      return "/routes/florida-to-california";
+    }
     return null;
   };
 
