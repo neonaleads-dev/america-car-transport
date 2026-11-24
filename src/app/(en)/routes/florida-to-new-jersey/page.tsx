@@ -520,7 +520,7 @@ export default function FloridaToNewJerseyRoutePage() {
                   </li>
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                    <span><strong>Verified Reviews:</strong> <Link href="/reviews" className="text-blue-400 underline font-bold">See customer reviews (4.9/5.0 rating from 10,450+ reviews)</Link>.</span>
+                    <span><strong>Verified Reviews:</strong> <Link href="/reviews" className="text-blue-400 underline font-bold">See customer reviews (5.0/5.0 rating from 1,000+ reviews)</Link>.</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />

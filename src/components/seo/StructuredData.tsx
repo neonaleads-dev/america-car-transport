@@ -60,11 +60,11 @@ const schemaData = {
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
+        "ratingValue": "5.0",
         "bestRating": "5.0",
         "worstRating": "1.0",
-        "ratingCount": "10450",
-        "reviewCount": "10450"
+        "ratingCount": "1000",
+        "reviewCount": "1000"
       },
       "review": [
         {
@@ -116,7 +116,7 @@ const schemaData = {
           "@type": "WebPage",
           "name": "Verified Customer Reviews",
           "url": "https://www.americacartransport.com/reviews",
-          "description": "Read verified 4.9-star ratings and route-specific customer experiences."
+          "description": "Read verified 5-star ratings and route-specific customer experiences."
         },
         {
           "@type": "WebPage",

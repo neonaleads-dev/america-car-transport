@@ -45,6 +45,10 @@ export default function HomeClient() {
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <img
             src="/hero-background-truck-bright.webp"
+            srcSet="/hero-background-truck-bright.webp 900w, /hero-background-truck-bright-1376.webp 1376w"
+            sizes="100vw"
+            width={1376}
+            height={768}
             alt="America Car Transport Carrier Truck Driving Along Scenic Coast Highway at Sunset"
             fetchPriority="high"
             loading="eager"
@@ -79,7 +83,7 @@ export default function HomeClient() {
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
                   </span>
-                  <span className="font-semibold text-white">4.9 / 5.0 Rating</span>
+                  <span className="font-semibold text-white">5.0 / 5.0 Rating</span>
                 </dd>
                 <dd className="text-sm text-navy-200 mt-1">Google Verified Reviews</dd>
               </div>

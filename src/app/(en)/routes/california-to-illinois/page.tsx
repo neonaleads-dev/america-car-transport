@@ -282,9 +282,9 @@ export default function CaliforniaToIllinoisRoutePage() {
 
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
               <Award className="w-8 h-8 text-amber-500 mb-3" />
-              <h3 className="font-extrabold text-slate-900 text-lg mb-2">4.9 ★ Customer Rating</h3>
+              <h3 className="font-extrabold text-slate-900 text-lg mb-2">5.0 ★ Customer Rating</h3>
               <p className="text-xs text-slate-600 font-medium leading-relaxed">
-                Over 10,450+ verified customer reviews across Google &amp; BBB. Read real delivery feedback on the CA ➔ IL route.
+                Over 1,000+ verified customer reviews across Google &amp; BBB. Read real delivery feedback on the CA ➔ IL route.
               </p>
               <Link href="/reviews" className="text-xs font-bold text-blue-600 hover:underline mt-3 inline-block">
                 Read Customer Reviews ➔

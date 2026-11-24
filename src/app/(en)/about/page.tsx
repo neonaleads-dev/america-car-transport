@@ -139,11 +139,11 @@ export default function AboutPage() {
         <div className="max-w-[1200px] mx-auto px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-black text-blue-400 mb-1">10,450+</div>
+              <div className="text-4xl md:text-5xl font-black text-blue-400 mb-1">1,000+</div>
               <div className="text-xs md:text-sm text-slate-300 font-semibold">Verified Reviews</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-black text-emerald-400 mb-1">4.9 ★</div>
+              <div className="text-4xl md:text-5xl font-black text-emerald-400 mb-1">5.0 ★</div>
               <div className="text-xs md:text-sm text-slate-300 font-semibold">Customer Rating</div>
             </div>
             <div>

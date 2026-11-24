@@ -17,7 +17,7 @@ export function TrustBar() {
         <Link href="/reviews" className="flex items-center gap-4 md:px-6 py-4 md:py-0 hover:text-blue-400 transition-colors">
           <Star className="w-10 h-10 text-amber-400 fill-amber-400 shrink-0" />
           <div>
-            <h4 className="font-bold text-base">4.9/5 Rating</h4>
+            <h4 className="font-bold text-base">5/5 Rating</h4>
             <p className="text-xs text-slate-400">Verified Customer Reviews</p>
           </div>
         </Link>

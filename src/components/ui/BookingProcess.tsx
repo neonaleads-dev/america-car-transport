@@ -52,6 +52,8 @@ export default function BookingProcess() {
           <figure className="relative">
             <img
               src="/america-car-transport-booking-process-auto-carrier-650.webp"
+              srcSet="/america-car-transport-booking-process-auto-carrier-650.webp 650w, /america-car-transport-booking-process-auto-carrier-1024.webp 1024w"
+              sizes="(min-width: 1024px) 480px, 100vw"
               width={650}
               height={650}
               loading="lazy"

@@ -182,7 +182,7 @@ export default function SpanishInterstateTransportPage() {
                     ))}
                   </div>
                   <div>
-                    <div className="font-extrabold text-white text-sm leading-none">4.9 / 5.0 Rating</div>
+                    <div className="font-extrabold text-white text-sm leading-none">5.0 / 5.0 Rating</div>
                     <div className="text-xs text-slate-400 font-medium mt-0.5">Opiniones Verificadas</div>
                   </div>
                 </div>

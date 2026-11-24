@@ -190,7 +190,7 @@ export default function CorporateRelocationTransportPage() {
             <div className="space-y-2">
               <h2 className="text-2xl font-bold">Proven Satisfaction Across Employee Moves</h2>
               <p className="text-xs md:text-sm text-blue-200 font-medium">
-                Read authentic customer feedback and 4.9-star ratings on our <Link href="/reviews" className="text-white font-bold underline">Verified Customer Reviews</Link> page.
+                Read authentic customer feedback and 5-star ratings on our <Link href="/reviews" className="text-white font-bold underline">Verified Customer Reviews</Link> page.
               </p>
             </div>
             <Link href="/contact" className="shrink-0 bg-white text-blue-900 px-6 py-3 rounded-xl font-extrabold text-sm hover:bg-slate-100 transition-colors">

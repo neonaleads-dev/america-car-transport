@@ -82,6 +82,22 @@ const whoWeServe = [
   },
 ];
 
+// Sharper 800px versions exist for these card images (made from the original 1024px art).
+const HD: Record<string, string> = {
+  "/america-car-transport-door-to-door-vehicle-shipping-service-400.webp": "/america-car-transport-door-to-door-vehicle-shipping-service-800.webp",
+  "/america-car-transport-open-car-shipping-affordable-400.webp": "/america-car-transport-open-car-shipping-affordable-800.webp",
+  "/america-car-transport-enclosed-auto-transport-premium-protection-400.webp": "/america-car-transport-enclosed-auto-transport-premium-protection-800.webp",
+  "/america-car-transport-expedited-fast-vehicle-shipping-400.webp": "/america-car-transport-expedited-fast-vehicle-shipping-800.webp",
+  "/america-car-transport-booking-process-auto-carrier-650.webp": "/america-car-transport-booking-process-auto-carrier-1024.webp",
+};
+const srcSetFor = (src: string) => {
+  const hd = HD[src];
+  if (!hd) return undefined;
+  const small = src.endsWith("-650.webp") ? "650w" : "400w";
+  const big = hd.endsWith("-1024.webp") ? "1024w" : "800w";
+  return `${src} ${small}, ${hd} ${big}`;
+};
+
 export default function ServicesCarousel() {
   const [activeTab, setActiveTab] = useState<"offer" | "serve">("offer");
 
@@ -136,6 +152,8 @@ export default function ServicesCarousel() {
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-navy-100">
                 <img
                   src={item.img}
+                  srcSet={srcSetFor(item.img)}
+                  sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
                   alt={item.alt}
                   width={400}
                   height={400}

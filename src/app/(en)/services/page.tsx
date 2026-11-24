@@ -127,7 +127,7 @@ export default function ServicesHubPage() {
                     ))}
                   </div>
                   <div>
-                    <div className="font-extrabold text-white text-sm leading-none">4.9 / 5.0 Rating</div>
+                    <div className="font-extrabold text-white text-sm leading-none">5.0 / 5.0 Rating</div>
                     <div className="text-xs text-slate-400 font-medium mt-0.5">Google Verified Reviews</div>
                   </div>
                 </div>
@@ -510,7 +510,7 @@ export default function ServicesHubPage() {
                   <Star className="w-8 h-8 text-amber-400 fill-amber-400 mb-4" />
                   <h3 className="font-bold text-lg mb-2">Real Customer Reviews</h3>
                   <p className="text-xs md:text-sm text-slate-300 font-medium leading-relaxed mb-3">
-                    Over 10,450+ verified reviews with a 4.9/5.0 aggregate rating.
+                    Over 1,000+ verified reviews with a 5.0/5.0 aggregate rating.
                   </p>
                 </div>
                 <Link href="/reviews" className="text-xs font-bold text-blue-400 hover:underline">

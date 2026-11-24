@@ -51,6 +51,8 @@ export default function EnLayout({
           rel="preload" 
           as="image" 
           href="/hero-background-truck-bright.webp" 
+          imageSrcSet="/hero-background-truck-bright.webp 900w, /hero-background-truck-bright-1376.webp 1376w"
+          imageSizes="100vw"
           type="image/webp"
           fetchPriority="high" 
         />

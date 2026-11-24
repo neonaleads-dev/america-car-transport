@@ -81,7 +81,7 @@ export const floridaData: FloridaStateData = {
 
   stats: {
     shippedCount: "55,697 vehicles shipped",
-    averageRating: "4.9 / 5.0",
+    averageRating: "5.0 / 5.0",
     countiesServed: 67,
     pickupWindow: "1–3 Days",
     upfrontDeposit: "$0 Deposit"

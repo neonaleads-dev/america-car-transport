@@ -47,7 +47,7 @@ export default function StateHero({ state }: StateHeroProps) {
                     <Star key={i} className="w-4 h-4 fill-current" />
                   ))}
                 </span>
-                <span className="font-semibold">4.9 / 5.0 Rating</span>
+                <span className="font-semibold">5.0 / 5.0 Rating</span>
               </dd>
               <dd className="text-sm text-navy-200 mt-1">Google Verified Reviews</dd>
             </div>

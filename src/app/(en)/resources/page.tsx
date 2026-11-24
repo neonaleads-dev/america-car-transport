@@ -73,10 +73,10 @@ const RESOURCES = [
   },
   {
     title: "Verified Customer Reviews & Ratings",
-    desc: "Browse authentic customer testimonials, route-specific feedback, and 4.9-star Google verified ratings.",
+    desc: "Browse authentic customer testimonials, route-specific feedback, and 5-star Google verified ratings.",
     category: "Customer Feedback",
     href: "/reviews",
-    tag: "4.9 Stars",
+    tag: "5.0 Stars",
     tagColor: "bg-amber-500"
   },
   {

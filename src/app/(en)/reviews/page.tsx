@@ -8,8 +8,8 @@ import { Star, ShieldCheck, CheckCircle2, Phone, Award, ThumbsUp, Filter, Messag
 
 import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
-  title: "4.9★ Customer Reviews & Ratings | Verified Car Shipping | America Car Transport",
-  description: "Read 10,450+ verified customer reviews for America Car Transport. See real 4.9-star ratings, door-to-door vehicle delivery stories, and route feedback nationwide.",
+  title: "5.0★ Customer Reviews & Ratings | Verified Car Shipping | America Car Transport",
+  description: "Read 1,000+ verified customer reviews for America Car Transport. See real 5-star ratings, door-to-door vehicle delivery stories, and route feedback nationwide.",
   alternates: {
     canonical: "https://www.americacartransport.com/reviews",
   },
@@ -123,7 +123,7 @@ export default function ReviewsPage() {
         "@id": "https://www.americacartransport.com/reviews#webpage",
         "url": "https://www.americacartransport.com/reviews",
         "name": "Verified Customer Reviews & Ratings | America Car Transport",
-        "description": "Read verified 4.9-star customer reviews for America Car Transport. Nationwide door-to-door vehicle transport testimonials.",
+        "description": "Read verified 5-star customer reviews for America Car Transport. Nationwide door-to-door vehicle transport testimonials.",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://www.americacartransport.com/#website",
@@ -140,11 +140,11 @@ export default function ReviewsPage() {
         "logo": "https://www.americacartransport.com/america-car-transport-logo.png",
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "4.9",
+          "ratingValue": "5.0",
           "bestRating": "5",
           "worstRating": "1",
-          "ratingCount": "10450",
-          "reviewCount": "10450"
+          "ratingCount": "1000",
+          "reviewCount": "1000"
         },
         "review": REVIEWS_DATA.map((rev) => ({
           "@type": "Review",
@@ -214,7 +214,7 @@ export default function ReviewsPage() {
           
           {/* Left Hero Content */}
           <AnimatedSection direction="up" className="lg:col-span-7">
-            <p className="act-eyebrow !mb-5">4.9 / 5.0 Rated Across 10,450+ Verified Customer Reviews</p>
+            <p className="act-eyebrow !mb-5">5.0 / 5.0 Rated Across 1,000+ Verified Customer Reviews</p>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.8rem] leading-[1.1] font-black text-slate-900 tracking-tight mb-5">
               Real Stories from Satisfied Car Shipping Customers
@@ -233,7 +233,7 @@ export default function ReviewsPage() {
                       <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
                     ))}
                   </div>
-                  <div className="text-2xl font-black text-slate-900">4.9 / 5.0</div>
+                  <div className="text-2xl font-black text-slate-900">5.0 / 5.0</div>
                   <div className="text-xs text-slate-500 font-semibold">Google Verified Rating</div>
                 </div>
               </AnimatedCard>
@@ -241,7 +241,7 @@ export default function ReviewsPage() {
               <AnimatedCard delay={0.2}>
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                   <div className="text-xs text-slate-500 font-bold uppercase">Total Reviews</div>
-                  <div className="text-2xl font-black text-blue-600">10,450+</div>
+                  <div className="text-2xl font-black text-blue-600">1,000+</div>
                   <div className="text-xs text-emerald-700 font-semibold">100% Real Deliveries</div>
                 </div>
               </AnimatedCard>

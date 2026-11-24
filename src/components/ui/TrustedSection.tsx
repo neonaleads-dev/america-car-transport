@@ -17,6 +17,8 @@ export default function TrustedSection() {
         <div className="lg:col-span-5">
           <img
             src="/america-car-transport-trusted-auto-carrier-scenic-highway-650.webp"
+              srcSet="/america-car-transport-trusted-auto-carrier-scenic-highway-650.webp 650w, /america-car-transport-trusted-auto-carrier-scenic-highway-1024.webp 1024w"
+              sizes="(min-width: 1024px) 480px, 100vw"
             width={650}
             height={650}
             loading="lazy"
@@ -33,9 +35,9 @@ export default function TrustedSection() {
             <div className="p-5 md:p-6">
               <dt className="text-xs uppercase tracking-[0.12em] text-navy-200 mb-1">Verified Reviews</dt>
               <dd className="font-heading text-3xl font-bold tabular">
-                <span className="sr-only">10,450+</span>
+                <span className="sr-only">1,000+</span>
                 <span aria-hidden="true">
-                  <CountUp from={9000} to={10450} separator="," suffix="+" duration={1.6} />
+                  <CountUp from={800} to={1000} separator="," suffix="+" duration={1.6} />
                 </span>
               </dd>
             </div>

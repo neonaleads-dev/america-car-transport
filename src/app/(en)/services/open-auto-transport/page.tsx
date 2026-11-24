@@ -160,7 +160,7 @@ export default function OpenAutoTransportPage() {
                     ))}
                   </div>
                   <div>
-                    <div className="font-extrabold text-white text-sm leading-none">4.9 / 5.0 Rating</div>
+                    <div className="font-extrabold text-white text-sm leading-none">5.0 / 5.0 Rating</div>
                     <div className="text-xs text-slate-400 font-medium mt-0.5">Google Verified Reviews</div>
                   </div>
                 </div>
@@ -662,7 +662,7 @@ export default function OpenAutoTransportPage() {
                   <Star className="w-8 h-8 text-amber-400 mb-4 fill-amber-400 group-hover:scale-110 transition-transform" />
                   <h3 className="font-bold text-lg mb-2 group-hover:text-amber-300 transition-colors">Real Customer Reviews</h3>
                   <p className="text-xs md:text-sm text-slate-300 font-medium leading-relaxed mb-3">
-                    Over 10,450+ verified customer reviews with a 4.9/5.0 aggregate rating.
+                    Over 1,000+ verified customer reviews with a 5.0/5.0 aggregate rating.
                   </p>
                 </div>
                 <Link href="/reviews" className="text-xs font-bold text-blue-400 hover:underline">

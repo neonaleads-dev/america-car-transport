@@ -86,7 +86,7 @@ export default function TestimonialsSection() {
         <div className="text-center mb-16">
           <p className="act-eyebrow !mb-4">Verified Customer Feedback</p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
-            Trusted by Over 10,450+ Vehicle Owners
+            Trusted by Over 1,000+ Vehicle Owners
           </h2>
           <p className="text-lg text-slate-600 font-medium max-w-2xl mx-auto">
             See what real car buyers, collectors, and families say about our nationwide door-to-door car shipping network.
@@ -146,7 +146,7 @@ export default function TestimonialsSection() {
             </div>
             <div>
               <div className="font-extrabold text-lg text-white">Google & BBB Overall Satisfaction Score</div>
-              <div className="text-slate-400 text-sm font-medium">Based on 10,450+ verified customer reviews nationwide</div>
+              <div className="text-slate-400 text-sm font-medium">Based on 1,000+ verified customer reviews nationwide</div>
             </div>
           </div>
           <a 
