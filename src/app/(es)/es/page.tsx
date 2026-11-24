@@ -85,7 +85,7 @@ export default function SpanishHomePage() {
               </div>
               <div className="flex items-center gap-3 text-[15px] text-navy-50">
                 <CheckCircle2 className="w-4 h-4 text-brass-300 shrink-0" aria-hidden="true" />
-                <span>Licencia Oficial  y </span>
+                <span>Corredor con Licencia Oficial y Fianza</span>
               </div>
               <div className="flex items-center gap-3 text-[15px] text-navy-50">
                 <CheckCircle2 className="w-4 h-4 text-brass-300 shrink-0" aria-hidden="true" />
