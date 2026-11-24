@@ -8,6 +8,7 @@ import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import AnimatedSection, { AnimatedCard } from "@/components/ui/AnimatedSection";
 import { ShieldCheck, Award, Clock, DollarSign, ArrowRight, ArrowLeftRight, CheckCircle2, Phone, HelpCircle, MapPin, Truck, ChevronDown, Lock } from "lucide-react";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Texas to California Car Shipping | Cost & Transit | America Car Transport",
   description: "Ship a car from Texas to California — real 2026 pricing, transit times, and FAQs. Zero upfront deposit, fully licensed and bonded. Get an instant quote.",
@@ -111,52 +112,15 @@ export default function TexasToCaliforniaRoutePage() {
       />
 
       {/* Header Navigation */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/" title="America Car Transport Homepage" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport - Nationwide Auto Transport Company Logo" 
-              title="America Car Transport Official Logo"
-              width={160}
-              height={72}
-              // @ts-ignore
-              fetchpriority="high"
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain transition-transform hover:scale-[1.02]"
-            />
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-6 text-slate-700 font-semibold text-sm">
-            <Link href="/#how-it-works" className="hover:text-blue-600 transition-colors">How It Works</Link>
-            <Link href="/services" className="hover:text-blue-600 transition-colors">Services</Link>
-            <Link href="/locations" className="hover:text-blue-600 transition-colors">Locations</Link>
-            <Link href="/routes" className="text-blue-600 font-bold">Routes</Link>
-            <Link href="/reviews" className="hover:text-blue-600 transition-colors">Reviews</Link>
-            <Link href="/licensing-insurance" className="hover:text-blue-600 transition-colors">Licensing &amp; Insurance</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a href="tel:5307255383" className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-xs rounded-xl">
-              <Phone className="w-3.5 h-3.5" />
-              (530) 725-5383
-            </a>
-            <Link href="/tools/car-shipping-cost-calculator" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-4 py-2 rounded-xl text-xs md:text-sm font-extrabold shadow-sm">
-              Get Instant Quote
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader active="routes" />
 
       {/* Hero Section */}
-      <section className="relative px-4 md:px-8 lg:px-24 pt-10 pb-16 bg-[#F8FAFC] bg-grid-pattern border-b border-slate-200 overflow-hidden">
+      <section className="relative px-4 md:px-8 lg:px-24 pt-10 pb-16 bg-paper bg-grid-pattern border-b border-slate-200 overflow-hidden">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Text Column */}
           <AnimatedSection direction="up" className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-5 border border-blue-200/80 shadow-sm">
-              <Truck className="w-4 h-4 text-blue-600" />
-              High-Volume South-to-West Corridor (I-10 / I-40 Highway)
-            </div>
+            <p className="act-eyebrow !mb-5">High-Volume South-to-West Corridor (I-10 / I-40 Highway)</p>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.8rem] leading-[1.1] font-black text-slate-900 tracking-tight mb-5">
               Texas to California Car Shipping: Cost &amp; Transit Guide
@@ -210,10 +174,7 @@ export default function TexasToCaliforniaRoutePage() {
           
           <AnimatedSection direction="up">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-                <DollarSign className="w-4 h-4 text-emerald-600" />
-                Real 2026 Carrier Benchmark Pricing
-              </div>
+              <p className="act-eyebrow !mb-3">Real 2026 Carrier Benchmark Pricing</p>
               <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
                 Texas to California Car Shipping Rates by City Pair
               </h2>
@@ -329,10 +290,7 @@ export default function TexasToCaliforniaRoutePage() {
         <div className="max-w-[1200px] mx-auto px-4 md:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-              <HelpCircle className="w-4 h-4 text-blue-600" />
-              Route Questions &amp; Answers
-            </div>
+            <p className="act-eyebrow !mb-3">Route Questions &amp; Answers</p>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
               Texas to California Shipping FAQs
             </h2>

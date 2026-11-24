@@ -5,9 +5,7 @@ export default function PricingMethodology() {
   return (
     <section className="bg-slate-900 text-white rounded-3xl p-6 md:p-10 my-12 font-sans shadow-xl border border-slate-800">
       <div className="max-w-4xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-500/10 text-blue-400 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-blue-500/20">
-          <DollarSign className="w-4 h-4 text-blue-400" /> Transparent Pricing Formula &amp; Methodology
-        </div>
+        <p className="act-eyebrow !text-navy-200 !mb-4">Transparent Pricing Formula &amp; Methodology</p>
 
         <h2 className="text-2xl md:text-4xl font-black text-white mb-4">
           How Car Shipping Costs Are Calculated (2026 Benchmark)

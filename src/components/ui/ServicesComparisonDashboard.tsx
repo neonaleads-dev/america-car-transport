@@ -13,9 +13,7 @@ export default function ServicesComparisonDashboard() {
         
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/80 text-blue-800 rounded-full text-xs font-extrabold uppercase tracking-wider mb-3 border border-blue-200">
-            Full Service Matrix
-          </div>
+          <p className="act-eyebrow !mb-3">Full Service Matrix</p>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">
             Compare All Services at a Glance
           </h2>
@@ -235,9 +233,7 @@ export default function ServicesComparisonDashboard() {
 
         {/* ELEVATED DIRECT ANSWER BOX (BOTTOM CARD FOR AEO) */}
         <div className="bg-sky-50/90 border border-sky-200/90 p-6 md:p-8 rounded-3xl shadow-sm transition-all duration-300 hover:shadow-md">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-sky-600 text-white rounded-full text-xs font-black uppercase tracking-wider mb-4 shadow-sm">
-            <HelpCircle className="w-4 h-4 text-white" /> DIRECT ANSWER — HOW TO DECIDE
-          </div>
+          <p className="act-eyebrow !text-navy-200 !mb-4">DIRECT ANSWER — HOW TO DECIDE</p>
           <p className="text-slate-800 text-base md:text-lg font-medium leading-relaxed">
             <strong className="text-slate-950 font-black">Most vehicle owners choose Open Auto Transport with Door-to-Door delivery</strong> — it is the standard, most widely available combination nationwide. Choose <strong className="text-slate-950">Enclosed transport</strong> if your vehicle is classic, exotic, or high-value; choose <strong className="text-slate-950">Terminal-to-Terminal</strong> if minimizing cost matters more than convenience; and choose <strong className="text-slate-950">Expedited shipping</strong> if your timeline is fixed and cannot flex.
           </p>

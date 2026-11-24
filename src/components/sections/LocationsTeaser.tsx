@@ -40,7 +40,7 @@ export function LocationsTeaser() {
         <div className="bg-paper rounded-md aspect-square lg:aspect-auto lg:h-full min-h-[400px] border border-gray-200 relative overflow-hidden flex items-center justify-center p-8 group">
           {/* Abstract representation of a map for the teaser */}
           <div className="w-full h-full border-2 border-navy/10 rounded-md relative overflow-hidden bg-white/50">
-            <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-red rounded-full shadow-[0_0_15px_rgba(200,16,46,0.5)] group-hover:scale-125 transition-transform" />
+            <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-red rounded-full group-hover:scale-125 transition-transform" />
             <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-navy rounded-full group-hover:scale-125 transition-transform" />
             
             <svg className="absolute inset-0 w-full h-full opacity-20 group-hover:opacity-40 transition-opacity" viewBox="0 0 100 100" preserveAspectRatio="none">

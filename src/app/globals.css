@@ -4,7 +4,48 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+    @apply bg-paper text-slate-900 font-sans antialiased;
+  }
+  /* Brand headings: Archivo, tight but not shouty */
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading), var(--font-inter), sans-serif;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  /* Prices, miles and days line up in tables and cards */
+  .tabular, table td, table th {
+    font-variant-numeric: tabular-nums;
+  }
+  [id] {
+    scroll-margin-top: 7rem;
+  }
+  ::selection {
+    background: #C8D3E2;
+  }
+}
+
+/* Shared ACT building blocks, used by every page template */
+@layer components {
+  .act-container { @apply max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8; }
+  .act-section { @apply py-16 md:py-24; }
+  .act-eyebrow {
+    @apply flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-signal-700 mb-4;
+  }
+  .act-eyebrow::before {
+    content: "";
+    @apply inline-block w-7 h-[3px] bg-signal shrink-0;
+  }
+  .act-h2 { @apply text-[2rem] leading-[1.08] md:text-[2.75rem] font-bold tracking-tight text-navy-900; }
+  .act-lead { @apply text-lg text-slate-600 leading-relaxed; }
+  .act-card { @apply bg-white border border-slate-200 rounded-lg; }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 h-12 px-6 rounded-md bg-signal hover:bg-signal-700 text-white font-semibold transition-colors;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 h-12 px-6 rounded-md border border-navy-900/25 text-navy-900 font-semibold hover:bg-navy-50 transition-colors;
+  }
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 h-12 px-6 rounded-md bg-navy-900 hover:bg-navy-800 text-white font-semibold transition-colors;
   }
 }
 
@@ -12,11 +53,9 @@
   .text-balance {
     text-wrap: balance;
   }
+  /* grid backgrounds retired in the 2026 redesign; keep the class harmless */
   .bg-grid-pattern {
-    background-size: 32px 32px;
-    background-image: 
-      linear-gradient(to right, rgba(203, 213, 225, 0.35) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(203, 213, 225, 0.35) 1px, transparent 1px);
+    background-image: none;
   }
 }
 
@@ -47,17 +86,8 @@ html.lenis, html.lenis body {
 }
 
 /* Subtle Animations & Micro-Interactions */
-@keyframes ctaPulse {
-  0%, 100% {
-    box-shadow: 0 4px 14px 0 rgba(255, 107, 0, 0.39);
-  }
-  50% {
-    box-shadow: 0 6px 24px 4px rgba(255, 107, 0, 0.55);
-  }
-}
-
 .animate-cta-pulse {
-  animation: ctaPulse 3.5s infinite ease-in-out;
+  /* intentionally static */
 }
 
 @keyframes stepFadeIn {

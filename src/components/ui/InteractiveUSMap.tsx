@@ -68,10 +68,7 @@ export default function InteractiveUSMap() {
       {/* Map Section Title */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-100">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wider mb-2 border border-blue-200/60">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-            Interactive Shipping Map
-          </div>
+          <p className="act-eyebrow !mb-2">Interactive Shipping Map</p>
           <h3 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">
             Click Any State to View Rates &amp; Routes
           </h3>
@@ -109,10 +106,10 @@ export default function InteractiveUSMap() {
                   onClick={() => router.push(`/locations/${st.slug}`)}
                   className={`transition-all duration-200 cursor-pointer stroke-white stroke-[2.5] ${
                     isHovered
-                      ? "fill-[#2563eb] filter drop-shadow(0px 8px 16px rgba(37,99,235,0.4)) scale-[1.02]"
+                      ? "fill-[#2E4C73] filter drop-shadow(0px 8px 16px rgba(37,99,235,0.4)) scale-[1.02]"
                       : isFeatured
-                      ? "fill-[#3b82f6] hover:fill-[#2563eb]"
-                      : "fill-[#60a5fa] hover:fill-[#3b82f6]"
+                      ? "fill-[#476489] hover:fill-[#2E4C73]"
+                      : "fill-[#6B86A8] hover:fill-[#476489]"
                   }`}
                 />
               );

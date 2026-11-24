@@ -4,6 +4,7 @@ import { ShieldCheck, Phone, CheckCircle2, Truck, Star, ArrowRight, Award, Lock,
 import Footer from "@/components/ui/Footer";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Open Car Transport & Open Auto Shipping | Affordable Rates",
   description: "Ship your car nationwide with open auto transport — America's most affordable, fastest way to move a vehicle. Get an instant quote, zero upfront deposit.",
@@ -116,43 +117,9 @@ export default function OpenAutoTransportPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       {/* Global Header Navigation */}
-      <header className="sticky top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-        <div className="max-w-[1400px] w-full mx-auto px-4 md:px-8 py-3.5 md:py-2.5 md:py-3 flex items-center justify-between gap-4 md:gap-6">
-          <Link href="/" title="America Car Transport Homepage" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport - Nationwide Auto Transport Company Logo" 
-              title="America Car Transport Official Logo"
-              width={160}
-              height={72}
-              // @ts-ignore
-              fetchpriority="high"
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain transition-transform hover:scale-[1.02]"
-            />
-          </Link>
+      <SiteHeader active="services" ctaHref="#open-quote-widget" />
 
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7 whitespace-nowrap text-slate-700 font-semibold text-xs lg:text-sm xl:text-[15px]">
-            <Link href="/#how-it-works" className="hover:text-blue-600 transition-colors">How It Works</Link>
-            <Link href="/services" className="hover:text-blue-600 transition-colors">Services</Link>
-            <Link href="/#why-us" className="hover:text-blue-600 transition-colors">Why Us</Link>
-            <Link href="/routes" className="hover:text-blue-600 transition-colors">Popular Routes</Link>
-            <Link href="/locations" className="hover:text-blue-600 transition-colors">Locations</Link>
-            <Link href="/faq" className="hover:text-blue-600 transition-colors">FAQ Hub</Link>
-          </nav>
-
-          <div className="flex items-center gap-3 shrink-0">
-            <a href="tel:5307255383" className="hidden xl:flex items-center gap-2 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-100 px-3.5 py-2 rounded-xl text-xs xl:text-sm font-extrabold transition-all shadow-sm shrink-0 whitespace-nowrap">
-              <Phone className="w-4 h-4 text-blue-600" />
-              (530) 725-5383
-            </a>
-            <Link href="#open-quote-widget" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] text-white px-4 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-extrabold transition-all duration-200 shadow-[0_4px_14px_0_rgba(255,107,0,0.39)] rounded-xl shrink-0 whitespace-nowrap">
-              Get Instant Quote
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      <main className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans">
+      <main className="min-h-screen bg-paper text-slate-800 font-sans">
         
         {/* PART 2 — Breadcrumb Navigation (Dark Luxury Theme) */}
         <div className="bg-slate-900 border-b border-slate-800 py-3 px-4 md:px-8 lg:px-24 text-xs font-semibold text-slate-400">
@@ -169,16 +136,12 @@ export default function OpenAutoTransportPage() {
         <section id="open-quote-widget" className="py-12 md:py-20 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white border-b border-slate-800 px-4 md:px-8 lg:px-24 relative overflow-hidden">
           
           {/* Subtle Ambient Glow */}
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
             
             {/* H1 & Subheading */}
             <div className="lg:col-span-6 xl:col-span-7">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-950/80 text-blue-200 rounded-full text-xs md:text-sm font-bold mb-6 border border-blue-500/40 shadow-lg shadow-blue-950/40">
-                <ShieldCheck className="w-4 h-4 text-blue-400" />
-                Industry Standard Auto Transport (90%+ of Nationwide Shipments)
-              </div>
+              <p className="act-eyebrow !mb-6">Industry Standard Auto Transport (90%+ of Nationwide Shipments)</p>
 
               <h1 className="text-3xl md:text-5xl lg:text-[3.6rem] font-black text-white leading-tight mb-6 tracking-tight">
                 Open Auto Transport: <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-amber-300 bg-clip-text text-transparent">Fast, Affordable</span> Car Shipping Nationwide
@@ -819,7 +782,7 @@ export default function OpenAutoTransportPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link 
                 href="#open-quote-widget" 
-                className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] text-white px-8 py-4 rounded-xl font-black text-lg shadow-xl shadow-orange-500/20 inline-flex items-center gap-2"
+                className="bg-signal hover:bg-signal-700 hover:from-[#A50D26] text-white px-8 py-4 rounded-xl font-black text-lg shadow-xl shadow-orange-500/20 inline-flex items-center gap-2"
               >
                 Get Instant Quote →
               </Link>

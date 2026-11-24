@@ -5,6 +5,7 @@ import Footer from "@/components/ui/Footer";
 import { DollarSign, ShieldCheck, Phone, ArrowRight, Table, Calculator } from "lucide-react";
 import { STATE_HUB_MAP } from "@/data/states";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Car Shipping Rates by State (2026) | 50-State Average Cost Table",
   description: "Complete 2026 data table of car shipping rates across all 50 states. Compare average per-mile costs, regional price factors, and popular route baselines.",
@@ -41,29 +42,9 @@ export default function CarShippingRatesByStatePage() {
     <main className="min-h-screen bg-slate-50 font-sans">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/" title="America Car Transport Homepage" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport Logo" 
-              width={160}
-              height={72}
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain"
-            />
-          </Link>
-          <div className="flex items-center gap-3">
-            <a href="tel:5307255383" className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-xs rounded-xl">
-              <Phone className="w-3.5 h-3.5" /> (530) 725-5383
-            </a>
-            <Link href="/tools/car-shipping-cost-calculator" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-4 py-2 rounded-xl text-xs md:text-sm font-extrabold shadow-sm">
-              Get Instant Quote
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
-      <section className="relative px-4 md:px-8 lg:px-24 pt-10 pb-16 bg-[#F8FAFC] border-b border-slate-200">
+      <section className="relative px-4 md:px-8 lg:px-24 pt-10 pb-16 bg-paper border-b border-slate-200">
         <div className="max-w-[1200px] mx-auto">
           <nav className="flex items-center gap-2 text-xs md:text-sm font-semibold text-slate-500 mb-5">
             <Link href="/">Home</Link><span>/</span>
@@ -71,10 +52,7 @@ export default function CarShippingRatesByStatePage() {
             <span className="text-slate-900 font-bold">Rates by State</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-5 border border-blue-200/80 shadow-sm">
-            <DollarSign className="w-4 h-4 text-blue-600" />
-            2026 Nationwide Data Asset
-          </div>
+          <p className="act-eyebrow !mb-5">2026 Nationwide Data Asset</p>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] mb-5">
             Car Shipping Rates by State (2026 Data Index)
@@ -128,7 +106,7 @@ export default function CarShippingRatesByStatePage() {
             <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-6 font-medium">
               America Car Transport grants permission to moving companies, relocation consultants, and media outlets to cite this 2026 state rate matrix provided link attribution is included to AmericaCarTransport.com.
             </p>
-            <Link href="/tools/car-shipping-cost-calculator" className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-6 py-3.5 rounded-xl font-extrabold text-sm shadow-md">
+            <Link href="/tools/car-shipping-cost-calculator" className="inline-flex items-center gap-2 bg-signal hover:bg-signal-700 text-white px-6 py-3.5 rounded-xl font-extrabold text-sm shadow-md">
               <Calculator className="w-4 h-4" /> Run Live Calculator →
             </Link>
           </div>

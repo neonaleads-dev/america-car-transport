@@ -84,10 +84,7 @@ export default function TestimonialsSection() {
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-50 text-amber-800 border border-amber-200 rounded-full text-xs md:text-sm font-bold mb-4 shadow-sm">
-            <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-            Verified Customer Feedback
-          </div>
+          <p className="act-eyebrow !mb-4">Verified Customer Feedback</p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
             Trusted by Over 10,450+ Vehicle Owners
           </h2>
@@ -154,7 +151,7 @@ export default function TestimonialsSection() {
           </div>
           <a 
             href="#hero-quote" 
-            className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] text-white px-6 py-3 rounded-xl font-extrabold text-sm shadow-md hover:shadow-lg transition-all shrink-0"
+            className="bg-signal hover:bg-signal-700 hover:from-[#A50D26] text-white px-6 py-3 rounded-xl font-extrabold text-sm shadow-md hover:shadow-lg transition-all shrink-0"
           >
             Calculate Your Rate →
           </a>

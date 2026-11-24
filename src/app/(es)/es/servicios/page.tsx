@@ -5,6 +5,7 @@ import Footer from "@/components/ui/Footer";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Servicios de Transporte de Vehículos | Opciones de Envío de Autos",
   description: "Descubra todas las opciones de transporte de vehículos de America Car Transport en EE.UU. Envíos abiertos, cerrados, puerta a puerta y acelerados.",
@@ -47,36 +48,7 @@ export default function SpanishServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
 
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/es" title="America Car Transport" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport Logotipo Oficial" 
-              width={160}
-              height={72}
-              // @ts-ignore
-              fetchpriority="high"
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain"
-            />
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-6 text-slate-700 font-semibold text-sm">
-            <Link href="/es" className="hover:text-blue-600 transition-colors">Inicio</Link>
-            <Link href="/es/servicios" className="text-blue-600 font-extrabold transition-colors">Servicios</Link>
-            <Link href="/es/calculadora" className="hover:text-blue-600 transition-colors">Calculadora</Link>
-            <Link href="/locations" className="hover:text-blue-600 transition-colors">Ubicaciones</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <LanguageSwitcher />
-            <a href="tel:5307255383" className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-xs rounded-xl">
-              <Phone className="w-3.5 h-3.5" />
-              (530) 725-5383
-            </a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader lang="es" active="services" />
 
       {/* Breadcrumbs */}
       <div className="bg-slate-900 border-b border-slate-800 py-3 px-4 md:px-8 text-xs font-semibold text-slate-400">

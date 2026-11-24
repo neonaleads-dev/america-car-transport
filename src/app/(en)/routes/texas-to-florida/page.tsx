@@ -9,6 +9,7 @@ import AuthorProfile from "@/components/ui/AuthorProfile";
 import PricingMethodology from "@/components/ui/PricingMethodology";
 import { ShieldCheck, Award, Clock, DollarSign, ArrowRight, CheckCircle2, Phone, MapPin, Truck, Lock } from "lucide-react";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Texas to Florida Car Shipping | Cost & Transit | America Car Transport",
   description: "Ship a car from Texas to Florida — real 2026 pricing, transit times, and FAQs. Zero upfront deposit, fully licensed and bonded. Get an instant quote.",
@@ -104,29 +105,13 @@ export default function TexasToFloridaRoutePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
 
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/" title="America Car Transport Homepage" className="flex items-center shrink-0">
-            <img src="/america-car-transport-logo.png" alt="America Car Transport Logo" width={160} height={72} className="h-[52px] sm:h-[58px] w-auto object-contain" />
-          </Link>
-          <div className="flex items-center gap-3">
-            <a href="tel:5307255383" className="hidden sm:flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-200 px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold">
-              <Phone className="w-4 h-4 text-blue-600" /> (530) 725-5383
-            </a>
-            <Link href="/tools/car-shipping-cost-calculator" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-4 py-2 text-xs sm:text-sm font-extrabold rounded-xl shadow-md">
-              Instant Quote
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader active="routes" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white py-12 md:py-16 px-4 md:px-8">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-500/10 text-blue-400 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-blue-500/20">
-              <Truck className="w-4 h-4 text-blue-400" /> Direct Highway Corridor (I-10 E)
-            </div>
+            <p className="act-eyebrow !text-navy-200 !mb-4">Direct Highway Corridor (I-10 E)</p>
             <h1 className="text-3xl md:text-5xl font-black leading-tight text-white mb-4">
               Texas to Florida <span className="text-blue-400">Car Shipping Cost 2026</span>
             </h1>

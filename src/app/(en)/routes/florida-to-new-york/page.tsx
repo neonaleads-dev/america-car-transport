@@ -5,6 +5,7 @@ import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import AnimatedSection, { AnimatedCard } from "@/components/ui/AnimatedSection";
 import { ShieldCheck, MapPin, Clock, DollarSign, Train, AlertCircle, FileText, CheckCircle2, Phone, HelpCircle, ChevronDown, ExternalLink, ArrowRight } from "lucide-react";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Florida to New York Car Transport | Cost, Time & Quotes — America Car Transport",
   description: "Ship your car from Florida to New York with licensed, insured carriers. Get an instant quote, compare open vs. enclosed rates, and see real transit times for this popular snowbird route.",
@@ -119,43 +120,9 @@ export default function FloridaToNewYorkRoutePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/" title="America Car Transport Homepage" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport - Nationwide Auto Transport Company Logo" 
-              title="America Car Transport Official Logo"
-              width={160}
-              height={72}
-              // @ts-ignore
-              fetchpriority="high"
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain transition-transform hover:scale-[1.02]"
-            />
-          </Link>
+      <SiteHeader active="routes" />
 
-          <nav className="hidden lg:flex items-center gap-6 text-slate-700 font-semibold text-sm">
-            <Link href="/#how-it-works" className="hover:text-blue-600 transition-colors">How It Works</Link>
-            <Link href="/services" className="hover:text-blue-600 transition-colors">Services</Link>
-            <Link href="/locations" className="hover:text-blue-600 transition-colors">Locations</Link>
-            <Link href="/routes" className="text-blue-600 font-bold">Routes</Link>
-            <Link href="/faq" className="hover:text-blue-600 transition-colors">FAQ Hub</Link>
-            <Link href="/licensing-insurance" className="hover:text-blue-600 transition-colors">Licensing &amp; Insurance</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a href="tel:5307255383" className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-xs rounded-xl">
-              <Phone className="w-3.5 h-3.5" />
-              (530) 725-5383
-            </a>
-            <Link href="/tools/car-shipping-cost-calculator" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-4 py-2 rounded-xl text-xs md:text-sm font-extrabold shadow-sm">
-              Get Instant Quote
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      <section className="relative px-4 md:px-8 lg:px-24 pt-10 pb-16 bg-[#F8FAFC] bg-grid-pattern border-b border-slate-200 overflow-hidden">
+      <section className="relative px-4 md:px-8 lg:px-24 pt-10 pb-16 bg-paper bg-grid-pattern border-b border-slate-200 overflow-hidden">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <AnimatedSection direction="up" className="lg:col-span-7">
@@ -167,10 +134,7 @@ export default function FloridaToNewYorkRoutePage() {
               <span className="text-slate-900 font-bold">Florida to New York</span>
             </nav>
 
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 text-blue-800 rounded-full text-xs md:text-sm font-bold tracking-wide mb-5 border border-blue-200/80 shadow-sm">
-              <MapPin className="w-4 h-4 text-blue-600" />
-              Top Snowbird Route (~1,100–1,300 Miles)
-            </div>
+            <p className="act-eyebrow !mb-5">Top Snowbird Route (~1,100–1,300 Miles)</p>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.6rem] leading-[1.1] font-black text-slate-900 tracking-tight mb-5">
               Florida to New York Car Transport
@@ -541,10 +505,7 @@ export default function FloridaToNewYorkRoutePage() {
           <AnimatedSection direction="up">
             <div className="bg-slate-900 text-white rounded-3xl p-8 md:p-12 shadow-xl">
               <div className="max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-950 text-blue-300 rounded-full text-xs font-bold uppercase tracking-wider mb-3 border border-blue-500/30">
-                  <ShieldCheck className="w-4 h-4 text-blue-400" />
-                  Direct Carrier Dispatch
-                </div>
+                <p className="act-eyebrow !mb-3">Direct Carrier Dispatch</p>
                 <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-4">
                   Why Ship With America Car Transport
                 </h2>
@@ -575,7 +536,7 @@ export default function FloridaToNewYorkRoutePage() {
                 <div className="flex flex-wrap gap-4">
                   <Link 
                     href="/tools/car-shipping-cost-calculator" 
-                    className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-6 py-3.5 rounded-xl font-extrabold text-xs md:text-sm shadow-md hover:shadow-lg"
+                    className="bg-signal hover:bg-signal-700 text-white px-6 py-3.5 rounded-xl font-extrabold text-xs md:text-sm shadow-md hover:shadow-lg"
                   >
                     Get Instant Florida to New York Quote →
                   </Link>
@@ -587,10 +548,7 @@ export default function FloridaToNewYorkRoutePage() {
           <div className="pt-8">
             <AnimatedSection direction="up">
               <div className="text-center max-w-xl mx-auto mb-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-                  <HelpCircle className="w-4 h-4 text-blue-600" />
-                  Route FAQs
-                </div>
+                <p className="act-eyebrow !mb-3">Route FAQs</p>
                 <h2 className="text-3xl font-black text-slate-900 tracking-tight">
                   Frequently Asked Questions
                 </h2>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Archivo } from "next/font/google";
 import "../globals.css";
 
 const inter = Inter({ 
@@ -7,10 +7,9 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap"
 });
-const plusJakarta = Plus_Jakarta_Sans({
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-plus-jakarta",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-heading",
   display: "swap"
 });
 
@@ -44,7 +43,7 @@ export default function EnLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
+    <html lang="en" className={`${inter.variable} ${archivo.variable}`}>
       <head>
         <meta name="google-site-verification" content="ddgFC7lCCFGcRISIspal82FrdtgAL6wFuWAVL5V6Kg8" />
         <link rel="preconnect" href="https://www.americacartransport.com" />
@@ -57,10 +56,10 @@ export default function EnLayout({
         />
         <StructuredData />
       </head>
-      <body className="font-sans bg-slate-100 text-charcoal antialiased">
+      <body className="font-sans bg-paper text-charcoal antialiased">
         <GSAPScrollAnimations />
         <SmoothScroll>
-          <div className="max-w-[1600px] mx-auto bg-white shadow-2xl relative overflow-x-clip min-h-screen flex flex-col">
+          <div className="relative overflow-x-clip min-h-screen flex flex-col bg-paper">
             {children}
           </div>
         </SmoothScroll>

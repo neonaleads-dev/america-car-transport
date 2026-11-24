@@ -52,9 +52,7 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
         <AnimatedSection direction="up" delay={0.1}>
           <div className="bg-slate-900 text-white p-8 md:p-12 rounded-3xl space-y-8 shadow-xl">
             <div className="text-center max-w-2xl mx-auto space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 font-bold text-xs">
-                Simple 3-Step Process
-              </div>
+              <p className="act-eyebrow !text-navy-200 !mb-0">Simple 3-Step Process</p>
               <h2 className="text-3xl md:text-4xl font-black tracking-tight">
                 How {state.name} Auto Shipping Works
               </h2>
@@ -103,10 +101,7 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
         <AnimatedSection direction="up" delay={0.1}>
           <div className="bg-slate-50 border border-slate-200/90 p-8 rounded-3xl space-y-8">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 text-emerald-900 rounded-full text-xs font-bold uppercase tracking-wider">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                Pre-Pickup Vehicle Prep Checklist
-              </div>
+              <p className="act-eyebrow !mb-0">Pre-Pickup Vehicle Prep Checklist</p>
               <h2 className="text-3xl font-black text-slate-900 tracking-tight">
                 4 Essential Steps Before Carrier Pickup
               </h2>
@@ -223,10 +218,7 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
           <AnimatedSection direction="up" delay={0.1}>
             <div className="space-y-6">
               <div className="text-center max-w-2xl mx-auto space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-900 rounded-full text-xs font-bold uppercase tracking-wider">
-                  <Star className="w-4 h-4 text-amber-600 fill-amber-500" />
-                  Verified {state.name} Shipper Feedback
-                </div>
+                <p className="act-eyebrow !mb-0">Verified {state.name} Shipper Feedback</p>
                 <h2 className="text-3xl font-black text-slate-900 tracking-tight">
                   What {state.name} Shippers Say About Us
                 </h2>
@@ -271,10 +263,7 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
           <AnimatedSection direction="up" delay={0.1}>
             <div className="space-y-8">
               <div className="text-center max-w-2xl mx-auto space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-900 rounded-full text-xs font-bold uppercase tracking-wider">
-                  <ShieldCheck className="w-4 h-4 text-blue-600" />
-                  Virginia Staging Expertise
-                </div>
+                <p className="act-eyebrow !mb-0">Virginia Staging Expertise</p>
                 <h2 className="text-3xl font-black text-slate-900 tracking-tight">
                   Virginia Military PCS &amp; Auction Transport
                 </h2>
@@ -481,10 +470,7 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
           <AnimatedSection direction="up" delay={0.1}>
             <div className="space-y-8">
               <div className="text-center max-w-2xl mx-auto space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-900 rounded-full text-xs font-bold uppercase tracking-wider">
-                  <ShieldCheck className="w-4 h-4 text-blue-600" />
-                  Florida Staging &amp; Snowbird Expertise
-                </div>
+                <p className="act-eyebrow !mb-0">Florida Staging &amp; Snowbird Expertise</p>
                 <h2 className="text-3xl font-black text-slate-900 tracking-tight">
                   Florida Snowbird, Military PCS &amp; Auction Shipping
                 </h2>
@@ -725,10 +711,7 @@ export default function StateConsiderations({ state }: StateConsiderationsProps)
         <AnimatedSection direction="up" delay={0.2}>
           <div className="bg-slate-900 text-white rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
             <div className="max-w-3xl relative z-10">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-950 text-blue-300 rounded-full text-xs font-extrabold uppercase tracking-widest mb-4 border border-blue-500/30">
-                <ShieldCheck className="w-4 h-4 text-blue-400" />
-                Consumer Scam Protection
-              </div>
+              <p className="act-eyebrow !mb-4">Consumer Scam Protection</p>
               <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">
                 How Do I Not Get Scammed Shipping My Car in {state.name}?
               </h2>

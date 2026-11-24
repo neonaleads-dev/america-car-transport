@@ -93,10 +93,7 @@ export default function StateRouteGrid({ stateName }: { stateName: string }) {
         
         {/* Section Header */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 font-bold text-xs">
-            <Navigation className="w-3.5 h-3.5" />
-            Interstate & Regional Route Directory
-          </div>
+          <p className="act-eyebrow !text-navy-200 !mb-0">Interstate & Regional Route Directory</p>
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white">
             Popular {stateName} Car Shipping Corridors
           </h2>

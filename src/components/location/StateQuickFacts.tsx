@@ -13,10 +13,7 @@ export default function StateQuickFacts({ state }: StateQuickFactsProps) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-slate-800 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-            <Truck className="w-4 h-4 text-blue-600" />
-            {state.name} Logistics Infrastructure
-          </div>
+          <p className="act-eyebrow !mb-3">{state.name} Logistics Infrastructure</p>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
             Key Car Shipping Facts for {state.name}
           </h2>

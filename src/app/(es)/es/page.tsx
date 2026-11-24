@@ -5,6 +5,7 @@ import Footer from "@/components/ui/Footer";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Transporte de Autos en EE.UU. | Cotización Gratis de Envío de Vehículos",
   description: "Transporte de vehículos confiable en Estados Unidos con America Car Transport. Cotización instantánea sin depósito inicial. Envíos abiertos y cerrados puerta a puerta.",
@@ -60,80 +61,41 @@ export default function SpanishHomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
 
       {/* Header Bar */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/es" title="America Car Transport Página Principal" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport Logotipo Oficial" 
-              title="America Car Transport"
-              width={160}
-              height={72}
-              // @ts-ignore
-              fetchpriority="high"
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain transition-transform hover:scale-[1.02]"
-            />
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-6 text-slate-700 font-semibold text-sm">
-            <Link href="/es" className="text-blue-600 font-extrabold transition-colors">Inicio</Link>
-            <Link href="/es/servicios" className="hover:text-blue-600 transition-colors">Servicios</Link>
-            <Link href="/es/calculadora" className="hover:text-blue-600 transition-colors">Calculadora de Costos</Link>
-            <Link href="/locations" className="hover:text-blue-600 transition-colors">Ubicaciones</Link>
-            <Link href="/reviews" className="hover:text-blue-600 transition-colors">Opiniones</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <LanguageSwitcher />
-            
-            <a href="tel:5307255383" className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-xs rounded-xl">
-              <Phone className="w-3.5 h-3.5" />
-              (530) 725-5383
-            </a>
-            
-            <Link href="/es/calculadora" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-4 py-2 rounded-xl text-xs md:text-sm font-extrabold shadow-sm">
-              Cotización Gratis
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader lang="es" active="home" />
 
       {/* Hero Section */}
-      <section className="relative px-4 md:px-8 lg:px-24 pt-10 pb-16 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white overflow-hidden">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      <section className="relative bg-navy-900 text-white overflow-hidden">
+        <div className="act-container pt-10 pb-14 md:pt-16 md:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
           
           <div className="lg:col-span-6 xl:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-emerald-500/20 text-emerald-300 rounded-full text-xs md:text-sm font-bold border border-emerald-500/30">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              Atención Telefónica en Español · Sin Depósito Inicial
-            </div>
+            <p className="act-eyebrow !text-navy-200 !mb-0">Atención Telefónica en Español · Sin Depósito Inicial</p>
 
-            <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-black leading-tight tracking-tight">
-              Transporte de Autos en EE.UU. <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-amber-300 bg-clip-text text-transparent">Seguro y Confiable</span>
+            <h1 className="text-4xl md:text-5xl lg:text-[3.8rem] font-bold leading-[1.04] tracking-tight">
+              Transporte de Autos en EE.UU. <span className="text-navy-200">Seguro y Confiable</span>
             </h1>
 
-            <p className="text-base md:text-lg text-slate-300 font-medium leading-relaxed">
+            <p className="text-lg md:text-xl text-navy-100 leading-relaxed max-w-xl">
               Enviamos su vehículo a cualquier estado de EE.UU. con transportistas verificados, seguro de carga completo y $0 de depósito por adelantado.
             </p>
 
-            <div className="bg-slate-900/90 p-4 rounded-2xl border border-slate-800 space-y-2.5 max-w-xl">
-              <div className="flex items-center gap-3 text-xs md:text-sm font-bold text-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            <div className="border-t border-white/15 pt-6 space-y-2.5 max-w-xl">
+              <div className="flex items-center gap-3 text-[15px] text-navy-50">
+                <CheckCircle2 className="w-4 h-4 text-brass-300 shrink-0" aria-hidden="true" />
                 <span>Servicio Puerta a Puerta en Todo el País</span>
               </div>
-              <div className="flex items-center gap-3 text-xs md:text-sm font-bold text-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+              <div className="flex items-center gap-3 text-[15px] text-navy-50">
+                <CheckCircle2 className="w-4 h-4 text-brass-300 shrink-0" aria-hidden="true" />
                 <span>Licencia Oficial  y </span>
               </div>
-              <div className="flex items-center gap-3 text-xs md:text-sm font-bold text-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+              <div className="flex items-center gap-3 text-[15px] text-navy-50">
+                <CheckCircle2 className="w-4 h-4 text-brass-300 shrink-0" aria-hidden="true" />
                 <span>Asistencia 100% en Español Disponible</span>
               </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a href="tel:5307255383" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3.5 rounded-xl font-extrabold text-sm shadow-lg transition-all flex items-center gap-2">
-                <Phone className="w-4 h-4 text-blue-200" /> Llamar en Español: (530) 725-5383
+              <a href="tel:5307255383" className="inline-flex items-center gap-2 h-12 px-6 rounded-md border border-white/40 text-white font-semibold hover:bg-white/10 transition-colors">
+                <Phone className="w-4 h-4" aria-hidden="true" /> Llamar en Español: (530) 725-5383
               </a>
             </div>
           </div>

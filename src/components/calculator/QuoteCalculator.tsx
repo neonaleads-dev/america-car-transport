@@ -273,7 +273,7 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
   };
 
   return (
-    <div className="w-full max-w-[500px] mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden font-sans text-slate-800 flex flex-col relative z-20 border border-slate-100">
+    <div className="w-full max-w-[500px] mx-auto bg-white rounded-lg shadow-[0_24px_60px_-20px_rgba(6,24,48,0.55)] overflow-hidden font-sans text-slate-800 flex flex-col relative z-20 border border-navy-900/10">
       
       <datalist id="us-cities">
         {US_CITIES.map(city => <option key={city} value={city} />)}
@@ -290,10 +290,10 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
       ))}
 
       {/* Top Header Section */}
-      <div className="bg-[#f8fafc] px-4 py-3.5 md:px-6 md:py-5 border-b border-slate-200 flex justify-between items-center">
+      <div className="bg-paper px-4 py-3.5 md:px-6 md:py-5 border-b border-slate-200 flex justify-between items-center">
         <div>
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-green-500"></span>
             <span className="text-green-700 font-semibold text-xs sm:text-sm">
               {isEs ? "Cotización Instantánea — 30 Seg" : "Instant Quote — 30 Secs"}
             </span>
@@ -352,7 +352,7 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
                 {isEs ? "Ubicación de Recogida y Entrega" : "Pickup & Delivery Location"}
               </label>
               
-              <div className="relative bg-[#f8fafc] border border-slate-200 rounded-xl mb-6">
+              <div className="relative bg-paper border border-slate-200 rounded-xl mb-6">
                 
                 {/* Pickup Input */}
                 <div className="relative border-b border-slate-200 flex items-center px-4 py-3 pr-14">
@@ -443,14 +443,14 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
                     <button 
                       type="button"
                       onClick={() => setFormData({...formData, transportType: "open"})}
-                      className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-md text-xs font-bold transition-all ${formData.transportType === 'open' ? 'bg-[#2563eb] text-white shadow-sm' : 'text-slate-700 hover:text-slate-900'}`}
+                      className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-md text-xs font-bold transition-all ${formData.transportType === 'open' ? 'bg-navy-900 text-white shadow-sm' : 'text-slate-700 hover:text-slate-900'}`}
                     >
                       <Car className="w-3.5 h-3.5" /> {isEs ? "Abierto" : "Open"}
                     </button>
                     <button 
                       type="button"
                       onClick={() => setFormData({...formData, transportType: "enclosed"})}
-                      className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-md text-xs font-bold transition-all ${formData.transportType === 'enclosed' ? 'bg-[#2563eb] text-white shadow-sm' : 'text-slate-700 hover:text-slate-900'}`}
+                      className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-md text-xs font-bold transition-all ${formData.transportType === 'enclosed' ? 'bg-navy-900 text-white shadow-sm' : 'text-slate-700 hover:text-slate-900'}`}
                     >
                       <Car className="w-3.5 h-3.5" /> {isEs ? "Cerrado" : "Closed"}
                     </button>
@@ -466,7 +466,7 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
                     if (!formData.zipTo) setFormData(prev => ({ ...prev, zipTo: "New York, NY 10001" }));
                     handleNext();
                   }}
-                  className="w-full bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 md:py-4 rounded-xl flex items-center justify-center gap-2 text-base md:text-lg shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] active:shadow-inner transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0.5 cursor-pointer animate-cta-pulse"
+                  className="w-full bg-signal hover:bg-signal-700 text-white font-semibold py-3.5 md:py-4 rounded-xl flex items-center justify-center gap-2 text-base md:text-lg active:shadow-inner transition-all duration-200 cursor-pointer"
                 >
                   {isEs ? "Detalles del Vehículo →" : "Vehicle Details →"}
                 </button>
@@ -502,7 +502,7 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
                         <select 
                           value={vehicle.year} 
                           onChange={(e) => updateVehicle(vehicle.id, 'year', e.target.value)}
-                          className="w-full bg-[#f8fafc] border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm appearance-none cursor-pointer"
+                          className="w-full bg-paper border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm appearance-none cursor-pointer"
                         >
                           <option value="" disabled>{isEs ? "Seleccionar Año" : "Select Year"}</option>
                           {YEARS.map(y => <option key={y} value={y}>{y}</option>)}
@@ -518,7 +518,7 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
                           placeholder={isEs ? "ej. BMW" : "e.g. BMW"}
                           value={vehicle.make} 
                           onChange={(e) => updateVehicle(vehicle.id, 'make', e.target.value)}
-                          className="w-full bg-[#f8fafc] border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm"
+                          className="w-full bg-paper border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm"
                         />
                         {fetchingModels[vehicle.make] && (
                           <Loader2 className="w-3 h-3 text-blue-500 animate-spin absolute right-3 top-9" />
@@ -537,7 +537,7 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
                           placeholder={vehicle.make && !modelsCache[vehicle.make] && !fetchingModels[vehicle.make] ? (isEs ? "Cargando..." : "Loading...") : (isEs ? "ej. X5" : "e.g. X5")}
                           value={vehicle.model} 
                           onChange={(e) => updateVehicle(vehicle.id, 'model', e.target.value)}
-                          className="w-full bg-[#f8fafc] border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm"
+                          className="w-full bg-paper border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm"
                         />
                       </div>
                       <div>
@@ -547,7 +547,7 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
                         <select 
                           value={vehicle.condition} 
                           onChange={(e) => updateVehicle(vehicle.id, 'condition', e.target.value)}
-                          className="w-full bg-[#f8fafc] border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm appearance-none cursor-pointer"
+                          className="w-full bg-paper border border-slate-200 text-slate-800 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 font-medium text-sm appearance-none cursor-pointer"
                         >
                           <option value="running">{isEs ? "En Funcionamiento" : "Running"}</option>
                           <option value="non-running">{isEs ? "Sin Funcionar" : "Non-Running"}</option>
@@ -575,7 +575,7 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
                 <button 
                   onClick={handleNext}
                   disabled={!isVehiclesValid()}
-                  className="w-2/3 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] cursor-pointer"
+                  className="w-2/3 bg-signal hover:bg-signal-700 text-white font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base cursor-pointer"
                 >
                   {isEs ? "Datos de Contacto →" : "Contact Details →"}
                 </button>
@@ -676,7 +676,7 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
                 <button 
                   onClick={handleNext}
                   disabled={isSubmitting || !formData.fullName || !formData.email || !formData.phone || !formData.pickupDate || !formData.consent}
-                  className="w-2/3 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] cursor-pointer disabled:opacity-75"
+                  className="w-2/3 bg-signal hover:bg-signal-700 text-white font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base cursor-pointer disabled:opacity-75"
                 >
                   {isSubmitting ? (
                     <>
@@ -707,7 +707,7 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
                   : "Thank you! We received your request. Our team will review your information and contact you with a personalized quote shortly."}
               </p>
 
-              <div className="bg-[#f8fafc] border border-slate-200 rounded-2xl p-4 w-full mb-4 text-left space-y-2 text-xs text-slate-700 font-medium">
+              <div className="bg-paper border border-slate-200 rounded-2xl p-4 w-full mb-4 text-left space-y-2 text-xs text-slate-700 font-medium">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                   <span className="font-bold text-slate-500 uppercase tracking-wider text-[10px]">{isEs ? "Ruta Solicitada" : "Route Requested"}</span>
                   <span className="font-extrabold text-blue-700">{locationFrom?.city || formData.zipFrom} → {locationTo?.city || formData.zipTo}</span>
@@ -727,7 +727,7 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
               </div>
 
               <div className="w-full space-y-2 mb-3">
-                <a href="tel:5307255383" className="w-full bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] hover:to-[#FF6B00] text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base shadow-[0_8px_20px_-4px_rgba(255,107,0,0.45)] hover:shadow-[0_12px_28px_-4px_rgba(255,107,0,0.55)] transition-all">
+                <a href="tel:5307255383" className="w-full bg-signal hover:bg-signal-700 text-white font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base transition-all">
                   <Phone className="w-4 h-4" /> {isEs ? "¿Asistencia Inmediata? Llame al (530) 725-5383" : "Need Immediate Assistance? Call (530) 725-5383"}
                 </a>
               </div>

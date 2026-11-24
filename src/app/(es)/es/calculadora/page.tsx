@@ -5,6 +5,7 @@ import Footer from "@/components/ui/Footer";
 import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Calculadora de Costos de Envío de Autos | Cotización Gratis en Español 2026",
   description: "Calcule el costo exacto de enviar su automóvil entre cualquier estado en EE.UU. Tarifas por milla 2026, sin depósito inicial, 100% en español.",
@@ -81,37 +82,7 @@ export default function SpanishCalculatorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
 
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/es" title="America Car Transport" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport Logotipo Oficial" 
-              width={160}
-              height={72}
-              // @ts-ignore
-              fetchpriority="high"
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain"
-            />
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-6 text-slate-700 font-semibold text-sm">
-            <Link href="/es" className="hover:text-blue-600 transition-colors">Inicio</Link>
-            <Link href="/es/servicios" className="hover:text-blue-600 transition-colors">Servicios</Link>
-            <Link href="/es/cuanto-cuesta-enviar-un-carro" className="hover:text-blue-600 transition-colors">Guía de Precios</Link>
-            <Link href="/es/calculadora" className="text-blue-600 font-extrabold transition-colors">Calculadora de Costos</Link>
-            <Link href="/es/estafas-de-transporte-de-autos" className="hover:text-blue-600 transition-colors">Evitar Estafas</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <LanguageSwitcher />
-            <a href="tel:5307255383" className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-xs rounded-xl">
-              <Phone className="w-3.5 h-3.5" />
-              (530) 725-5383
-            </a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader lang="es" active="calc" />
 
       {/* Breadcrumb Bar */}
       <div className="bg-slate-900 border-b border-slate-800 py-3 px-4 md:px-8 text-xs font-semibold text-slate-400">
@@ -127,10 +98,7 @@ export default function SpanishCalculatorPage() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-6 xl:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-500/20 text-blue-300 rounded-full text-xs font-bold border border-blue-500/30">
-              <Calculator className="w-4 h-4 text-blue-400" />
-              Calculadora de Tarifas Garantizadas 2026
-            </div>
+            <p className="act-eyebrow !text-navy-200 !mb-0">Calculadora de Tarifas Garantizadas 2026</p>
 
             <h1 className="text-3xl md:text-5xl font-black leading-tight tracking-tight">
               Calculadora de Costo de Envío de Carros en EE.UU.
@@ -332,7 +300,7 @@ export default function SpanishCalculatorPage() {
             <p className="text-slate-300 text-sm leading-relaxed mb-6 font-medium">
               Nunca pague depósitos por adelantado antes de que se le asigne un camionero verificado. Consulte nuestra <Link href="/es/estafas-de-transporte-de-autos" className="text-blue-400 underline font-bold hover:text-blue-300">guía de estafas de transporte de autos</Link> para conocer las señales de alerta.
             </p>
-            <a href="tel:5307255383" className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-6 py-3 rounded-xl font-extrabold text-sm shadow-md">
+            <a href="tel:5307255383" className="inline-flex items-center gap-2 bg-signal hover:bg-signal-700 text-white px-6 py-3 rounded-xl font-extrabold text-sm shadow-md">
               <Phone className="w-4 h-4" /> Hablar con un Asesor en Español: (530) 725-5383
             </a>
           </div>

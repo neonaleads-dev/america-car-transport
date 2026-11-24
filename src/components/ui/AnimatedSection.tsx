@@ -1,7 +1,12 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
+
+/*
+ * These wrappers used to fade content in with framer-motion, starting from
+ * opacity 0. On route and service pages that hid the H1 and the quote form
+ * until JavaScript loaded, which hurt LCP and showed a blank hero on slow
+ * phones. They now render content immediately; the props are kept so the
+ * 27 pages that use them don't need to change.
+ */
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -10,61 +15,17 @@ interface AnimatedSectionProps {
   className?: string;
 }
 
-export default function AnimatedSection({
-  children,
-  delay = 0,
-  direction = "up",
-  className = "",
-}: AnimatedSectionProps) {
-  const getInitialPosition = () => {
-    switch (direction) {
-      case "up":
-        return { opacity: 0, y: 30 };
-      case "down":
-        return { opacity: 0, y: -30 };
-      case "left":
-        return { opacity: 0, x: 30 };
-      case "right":
-        return { opacity: 0, x: -30 };
-      case "none":
-        return { opacity: 0 };
-      default:
-        return { opacity: 0, y: 30 };
-    }
-  };
-
-  return (
-    <motion.div
-      initial={getInitialPosition()}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
+export default function AnimatedSection({ children, className = "" }: AnimatedSectionProps) {
+  return <div className={className}>{children}</div>;
 }
 
 export function AnimatedCard({
   children,
-  delay = 0,
   className = "",
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
 }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20, scale: 0.97 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      whileHover={{ y: -5, transition: { duration: 0.2 } }}
-      viewport={{ once: true, margin: "-30px" }}
-      transition={{ duration: 0.4, delay, ease: "easeOut" }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }

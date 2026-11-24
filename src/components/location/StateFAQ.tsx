@@ -13,10 +13,7 @@ export default function StateFAQ({ state }: StateFAQProps) {
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-            <HelpCircle className="w-4 h-4 text-blue-600" />
-            Frequently Asked Questions
-          </div>
+          <p className="act-eyebrow !mb-3">Frequently Asked Questions</p>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
             {state.name} Auto Transport FAQs
           </h2>

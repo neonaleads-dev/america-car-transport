@@ -6,6 +6,7 @@ import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import AnimatedSection, { AnimatedCard } from "@/components/ui/AnimatedSection";
 import { Anchor, ShieldCheck, Award, Clock, DollarSign, ArrowRight, CheckCircle2, Phone, HelpCircle, MapPin, Truck, ChevronDown, Lock, AlertTriangle, BatteryCharging, Ship } from "lucide-react";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Hawaii Car Shipping | Ocean Auto Transport 2026",
   description: "Ship your car to Hawaii from California — RoRo and container ocean freight via Matson and Pasha. Real 2026 pricing, transit times, and what to expect.",
@@ -117,52 +118,15 @@ export default function HawaiiCarShippingPage() {
       />
 
       {/* Header Navigation */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/" title="America Car Transport Homepage" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport - Nationwide Auto Transport Company Logo" 
-              title="America Car Transport Official Logo"
-              width={160}
-              height={72}
-              // @ts-ignore
-              fetchpriority="high"
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain transition-transform hover:scale-[1.02]"
-            />
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-6 text-slate-700 font-semibold text-sm">
-            <Link href="/#how-it-works" className="hover:text-blue-600 transition-colors">How It Works</Link>
-            <Link href="/services" className="text-blue-600 font-bold">Services</Link>
-            <Link href="/locations" className="hover:text-blue-600 transition-colors">Locations</Link>
-            <Link href="/routes" className="hover:text-blue-600 transition-colors">Routes</Link>
-            <Link href="/reviews" className="hover:text-blue-600 transition-colors">Reviews</Link>
-            <Link href="/licensing-insurance" className="hover:text-blue-600 transition-colors">Licensing &amp; Insurance</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a href="tel:5307255383" className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-xs rounded-xl">
-              <Phone className="w-3.5 h-3.5" />
-              (530) 725-5383
-            </a>
-            <Link href="/tools/car-shipping-cost-calculator" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-4 py-2 rounded-xl text-xs md:text-sm font-extrabold shadow-sm">
-              Get Instant Quote
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader active="services" />
 
       {/* Hero Section */}
-      <section className="relative px-4 md:px-8 lg:px-24 pt-10 pb-16 bg-[#F8FAFC] bg-grid-pattern border-b border-slate-200 overflow-hidden">
+      <section className="relative px-4 md:px-8 lg:px-24 pt-10 pb-16 bg-paper bg-grid-pattern border-b border-slate-200 overflow-hidden">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Text Column */}
           <AnimatedSection direction="up" className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-cyan-50 text-cyan-900 rounded-full text-xs md:text-sm font-bold tracking-wide mb-5 border border-cyan-200/80 shadow-sm">
-              <Ship className="w-4 h-4 text-cyan-700" />
-              Ocean Freight Transport via Matson &amp; Pasha Hawaii
-            </div>
+            <p className="act-eyebrow !mb-5">Ocean Freight Transport via Matson &amp; Pasha Hawaii</p>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.8rem] leading-[1.1] font-black text-slate-900 tracking-tight mb-5">
               Hawaii Car Shipping: Ocean Transport From California, Explained Honestly
@@ -213,10 +177,7 @@ export default function HawaiiCarShippingPage() {
           
           <AnimatedSection direction="up">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-                <Anchor className="w-4 h-4 text-blue-600" />
-                The 3-Step Ocean Shipping Logistics
-              </div>
+              <p className="act-eyebrow !mb-3">The 3-Step Ocean Shipping Logistics</p>
               <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
                 How Shipping a Car to Hawaii Works
               </h2>
@@ -316,10 +277,7 @@ export default function HawaiiCarShippingPage() {
           
           <AnimatedSection direction="up">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-                <Clock className="w-4 h-4 text-blue-600" />
-                Honest Transit Time Expectations
-              </div>
+              <p className="act-eyebrow !mb-3">Honest Transit Time Expectations</p>
               <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
                 How Long Does Hawaii Car Shipping Really Take?
               </h2>
@@ -364,10 +322,7 @@ export default function HawaiiCarShippingPage() {
           
           <AnimatedSection direction="up">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-                <DollarSign className="w-4 h-4 text-emerald-600" />
-                Shipping Options Comparison
-              </div>
+              <p className="act-eyebrow !mb-3">Shipping Options Comparison</p>
               <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
                 RoRo vs. Container Shipping: Which Should You Choose?
               </h2>
@@ -457,10 +412,7 @@ export default function HawaiiCarShippingPage() {
         <div className="max-w-[1200px] mx-auto px-4 md:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-              <HelpCircle className="w-4 h-4 text-blue-600" />
-              Frequently Asked Questions
-            </div>
+            <p className="act-eyebrow !mb-3">Frequently Asked Questions</p>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
               Hawaii Car Shipping FAQs
             </h2>

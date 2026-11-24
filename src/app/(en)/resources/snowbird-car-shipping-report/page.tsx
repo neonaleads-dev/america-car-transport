@@ -4,6 +4,7 @@ import Link from "next/link";
 import Footer from "@/components/ui/Footer";
 import { Sun, Calendar, Clock, MapPin, Phone, CheckCircle2, TrendingUp, DollarSign, Calculator, ArrowRight, ShieldCheck, FileText } from "lucide-react";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "How Snowbird Season Drives Up Car Shipping Prices (2026–2027 Report)",
   description: "Snowbird season raises car shipping prices 15–25% on lanes like NY→Miami and Chicago→Phoenix. See 2026–2027 corridor data, timing windows, and when to book.",
@@ -110,41 +111,10 @@ export default function SnowbirdCarShippingReportPage() {
       />
 
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/" title="America Car Transport Homepage" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport - Nationwide Auto Transport Company Logo" 
-              title="America Car Transport Official Logo"
-              width={160}
-              height={72}
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain transition-transform hover:scale-[1.02]"
-            />
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-6 text-slate-700 font-semibold text-sm">
-            <Link href="/#how-it-works" className="hover:text-blue-600 transition-colors">How It Works</Link>
-            <Link href="/services" className="hover:text-blue-600 transition-colors">Services</Link>
-            <Link href="/locations" className="hover:text-blue-600 transition-colors">Locations</Link>
-            <Link href="/resources" className="hover:text-blue-600 transition-colors">Resources</Link>
-            <Link href="/faq" className="hover:text-blue-600 transition-colors">FAQ Hub</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a href="tel:5307255383" className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-xs rounded-xl">
-              <Phone className="w-3.5 h-3.5" />
-              (530) 725-5383
-            </a>
-            <Link href="/tools/car-shipping-cost-calculator" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-4 py-2 rounded-xl text-xs md:text-sm font-extrabold shadow-sm">
-              Get Instant Quote
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* Hero Header */}
-      <section className="relative px-4 md:px-8 lg:px-24 pt-10 pb-16 bg-[#F8FAFC] bg-grid-pattern border-b border-slate-200">
+      <section className="relative px-4 md:px-8 lg:px-24 pt-10 pb-16 bg-paper bg-grid-pattern border-b border-slate-200">
         <div className="max-w-[1200px] mx-auto">
           
           {/* Breadcrumb Path */}
@@ -156,10 +126,7 @@ export default function SnowbirdCarShippingReportPage() {
             <span className="text-slate-900 font-bold">Snowbird Car Shipping Report</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-amber-100 text-amber-900 rounded-full text-xs md:text-sm font-bold tracking-wide mb-5 border border-amber-300 shadow-sm">
-            <TrendingUp className="w-4 h-4 text-amber-700" />
-            2026–2027 Seasonal Auto Transport Market Research Report
-          </div>
+          <p className="act-eyebrow !mb-5">2026–2027 Seasonal Auto Transport Market Research Report</p>
 
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] mb-5">
             How Snowbird Season Drives Up Car Shipping Prices (2026–2027)
@@ -462,7 +429,7 @@ export default function SnowbirdCarShippingReportPage() {
             <p className="text-amber-400 font-bold text-sm md:text-base mb-6">
               If you already know your window, the honest version of this entire report in one sentence: <em>book September, ship October, or book December, ship January — and never buy a truck ticket for the week of Thanksgiving.</em>
             </p>
-            <Link href="/tools/car-shipping-cost-calculator" className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-6 py-3.5 rounded-xl font-extrabold text-sm shadow-md">
+            <Link href="/tools/car-shipping-cost-calculator" className="inline-flex items-center gap-2 bg-signal hover:bg-signal-700 text-white px-6 py-3.5 rounded-xl font-extrabold text-sm shadow-md">
               <Calculator className="w-4 h-4" /> Calculate Your Snowbird Quote →
             </Link>
           </div>

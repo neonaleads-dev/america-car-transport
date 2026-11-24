@@ -3,6 +3,7 @@ import Metadata from "next";
 import Link from "next/link";
 import Footer from "@/components/ui/Footer";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Privacy Policy | America Car Transport",
   description: "Privacy Policy for America Car Transport — Learn how we protect your personal information, quote data, and communications.",
@@ -49,31 +50,7 @@ export default function PrivacyPolicyPage() {
       />
 
       {/* Header Navigation */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/" title="America Car Transport Homepage" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport - Nationwide Auto Transport Company Logo" 
-              title="America Car Transport Official Logo"
-              width={160}
-              height={72}
-              // @ts-ignore
-              fetchpriority="high"
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain transition-transform hover:scale-[1.02]"
-            />
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-6 text-slate-700 font-semibold text-sm">
-            <Link href="/#how-it-works" className="hover:text-blue-600 transition-colors">How It Works</Link>
-            <Link href="/services" className="hover:text-blue-600 transition-colors">Services</Link>
-            <Link href="/locations" className="hover:text-blue-600 transition-colors">Locations</Link>
-            <Link href="/routes" className="hover:text-blue-600 transition-colors">Routes</Link>
-            <Link href="/reviews" className="hover:text-blue-600 transition-colors">Reviews</Link>
-            <Link href="/licensing-insurance" className="hover:text-blue-600 transition-colors">Licensing &amp; Insurance</Link>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* Visual Breadcrumb Bar */}
       <div className="bg-slate-900 border-b border-slate-800 py-3 px-4 md:px-8 text-xs font-semibold text-slate-400">

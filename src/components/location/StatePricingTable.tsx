@@ -54,10 +54,7 @@ export default function StatePricingTable({ state }: StatePricingTableProps) {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-            <DollarSign className="w-4 h-4 text-emerald-600" />
-            Transparent Pricing Matrix
-          </div>
+          <p className="act-eyebrow !mb-3">Transparent Pricing Matrix</p>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
             {state.name} Car Shipping Cost &amp; Distance Examples
           </h2>

@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ExternalLink, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import USAMap from "react-usa-map";
 
 // Detailed State Cards interlinked with state pages
@@ -64,23 +64,39 @@ export default function DestinationsMap() {
   };
 
   return (
-    <section className="py-24 bg-white border-t border-slate-100 overflow-hidden flex flex-col items-center">
-      <div className="max-w-[1400px] w-full px-4 md:px-8 lg:px-24 text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200/70">
-          <MapPin className="w-4 h-4 text-blue-600" />
-          Interactive Nationwide Network
-        </div>
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+    <section className="act-section bg-white border-t border-navy-900/10 overflow-hidden">
+      <div className="act-container grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div className="lg:col-span-4">
+        <p className="act-eyebrow">Interactive Nationwide Network</p>
+        <h2 className="act-h2 mb-5">
           Browse Car Shipping Destinations
         </h2>
-        <p className="text-lg text-slate-600 font-medium max-w-2xl mx-auto">
+        <p className="act-lead mb-8">
           Click any state on the map below to view custom shipping rates, local logistics data, and available auto transport corridors.
         </p>
+        <ul className="grid grid-cols-2 gap-x-6 border-t border-navy-900/15">
+          {stateCards.map((state) => (
+            <li key={state.slug} className="border-b border-navy-900/15">
+              <Link
+                href={`/locations/${state.slug}`}
+                title={state.desc}
+                className="flex items-center justify-between py-2.5 text-[15px] font-medium text-navy-900 hover:text-signal-700 transition-colors"
+              >
+                {state.name}
+                <ArrowRight className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <Link href="/locations" className="btn-dark mt-8">
+          Browse All 50 State Hubs
+          <ArrowRight className="w-4 h-4" aria-hidden="true" />
+        </Link>
       </div>
 
-      <div className="w-full relative mb-16 px-4 flex justify-center">
-        <div 
-          className="relative w-full max-w-[900px] aspect-[4/3] md:aspect-[2/1] flex items-center justify-center"
+      <div className="lg:col-span-8 w-full relative flex justify-center">
+        <div
+          className="relative w-full aspect-[3/2] flex items-center justify-center"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
@@ -89,7 +105,7 @@ export default function DestinationsMap() {
              <USAMap 
                width="100%" 
                height="100%" 
-               defaultFill="#3b82f6"
+               defaultFill="#C8D3E2"
                onClick={handleStateClick}
                customize={{}}
              />
@@ -100,13 +116,12 @@ export default function DestinationsMap() {
                 }
                 .usa-map-container path {
                   stroke: white !important;
-                  stroke-width: 1.5px !important;
-                  transition: all 0.2s;
+                  stroke-width: 1.25px !important;
+                  transition: fill 0.15s;
                   cursor: pointer;
                 }
                 .usa-map-container path:hover {
-                  fill: #1d4ed8 !important;
-                  filter: drop-shadow(0px 4px 10px rgba(37,99,235,0.4));
+                  fill: #0B2545 !important;
                 }
              `}</style>
           </div>
@@ -114,48 +129,16 @@ export default function DestinationsMap() {
         </div>
       </div>
 
-      {/* Responsive State Cards Grid */}
-      <div className="w-full max-w-[1400px] px-4 md:px-8 lg:px-24 mb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {stateCards.map((state) => (
-            <Link 
-              key={state.slug}
-              href={`/locations/${state.slug}`}
-              className="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm hover:shadow-xl hover:border-blue-500 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer group"
-            >
-              <div>
-                <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
-                  {state.name}
-                </h3>
-                <p className="text-xs text-slate-500 font-medium leading-relaxed line-clamp-2 mb-4">
-                  {state.desc}
-                </p>
-              </div>
-              <div className="pt-3 border-t border-slate-100 flex justify-between items-center group-hover:text-blue-600 transition-colors">
-                <span className="text-xs font-bold text-slate-700 group-hover:text-blue-600">View State Hub</span>
-                <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600" />
-              </div>
-            </Link>
-          ))}
-        </div>
       </div>
-
-      {/* All Locations Button */}
-      <Link 
-        href="/locations"
-        className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold py-3.5 px-8 rounded-xl shadow-md hover:shadow-lg transition-all text-sm"
-      >
-        Browse All 50 State Hubs →
-      </Link>
 
       {/* Floating Tooltip */}
       {tooltip.show && (
         <div 
-          className="fixed z-50 pointer-events-none bg-slate-900 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-bold tracking-wide transform -translate-x-1/2 -translate-y-full mt-[-10px]"
+          className="fixed z-50 pointer-events-none bg-navy-900 text-white px-3 py-1.5 rounded text-sm font-semibold transform -translate-x-1/2 -translate-y-full mt-[-10px]"
           style={{ top: tooltip.y, left: tooltip.x }}
         >
           Click to view {tooltip.name} Shipping Rates
-          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900"></div>
+          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-navy-900"></div>
         </div>
       )}
 

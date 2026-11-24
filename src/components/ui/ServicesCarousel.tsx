@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, ArrowRight, Building2, Gavel, Truck, UserCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const servicesWeOffer = [
   {
@@ -83,103 +83,80 @@ const whoWeServe = [
 ];
 
 export default function ServicesCarousel() {
-  const carouselRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState<"offer" | "serve">("offer");
 
   const displayItems = activeTab === "offer" ? servicesWeOffer : whoWeServe;
 
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -400, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 400, behavior: "smooth" });
-    }
-  };
 
   return (
-    <section className="py-24 bg-[#f8fafc] border-t border-slate-100 font-sans">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-24">
-        
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <div className="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm md:text-base">
-            {activeTab === "offer" ? "What We Offer" : "Who We Serve"}
+    <section className="act-section bg-paper border-t border-navy-900/10 font-sans">
+      <div className="act-container">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+          <div className="max-w-2xl">
+            <p className="act-eyebrow">{activeTab === "offer" ? "What We Offer" : "Who We Serve"}</p>
+            <h2 className="act-h2 mb-5">
+              {activeTab === "offer" ? "Our Popular Car Transport Services" : "Customized Solutions for Every Client"}
+            </h2>
+            <p className="act-lead">
+              {activeTab === "offer"
+                ? "Whether you're shipping across the street or across the country, America Car Transport makes it easy to choose the right option."
+                : "We provide tailored logistics for automotive businesses, auctions, commercial fleets, and private car buyers."}
+            </p>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
-            {activeTab === "offer" ? "Our Popular Car Transport Services" : "Customized Solutions for Every Client"}
-          </h2>
-          <p className="text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-10">
-            {activeTab === "offer" 
-              ? "Whether you're shipping across the street or across the country, America Car Transport makes it easy to choose the right option." 
-              : "We provide tailored logistics for automotive businesses, auctions, commercial fleets, and private car buyers."}
-          </p>
 
-          {/* Toggle Switch */}
-          <div className="inline-flex bg-white rounded-full p-1.5 border border-slate-200 shadow-sm mx-auto">
-            <button 
+          <div role="tablist" aria-label="Services view" className="inline-flex self-start lg:self-auto border border-navy-900/20 rounded-md p-1 bg-white">
+            <button
               type="button"
+              role="tab"
+              aria-selected={activeTab === "offer"}
               onClick={() => setActiveTab("offer")}
-              className={`px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 ${activeTab === 'offer' ? 'bg-blue-600 text-white shadow-md' : 'text-slate-500 hover:text-slate-900'}`}
+              className={`px-5 h-10 rounded font-semibold text-sm transition-colors ${activeTab === 'offer' ? 'bg-navy-900 text-white' : 'text-slate-600 hover:text-navy-900'}`}
             >
               We Offer
             </button>
-            <button 
+            <button
               type="button"
+              role="tab"
+              aria-selected={activeTab === "serve"}
               onClick={() => setActiveTab("serve")}
-              className={`px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 ${activeTab === 'serve' ? 'bg-blue-600 text-white shadow-md' : 'text-slate-500 hover:text-slate-900'}`}
+              className={`px-5 h-10 rounded font-semibold text-sm transition-colors ${activeTab === 'serve' ? 'bg-navy-900 text-white' : 'text-slate-600 hover:text-navy-900'}`}
             >
               Who We Serve
             </button>
           </div>
         </div>
 
-      </div>
-
-      {/* Grid Container */}
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-navy-900/10 border border-navy-900/10 rounded-lg overflow-hidden">
           {displayItems.map((item, idx) => (
-            <Link 
-              key={idx} 
+            <Link
+              key={idx}
               href={item.href}
-              className="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-blue-500 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col group/card cursor-pointer block"
+              className="bg-white flex flex-col group/card"
             >
-              {/* Image Header */}
-              <div className="relative h-44 w-full overflow-hidden">
-                <img 
-                  src={item.img} 
-                  alt={item.alt} 
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-navy-100">
+                <img
+                  src={item.img}
+                  alt={item.alt}
                   width={400}
                   height={400}
                   loading="lazy"
                   decoding="async"
                   title={`America Car Transport - ${item.title}`}
-                  className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover/card:scale-[1.03] transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-                
-                {/* Tag */}
-                <div className={`absolute top-4 left-4 ${item.tagColor} text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm`}>
-                  {item.tag}
-                </div>
               </div>
-
-              {/* Content */}
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium mb-6 flex-1">
-                  {item.desc}
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 mb-2">
+                  {String(idx + 1).padStart(2, "0")} · {item.tag}
                 </p>
-                
-                {/* Learn More Link */}
-                <div className="flex items-center gap-2 text-xs font-bold text-blue-600 group-hover/card:text-blue-700 transition-colors mt-auto">
-                  {activeTab === "offer" ? "Learn More" : "View Segment Rates"}
-                  <ArrowRight className="w-3.5 h-3.5 transform group-hover/card:translate-x-1 transition-transform" />
-                </div>
+                <h3 className="text-xl font-bold text-navy-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-1">{item.desc}</p>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-navy-900 mt-auto">
+                  <span className="underline decoration-signal decoration-2 underline-offset-4">
+                    {activeTab === "offer" ? "Learn More" : "View Segment Rates"}
+                  </span>
+                  <ArrowRight className="w-4 h-4 group-hover/card:translate-x-1 transition-transform" />
+                </span>
               </div>
             </Link>
           ))}
@@ -188,4 +165,3 @@ export default function ServicesCarousel() {
     </section>
   );
 }
-

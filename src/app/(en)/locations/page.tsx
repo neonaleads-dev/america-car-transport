@@ -7,6 +7,7 @@ import InteractiveUSMap from "@/components/ui/InteractiveUSMap";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { MapPin, Search, ArrowRight, ShieldCheck, Truck, Star } from "lucide-react";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Car Shipping Locations | Nationwide Auto Transport Network",
   description: "Explore America Car Transport coverage across all 50 states. Compare door-to-door car shipping rates, popular interstate routes, and local delivery hubs.",
@@ -25,51 +26,16 @@ export default function LocationsHubPage() {
     <main className="min-h-screen bg-slate-50 font-sans">
       
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/" title="America Car Transport Homepage" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport - Nationwide Auto Transport Company Logo" 
-              title="America Car Transport Official Logo"
-              width={160}
-              height={72}
-              // @ts-ignore
-              fetchpriority="high"
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain transition-transform hover:scale-[1.02]"
-            />
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-6 text-slate-700 font-semibold text-sm">
-            <Link href="/#how-it-works" className="hover:text-blue-600 transition-colors">How It Works</Link>
-            <Link href="/services" className="hover:text-blue-600 transition-colors">Services</Link>
-            <Link href="/locations" className="text-blue-600 font-bold">Locations</Link>
-            <Link href="/#why-us" className="hover:text-blue-600 transition-colors">Why Us</Link>
-            <Link href="/#faq" className="hover:text-blue-600 transition-colors">FAQ</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a href="tel:5307255383" className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-xs rounded-xl">
-              (530) 725-5383
-            </a>
-            <Link href="/tools/car-shipping-cost-calculator" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] text-white px-4 py-2 rounded-xl text-xs md:text-sm font-extrabold shadow-sm">
-              Get Instant Quote
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader active="locations" />
 
       {/* Visual Breadcrumb Bar */}
       <Breadcrumbs items={[{ label: "Locations", url: "/locations" }]} />
 
       {/* Hero Section */}
-      <section className="relative px-4 md:px-8 lg:px-24 pt-12 pb-16 bg-[#F8FAFC] bg-grid-pattern border-b border-slate-200">
+      <section className="relative px-4 md:px-8 lg:px-24 pt-12 pb-16 bg-paper bg-grid-pattern border-b border-slate-200">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200/70">
-              <MapPin className="w-4 h-4 text-blue-600" />
-              Nationwide Coverage Directory
-            </div>
+            <p className="act-eyebrow !mb-4">Nationwide Coverage Directory</p>
             <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4">
               Car Shipping Locations Nationwide
             </h1>

@@ -38,41 +38,42 @@ const b2bServices = [
 
 export default function B2BCarousel() {
   return (
-    <section className="py-24 bg-white border-t border-slate-100 font-sans">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-24">
+    <section className="act-section bg-navy-900 text-white font-sans">
+      <div className="act-container">
         
         {/* Header */}
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-2">
+          <p className="act-eyebrow !text-navy-200">For Business</p>
+          <h2 className="act-h2 !text-white mb-3">
             B2B & Commercial Services
           </h2>
-          <p className="text-slate-600 font-medium text-lg">
+          <p className="text-navy-100 text-lg">
             Custom Logistics Solutions for Commercial Clients
           </p>
         </div>
 
         {/* Responsive CSS Grid (All cards visible on desktop) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-t border-white/15">
           {b2bServices.map((service, idx) => {
             const Icon = service.icon;
             return (
               <div 
                 key={idx} 
-                className="bg-white rounded-3xl border-2 border-slate-100 p-6 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 flex flex-col group cursor-pointer"
+                className="py-7 lg:px-6 lg:first:pl-0 lg:border-l lg:first:border-l-0 border-b lg:border-b-0 border-white/15 flex flex-col group"
               >
                 {/* Icon */}
-                <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-600/30 transition-all duration-300 shrink-0">
-                  <Icon className="w-6 h-6" />
+                <div className="text-navy-200 mb-5 shrink-0">
+                  <Icon className="w-6 h-6" aria-hidden="true" />
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
-                <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium mb-6 flex-1">
+                <h3 className="text-lg font-bold text-white mb-2">{service.title}</h3>
+                <p className="text-navy-100 text-sm leading-relaxed mb-6 flex-1">
                   {service.desc}
                 </p>
 
                 {/* Link */}
-                <div className="flex items-center gap-1 text-xs font-bold text-blue-600 group-hover:text-blue-700 transition-colors mt-auto">
+                <div className="flex items-center gap-1 text-sm font-semibold text-white mt-auto">
                   {service.linkText}
                   <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                 </div>

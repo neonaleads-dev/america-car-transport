@@ -6,6 +6,7 @@ import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import ServicesComparisonDashboard from "@/components/ui/ServicesComparisonDashboard";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Nationwide Car Shipping Services | Open, Enclosed & Door-to-Door",
   description: "Nationwide car shipping and auto transport services from America Car Transport: open, enclosed, door-to-door, terminal and expedited. Instant quote, no deposit.",
@@ -91,43 +92,9 @@ export default function ServicesHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       {/* Global Header Navigation */}
-      <header className="sticky top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-        <div className="max-w-[1400px] w-full mx-auto px-4 md:px-8 py-3.5 md:py-2.5 md:py-3 flex items-center justify-between gap-4 md:gap-6">
-          <Link href="/" title="America Car Transport Homepage" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport - Nationwide Auto Transport Company Logo" 
-              title="America Car Transport Official Logo"
-              width={160}
-              height={72}
-              // @ts-ignore
-              fetchpriority="high"
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain transition-transform hover:scale-[1.02]"
-            />
-          </Link>
+      <SiteHeader active="services" ctaHref="#services-quote-widget" />
 
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7 whitespace-nowrap text-slate-700 font-semibold text-xs lg:text-sm xl:text-[15px]">
-            <Link href="/#how-it-works" className="hover:text-blue-600 transition-colors">How It Works</Link>
-            <Link href="/services" className="text-blue-600 font-extrabold transition-colors">Services</Link>
-            <Link href="/#why-us" className="hover:text-blue-600 transition-colors">Why Us</Link>
-            <Link href="/routes" className="hover:text-blue-600 transition-colors">Popular Routes</Link>
-            <Link href="/locations" className="hover:text-blue-600 transition-colors">Locations</Link>
-            <Link href="/faq" className="hover:text-blue-600 transition-colors">FAQ Hub</Link>
-          </nav>
-
-          <div className="flex items-center gap-3 shrink-0">
-            <a href="tel:5307255383" className="hidden xl:flex items-center gap-2 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-100 px-3.5 py-2 rounded-xl text-xs xl:text-sm font-extrabold transition-all shadow-sm shrink-0 whitespace-nowrap">
-              <Phone className="w-4 h-4 text-blue-600" />
-              (530) 725-5383
-            </a>
-            <Link href="#services-quote-widget" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] text-white px-4 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-extrabold transition-all duration-200 shadow-[0_4px_14px_0_rgba(255,107,0,0.39)] rounded-xl shrink-0 whitespace-nowrap">
-              Get Instant Quote
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      <main className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans">
+      <main className="min-h-screen bg-paper text-slate-800 font-sans">
         
         {/* Dynamic Breadcrumb Component */}
         <Breadcrumbs items={[{ label: "Services", url: "/services" }]} />
@@ -136,16 +103,12 @@ export default function ServicesHubPage() {
         <section id="services-quote-widget" className="py-12 md:py-20 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white border-b border-slate-800 px-4 md:px-8 lg:px-24 relative overflow-hidden">
           
           {/* Subtle Ambient Glow */}
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
             
             {/* H1 & Subheading */}
             <div className="lg:col-span-6 xl:col-span-7">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-950/90 text-blue-300 rounded-full text-xs md:text-sm font-bold mb-6 border border-blue-500/40 shadow-lg shadow-blue-950/40">
-                <Compass className="w-4 h-4 text-blue-400" />
-                Nationwide Logistics Hub · All Transport Options
-              </div>
+              <p className="act-eyebrow !mb-6">Nationwide Logistics Hub · All Transport Options</p>
 
               <h1 className="text-3xl md:text-5xl lg:text-[3.6rem] font-black text-white leading-tight mb-6 tracking-tight">
                 Auto Transport Services: <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-amber-300 bg-clip-text text-transparent">Every Way to Ship Your Car</span>, Nationwide
@@ -628,10 +591,7 @@ export default function ServicesHubPage() {
         {/* CLOSING CTA BANNER */}
         <section className="py-20 px-4 md:px-8 lg:px-24 bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 text-white text-center relative overflow-hidden">
           <div className="max-w-[1000px] mx-auto relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/20 text-blue-300 rounded-full text-xs md:text-sm font-bold mb-6 border border-blue-500/30">
-              <Compass className="w-4 h-4 text-blue-400" />
-              Custom Transport Packages
-            </div>
+            <p className="act-eyebrow !text-navy-200 !mb-6">Custom Transport Packages</p>
             
             <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">
               Get Your Quote
@@ -642,7 +602,7 @@ export default function ServicesHubPage() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="#services-quote-widget" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] text-white px-8 py-4 rounded-xl font-extrabold text-base transition-all shadow-[0_4px_14px_0_rgba(255,107,0,0.39)] hover:scale-105">
+              <Link href="#services-quote-widget" className="bg-signal hover:bg-signal-700 hover:from-[#A50D26] text-white px-8 py-4 rounded-xl font-extrabold text-base transition-all hover:scale-105">
                 Get Instant Quote →
               </Link>
               <a href="tel:5307255383" className="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-6 py-4 rounded-xl font-extrabold text-base transition-all flex items-center gap-2">

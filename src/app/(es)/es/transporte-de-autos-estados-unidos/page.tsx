@@ -10,6 +10,7 @@ import QuoteCalculator from "@/components/calculator/QuoteCalculator";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
+import SiteHeader from "@/components/layout/SiteHeader";
 export const metadata = {
   title: "Transporte de Autos en Estados Unidos | Cotización Gratis Sin Correo - America Car Transport",
   description: "Transporte de autos y vehículos de estado a estado en EE.UU. Cotización instantánea sin dar tu correo ni teléfono. Transportistas con licencia USDOT/MC, seguro de carga incluido y servicio puerta a puerta. Evita estafas — compara antes de contratar.",
@@ -148,43 +149,7 @@ export default function SpanishInterstateTransportPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Header Bar */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-4">
-          <Link href="/es" title="America Car Transport Página Principal" className="flex items-center shrink-0 my-auto">
-            <img 
-              src="/america-car-transport-logo.png" 
-              alt="America Car Transport Logotipo Oficial" 
-              title="America Car Transport"
-              width={160}
-              height={72}
-              // @ts-ignore
-              fetchpriority="high"
-              className="h-[52px] sm:h-[58px] md:h-[64px] lg:h-[72px] w-auto object-contain transition-transform hover:scale-[1.02]"
-            />
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-6 text-slate-700 font-semibold text-sm">
-            <Link href="/es" className="hover:text-blue-600 transition-colors">Inicio</Link>
-            <Link href="/es/servicios" className="text-blue-600 font-extrabold transition-colors">Servicios</Link>
-            <Link href="/es/calculadora" className="hover:text-blue-600 transition-colors">Calculadora</Link>
-            <Link href="/locations" className="hover:text-blue-600 transition-colors">Ubicaciones</Link>
-            <Link href="/reviews" className="hover:text-blue-600 transition-colors">Opiniones</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <LanguageSwitcher />
-            
-            <a href="tel:5307255383" className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-xs rounded-xl hover:bg-blue-100 transition-colors">
-              <Phone className="w-3.5 h-3.5" />
-              (530) 725-5383
-            </a>
-            
-            <Link href="/es/calculadora" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] text-white px-4 py-2 rounded-xl text-xs md:text-sm font-extrabold shadow-sm transition-all">
-              Cotización Gratis
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader lang="es" />
 
       {/* Breadcrumbs Navigation */}
       <Breadcrumbs items={[
@@ -195,14 +160,10 @@ export default function SpanishInterstateTransportPage() {
       <article lang="es">
         {/* HERO SECTION — DARK BLUE BANNER WITH CALCULATOR */}
         <section className="py-12 md:py-20 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white border-b border-slate-800 px-4 md:px-8 lg:px-24 relative overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
             <div className="lg:col-span-6 xl:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-950/90 text-blue-300 rounded-full text-xs md:text-sm font-bold border border-blue-500/40 shadow-lg shadow-blue-950/40">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                Cotización Instantánea · Sin Correo · Sin Teléfono
-              </div>
+              <p className="act-eyebrow !mb-0">Cotización Instantánea · Sin Correo · Sin Teléfono</p>
 
               <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-black text-white leading-tight tracking-tight">
                 Transporte de Autos en Estados Unidos: <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-amber-300 bg-clip-text text-transparent">Cotización Gratis y Sin Estafas</span>
@@ -238,7 +199,7 @@ export default function SpanishInterstateTransportPage() {
               </div>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Link href="#calculator-widget" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] text-white px-6 py-3.5 rounded-xl font-extrabold text-sm shadow-lg shadow-amber-950/40 transition-all flex items-center gap-2">
+                <Link href="#calculator-widget" className="bg-signal hover:bg-signal-700 hover:from-[#A50D26] text-white px-6 py-3.5 rounded-xl font-extrabold text-sm shadow-lg shadow-amber-950/40 transition-all flex items-center gap-2">
                   Calcular Mi Cotización Gratis <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a href="tel:5307255383" className="bg-blue-600/80 hover:bg-blue-600 text-white px-5 py-3.5 rounded-xl font-bold text-sm transition-all flex items-center gap-2 border border-blue-500/40">
@@ -472,9 +433,7 @@ export default function SpanishInterstateTransportPage() {
           <div className="max-w-[1400px] mx-auto">
             <div className="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 rounded-3xl p-8 md:p-14 text-white shadow-2xl border border-slate-800">
               <div className="max-w-3xl mb-10 space-y-4">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-red-500/20 text-red-300 rounded-full text-xs font-bold border border-red-500/30">
-                  <AlertTriangle className="w-4 h-4 text-red-400" /> Guía Anti-Estafas en EE.UU.
-                </div>
+                <p className="act-eyebrow !text-navy-200 !mb-0">Guía Anti-Estafas en EE.UU.</p>
                 <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">
                   Cómo Evitar Estafas de Transporte de Autos
                 </h2>
@@ -711,9 +670,7 @@ export default function SpanishInterstateTransportPage() {
         {/* SECTION 9: CTA FINAL */}
         <section id="cta-final" className="py-20 px-4 md:px-8 lg:px-24 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white text-center">
           <div className="max-w-[900px] mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/20 text-amber-300 rounded-full text-xs md:text-sm font-bold border border-amber-500/30">
-              <Star className="w-4 h-4 text-amber-400 fill-amber-400" /> Sin Registro Necesario
-            </div>
+            <p className="act-eyebrow !text-navy-200 !mb-0">Sin Registro Necesario</p>
             
             <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">
               Obtén Tu Cotización Ahora — Sin Correo, Sin Teléfono
@@ -724,7 +681,7 @@ export default function SpanishInterstateTransportPage() {
             </p>
 
             <div className="pt-4 flex flex-wrap justify-center items-center gap-4">
-              <Link href="#calculator-widget" className="bg-gradient-to-r from-[#FF6B00] to-[#FF852d] hover:from-[#E05E00] text-white px-8 py-4 rounded-xl font-extrabold text-base shadow-xl transition-all">
+              <Link href="#calculator-widget" className="bg-signal hover:bg-signal-700 hover:from-[#A50D26] text-white px-8 py-4 rounded-xl font-extrabold text-base shadow-xl transition-all">
                 Calcular Mi Cotización Gratis
               </Link>
               <a href="tel:5307255383" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-base transition-all flex items-center gap-2">

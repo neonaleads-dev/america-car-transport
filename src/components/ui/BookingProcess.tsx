@@ -1,81 +1,70 @@
 import React from "react";
-import Image from "next/image";
-import { Layers } from "lucide-react";
+
+const steps = [
+  {
+    title: "Request Your Instant Quote",
+    body: "Enter your pickup and destination details to get a customized, transparent instant quote with no upfront deposit required.",
+  },
+  {
+    title: "Choose Options & Confirm Booking",
+    body: "Select your preferred transport type (Open or Enclosed) and schedule your pickup date with instant order confirmation.",
+  },
+  {
+    title: "Safe Door-to-Door Delivery & Final Inspection",
+    body: "Relax while our vetted, insured carrier picks up your vehicle and safely delivers it directly to your destination address.",
+  },
+];
 
 export default function BookingProcess() {
   return (
-    <section className="py-24 px-4 md:px-8 lg:px-24 bg-white border-t border-slate-100 overflow-hidden font-sans">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16 xl:gap-24 items-center">
-        
-        {/* Left Column: The 3 Steps */}
-        <div className="flex flex-col">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="text-blue-600">
-              <Layers className="w-8 h-8" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-              Simple 3-Step Vehicle Booking Process
-            </h2>
-          </div>
-          
-          <p className="text-lg text-slate-600 leading-relaxed font-medium mb-12">
-            America&apos;s leading bonded & insured auto transport network. Follow our straightforward process to ship your vehicle safely nationwide with zero hassle.
+    <section className="act-section bg-white border-t border-navy-900/10 font-sans">
+      <div className="act-container grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="lg:col-span-7">
+          <p className="act-eyebrow">How It Works</p>
+          <h2 className="act-h2 mb-5">Simple 3-Step Vehicle Booking Process</h2>
+          <p className="act-lead mb-10 max-w-2xl">
+            America&apos;s leading bonded &amp; insured auto transport network. Follow our straightforward process to ship your vehicle safely nationwide with zero hassle.
           </p>
 
-          <div className="space-y-10">
-            {/* Step 1 */}
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight flex items-baseline gap-2">
-                <span className="text-blue-600">1.</span> Request Your Instant Quote
-              </h3>
-              <p className="text-slate-600 leading-relaxed font-medium">
-                Enter your pickup and destination details to get a customized, transparent instant quote with no upfront deposit required.
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight flex items-baseline gap-2">
-                <span className="text-blue-600">2.</span> Choose Options & Confirm Booking
-              </h3>
-              <p className="text-slate-600 leading-relaxed font-medium">
-                Select your preferred transport type (Open or Enclosed) and schedule your pickup date with instant order confirmation.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight flex items-baseline gap-2">
-                <span className="text-blue-600">3.</span> Safe Door-to-Door Delivery & Final Inspection
-              </h3>
-              <p className="text-slate-600 leading-relaxed font-medium">
-                Relax while our vetted, insured carrier picks up your vehicle and safely delivers it directly to your destination address.
-              </p>
-            </div>
-          </div>
+          <ol className="border-t border-navy-900/15">
+            {steps.map((step, i) => (
+              <li key={step.title} className="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-7 border-b border-navy-900/15">
+                <span
+                  aria-hidden="true"
+                  className="font-heading text-4xl md:text-5xl font-bold leading-none text-navy-400 tabular"
+                 
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-navy-900 mb-2">
+                    <span className="sr-only">{i + 1}. </span>
+                    {step.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed">{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
 
-        {/* Right Column: Image */}
-        <div className="relative">
-          <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border-4 border-white transform hover:scale-[1.02] transition-transform duration-500">
-            {/* Using standard img tag since next/image sometimes requires domain configuration for external urls, but here we use a local public file. */}
-            <img 
+        <div className="lg:col-span-5 lg:sticky lg:top-32">
+          <figure className="relative">
+            <img
               src="/america-car-transport-booking-process-auto-carrier-650.webp"
               width={650}
               height={650}
               loading="lazy"
               decoding="async"
-              alt="America Car Transport modern auto carrier truck transporting multiple vehicles safely" 
+              alt="America Car Transport modern auto carrier truck transporting multiple vehicles safely"
               title="America Car Transport - Easy 3 Step Booking Process for Auto Shipping"
-              className="w-full h-full object-cover"
+              className="w-full aspect-[4/5] object-cover rounded-lg"
             />
-          </div>
-          
-          {/* Decorative accents */}
-          <div className="absolute -z-10 -bottom-8 -right-8 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-60"></div>
-          <div className="absolute -z-10 -top-8 -left-8 w-48 h-48 bg-slate-50 rounded-full blur-2xl opacity-60"></div>
+            <figcaption className="absolute left-4 right-4 bottom-4 bg-white/95 rounded-md px-4 py-3 text-sm text-slate-700 border border-navy-900/10">
+              <span className="font-semibold text-navy-900">No upfront deposit.</span> Every shipment is handled by a licensed, insured carrier.
+            </figcaption>
+          </figure>
         </div>
-
       </div>
     </section>
   );

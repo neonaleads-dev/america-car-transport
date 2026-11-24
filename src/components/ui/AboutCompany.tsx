@@ -25,40 +25,41 @@ const popularLinks = [
 
 export default function AboutCompany() {
   return (
-    <section id="about" className="py-20 bg-white border-t border-slate-100 font-sans">
-      <div className="max-w-[1100px] mx-auto px-4 md:px-8 space-y-10">
+    <section id="about" className="act-section bg-paper border-t border-navy-900/10 font-sans">
+      <div className="act-container space-y-12">
         <div className="max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-4">
+          <p className="act-eyebrow">About</p>
+          <h2 className="act-h2 mb-5">
             About America Car Transport
           </h2>
-          <p className="text-base md:text-lg text-slate-700 font-medium leading-relaxed">
+          <p className="act-lead">
             America Car Transport is a nationwide auto transport broker that ships cars, SUVs, pickup trucks, and motorcycles between all 50 U.S. states. We match each customer with a licensed, insured carrier for open or enclosed transport, with door-to-door pickup and delivery and no upfront deposit. Quotes are free online or by phone at (530) 725-5383, in English or Spanish.
           </p>
         </div>
 
         <div>
-          <h3 className="text-xl font-extrabold text-slate-900 mb-4">Car Shipping at a Glance</h3>
-          <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <h3 className="text-xl font-bold text-navy-900 mb-4">Car Shipping at a Glance</h3>
+          <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-navy-900/15 border border-navy-900/15 rounded-lg overflow-hidden">
             {facts.map((f) => (
-              <div key={f.label} className="bg-slate-50 border border-slate-200 rounded-2xl p-5">
-                <dt className="text-xs font-bold uppercase tracking-wide text-slate-500 mb-1">{f.label}</dt>
-                <dd className="text-base font-extrabold text-slate-900">{f.value}</dd>
+              <div key={f.label} className="bg-white p-5 md:p-6">
+                <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 mb-2">{f.label}</dt>
+                <dd className="font-heading text-lg md:text-xl font-bold text-navy-900 tabular">{f.value}</dd>
               </div>
             ))}
           </dl>
-          <p className="text-xs text-slate-500 font-medium mt-3">
+          <p className="text-sm text-slate-600 mt-3">
             Typical ranges for a running sedan on open transport. Your final price depends on route, vehicle, season, and pickup date.
           </p>
         </div>
 
         <div>
-          <h3 className="text-xl font-extrabold text-slate-900 mb-4">Popular Pages</h3>
-          <ul className="flex flex-wrap gap-3">
+          <h3 className="text-xl font-bold text-navy-900 mb-4">Popular Pages</h3>
+          <ul className="flex flex-wrap gap-x-6 gap-y-3">
             {popularLinks.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="inline-block bg-blue-50 hover:bg-blue-100 border border-blue-100 text-blue-700 font-bold text-sm px-4 py-2 rounded-xl transition-colors"
+                  className="text-[15px] font-medium text-navy-900 underline decoration-navy-900/25 underline-offset-4 hover:decoration-signal"
                 >
                   {l.label}
                 </Link>
