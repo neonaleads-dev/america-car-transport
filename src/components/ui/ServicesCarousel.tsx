@@ -142,14 +142,14 @@ export default function ServicesCarousel() {
           </div>
         </div>
 
-        <div data-gsap-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-navy-900/10 border border-navy-900/10 rounded-lg overflow-hidden">
+        <div data-gsap-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {displayItems.map((item, idx) => (
             <Link
               key={idx}
               href={item.href}
-              className="bg-white flex flex-col group/card"
+              className="group/card relative flex flex-col bg-white rounded-xl border border-navy-900/10 shadow-[0_1px_2px_rgba(11,37,69,0.06)] overflow-hidden transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_22px_44px_-18px_rgba(11,37,69,0.38)] hover:border-navy-900/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
             >
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-navy-100">
+              <div className="relative aspect-[16/11] w-full overflow-hidden bg-navy-100">
                 <img
                   src={item.img}
                   srcSet={srcSetFor(item.img)}
@@ -160,20 +160,28 @@ export default function ServicesCarousel() {
                   loading="lazy"
                   decoding="async"
                   title={`America Car Transport - ${item.title}`}
-                  className="w-full h-full object-cover group-hover/card:scale-[1.03] transition-transform duration-500"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-[1.06]"
                 />
+                {/* soft navy fade so the label always reads */}
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-navy-950/0 to-transparent opacity-80 transition-opacity duration-300 group-hover/card:opacity-100"></div>
+                <span className="absolute top-3 left-3 inline-flex items-center rounded bg-white/95 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-navy-900">
+                  {item.tag}
+                </span>
+                <span aria-hidden="true" className="absolute bottom-2 right-4 font-heading text-5xl font-bold leading-none text-white/90 tabular">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
               </div>
-              <div className="p-6 flex flex-col flex-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 mb-2">
-                  {String(idx + 1).padStart(2, "0")} · {item.tag}
-                </p>
-                <h3 className="text-xl font-bold text-navy-900 mb-2">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-1">{item.desc}</p>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-navy-900 mt-auto">
-                  <span className="underline decoration-signal decoration-2 underline-offset-4">
-                    {activeTab === "offer" ? "Learn More" : "View Segment Rates"}
+
+              <div className="relative flex flex-col flex-1 px-6 pt-6 pb-5">
+                {/* red accent grows on hover */}
+                <span aria-hidden="true" className="absolute top-0 left-6 h-[3px] w-10 bg-signal transition-all duration-500 ease-out group-hover/card:w-[calc(100%-3rem)]"></span>
+                <h3 className="text-xl font-bold text-navy-900 mb-2 mt-1">{item.title}</h3>
+                <p className="text-slate-600 text-[15px] leading-relaxed mb-6 flex-1">{item.desc}</p>
+                <span className="flex items-center justify-between border-t border-navy-900/10 pt-4 mt-auto text-sm font-semibold text-navy-900">
+                  {activeTab === "offer" ? "Learn More" : "View Segment Rates"}
+                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-navy-900/20 text-navy-900 transition-colors duration-300 group-hover/card:bg-signal group-hover/card:border-signal group-hover/card:text-white">
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/card:translate-x-0.5" aria-hidden="true" />
                   </span>
-                  <ArrowRight className="w-4 h-4 group-hover/card:translate-x-1 transition-transform" />
                 </span>
               </div>
             </Link>
