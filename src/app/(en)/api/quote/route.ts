@@ -26,7 +26,26 @@ export async function POST(req: Request) {
       pickupDate = "",
       calculatedPrice = "",
       distance = 0,
+      sourcePage = "",
+      leadSource = null,
     } = body;
+
+    // Where the lead came from (sent by the quote form; all optional, plain text only).
+    const clean = (v: unknown, max = 120) => String(v ?? "").replace(/[\s|]+/g, " ").trim().slice(0, max);
+    const src = leadSource && typeof leadSource === "object" ? leadSource : {};
+    const formPage = clean(sourcePage);
+    const landingPage = clean((src as any).landingPage);
+    const referrer = clean((src as any).referrer) || "direct";
+    const utm = ["utmSource", "utmMedium", "utmCampaign", "utmTerm"]
+      .map((k) => clean((src as any)[k], 60))
+      .filter(Boolean)
+      .join(" / ");
+    const sourceSummary = [
+      formPage && `Form page: ${formPage}`,
+      landingPage && `Landing page: ${landingPage}`,
+      `From: ${referrer}`,
+      utm && `UTM: ${utm}`,
+    ].filter(Boolean).join(" | ");
 
     const safeVehicles = Array.isArray(vehicles) && vehicles.length > 0 
       ? vehicles 
@@ -51,6 +70,7 @@ export async function POST(req: Request) {
     console.log(`Destination: ${destStr}`);
     console.log(`Transport Type: ${transportType}`);
     console.log(`Vehicles: ${vehicleSummary}`);
+    console.log(`Source: ${sourceSummary}`);
     console.log("==========================================");
 
     // 2. Build the CRM lead payload (neon-crm-app webhook schema)
@@ -74,7 +94,7 @@ export async function POST(req: Request) {
       c === "non-running" || c === "inoperable" ? "Non-running" : "Running";
     const conditions = Array.from(new Set(safeVehicles.map((v: any) => conditionLabel(v.condition))));
     const transportLabel = transportType === "enclosed" ? "enclosed" : "open";
-    const notes = `${conditions.join(" / ")}, ${transportLabel} transport`;
+    const notes = `${conditions.join(" / ")}, ${transportLabel} transport | ${sourceSummary}`;
 
     const crmLead = {
       name: fullName || "Customer",
@@ -204,7 +224,7 @@ export async function POST(req: Request) {
 
                   <!-- 5. Additional Notes & System Info -->
                   <div style="background-color: #f1f5f9; border-radius: 8px; padding: 12px; font-size: 12px; color: #64748b; text-align: center;">
-                    Submission Time: ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} EST · Source: Website Quote Calculator Lead Form
+                    Submission Time: ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} EST · Source: Website Quote Calculator Lead Form<br />${esc(sourceSummary)}
                   </div>
 
                 </div>

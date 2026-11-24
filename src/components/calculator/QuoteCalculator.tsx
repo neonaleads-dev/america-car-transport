@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { readLeadSource } from "@/components/analytics/LeadSourceTracker";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Flag, ArrowDownUp, Phone, Lock, CheckCircle2, Car, Calendar, Loader2, Plus, Trash2, X, User, Mail, AlertTriangle } from "lucide-react";
 
@@ -206,6 +207,8 @@ export default function QuoteCalculator({ lang = "en" }: QuoteCalculatorProps) {
             locationFrom,
             locationTo,
             distance: distanceMiles,
+            sourcePage: window.location.pathname,
+            leadSource: readLeadSource(),
           }),
         });
         const resData = await response.json();

@@ -16,6 +16,8 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import StructuredData from "@/components/seo/StructuredData";
+import { Analytics } from "@vercel/analytics/next";
+import LeadSourceTracker from "@/components/analytics/LeadSourceTracker";
 import dynamic from "next/dynamic";
 const GSAPScrollAnimations = dynamic(() => import("@/components/animation/GSAPScrollAnimations"), { ssr: false });
 
@@ -62,6 +64,8 @@ export default function EnLayout({
             {children}
           </div>
         </SmoothScroll>
+        <LeadSourceTracker />
+        <Analytics />
       </body>
     </html>
   );
