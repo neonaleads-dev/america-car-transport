@@ -26,7 +26,7 @@ export default function BookingProcess() {
             America&apos;s leading bonded &amp; insured auto transport network. Follow our straightforward process to ship your vehicle safely nationwide with zero hassle.
           </p>
 
-          <ol className="border-t border-navy-900/15">
+          <ol data-gsap-stagger className="border-t border-navy-900/15">
             {steps.map((step, i) => (
               <li key={step.title} className="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-7 border-b border-navy-900/15">
                 <span

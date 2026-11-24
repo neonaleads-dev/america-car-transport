@@ -53,7 +53,7 @@ export default function B2BCarousel() {
         </div>
 
         {/* Responsive CSS Grid (All cards visible on desktop) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-t border-white/15">
+        <div data-gsap-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-t border-white/15">
           {b2bServices.map((service, idx) => {
             const Icon = service.icon;
             return (

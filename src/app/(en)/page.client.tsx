@@ -24,8 +24,6 @@ const CTABanner = dynamic(() => import("@/components/ui/CTABanner"));
 const FAQSection = dynamic(() => import("@/components/ui/FAQSection"));
 const TestimonialsSection = dynamic(() => import("@/components/ui/TestimonialsSection"));
 const PopularRoutes = dynamic(() => import("@/components/ui/PopularRoutes"));
-// React Bits FadeContent: below-the-fold sections only (see the component header).
-import FadeContent from "@/components/reactbits/FadeContent";
 
 export default function HomeClient() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -116,23 +114,17 @@ export default function HomeClient() {
 
       {/* 3. How It Works (3 Steps) */}
       <div id="how-it-works">
-        <FadeContent blur={4} duration={0.7} threshold={0.15}>
-          <BookingProcess />
-        </FadeContent>
+        <BookingProcess />
       </div>
 
       {/* 4. Cost Calculator / Interactive Price Matrix */}
       <div id="calculator">
-        <FadeContent blur={4} duration={0.7} threshold={0.15}>
-          <PricingTransparency />
-        </FadeContent>
+        <PricingTransparency />
       </div>
 
       {/* 5. Why Choose Us (Value Proposition & Trust Signals) */}
       <div id="why-us">
-        <FadeContent blur={4} duration={0.7} threshold={0.15}>
-          <TrustedSection />
-        </FadeContent>
+        <TrustedSection />
       </div>
 
       {/* 5b. Verified Customer Reviews & Testimonials */}
@@ -140,23 +132,17 @@ export default function HomeClient() {
 
       {/* 6. Popular Shipping Routes (SEO Route Cards) */}
       <div id="popular-routes">
-        <FadeContent blur={4} duration={0.7} threshold={0.15}>
-          <PopularRoutes />
-        </FadeContent>
+        <PopularRoutes />
       </div>
 
       {/* 7. Browse By State / US Map (Local SEO Hub) */}
       <div id="locations">
-        <FadeContent blur={4} duration={0.7} threshold={0.15}>
-          <DestinationsMap />
-        </FadeContent>
+        <DestinationsMap />
       </div>
 
       {/* 8. B2B & Commercial Services */}
       <div id="b2b">
-        <FadeContent blur={4} duration={0.7} threshold={0.15}>
-          <B2BCarousel />
-        </FadeContent>
+        <B2BCarousel />
       </div>
 
       {/* 8b. About the company: plain facts for search and AI answer engines */}

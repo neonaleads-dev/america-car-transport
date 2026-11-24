@@ -60,9 +60,6 @@ export default function SiteHeader({
               : "Licensed & bonded auto transport broker · Serving all 50 states"}
           </span>
           <div className="flex items-center gap-5">
-            <a href={PHONE_HREF} className="font-semibold text-white hover:underline underline-offset-4">
-              {lang === "es" ? "Llame" : "Call"} {PHONE_DISPLAY}
-            </a>
             <Link href={otherLang.href} title={otherLang.title} hrefLang={lang === "es" ? "en" : "es"} className="font-semibold tracking-wide hover:text-white">
               {otherLang.label}
             </Link>
@@ -70,7 +67,7 @@ export default function SiteHeader({
         </div>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 h-16 md:h-[72px] flex items-center justify-between gap-6">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 h-16 md:h-[72px] flex items-center justify-between gap-3 md:gap-6">
         <Link href={home} title={lang === "es" ? "America Car Transport Página Principal" : "America Car Transport Homepage"} className="flex items-center shrink-0">
           <img
             src="/america-car-transport-logo.png"
@@ -78,11 +75,11 @@ export default function SiteHeader({
             width={160}
             height={72}
             fetchPriority="high"
-            className="h-11 md:h-[52px] w-auto object-contain"
+            className="h-9 sm:h-11 md:h-[52px] w-auto object-contain"
           />
         </Link>
 
-        <nav aria-label="Main" className="hidden lg:flex items-center gap-7 text-[15px] font-medium text-slate-700">
+        <nav aria-label="Main" className="hidden lg:flex items-center gap-5 xl:gap-7 text-[15px] font-medium text-slate-700">
           {items.map((item) => (
             <Link
               key={item.key}
@@ -99,19 +96,24 @@ export default function SiteHeader({
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+          {/* Phone in its own box right next to the quote button, on every screen size */}
           <a
             href={PHONE_HREF}
-            aria-label={`Call ${PHONE_DISPLAY}`}
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-slate-300 text-navy-900"
+            aria-label={`${lang === "es" ? "Llamar al" : "Call"} ${PHONE_DISPLAY}`}
+            data-magnetic
+            className="inline-flex items-center gap-1.5 sm:gap-2 h-10 md:h-11 px-2.5 sm:px-3.5 rounded-md border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white text-[13px] sm:text-sm font-bold whitespace-nowrap transition-colors tabular"
           >
-            <Phone className="w-[18px] h-[18px]" />
+            <Phone className="w-4 h-4 shrink-0" aria-hidden="true" />
+            {PHONE_DISPLAY}
           </a>
           <Link
             href={cta.href}
-            className="inline-flex items-center h-10 md:h-11 px-4 md:px-5 rounded-md bg-signal hover:bg-signal-700 text-white text-sm font-semibold transition-colors whitespace-nowrap"
+            data-magnetic
+            className="inline-flex items-center h-10 md:h-11 px-3 sm:px-4 md:px-5 rounded-md bg-signal hover:bg-signal-700 text-white text-[13px] sm:text-sm font-semibold transition-colors whitespace-nowrap"
           >
-            {cta.label}
+            <span className="sm:hidden">{lang === "es" ? "Cotizar" : "Quote"}</span>
+            <span className="hidden sm:inline">{cta.label}</span>
           </Link>
 
           <details className="lg:hidden relative group">

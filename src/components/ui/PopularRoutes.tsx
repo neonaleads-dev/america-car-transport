@@ -45,7 +45,7 @@ export default function PopularRoutes() {
             <span>Estimated Cost</span>
             <span aria-hidden="true"></span>
           </div>
-          <ul>
+          <ul data-gsap-stagger>
             {POPULAR_ROUTES.map((route) => (
               <li
                 key={route.slug}

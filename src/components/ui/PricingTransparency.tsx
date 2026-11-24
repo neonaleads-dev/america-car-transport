@@ -127,9 +127,9 @@ export default function PricingTransparency() {
 
           {/* Animated Visualizer Card */}
           <div className="bg-white rounded-lg p-6 md:p-8 border border-navy-900/15 mb-8" ref={containerRef}>
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 mb-8">
               <span className="text-slate-600 font-semibold text-sm">Typical Price range</span>
-              <span className="font-heading text-3xl md:text-4xl font-bold text-navy-900 tabular">
+              <span className="font-heading text-3xl md:text-4xl font-bold text-navy-900 tabular whitespace-nowrap">
                 ${displayMin.toLocaleString()} – ${displayMax.toLocaleString()}
               </span>
             </div>
@@ -167,7 +167,7 @@ export default function PricingTransparency() {
               {/* Animated Floating Tooltip */}
               <motion.div 
                 initial={{ opacity: 0, left: "0%" }}
-                animate={isInView ? { opacity: 1, left: `${percentage}%` } : { opacity: 0, left: "0%" }}
+                animate={isInView ? { opacity: 1, left: `${Math.min(Math.max(percentage, 30), 70)}%` } : { opacity: 0, left: "0%" }}
                 transition={{ duration: 0.8, ease: "backOut" }}
                 className="absolute -top-14 transform -translate-x-1/2 bg-navy-900 text-white text-xs font-semibold py-2 px-3 rounded whitespace-nowrap z-10 flex flex-col items-center"
               >
@@ -191,7 +191,7 @@ export default function PricingTransparency() {
         {/* Right Column: what moves the price */}
         <div className="xl:pt-14">
           <h3 className="text-xl font-bold text-navy-900 mb-2">Factors That Affect This Price</h3>
-          <ol className="border-t border-navy-900/15">
+          <ol data-gsap-stagger className="border-t border-navy-900/15">
             {factors.map((factor, idx) => {
               const Icon = factor.icon;
               return (

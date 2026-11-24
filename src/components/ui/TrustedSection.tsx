@@ -51,7 +51,7 @@ export default function TrustedSection() {
             It took us a decade to rule the industry and be known as a reliable and top-notch hub of auto transport services in the USA.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-navy-900/15 mb-10">
+          <div data-gsap-stagger className="grid grid-cols-1 md:grid-cols-2 border-t border-navy-900/15 mb-10">
             {features.map(({ icon: Icon, title, body }, i) => (
               <div
                 key={title}

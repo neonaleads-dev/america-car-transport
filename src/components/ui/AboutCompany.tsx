@@ -39,7 +39,7 @@ export default function AboutCompany() {
 
         <div>
           <h3 className="text-xl font-bold text-navy-900 mb-4">Car Shipping at a Glance</h3>
-          <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-navy-900/15 border border-navy-900/15 rounded-lg overflow-hidden">
+          <dl data-gsap-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-navy-900/15 border border-navy-900/15 rounded-lg overflow-hidden">
             {facts.map((f) => (
               <div key={f.label} className="bg-white p-5 md:p-6">
                 <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 mb-2">{f.label}</dt>

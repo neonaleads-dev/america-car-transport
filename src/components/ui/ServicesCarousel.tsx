@@ -142,7 +142,7 @@ export default function ServicesCarousel() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-navy-900/10 border border-navy-900/10 rounded-lg overflow-hidden">
+        <div data-gsap-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-navy-900/10 border border-navy-900/10 rounded-lg overflow-hidden">
           {displayItems.map((item, idx) => (
             <Link
               key={idx}

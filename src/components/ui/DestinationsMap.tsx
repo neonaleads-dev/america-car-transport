@@ -74,7 +74,7 @@ export default function DestinationsMap() {
         <p className="act-lead mb-8">
           Click any state on the map below to view custom shipping rates, local logistics data, and available auto transport corridors.
         </p>
-        <ul className="grid grid-cols-2 gap-x-6 border-t border-navy-900/15">
+        <ul data-gsap-stagger className="grid grid-cols-2 gap-x-6 border-t border-navy-900/15">
           {stateCards.map((state) => (
             <li key={state.slug} className="border-b border-navy-900/15">
               <Link
