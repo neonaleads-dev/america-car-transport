@@ -50,7 +50,7 @@ export default function SiteHeader({
     : { href: "/es", label: "ES", title: "Español" };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur border-b border-navy-900/10">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-navy-900/10">
       {/* Utility strip: phone + language, the things people look for first */}
       <div className="hidden md:block bg-navy-900 text-navy-100 text-[13px]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 h-9 flex items-center justify-between">

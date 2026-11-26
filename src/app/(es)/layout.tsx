@@ -13,7 +13,6 @@ const archivo = Archivo({
   display: "swap"
 });
 
-import SmoothScroll from "@/components/layout/SmoothScroll";
 import StructuredData from "@/components/seo/StructuredData";
 import { Analytics } from "@vercel/analytics/next";
 import LeadSourceTracker from "@/components/analytics/LeadSourceTracker";
@@ -58,11 +57,9 @@ export default function EsLayout({
       </head>
       <body className="font-sans bg-paper text-charcoal antialiased">
         <GSAPScrollAnimations />
-        <SmoothScroll>
           <div className="relative overflow-x-clip min-h-screen flex flex-col bg-paper">
             {children}
           </div>
-        </SmoothScroll>
         <LeadSourceTracker />
         <Analytics />
       </body>
